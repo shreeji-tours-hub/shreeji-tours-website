@@ -1,0 +1,335 @@
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+
+  height: 78px;
+
+  background: #6d0707;
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: relative;
+
+  z-index: 100;
+}
+
+.navInner {
+  width: min(1250px, calc(100% - 40px));
+
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.logoSymbol {
+  font-size: 38px;
+
+  line-height: 1;
+}
+
+.logoContent {
+  text-align: center;
+}
+
+.logoText {
+  color: #e1bb16;
+
+  font-family: Georgia, serif;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.logoTagline {
+  margin-top: 1px;
+
+  color: #fffcfc;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.navLinks {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.navLinks a {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  position: relative;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.navLinks a:hover,
+.navLinks a.active {
+  color: #ddac1a;
+}
+
+.navLinks a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  height: 3px;
+
+  background: #f5b400;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobileMenu {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  color: #222222;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsappButton {
+  position: fixed;
+
+  right: 0;
+
+  top: 90px;
+
+  z-index: 999;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  background: #25d366;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 22px 0 0 22px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+
+  transition: 0.25s;
+}
+
+.whatsappButton svg {
+  font-size: 19px;
+}
+
+.whatsappButton:hover {
+  padding-right: 20px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+  .navLinks {
+    gap: 14px;
+  }
+
+  .navLinks a {
+    font-size: 11px;
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+  .topbar {
+    display: none;
+  }
+
+  .navbar {
+    height: 70px;
+  }
+
+  .navInner {
+    width: calc(100% - 30px);
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .logoSymbol {
+    font-size: 30px;
+  }
+
+  .mobileMenu {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+  .navLinks {
+    position: absolute;
+
+    top: 70px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 15px 20px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 8px 20px rgba(0,0,0,0.12);
+  }
+
+  .navLinks.mobileActive {
+    display: flex;
+  }
+
+  .navLinks a {
+    height: auto;
+
+    padding: 15px 5px;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .navLinks a.active::after {
+    display: none;
+  }
+
+  .whatsappButton {
+    top: auto;
+
+    bottom: 85px;
+
+    right: 15px;
+
+    width: 52px;
+
+    height: 52px;
+
+    padding: 0;
+
+    justify-content: center;
+
+    border-radius: 50%;
+  }
+
+  .whatsappButton span {
+    display: none;
+  }
+
+}

@@ -1,0 +1,539 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+  background: #6d0707;
+  color: #ffffff;
+}
+
+
+/* =========================
+   GOOGLE REVIEWS
+========================= */
+
+.reviewSection {
+  background: #f5b400;
+  padding: 25px 0;
+}
+
+.reviewContainer {
+  width: min(1250px, calc(100% - 50px));
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.reviewText h3 {
+  margin: 0 0 5px;
+
+  color: #182b49;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.reviewText p {
+  margin: 0;
+
+  color: #333;
+
+  font-size: 14px;
+}
+
+.reviewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 22px;
+
+  background: #ffffff;
+  color: #b7191c;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: all 0.25s ease;
+}
+
+.reviewButton:hover {
+  background: #8f1114;
+  color: #ffffff;
+}
+
+
+/* =========================
+   MAIN FOOTER
+========================= */
+
+.footerMain {
+  width: min(1250px, calc(100% - 50px));
+
+  margin: 0 auto;
+
+  padding: 45px 0 35px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap: 45px;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  padding-right: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+.logoSymbol {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #b7191c;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.logoTagline {
+  font-size: 11px;
+
+  color: #ffd45c;
+
+  letter-spacing: 1.5px;
+
+  margin-top: 2px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  max-width: 320px;
+}
+
+
+/* =========================
+   TRIPADVISOR
+========================= */
+
+.tripadvisor {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.tripadvisor strong {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.tripadvisor span {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.column h3 {
+  margin: 0 0 17px;
+
+  color: #ffd45c;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.links {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin-bottom: 9px;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.88);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.links a:hover {
+  color: #ffd45c;
+
+  padding-left: 4px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contactList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+.contactItem {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.contactIcon {
+  flex-shrink: 0;
+
+  color: #ffd45c;
+
+  margin-top: 2px;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.social {
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.social a {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  transition: all 0.25s ease;
+}
+
+.social a:hover {
+  background: #ffffff;
+
+  border-color: #ffffff;
+
+  color: #b7191c;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+  padding: 17px 0;
+}
+
+.bottomInner {
+  width: min(1250px, calc(100% - 50px));
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.copyright {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 12px;
+}
+
+.bottomLinks {
+  display: flex;
+
+  gap: 20px;
+}
+
+.bottomLinks a {
+  color: rgba(255, 255, 255, 0.75);
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+.bottomLinks a:hover {
+  color: #ffd45c;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.floatingWhatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+
+  width: 58px;
+  height: 58px;
+
+  background: #25d366;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  z-index: 9999;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+
+  transition:
+    width 0.3s ease,
+    border-radius 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  overflow: hidden;
+}
+
+/* WhatsApp icon */
+
+.whatsappIcon {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+}
+
+/* Text hidden initially */
+
+.whatsappText {
+  display: none;
+
+  white-space: nowrap;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-left: 8px;
+}
+
+
+/* Hover expands the button */
+
+.floatingWhatsapp:hover {
+  width: 145px;
+  border-radius: 30px;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.floatingWhatsapp:hover .whatsappText {
+  display: inline;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .floatingWhatsapp {
+    width: 54px;
+    height: 54px;
+
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsappIcon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .floatingWhatsapp:hover {
+    width: 54px;
+    border-radius: 50%;
+  }
+
+  .floatingWhatsapp:hover .whatsappText {
+    display: none;
+  }
+
+}
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .footerMain {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .reviewContainer {
+    width: calc(100% - 30px);
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 15px;
+  }
+
+  .reviewText h3 {
+    font-size: 20px;
+  }
+
+  .footerMain {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 35px 0;
+  }
+
+  .brand {
+    padding-right: 0;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .bottomInner {
+    width: calc(100% - 30px);
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+  .bottomLinks {
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+}

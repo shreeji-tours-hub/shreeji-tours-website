@@ -1,95 +1,104 @@
 "use client";
 
-import { useState } from "react";
+import styles from "./Footer.module.css";
+
 import {
   Phone,
   Mail,
-  ChevronDown,
-  MessageCircle,
-  Menu,
-  X,
+  MapPin,
 } from "lucide-react";
 
 import {
   FaFacebookF,
   FaInstagram,
   FaYoutube,
+  FaWhatsapp,
 } from "react-icons/fa";
 
-export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+import {
+  footerBrand,
+  footerQuickLinks,
+  footerPopularTours,
+  footerServices,
+  footerContact,
+  footerSocialLinks,
+  footerReviews,
+  footerCopyright,
+} from "./FooterData";
 
-  const closeMenu = () => {
-    setMobileOpen(false);
-  };
+
+export default function Footer() {
 
   return (
-    <>
-      {/* TOP CONTACT BAR */}
-      <div className="topbar">
-        <div className="container topbar-inner">
 
-          <div className="top-contact">
+    <footer
+      className={styles.footer}
+      id="contact"
+    >
 
-            <span>
-              <Phone size={13} />
-              +91 9969422936
-            </span>
 
-            <span>
-              <Phone size={13} />
-              +91 9324622153
-            </span>
+      {/* =========================
+          GOOGLE REVIEWS
+      ========================= */}
 
-            <span>
-              <Mail size={13} />
-              contact@shreejitourstravels.in
-            </span>
+      <div className={styles.reviewSection}>
 
-            <span className="website-top">
-              🌐 www.shreejitourstravels.in
-            </span>
+        <div className={styles.reviewContainer}>
 
-          </div>
+          <div className={styles.reviewText}>
 
-          <div className="social-top">
+            <h3>
+              {footerReviews.title}
+            </h3>
 
-            <span className="language">
-              English
-              <ChevronDown size={11} />
-            </span>
-
-            <FaFacebookF size={13} />
-            <FaInstagram size={13} />
-            <FaYoutube size={13} />
-            <MessageCircle size={14} />
+            <p>
+              {footerReviews.description}
+            </p>
 
           </div>
+
+
+          <a
+            href={footerReviews.googleReviewLink}
+            className={styles.reviewButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ⭐ Leave a Google Review
+          </a>
 
         </div>
+
       </div>
 
 
-      {/* NAVBAR */}
-      <header className="navbar">
+      {/* =========================
+          MAIN FOOTER
+      ========================= */}
 
-        <div className="container nav-inner">
+      <div className={styles.footerMain}>
 
-          {/* LOGO */}
-          <div className="logo-area">
 
-            <div className="logo-symbol">
+        {/* =========================
+            BRAND
+        ========================= */}
+
+        <div className={styles.brand}>
+
+          <div className={styles.logo}>
+
+            <div className={styles.logoSymbol}>
               🦚
             </div>
 
             <div>
 
-              <div className="logo-text">
-                Shreeji Tours n Travels
+              <div className={styles.logoText}>
+                {footerBrand.name}
               </div>
 
-              <div className="logo-tagline">
-                Make Tour Easy
+              <div className={styles.logoTagline}>
+                {footerBrand.tagline}
               </div>
 
             </div>
@@ -97,115 +106,301 @@ export default function Navbar() {
           </div>
 
 
-          {/* NAVIGATION */}
-          <nav
-            className={`nav-links ${
-              mobileOpen ? "mobile-active" : ""
-            }`}
-          >
+          <p className={styles.description}>
+            {footerBrand.description}
+          </p>
+
+
+          {/* TRIPADVISOR */}
+
+          <div className={styles.tripadvisor}>
+
+            <strong>
+              ◎ Tripadvisor
+            </strong>
+
+            <span>
+              {footerBrand.tripadvisorReviews}
+            </span>
+
+          </div>
+
+
+          {/* SOCIAL */}
+
+          <div className={styles.social}>
 
             <a
-              href="/"
-              className="active"
-              onClick={closeMenu}
+              href={footerSocialLinks.facebook}
+              aria-label="Facebook"
             >
-              Home
+              <FaFacebookF />
             </a>
 
             <a
-              href="#about"
-              onClick={closeMenu}
+              href={footerSocialLinks.instagram}
+              aria-label="Instagram"
             >
-              About Us
+              <FaInstagram />
             </a>
 
             <a
-              href="#tours"
-              onClick={closeMenu}
+              href={footerSocialLinks.youtube}
+              aria-label="YouTube"
             >
-              India Tours
-              <ChevronDown size={11} />
+              <FaYoutube />
             </a>
 
             <a
-              href="#foreigners"
-              onClick={closeMenu}
+              href={footerSocialLinks.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
             >
-              Tours for Foreigners
+              <FaWhatsapp />
             </a>
 
-            <a
-              href="#international"
-              onClick={closeMenu}
-            >
-              International Tours
-              <ChevronDown size={11} />
-            </a>
-
-            <a
-              href="#cab"
-              onClick={closeMenu}
-            >
-              Cab Hire
-            </a>
-
-            <a
-              href="#groups"
-              onClick={closeMenu}
-            >
-              Group Tours
-            </a>
-
-            <a
-              href="#reviews"
-              onClick={closeMenu}
-            >
-              Happy Clients
-            </a>
-
-            <a
-              href="#contact"
-              onClick={closeMenu}
-            >
-              Contact Us
-            </a>
-
-          </nav>
-
-
-          {/* MOBILE BUTTON */}
-          <button
-            className="mobile-menu"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-
-            {mobileOpen ? (
-              <X size={25} />
-            ) : (
-              <Menu size={25} />
-            )}
-
-          </button>
+          </div>
 
         </div>
 
-      </header>
+
+        {/* =========================
+            QUICK LINKS
+        ========================= */}
+
+        <div className={styles.column}>
+
+          <h3>
+            Quick Links
+          </h3>
+
+          <ul className={styles.links}>
+
+            {footerQuickLinks.map(
+              (link, index) => (
+
+                <li key={index}>
+
+                  <a href={link.href}>
+                    {link.label}
+                  </a>
+
+                </li>
+
+              )
+            )}
+
+          </ul>
+
+        </div>
 
 
-      {/* WHATSAPP BUTTON */}
+        {/* =========================
+            POPULAR TOURS
+        ========================= */}
+
+        <div className={styles.column}>
+
+          <h3>
+            Popular Tours
+          </h3>
+
+          <ul className={styles.links}>
+
+            {footerPopularTours.map(
+              (tour, index) => (
+
+                <li key={index}>
+
+                  <a href="#tours">
+                    {tour}
+                  </a>
+
+                </li>
+
+              )
+            )}
+
+          </ul>
+
+        </div>
+
+
+        {/* =========================
+            SERVICES
+        ========================= */}
+
+        <div className={styles.column}>
+
+          <h3>
+            Our Services
+          </h3>
+
+          <ul className={styles.links}>
+
+            {footerServices.map(
+              (service, index) => (
+
+                <li key={index}>
+
+                  <a href={service.href}>
+                    {service.label}
+                  </a>
+
+                </li>
+
+              )
+            )}
+
+          </ul>
+
+        </div>
+
+
+        {/* =========================
+            CONTACT
+        ========================= */}
+
+        <div className={styles.column}>
+
+          <h3>
+            Contact Us
+          </h3>
+
+
+          <div className={styles.contactList}>
+
+
+            <a
+              href={`tel:${footerContact.phone1}`}
+              className={styles.contactItem}
+            >
+
+              <Phone
+                size={17}
+                className={styles.contactIcon}
+              />
+
+              <span>
+                {footerContact.phone1}
+              </span>
+
+            </a>
+
+
+            <a
+              href={`tel:${footerContact.phone2}`}
+              className={styles.contactItem}
+            >
+
+              <Phone
+                size={17}
+                className={styles.contactIcon}
+              />
+
+              <span>
+                {footerContact.phone2}
+              </span>
+
+            </a>
+
+
+            <a
+              href={`mailto:${footerContact.email}`}
+              className={styles.contactItem}
+            >
+
+              <Mail
+                size={17}
+                className={styles.contactIcon}
+              />
+
+              <span>
+                {footerContact.email}
+              </span>
+
+            </a>
+
+
+            <div className={styles.contactItem}>
+
+              <MapPin
+                size={20}
+                className={styles.contactIcon}
+              />
+
+              <span>
+                {footerContact.address}
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* =========================
+          FOOTER BOTTOM
+      ========================= */}
+
+      <div className={styles.bottom}>
+
+        <div className={styles.bottomInner}>
+
+          <p className={styles.copyright}>
+
+            © {footerCopyright.year}{" "}
+
+            {footerCopyright.text}
+
+          </p>
+
+
+          <div className={styles.bottomLinks}>
+
+            <a href="#">
+              Privacy Policy
+            </a>
+
+            <a href="#">
+              Terms & Conditions
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* =========================
+          FLOATING WHATSAPP
+      ========================= */}
+
       <a
-        href="https://wa.me/919969422936"
+        href={footerSocialLinks.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        className="whatsapp-top"
+        className={styles.floatingWhatsapp}
+        aria-label="WhatsApp"
       >
 
-        <MessageCircle size={16} />
+        <FaWhatsapp
+          className={styles.whatsappIcon}
+        />
 
-        WhatsApp Us
+        <span className={styles.whatsappText}>
+          WhatsApp Us
+        </span>
 
       </a>
-    </>
+
+
+    </footer>
   );
 }

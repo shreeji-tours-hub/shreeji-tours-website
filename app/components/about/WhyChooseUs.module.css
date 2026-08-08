@@ -1,0 +1,102 @@
+.section {
+  padding: 50px 0;
+  background: #fffaf5;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 35px;
+}
+
+.choose > span,
+.achievement > span {
+  color: #8c1717;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.choose h2,
+.achievement h2 {
+  font-size: 25px;
+  margin: 8px 0 20px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.item svg {
+  color: #8c1717;
+  flex-shrink: 0;
+}
+
+.item p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.achievement {
+  background: #8d1010;
+  color: white;
+
+  padding: 28px;
+
+  border-radius: 7px;
+}
+
+.achievement > span {
+  color: #ffd45c;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.stat svg {
+  color: #f5b400;
+}
+
+.stat strong {
+  display: block;
+  font-size: 18px;
+}
+
+.stat small {
+  display: block;
+  font-size: 11px;
+  color: #eee;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+}

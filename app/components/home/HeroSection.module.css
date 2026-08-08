@@ -1,0 +1,262 @@
+.hero {
+  position: relative;
+
+  height: 470px;
+  min-height: 470px;
+
+  overflow: hidden;
+
+  background-image: url("https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=2000&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.62) 35%,
+      rgba(0, 0, 0, 0.20) 75%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+
+  width: min(1380px, calc(100% - 50px));
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.heroCopy {
+  color: white;
+  margin-top: -5px;
+}
+
+
+.heroTitle {
+  font-size: clamp(40px, 4vw, 55px);
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  margin-bottom: 4px;
+}
+
+
+.heroScript {
+  font-family: "Pacifico", cursive;
+
+  color: #ffc400;
+
+  font-size: clamp(43px, 4.6vw, 65px);
+
+  line-height: 1.15;
+
+  margin-bottom: 18px;
+}
+
+
+.heroServices {
+  font-size: 17px;
+  line-height: 2;
+
+  font-weight: 500;
+}
+
+
+.heroServices span {
+  color: #ffc400;
+  margin: 0 9px;
+}
+
+
+.heroButtons {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 23px;
+}
+
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 26px;
+
+  background: #ffbf00;
+  color: #111;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.25s;
+}
+
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  background: #ffd447;
+}
+
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 13px 25px;
+
+  border: 1px solid white;
+  border-radius: 8px;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.btnOutline:hover {
+  background: white;
+  color: #111;
+}
+
+
+/* TRIPADVISOR */
+
+.tripadvisorBadge {
+  position: absolute;
+
+  right: 6%;
+  bottom: 0;
+
+  z-index: 5;
+
+  width: 125px;
+  min-height: 150px;
+
+  background: #d71919;
+  color: white;
+
+  text-align: center;
+
+  padding: 12px 8px;
+}
+
+
+.tripadvisorExcellent {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.tripadvisorBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 7px;
+
+  font-size: 15px;
+}
+
+
+.tripadvisorCircle {
+  width: 35px;
+  height: 35px;
+
+  border: 3px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tripadvisorStars {
+  margin-top: 7px;
+
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+
+.tripadvisorBadge small {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 10px;
+}
+
+
+@media (max-width: 800px) {
+
+  .hero {
+    height: 520px;
+  }
+
+  .heroContent {
+    width: calc(100% - 30px);
+  }
+
+  .heroTitle {
+    font-size: 35px;
+  }
+
+  .heroScript {
+    font-size: 40px;
+  }
+
+  .heroServices {
+    font-size: 14px;
+  }
+
+  .tripadvisorBadge {
+    right: 20px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .heroTitle {
+    font-size: 29px;
+  }
+
+  .heroScript {
+    font-size: 34px;
+  }
+
+  .heroServices {
+    font-size: 13px;
+  }
+
+  .heroButtons {
+    flex-wrap: wrap;
+  }
+
+}

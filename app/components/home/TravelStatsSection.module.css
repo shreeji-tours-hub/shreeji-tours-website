@@ -1,0 +1,450 @@
+/* =========================
+   TRAVEL STATS SECTION
+========================= */
+
+.section {
+  width: 100%;
+
+  padding: 45px 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  width: min(1155px, calc(100% - 50px));
+
+  min-height: 570px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns: 43% 57%;
+
+  align-items: center;
+
+  border-radius: 16px;
+
+  background:
+    radial-gradient(
+      circle at 78% 55%,
+      rgba(245, 146, 105, 0.16),
+      transparent 28%
+    ),
+    #fafafa;
+
+  box-shadow:
+    0 5px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   SUBTLE BACKGROUND PATTERN
+========================= */
+
+.container::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.28;
+
+  pointer-events: none;
+
+  background-image:
+    repeating-radial-gradient(
+      ellipse at 20% 30%,
+      transparent 0,
+      transparent 55px,
+      rgba(40, 40, 40, 0.025) 56px,
+      transparent 58px
+    );
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.content {
+  position: relative;
+
+  z-index: 2;
+
+  padding-left: 75px;
+
+  max-width: 500px;
+}
+
+.content h2 {
+  margin: 0 0 25px;
+
+  color: #101b55;
+
+  font-size: 42px;
+
+  line-height: 1.18;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+.content p {
+  margin: 0;
+
+  max-width: 420px;
+
+  color: #25315d;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+  margin-top: 55px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 17px 36px;
+
+  background: #f36b2b;
+
+  color: #ffffff;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.button span {
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+.button:hover {
+  background: #df571c;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(243, 107, 43, 0.25);
+}
+
+
+/* =========================
+   STATS AREA
+========================= */
+
+.stats {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  padding-right: 70px;
+}
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+.statCard {
+  width: 245px;
+
+  height: 245px;
+
+  padding: 30px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px rgba(20, 30, 80, 0.07);
+
+  position: relative;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 14px 35px rgba(20, 30, 80, 0.12);
+}
+
+
+/* =========================
+   OFFSET CARDS
+========================= */
+
+.statCard:first-child {
+  transform: translateY(-105px);
+}
+
+.statCard:first-child:hover {
+  transform: translateY(-112px);
+}
+
+.middleCard {
+  transform: translateY(105px);
+}
+
+.middleCard:hover {
+  transform: translateY(98px);
+}
+
+.statCard:last-child {
+  transform: translateY(-5px);
+}
+
+.statCard:last-child:hover {
+  transform: translateY(-12px);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.icon {
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 13px;
+
+  color: #ed6c36;
+
+  font-size: 46px;
+
+  font-weight: 300;
+
+  line-height: 1;
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.number {
+  color: #ed6c36;
+
+  font-size: 40px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+  color: #192452;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+
+  .container {
+    grid-template-columns: 40% 60%;
+  }
+
+  .content {
+    padding-left: 45px;
+  }
+
+  .content h2 {
+    font-size: 36px;
+  }
+
+  .stats {
+    gap: 15px;
+
+    padding-right: 35px;
+  }
+
+  .statCard {
+    width: 190px;
+
+    height: 210px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .section {
+    padding: 30px 0;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+
+    padding: 45px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+  }
+
+  .content {
+    padding-left: 0;
+
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 34px;
+  }
+
+  .content p {
+    margin: 0 auto;
+
+    font-size: 15px;
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+
+  .stats {
+    width: 100%;
+
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding: 45px 0 0;
+  }
+
+  .statCard,
+  .statCard:first-child,
+  .statCard:last-child,
+  .middleCard {
+    width: 100%;
+
+    height: 190px;
+
+    transform: none;
+  }
+
+  .statCard:hover,
+  .statCard:first-child:hover,
+  .statCard:last-child:hover,
+  .middleCard:hover {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+  .content h2 {
+    font-size: 29px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .number {
+    font-size: 35px;
+  }
+
+}
