@@ -123,21 +123,6 @@ export default function Navbar() {
           WHATSAPP BUTTON
       ========================= */}
 
-      <a
-        href={navbarSocialLinks.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.whatsappButton}
-      >
-
-        <FaWhatsapp />
-
-        <span>
-          WhatsApp Us
-        </span>
-
-      </a>
-
     </>
   );
 }

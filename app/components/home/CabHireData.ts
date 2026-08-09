@@ -15,7 +15,7 @@ export const cabHireData = {
   buttonLink: "#contact",
 
   image:
-    "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=80",
+    "https://res.cloudinary.com/dz9hxvxa/image/upload/v1786290965/Hire_Cab.png",
 
   imageAlt: "Luxury car rental in Mumbai",
 

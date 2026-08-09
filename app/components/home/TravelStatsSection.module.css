@@ -129,7 +129,7 @@
 
   padding: 17px 36px;
 
-  background: #f36b2b;
+  background: #6d0707;
 
   color: #ffffff;
 
@@ -154,7 +154,7 @@
 }
 
 .button:hover {
-  background: #df571c;
+  background: #6d0707;
 
   transform: translateY(-3px);
 
@@ -275,7 +275,7 @@
 
   margin-bottom: 13px;
 
-  color: #ed6c36;
+  color: #6d0707;
 
   font-size: 46px;
 
@@ -290,7 +290,7 @@
 ========================= */
 
 .number {
-  color: #ed6c36;
+  color: #6d0707;
 
   font-size: 40px;
 

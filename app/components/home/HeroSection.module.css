@@ -1,21 +1,31 @@
 .hero {
   position: relative;
 
-  height: 470px;
+  height: 700px;
   min-height: 470px;
 
   overflow: hidden;
+}
 
-  background-image: url("https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=2000&q=90");
+.heroVideo {
+  position: absolute;
+  inset: 0;
 
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
 }
 
 
 .heroOverlay {
   position: absolute;
   inset: 0;
+
+  z-index: 1;
 
   background:
     linear-gradient(
@@ -27,14 +37,12 @@
     );
 }
 
-
 .heroContent {
   position: relative;
   z-index: 2;
 
   width: min(1380px, calc(100% - 50px));
   height: 100%;
-
   margin: auto;
 
   display: flex;

@@ -1,11 +1,12 @@
 export const footerBrand = {
   name: "Shreeji Tours & Travels",
-  tagline: "MAKE TOUR EASY",
 
   description:
-    "We are a trusted travel company based in Mumbai, providing memorable tour experiences across India and international destinations.",
+    "We are a trusted travel company based in Mumbai providing the best tour experiences across India and international destinations.",
 
   tripadvisorReviews: "500+ Reviews",
+
+  googleReviews: "Excellent",
 };
 
 
@@ -19,16 +20,12 @@ export const footerQuickLinks = [
     href: "#about",
   },
   {
-    label: "Tours for Foreigners",
-    href: "#foreigners",
-  },
-  {
     label: "India Tours",
     href: "#tours",
   },
   {
-    label: "Group Tours",
-    href: "#groups",
+    label: "Tours for Foreigners",
+    href: "#foreigners",
   },
   {
     label: "International Tours",
@@ -37,6 +34,14 @@ export const footerQuickLinks = [
   {
     label: "Cab Hire",
     href: "#cab",
+  },
+  {
+    label: "Group Tours",
+    href: "#groups",
+  },
+  {
+    label: "Happy Clients",
+    href: "#reviews",
   },
   {
     label: "Contact Us",
@@ -95,31 +100,36 @@ export const footerServices = [
 
 export const footerContact = {
   phone1: "+91 9969422936",
+
   phone2: "+91 9324622153",
 
   email:
     "contact@shreejitourstravels.in",
 
+  email2:
+    "shreejitourstravels@gmail.com",
+
   address:
-    "Supershva Theatre, E Wing, Flat No: 403, Old Nagardas Rd, Andheri East, Mumbai",
+    "Supershva Theatre, E Wing, Flat No: 403, Old Nagardas Rd, Andheri East, Mumbai - 400069",
 };
 
 
 export const footerSocialLinks = {
   facebook: "#",
+
   instagram: "#",
+
   youtube: "#",
-  whatsapp: "https://wa.me/919969422936",
+
+  whatsapp:
+    "https://wa.me/919969422936",
 };
 
 
 export const footerReviews = {
-  title: "Loved Your Trip With Us?",
-
-  description:
-    "Share your experience and help other travelers.",
-
   googleReviewLink: "#",
+
+  tripadvisorLink: "#",
 };
 
 
