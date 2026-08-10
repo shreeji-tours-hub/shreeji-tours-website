@@ -3,7 +3,7 @@ export const cabHireData = {
 
   title: [
     "Cab Hire &",
-    "Luxury Car Rental",
+    "Luxury Car Rental Services",
     "In Mumbai",
   ],
 
