@@ -28,5 +28,5 @@ export const aboutHeroData = {
   ],
 
   image:
-    "https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1800&q=85",
+    "https://res.cloudinary.com/dcaiszxcb/image/upload/v1784746538/pexels-feng-he-2162517834-38400805_lerail.jpg",
 };

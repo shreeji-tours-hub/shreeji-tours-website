@@ -97,6 +97,12 @@
   line-height: 1.6;
 }
 
+.companyName {
+  color: #8d1010;
+  font-weight: 700;
+  font-size: 17px;
+}
+
 @media (max-width: 768px) {
 
   .container {

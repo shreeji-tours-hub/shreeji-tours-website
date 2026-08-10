@@ -2,7 +2,7 @@ export const travelStats = [
  {
   number: "100+",
   label: "India Tour",
-  icon: "⌖",
+  icon: "📍",
 },
 {
   number: "1,000+",

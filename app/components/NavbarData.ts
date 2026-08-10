@@ -36,7 +36,7 @@ export const navbarLinks = [
 
   {
     label: "Contact Us",
-    href: "#contact",
+    href: "/contact",
   },
 ];
 

@@ -3,6 +3,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+import AboutHero from "./about/AboutHero";
 import OurStory from "./about/OurStory";
 import ValuesSection from "./about/ValuesSection";
 import LeadershipSection from "./about/LeadershipSection";
@@ -14,6 +15,8 @@ export default function AboutPage() {
     <main>
       <Navbar />
 
+      <AboutHero />
+      
       <OurStory />
 
       <ValuesSection />

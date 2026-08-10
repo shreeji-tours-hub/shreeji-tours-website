@@ -17,12 +17,13 @@ export default function JourneyCTA() {
             Your Dream Trip Starts Here
           </h2>
 
-          <p>
-            Whether you're looking for a spiritual pilgrimage,
-            family vacation, honeymoon, corporate event or
-            luxury holiday, we can create the perfect
-            itinerary for you.
-          </p>
+         <p>
+  <strong className={styles.companyName}>
+    Shreeji Tours & Travels Mumbai – Make Tour Easy
+  </strong>{" "}
+  was founded with a simple vision — to help travelers discover the true
+  beauty, culture, spirituality, and diversity of India.
+</p>
 
           <a
             href="#contact"

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lobster&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,15 +11,34 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: "DM Sans", Arial, sans-serif;
-  background: white;
-  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
 }
 
+/* Paragraphs across all pages */
+p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Section headings */
+h1 {
+  font-size: clamp(42px, 5vw, 72px);
+}
+
+h2 {
+  font-size: clamp(30px, 3.5vw, 48px);
+}
+
+h3 {
+  font-size: 22px;
+}
+
+/* Navigation */
 a {
-  text-decoration: none;
-  color: inherit;
+  font-size: 15px;
 }
 
 button {
@@ -28,4 +47,27 @@ button {
 
 img {
   max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
 }

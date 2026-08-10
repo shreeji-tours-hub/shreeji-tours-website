@@ -3,6 +3,7 @@
 import styles from "./TravelStatsSection.module.css";
 import { travelStats } from "./TravelStatsData";
 
+
 export default function TravelStatsSection() {
   return (
     <section className={styles.section}>

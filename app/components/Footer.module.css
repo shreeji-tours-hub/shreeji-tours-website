@@ -4,9 +4,7 @@
 
 .footer {
   width: 100%;
-
   background: #6d0707;
-
   color: #ffffff;
 }
 
@@ -20,7 +18,7 @@
 
   margin: 0 auto;
 
-  padding: 32px 0 28px;
+  padding: 38px 0 32px;
 
   display: grid;
 
@@ -43,26 +41,16 @@
 .column,
 .contactColumn {
   min-width: 0;
-
   padding: 0 25px;
 }
-
-
-/* First column */
 
 .brandColumn {
   padding-left: 0;
 }
 
-
-/* Last column */
-
 .contactColumn {
   padding-right: 0;
 }
-
-
-/* Vertical separators */
 
 .column,
 .contactColumn {
@@ -75,11 +63,11 @@
 ========================================================= */
 
 .columnTitle {
-  margin: 0 0 15px;
+  margin: 0 0 16px;
 
   color: #ffffff;
 
-  font-size: 13px;
+  font-size: 15px;
 
   font-weight: 700;
 
@@ -94,11 +82,11 @@
 .description {
   margin: 0;
 
-  max-width: 290px;
+  max-width: 310px;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
 
-  font-size: 10px;
+  font-size: 12px;
 
   line-height: 1.7;
 }
@@ -111,56 +99,43 @@
 .tripadvisor {
   display: inline-block;
 
-  margin-top: 15px;
+  margin-top: 17px;
 
   text-decoration: none;
 
   color: #ffffff;
 }
 
-
 .tripadvisorTop {
   display: flex;
-
   align-items: center;
-
   gap: 7px;
 }
 
-
 .tripadvisorCircle {
-  width: 25px;
-
-  height: 25px;
+  width: 27px;
+  height: 27px;
 
   border: 2px solid #00a680;
-
   border-radius: 50%;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   color: #00d09c;
 
-  font-size: 13px;
-
+  font-size: 14px;
   font-weight: 700;
 }
-
 
 .tripadvisorTop > span {
-  font-size: 14px;
-
+  font-size: 15px;
   font-weight: 700;
 }
-
 
 .tripadvisorBottom {
   display: flex;
-
   align-items: center;
 
   gap: 7px;
@@ -168,20 +143,18 @@
   margin-top: 5px;
 }
 
-
 .stars {
   color: #ffd000;
 
-  font-size: 13px;
+  font-size: 14px;
 
   letter-spacing: 1px;
 }
 
-
 .reviewCount {
   color: rgba(255, 255, 255, 0.85);
 
-  font-size: 9px;
+  font-size: 10px;
 }
 
 
@@ -190,22 +163,20 @@
 ========================================================= */
 
 .googleReview {
-  width: 88px;
+  width: 100px;
 
-  min-height: 50px;
+  min-height: 55px;
 
-  margin-top: 10px;
+  margin-top: 12px;
 
-  padding: 6px 7px;
+  padding: 7px 8px;
 
   background: #ffffff;
 
-  border-radius: 2px;
+  border-radius: 3px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
   text-decoration: none;
@@ -213,47 +184,40 @@
   box-shadow:
     0 2px 5px rgba(0, 0, 0, 0.15);
 
-  transition:
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
-
 
 .googleReview:hover {
   transform: translateY(-2px);
 }
 
-
 .googleLogo {
   color: #4285f4;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 }
-
 
 .googleText {
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 
-  margin-top: 2px;
+  margin-top: 3px;
 }
-
 
 .googleText strong {
   color: #444444;
 
-  font-size: 8px;
+  font-size: 9px;
 }
-
 
 .googleText span {
   color: #f5b400;
 
-  font-size: 7px;
+  font-size: 8px;
 
   letter-spacing: 0;
 }
@@ -267,30 +231,26 @@
   list-style: none;
 
   padding: 0;
-
   margin: 0;
 }
 
-
 .links li {
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 }
 
-
 .links a {
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.88);
 
   text-decoration: none;
 
-  font-size: 10px;
+  font-size: 12px;
 
-  line-height: 1.35;
+  line-height: 1.45;
 
   transition:
     color 0.2s ease,
     padding-left 0.2s ease;
 }
-
 
 .links a:hover {
   color: #ffd45c;
@@ -308,33 +268,31 @@
 
   flex-direction: column;
 
-  gap: 8px;
+  gap: 10px;
 }
-
 
 .contactItem {
   display: flex;
 
   align-items: flex-start;
 
-  gap: 7px;
+  gap: 8px;
 
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.88);
 
   text-decoration: none;
 
-  font-size: 9px;
+  font-size: 11px;
 
-  line-height: 1.45;
+  line-height: 1.5;
 }
-
 
 .contactItem svg {
   flex-shrink: 0;
 
   color: #ffd45c;
 
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 
@@ -347,21 +305,18 @@
 
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
-
 .social a {
-  width: 29px;
-
-  height: 29px;
+  width: 31px;
+  height: 31px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -372,7 +327,7 @@
 
   color: #ffffff;
 
-  font-size: 12px;
+  font-size: 13px;
 
   text-decoration: none;
 
@@ -380,7 +335,6 @@
     background 0.2s ease,
     transform 0.2s ease;
 }
-
 
 .social a:hover {
   background: #ffffff;
@@ -398,9 +352,8 @@
 .bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 
-  padding: 13px 0;
+  padding: 15px 0;
 }
-
 
 .bottomInner {
   width: min(1250px, calc(100% - 50px));
@@ -416,31 +369,27 @@
   gap: 20px;
 }
 
-
 .copyright {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
 
-  font-size: 9px;
+  font-size: 10px;
 }
-
 
 .bottomLinks {
   display: flex;
 
-  gap: 18px;
+  gap: 20px;
 }
 
-
 .bottomLinks a {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
 
   text-decoration: none;
 
-  font-size: 9px;
+  font-size: 10px;
 }
-
 
 .bottomLinks a:hover {
   color: #ffd45c;
@@ -455,11 +404,9 @@
   position: fixed;
 
   right: 22px;
-
   bottom: 22px;
 
   width: 56px;
-
   height: 56px;
 
   background: #25d366;
@@ -471,7 +418,6 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   text-decoration: none;
@@ -489,15 +435,12 @@
     transform 0.3s ease;
 }
 
-
 .whatsappIcon {
   width: 27px;
-
   height: 27px;
 
   flex-shrink: 0;
 }
-
 
 .whatsappText {
   display: none;
@@ -511,7 +454,6 @@
   font-weight: 600;
 }
 
-
 .floatingWhatsapp:hover {
   width: 140px;
 
@@ -519,7 +461,6 @@
 
   transform: translateY(-3px);
 }
-
 
 .floatingWhatsapp:hover .whatsappText {
   display: inline;
@@ -541,17 +482,14 @@
     row-gap: 30px;
   }
 
-
   .brandColumn {
     grid-column: span 1;
   }
-
 
   .column,
   .contactColumn {
     border-left: 1px solid rgba(255, 255, 255, 0.18);
   }
-
 }
 
 
@@ -562,28 +500,23 @@
 @media (max-width: 800px) {
 
   .footerMain {
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 30px 0;
   }
 
-
   .brandColumn {
     padding-left: 0;
   }
-
 
   .column,
   .contactColumn {
     padding: 0 20px;
   }
 
-
   .contactColumn {
     padding-right: 0;
   }
-
 }
 
 
@@ -598,11 +531,10 @@
 
     grid-template-columns: 1fr;
 
-    padding: 35px 0 25px;
+    padding: 38px 0 28px;
 
-    gap: 28px;
+    gap: 30px;
   }
-
 
   .brandColumn,
   .column,
@@ -612,36 +544,38 @@
     border-left: none;
   }
 
-
   .column,
   .contactColumn {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 
-    padding-top: 25px;
+    padding-top: 26px;
   }
-
 
   .description {
     max-width: 100%;
 
-    font-size: 11px;
-  }
+    font-size: 13px;
 
+    line-height: 1.7;
+  }
 
   .columnTitle {
-    font-size: 14px;
+    font-size: 15px;
   }
-
 
   .links a {
-    font-size: 11px;
+    font-size: 13px;
   }
 
+  .links li {
+    margin-bottom: 10px;
+  }
 
   .contactItem {
-    font-size: 10px;
-  }
+    font-size: 12px;
 
+    line-height: 1.55;
+  }
 
   .bottomInner {
     width: calc(100% - 30px);
@@ -650,9 +584,12 @@
 
     text-align: center;
 
-    gap: 10px;
+    gap: 11px;
   }
 
+  .copyright {
+    font-size: 10px;
+  }
 
   .bottomLinks {
     justify-content: center;
@@ -660,17 +597,17 @@
     flex-wrap: wrap;
   }
 
+  .bottomLinks a {
+    font-size: 10px;
+  }
 
   .floatingWhatsapp {
     width: 53px;
-
     height: 53px;
 
     right: 16px;
-
     bottom: 16px;
   }
-
 
   .floatingWhatsapp:hover {
     width: 53px;
@@ -678,9 +615,7 @@
     border-radius: 50%;
   }
 
-
   .floatingWhatsapp:hover .whatsappText {
     display: none;
   }
-
 }
