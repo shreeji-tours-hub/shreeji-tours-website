@@ -60,9 +60,11 @@
 .grid {
   display: grid;
 
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
-  gap: 13px;
+  gap: 30px;
+
+  width: 100%;
 }
 
 
@@ -114,11 +116,12 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
   }
 
 }
@@ -127,15 +130,13 @@
 @media (max-width: 600px) {
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+
+    gap: 20px;
   }
 
-  .headingTitle {
-    font-size: 24px;
-  }
-
-  .cardTitle {
-    font-size: 13px;
+  .image {
+    height: 220px;
   }
 
 }

@@ -2,18 +2,21 @@
 
 import styles from "./TravelStatsSection.module.css";
 import { travelStats } from "./TravelStatsData";
+import { MapPin, Smile, Plane } from "lucide-react";
 
+const iconMap = {
+  location: MapPin,
+  smile: Smile,
+  plane: Plane,
+};
 
 export default function TravelStatsSection() {
   return (
     <section className={styles.section}>
-
       <div className={styles.container}>
 
         {/* LEFT CONTENT */}
-
         <div className={styles.content}>
-
           <h2>
             We Make
             <br />
@@ -33,45 +36,32 @@ export default function TravelStatsSection() {
             Explore Our Tours
             <span>↗</span>
           </a>
-
         </div>
-
 
         {/* STATS */}
+        {travelStats.map((stat) => {
+          const Icon =
+            iconMap[stat.icon] || MapPin;
 
-        <div className={styles.stats}>
-
-          {travelStats.map((stat, index) => (
-
+          return (
             <div
-              key={index}
-              className={`${styles.statCard} ${
-                index === 1
-                  ? styles.middleCard
-                  : ""
-              }`}
+              className={styles.statCard}
+              key={stat.label}
             >
+              <Icon
+                className={styles.statIcon}
+                size={38}
+                strokeWidth={2}
+              />
 
-              <div className={styles.icon}>
-                {stat.icon}
-              </div>
+              <h3>{stat.number}</h3>
 
-              <div className={styles.number}>
-                {stat.number}
-              </div>
-
-              <div className={styles.label}>
-                {stat.label}
-              </div>
-
+              <p>{stat.label}</p>
             </div>
-
-          ))}
-
-        </div>
+          );
+        })}
 
       </div>
-
     </section>
   );
 }

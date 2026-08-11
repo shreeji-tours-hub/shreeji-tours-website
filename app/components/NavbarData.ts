@@ -11,27 +11,27 @@ export const navbarLinks = [
 
   {
     label: "Tours for Foreigners",
-    href: "#foreigners",
+    href: "/foreigners",
   },
 
   {
     label: "India Tours",
-    href: "#tours",
+    href: "/india-tours",
   },
 
   {
     label: "Group Tours",
-    href: "#groups",
+    href: "/groups",
   },
 
   {
     label: "International Tours",
-    href: "#international",
+    href: "/international",
   },
 
   {
     label: "Cab Hire",
-    href: "#cab",
+    href: "/cab",
   },
 
   {
@@ -40,15 +40,20 @@ export const navbarLinks = [
   },
 ];
 
+
 export const navbarContact = {
   phone1: "+91 9969422936",
   phone2: "+91 9324622153",
   email: "contact@shreejitourstravels.in",
 };
 
+
 export const navbarSocialLinks = {
   whatsapp: "https://wa.me/919969422936",
+
   facebook: "#",
+
   instagram: "#",
+
   youtube: "#",
 };

@@ -1,201 +1,122 @@
-/* =========================
-   TRAVEL STATS SECTION
-========================= */
-
 .section {
   width: 100%;
+  min-height: 575px;
 
-  padding: 45px 0;
+  padding: 0;
 
   background: #ffffff;
+
+  display: flex;
+  align-items: center;
 }
 
-
-/* =========================
-   MAIN CONTAINER
-========================= */
-
 .container {
-  width: min(1155px, calc(100% - 50px));
-
-  min-height: 570px;
+  width: min(1320px, 90%);
+  min-height: 575px;
 
   margin: 0 auto;
 
-  position: relative;
-
-  overflow: hidden;
-
   display: grid;
 
-  grid-template-columns: 43% 57%;
+  grid-template-columns: 520px 220px 220px 220px;
 
-  align-items: center;
+  column-gap: 36px;
 
-  border-radius: 16px;
+  align-items: start;
 
-  background:
-    radial-gradient(
-      circle at 78% 55%,
-      rgba(245, 146, 105, 0.16),
-      transparent 28%
-    ),
-    #fafafa;
-
-  box-shadow:
-    0 5px 25px rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 
 
-/* =========================
-   SUBTLE BACKGROUND PATTERN
-========================= */
-
-.container::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  opacity: 0.28;
-
-  pointer-events: none;
-
-  background-image:
-    repeating-radial-gradient(
-      ellipse at 20% 30%,
-      transparent 0,
-      transparent 55px,
-      rgba(40, 40, 40, 0.025) 56px,
-      transparent 58px
-    );
-}
-
-
-/* =========================
+/* =========================================================
    LEFT CONTENT
-========================= */
+========================================================= */
 
 .content {
-  position: relative;
-
-  z-index: 2;
-
-  padding-left: 75px;
-
-  max-width: 500px;
+  padding-top: 85px;
 }
 
 .content h2 {
   margin: 0 0 25px;
 
-  color: #101b55;
+  color: #17245f;
 
-  font-size: 42px;
+  font-size: 52px;
 
-  line-height: 1.18;
+  line-height: 1.08;
 
   font-weight: 700;
 
-  letter-spacing: -1px;
+  letter-spacing: -1.5px;
 }
 
 .content p {
+  max-width: 540px;
+
   margin: 0;
 
-  max-width: 420px;
+  color: #17356f;
 
-  color: #25315d;
+  font-size: 18px;
 
-  font-size: 16px;
-
-  line-height: 1.85;
+  line-height: 1.75;
 }
 
 
-/* =========================
+/* =========================================================
    BUTTON
-========================= */
+========================================================= */
 
 .button {
-  margin-top: 55px;
+  width: 295px;
 
-  display: inline-flex;
+  margin-top: 70px;
 
-  align-items: center;
-
-  gap: 18px;
-
-  padding: 17px 36px;
-
-  background: #6d0707;
-
-  color: #ffffff;
-
-  border-radius: 7px;
-
-  text-decoration: none;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.button span {
-  font-size: 21px;
-
-  line-height: 1;
-}
-
-.button:hover {
-  background: #6d0707;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 20px rgba(243, 107, 43, 0.25);
-}
-
-
-/* =========================
-   STATS AREA
-========================= */
-
-.stats {
-  position: relative;
-
-  z-index: 2;
-
-  height: 100%;
+  padding: 20px 25px;
 
   display: flex;
 
   align-items: center;
 
-  justify-content: center;
+  justify-content: space-between;
 
-  gap: 30px;
+  background: #8d0808;
 
-  padding-right: 70px;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  transition: 0.25s ease;
+}
+
+.button span {
+  font-size: 25px;
+}
+
+.button:hover {
+  background: #720707;
 }
 
 
-/* =========================
-   STAT CARD
-========================= */
+/* =========================================================
+   STAT CARDS
+========================================================= */
 
 .statCard {
-  width: 245px;
+  width: 220px;
+  height: 240px;
 
-  height: 245px;
+  background: #ffffff;
 
-  padding: 30px 20px;
+  border-radius: 18px;
 
   display: flex;
 
@@ -207,244 +128,194 @@
 
   text-align: center;
 
-  background: #ffffff;
-
-  border-radius: 14px;
-
   box-shadow:
-    0 8px 25px rgba(20, 30, 80, 0.07);
+    0 10px 35px rgba(0, 0, 0, 0.07);
 
-  position: relative;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.statCard:hover {
-  transform: translateY(-7px);
-
-  box-shadow:
-    0 14px 35px rgba(20, 30, 80, 0.12);
+  box-sizing: border-box;
 }
 
 
-/* =========================
-   OFFSET CARDS
-========================= */
+/* =========================================================
+   CARD POSITIONS
+========================================================= */
 
-.statCard:first-child {
-  transform: translateY(-105px);
+/* India Tour */
+.statCard:nth-child(2) {
+  margin-top: 0;
 }
 
-.statCard:first-child:hover {
-  transform: translateY(-112px);
+/* Happy Travelers */
+.statCard:nth-child(3) {
+  margin-top: 190px;
 }
 
-.middleCard {
-  transform: translateY(105px);
-}
-
-.middleCard:hover {
-  transform: translateY(98px);
-}
-
-.statCard:last-child {
-  transform: translateY(-5px);
-}
-
-.statCard:last-child:hover {
-  transform: translateY(-12px);
+/* Years Experience */
+.statCard:nth-child(4) {
+  margin-top: 125px;
 }
 
 
-/* =========================
+/* =========================================================
    ICON
-========================= */
+========================================================= */
 
-.icon {
-  width: 58px;
+.statIcon {
+  color: #8d1010;
 
-  height: 58px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  margin-bottom: 13px;
-
-  color: #6d0707;
-
-  font-size: 46px;
-
-  font-weight: 300;
-
-  line-height: 1;
+  margin-bottom: 15px;
 }
 
 
-/* =========================
+/* =========================================================
    NUMBER
-========================= */
+========================================================= */
 
-.number {
-  color: #6d0707;
+.statCard h3 {
+  margin: 0;
 
-  font-size: 40px;
+  color: #8d1010;
 
-  line-height: 1;
+  font-size: 30px;
+
+  line-height: 1.2;
 
   font-weight: 700;
-
-  margin-bottom: 8px;
 }
 
 
-/* =========================
+/* =========================================================
    LABEL
-========================= */
+========================================================= */
 
-.label {
-  color: #192452;
+.statCard p {
+  margin: 8px 0 0;
 
-  font-size: 15px;
+  color: #102d66;
+
+  font-size: 16px;
 
   line-height: 1.4;
-
-  font-weight: 500;
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1200px) {
 
   .container {
-    grid-template-columns: 40% 60%;
-  }
+    width: 94%;
 
-  .content {
-    padding-left: 45px;
-  }
+    grid-template-columns:
+      minmax(400px, 1fr)
+      200px
+      200px
+      200px;
 
-  .content h2 {
-    font-size: 36px;
-  }
-
-  .stats {
-    gap: 15px;
-
-    padding-right: 35px;
+    column-gap: 20px;
   }
 
   .statCard {
-    width: 190px;
-
-    height: 210px;
+    width: 200px;
   }
 
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   .section {
-    padding: 30px 0;
+    padding: 60px 0;
   }
 
   .container {
-    width: calc(100% - 30px);
+    width: 90%;
 
-    padding: 45px 25px;
+    display: grid;
 
-    display: flex;
+    grid-template-columns: 1fr 1fr;
 
-    flex-direction: column;
-
-    min-height: auto;
+    gap: 30px;
   }
 
   .content {
-    padding-left: 0;
+    grid-column: 1 / -1;
 
-    max-width: 100%;
+    padding-top: 0;
 
     text-align: center;
   }
 
-  .content h2 {
-    font-size: 34px;
-  }
-
   .content p {
     margin: 0 auto;
-
-    font-size: 15px;
   }
 
   .button {
-    margin-top: 30px;
+    margin: 40px auto 0;
   }
 
-  .stats {
-    width: 100%;
-
-    height: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-
-    padding: 45px 0 0;
+  .statCard:nth-child(2),
+  .statCard:nth-child(3),
+  .statCard:nth-child(4) {
+    margin-top: 0;
   }
 
-  .statCard,
-  .statCard:first-child,
-  .statCard:last-child,
-  .middleCard {
-    width: 100%;
-
-    height: 190px;
-
-    transform: none;
-  }
-
-  .statCard:hover,
-  .statCard:first-child:hover,
-  .statCard:last-child:hover,
-  .middleCard:hover {
-    transform: translateY(-5px);
+  .statCard {
+    margin: auto;
   }
 
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+  }
+
+  .content {
+    width: 100%;
+  }
 
   .content h2 {
-    font-size: 29px;
+    font-size: 38px;
   }
 
   .content p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
-  .number {
-    font-size: 35px;
+  .button {
+    width: 100%;
+    max-width: 295px;
   }
 
+  .statCard,
+  .statCard:nth-child(2),
+  .statCard:nth-child(3),
+  .statCard:nth-child(4) {
+    width: 220px;
+    height: 220px;
+
+    margin-top: 0;
+  }
 }
