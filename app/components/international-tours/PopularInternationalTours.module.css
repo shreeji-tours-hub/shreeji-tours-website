@@ -1,0 +1,171 @@
+.section {
+  width: 100%;
+  padding: 18px 0 30px;
+  background: white;
+}
+
+.container {
+  width: min(1260px, calc(100% - 50px));
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.heading span {
+  color: #951414;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.heading h2 {
+  margin: 4px 0;
+  font-size: 24px;
+  color: #171717;
+}
+
+.decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.decoration i {
+  width: 30px;
+  height: 1px;
+  background: #951414;
+}
+
+.decoration b {
+  color: #951414;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 9px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.imageWrap {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.duration {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  padding: 5px 8px;
+
+  background: #951414;
+  color: white;
+
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.cardBody {
+  padding: 14px;
+}
+
+.cardBody h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.route {
+  margin: 0 0 12px;
+  color: #555;
+  font-size: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 13px;
+}
+
+.info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+}
+
+.info svg {
+  color: #951414;
+}
+
+.details {
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #c58a3d;
+  border-radius: 5px;
+
+  color: #951414;
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.details:hover {
+  background: #951414;
+  color: white;
+}
+
+.allTours {
+  display: block;
+  width: max-content;
+  margin: 15px auto 0;
+
+  color: #951414;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 750px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

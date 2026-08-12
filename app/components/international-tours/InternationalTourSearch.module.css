@@ -1,0 +1,80 @@
+.section {
+  width: 100%;
+  padding: 0 0 25px;
+  background: white;
+}
+
+.searchBox {
+  width: min(1250px, calc(100% - 50px));
+
+  margin: -35px auto 0;
+
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 210px;
+  gap: 20px;
+
+  padding: 20px;
+
+  background: white;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.field label {
+  display: block;
+  margin-bottom: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.select {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  font-size: 12px;
+}
+
+.button {
+  height: 48px;
+
+  align-self: end;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: #951414;
+  color: white;
+
+  font-weight: 700;
+}
+
+@media (max-width: 850px) {
+  .searchBox {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .searchBox {
+    grid-template-columns: 1fr;
+    width: calc(100% - 30px);
+  }
+}

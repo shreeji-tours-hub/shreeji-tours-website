@@ -1,0 +1,128 @@
+.section {
+  width: 100%;
+  padding: 22px 0 12px;
+  background: #fff;
+}
+
+.container {
+  width: min(1260px, calc(100% - 50px));
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.heading h2 {
+  margin: 0;
+
+  font-size: 25px;
+  color: #171717;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+}
+
+.line i {
+  width: 35px;
+  height: 2px;
+  background: #8f1111;
+}
+
+.line b {
+  color: #8f1111;
+  font-size: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  overflow: hidden;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.cardHeader {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 9px 15px;
+
+  color: white;
+}
+
+.cardHeader strong {
+  font-size: 16px;
+}
+
+.cardHeader span {
+  font-size: 11px;
+}
+
+.local,
+.airport {
+  background: #8f1111;
+}
+
+.outstation {
+  background: #f2aa00;
+  color: #111;
+}
+
+.body {
+  padding: 7px 15px 10px;
+}
+
+.vehicle {
+  min-height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  font-size: 12px;
+}
+
+.vehicle svg {
+  color: #555;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-top: 11px;
+
+  color: #555;
+
+  font-size: 11px;
+}
+
+.note svg {
+  color: #8f1111;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

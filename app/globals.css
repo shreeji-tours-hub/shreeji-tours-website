@@ -71,3 +71,20 @@ img {
     font-size: 20px;
   }
 }
+.cab-bottom-grid {
+  width: min(1260px, calc(100% - 50px));
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+
+  gap: 0;
+}
+
+@media (max-width: 800px) {
+  .cab-bottom-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}

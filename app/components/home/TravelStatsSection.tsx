@@ -29,10 +29,7 @@ export default function TravelStatsSection() {
             destination and have more fun!
           </p>
 
-          <a
-            href="#tours"
-            className={styles.button}
-          >
+          <a href="#tours" className={styles.button}>
             Explore Our Tours
             <span>↗</span>
           </a>
@@ -41,7 +38,7 @@ export default function TravelStatsSection() {
         {/* STATS */}
         {travelStats.map((stat) => {
           const Icon =
-            iconMap[stat.icon] || MapPin;
+            iconMap[stat.icon as keyof typeof iconMap] || MapPin;
 
           return (
             <div

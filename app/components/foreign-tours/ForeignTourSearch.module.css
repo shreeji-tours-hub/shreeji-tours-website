@@ -1,0 +1,126 @@
+.section {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+
+  margin-top: -30px;
+
+  padding-bottom: 28px;
+}
+
+.searchBox {
+  width: min(1120px, calc(100% - 60px));
+
+  margin: auto;
+  padding: 12px 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    1fr
+    1fr
+    205px;
+
+  gap: 14px;
+
+  background: #fff;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.13);
+}
+
+.field label {
+  display: block;
+
+  margin: 0 0 7px 4px;
+
+  color: #333;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.select {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 1px solid #ddd;
+  border-radius: 7px;
+
+  background: white;
+}
+
+.select svg:first-child {
+  color: #8f1111;
+}
+
+.select select {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 12px;
+}
+
+.button {
+  height: 44px;
+
+  border: none;
+  border-radius: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  background: #8f1111;
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #720909;
+}
+
+@media (max-width: 850px) {
+  .searchBox {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .button {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 550px) {
+  .searchBox {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    grid-column: auto;
+  }
+}
