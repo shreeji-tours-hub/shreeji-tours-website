@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./PopularToursSection.module.css";
 
 import { popularTours } from "./PopularToursData";
@@ -10,7 +11,6 @@ export default function PopularToursSection() {
       className={styles.section}
       id="tours"
     >
-
       <div className={styles.container}>
 
         {/* HEADING */}
@@ -34,19 +34,20 @@ export default function PopularToursSection() {
         </div>
 
 
-        {/* 3 × 3 GRID */}
+        {/* TOUR GRID */}
 
         <div className={styles.grid}>
 
           {popularTours.map((tour) => (
 
-            <div
+            <Link
+              href={`/tours/${tour.slug}`}
               className={`${styles.card} ${
                 tour.featured
                   ? styles.featured
                   : ""
               }`}
-              key={tour.title}
+              key={tour.slug}
             >
 
               <img
@@ -66,9 +67,9 @@ export default function PopularToursSection() {
                     {tour.duration}
                   </p>
 
-                  <a href="#contact">
-                    View All Tours
-                  </a>
+                  <span>
+                    View Details →
+                  </span>
 
                 </div>
 
@@ -84,18 +85,21 @@ export default function PopularToursSection() {
                     {tour.duration}
                   </p>
 
+                  <span>
+                    View Details →
+                  </span>
+
                 </div>
 
               )}
 
-            </div>
+            </Link>
 
           ))}
 
         </div>
 
       </div>
-
     </section>
   );
 }

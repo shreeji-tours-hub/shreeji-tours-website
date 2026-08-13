@@ -1,16 +1,22 @@
 "use client";
 
-import styles from "./PopularGroupTours.module.css";
+import Link from "next/link";
 import { CalendarDays, MapPin } from "lucide-react";
+
+import styles from "./PopularGroupTours.module.css";
 import { popularGroupTours } from "./PopularGroupToursData";
 
 export default function PopularGroupTours() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+
         <div className={styles.heading}>
           <span>POPULAR GROUP TOURS</span>
-          <h2>Explore Our Best Group Experiences</h2>
+
+          <h2>
+            Explore Our Best Group Experiences
+          </h2>
 
           <div className={styles.decoration}>
             <i />
@@ -21,9 +27,16 @@ export default function PopularGroupTours() {
 
         <div className={styles.grid}>
           {popularGroupTours.map((tour) => (
-            <div className={styles.card} key={tour.title}>
+            <div
+              className={styles.card}
+              key={tour.slug}
+            >
               <div className={styles.imageWrap}>
-                <img src={tour.image} alt={tour.title} />
+
+                <img
+                  src={tour.image}
+                  alt={tour.title}
+                />
 
                 <span
                   className={styles.duration}
@@ -31,36 +44,50 @@ export default function PopularGroupTours() {
                 >
                   {tour.duration}
                 </span>
+
               </div>
 
               <div className={styles.cardBody}>
+
                 <h3>{tour.title}</h3>
 
-                <p className={styles.route}>{tour.route}</p>
+                <p className={styles.route}>
+                  {tour.route}
+                </p>
 
                 <div className={styles.info}>
+
                   <span>
-                    <CalendarDays size={13} />
+                    <CalendarDays size={14} />
                     {tour.duration}
                   </span>
 
                   <span>
-                    <MapPin size={13} />
+                    <MapPin size={14} />
                     {tour.description}
                   </span>
+
                 </div>
 
-                <a href="/contact" className={styles.details}>
-                  View Details
-                </a>
+                <Link
+                  href={`/groups/${tour.slug}`}
+                  className={styles.details}
+                >
+                  View Details →
+                </Link>
+
               </div>
             </div>
           ))}
         </div>
 
-        <a href="/groups" className={styles.allTours}>
+        <Link
+          href="/groups"
+          className={styles.allTours}
+        >
           View All Group Tours →
-        </a>
+        </Link>
+
       </div>
     </section>
   );

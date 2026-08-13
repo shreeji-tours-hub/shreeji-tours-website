@@ -1,63 +1,159 @@
 .section {
   width: 100%;
-  padding: 10px 0 22px;
   background: #fff;
+  padding: 55px 0 65px;
 }
 
 .container {
-  width: min(1260px, calc(100% - 50px));
-  margin: auto;
+  width: min(1380px, calc(100% - 60px));
+  margin: 0 auto;
 }
+
+
+/* =========================
+   HEADING
+========================= */
 
 .heading {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
+}
+
+.heading span {
+  display: block;
+
+  color: #b51c19;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 7px;
 }
 
 .heading h2 {
   margin: 0;
-  color: #171717;
-  font-size: 24px;
+
+  color: #182b49;
+
+  font-size: 34px;
+  line-height: 1.2;
+
+  font-weight: 700;
 }
+
+.decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 11px;
+}
+
+.decoration i {
+  display: block;
+
+  width: 45px;
+  height: 1px;
+
+  background: #d3a100;
+}
+
+.decoration b {
+  color: #b51c19;
+
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   GRID
+========================= */
 
 .grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+
+  gap: 20px;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card {
   overflow: hidden;
 
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
+  background: #fff;
 
-  background: white;
+  border: 1px solid #e8e8e8;
 
-  box-shadow: 0 4px 13px rgba(0,0,0,0.06);
+  border-radius: 6px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
 
 .imageWrap {
   position: relative;
-  height: 145px;
+
+  width: 100%;
+  height: 190px;
+
+  overflow: hidden;
 }
 
 .imageWrap img {
+  display: block;
+
   width: 100%;
   height: 100%;
 
-  display: block;
-
   object-fit: cover;
+
+  transition: transform 0.5s ease;
 }
+
+.card:hover .imageWrap img {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   ICON
+========================= */
 
 .icon {
   position: absolute;
 
+  left: 18px;
   bottom: -18px;
-  left: 50%;
-
-  transform: translateX(-50%);
 
   width: 42px;
   height: 42px;
@@ -66,64 +162,164 @@
   align-items: center;
   justify-content: center;
 
-  background: white;
+  background: #b51c19;
 
-  color: #8f1111;
+  color: #fff;
 
-  border: 1px solid #ddd;
   border-radius: 50%;
+
+  border: 3px solid #fff;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-.body {
-  padding: 27px 15px 15px;
 
-  text-align: center;
+/* =========================
+   BODY
+========================= */
+
+.body {
+  padding: 30px 18px 20px;
 }
 
 .body h3 {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
 
-  color: #8f1111;
-  font-size: 16px;
+  color: #182b49;
+
+  font-size: 19px;
+  line-height: 1.25;
+
+  font-weight: 700;
 }
 
 .body p {
-  min-height: 45px;
+  margin: 0 0 18px;
 
-  margin: 0 0 13px;
+  color: #777;
 
-  color: #444;
+  font-size: 13px;
 
-  font-size: 11px;
-  line-height: 1.5;
+  line-height: 1.6;
+
+  min-height: 63px;
 }
+
+
+/* =========================
+   BOOK BUTTON
+========================= */
 
 .button {
   display: inline-flex;
+
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 
-  padding: 9px 17px;
+  gap: 8px;
 
-  background: #f5b400;
-  color: #111;
+  padding: 9px 15px;
+
+  background: #b51c19;
+
+  color: #fff;
 
   border-radius: 4px;
 
   text-decoration: none;
 
-  font-size: 11px;
+  font-size: 12px;
+
   font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-@media (max-width: 900px) {
+.button:hover {
+  background: #8f1513;
+
+  transform: translateX(2px);
+}
+
+.button svg {
+  transition: transform 0.25s ease;
+}
+
+.button:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
+
+    max-width: 850px;
   }
+
 }
 
-@media (max-width: 550px) {
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 40px 0 50px;
+  }
+
+  .container {
+    width: calc(100% - 25px);
+  }
+
+  .heading {
+    margin-bottom: 27px;
+  }
+
+  .heading span {
+    font-size: 12px;
+  }
+
+  .heading h2 {
+    font-size: 27px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+
+    gap: 16px;
   }
+
+  .imageWrap {
+    height: 210px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
+  .imageWrap {
+    height: 190px;
+  }
+
 }

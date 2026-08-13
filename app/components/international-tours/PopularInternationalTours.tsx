@@ -1,13 +1,16 @@
 "use client";
 
-import styles from "./PopularInternationalTours.module.css";
+import Link from "next/link";
 import { CalendarDays, MapPin } from "lucide-react";
+
+import styles from "./PopularInternationalTours.module.css";
 import { popularInternationalTours } from "./PopularInternationalToursData";
 
 export default function PopularInternationalTours() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+
         <div className={styles.heading}>
           <span>POPULAR INTERNATIONAL TOURS</span>
 
@@ -22,9 +25,15 @@ export default function PopularInternationalTours() {
 
         <div className={styles.grid}>
           {popularInternationalTours.map((tour) => (
-            <div className={styles.card} key={tour.title}>
+            <div
+              className={styles.card}
+              key={tour.slug}
+            >
               <div className={styles.imageWrap}>
-                <img src={tour.image} alt={tour.title} />
+                <img
+                  src={tour.image}
+                  alt={tour.title}
+                />
 
                 <span className={styles.duration}>
                   {tour.duration}
@@ -34,7 +43,9 @@ export default function PopularInternationalTours() {
               <div className={styles.cardBody}>
                 <h3>{tour.title}</h3>
 
-                <p className={styles.route}>{tour.route}</p>
+                <p className={styles.route}>
+                  {tour.route}
+                </p>
 
                 <div className={styles.info}>
                   <span>
@@ -48,17 +59,24 @@ export default function PopularInternationalTours() {
                   </span>
                 </div>
 
-                <a href="/contact" className={styles.details}>
-                  View Details
-                </a>
+                <Link
+                  href={`/international/${tour.slug}`}
+                  className={styles.details}
+                >
+                  View Details →
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        <a href="/international" className={styles.allTours}>
+        <Link
+          href="/international"
+          className={styles.allTours}
+        >
           View All International Tours →
-        </a>
+        </Link>
+
       </div>
     </section>
   );

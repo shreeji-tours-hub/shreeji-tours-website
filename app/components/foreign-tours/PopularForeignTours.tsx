@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./PopularForeignTours.module.css";
 
 import {
@@ -30,12 +31,15 @@ export default function PopularForeignTours() {
         </div>
 
         <div className={styles.grid}>
+
           {popularForeignTours.map((tour) => (
-            <article
+            <Link
+              key={tour.slug}
+              href={`/foreign-tours/${tour.slug}`}
               className={styles.card}
-              key={tour.title}
             >
               <div className={styles.imageWrap}>
+
                 <img
                   src={tour.image}
                   alt={tour.title}
@@ -44,16 +48,21 @@ export default function PopularForeignTours() {
                 <span className={styles.duration}>
                   {tour.duration}
                 </span>
+
               </div>
 
               <div className={styles.cardBody}>
-                <h3>{tour.title}</h3>
+
+                <h3>
+                  {tour.title}
+                </h3>
 
                 <p className={styles.route}>
                   {tour.route}
                 </p>
 
                 <div className={styles.info}>
+
                   <span>
                     <CalendarDays size={14} />
                     {tour.duration}
@@ -63,26 +72,27 @@ export default function PopularForeignTours() {
                     <MapPinned size={14} />
                     {tour.details}
                   </span>
+
                 </div>
 
-                <a
-                  href="/contact"
-                  className={styles.details}
-                >
+                <span className={styles.details}>
                   View Details
-                </a>
+                  <ArrowRight size={15} />
+                </span>
+
               </div>
-            </article>
+            </Link>
           ))}
+
         </div>
 
-        <a
+        <Link
           href="/tours"
           className={styles.allTours}
         >
           View All Tours
           <ArrowRight size={17} />
-        </a>
+        </Link>
 
       </div>
     </section>

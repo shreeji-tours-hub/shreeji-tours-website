@@ -1,40 +1,45 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./TourHighlights.module.css";
 
-const galleryImages = [
+const tours = [
   {
-    src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=80",
-    alt: "Gateway of India",
+    slug: "mumbai-sightseeing",
+    src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80",
+    title: "Mumbai Sightseeing Tours",
+    description: "Explore the vibrant city of Mumbai",
   },
   {
-    src: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80",
-    alt: "Indian Palace",
+    slug: "elephanta-caves",
+    src: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80",
+    title: "Elephanta Caves Tours",
+    description: "UNESCO World Heritage Site Experience",
   },
   {
-    src: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
-    alt: "Taj Mahal",
+    slug: "food-culture",
+    src: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80",
+    title: "Food & Culture Tours",
+    description: "Taste India's rich culture & food",
   },
   {
-    src: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80",
-    alt: "Indian Architecture",
+    slug: "bollywood-experience",
+    src: "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=900&q=80",
+    title: "Bollywood Experience",
+    description: "Step into the world of Indian cinema",
   },
   {
-    src: "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=600&q=80",
-    alt: "Mountain Landscape",
+    slug: "golden-triangle",
+    src: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80",
+    title: "Golden Triangle Tours",
+    description: "Delhi – Agra – Jaipur Experience",
   },
   {
-    src: "https://images.unsplash.com/photo-1532664189809-02133fee698d?auto=format&fit=crop&w=600&q=80",
-    alt: "India Travel",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=600&q=80",
-    alt: "Camel Safari",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=600&q=80",
-    alt: "India Sightseeing",
+    slug: "custom-tour",
+    src: "https://images.unsplash.com/photo-1532664189809-02133fee698d?auto=format&fit=crop&w=900&q=80",
+    title: "Customize Your Own Tour",
+    description: "We create tours as per your interest",
   },
 ];
 
@@ -84,10 +89,6 @@ const testimonials = [
 export default function TourHighlights() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  /*
-    Shows 3 testimonials at a time.
-  */
-
   const visibleTestimonials = [
     testimonials[currentIndex % testimonials.length],
     testimonials[(currentIndex + 1) % testimonials.length],
@@ -96,102 +97,94 @@ export default function TourHighlights() {
 
   const previousTestimonials = () => {
     setCurrentIndex((current) =>
-      current === 0
-        ? testimonials.length - 1
-        : current - 1
+      current === 0 ? testimonials.length - 1 : current - 1
     );
   };
 
   const nextTestimonials = () => {
     setCurrentIndex((current) =>
-      current === testimonials.length - 1
-        ? 0
-        : current + 1
+      current === testimonials.length - 1 ? 0 : current + 1
     );
   };
 
   return (
     <section className={styles.section}>
-
       <div className={styles.container}>
 
-        {/* ==================================================
-            GALLERY
-        ================================================== */}
+        {/* ================================
+            TOURS
+        ================================= */}
 
         <div className={styles.gallerySection}>
 
-          {/* HEADER */}
-
           <div className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionLabel}>
+                TOURS FOR FOREIGNERS
+              </span>
 
-            <h2>
-              Moments from Our Tours
-            </h2>
+              <h2>
+                Specially Designed for International Travelers
+              </h2>
+            </div>
 
-            <button
-              type="button"
+            <Link
+              href="/tours"
               className={styles.viewGallery}
             >
-              View Gallery
-            </button>
-
+              View All Tours
+            </Link>
           </div>
-
-
-          {/* GALLERY */}
 
           <div className={styles.galleryGrid}>
 
-            {galleryImages.map((image, index) => (
-
-              <div
+            {tours.map((tour) => (
+              <Link
+                href={`/tours/${tour.slug}`}
                 className={styles.galleryItem}
-                key={index}
+                key={tour.slug}
               >
 
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                />
+                <div className={styles.imageWrapper}>
+                  <img
+                    src={tour.src}
+                    alt={tour.title}
+                  />
+                </div>
 
-              </div>
+                <div className={styles.tourInfo}>
+                  <h3>{tour.title}</h3>
 
+                  <p>{tour.description}</p>
+
+                  <span className={styles.learnMore}>
+                    View Tour →
+                  </span>
+                </div>
+
+              </Link>
             ))}
 
           </div>
-
         </div>
 
-
-        {/* ==================================================
+        {/* ================================
             TESTIMONIALS
-        ================================================== */}
+        ================================= */}
 
         <div className={styles.testimonialSection}>
 
-          {/* HEADER */}
-
           <div className={styles.testimonialHeader}>
 
-            <span>
-              HAPPY CLIENTS
-            </span>
+            <span>HAPPY CLIENTS</span>
 
-            <h2>
-              What Our Guests Say
-            </h2>
+            <h2>What Our Guests Say</h2>
 
             <div className={styles.headerDot}></div>
 
           </div>
 
-
-          {/* CAROUSEL */}
-
           <div className={styles.testimonialWrapper}>
-
-            {/* LEFT ARROW */}
 
             <button
               type="button"
@@ -202,73 +195,49 @@ export default function TourHighlights() {
               ‹
             </button>
 
-
-            {/* TESTIMONIAL CARDS */}
-
             <div className={styles.testimonials}>
 
-              {visibleTestimonials.map(
-                (testimonial) => (
+              {visibleTestimonials.map((testimonial) => (
+                <article
+                  className={styles.testimonialCard}
+                  key={testimonial.name}
+                >
 
-                  <article
-                    className={styles.testimonialCard}
-                    key={testimonial.name}
-                  >
+                  <div className={styles.customer}>
 
-                    {/* CUSTOMER */}
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                    />
 
-                    <div className={styles.customer}>
+                    <div className={styles.customerInfo}>
 
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                      />
+                      <h3>{testimonial.name}</h3>
 
-                      <div className={styles.customerInfo}>
+                      <p>
+                        <span className={styles.flag}>
+                          {testimonial.flag}
+                        </span>
 
-                        <h3>
-                          {testimonial.name}
-                        </h3>
-
-                        <p>
-
-                          <span
-                            className={styles.flag}
-                          >
-                            {testimonial.flag}
-                          </span>
-
-                          {testimonial.country}
-
-                        </p>
-
-                      </div>
+                        {testimonial.country}
+                      </p>
 
                     </div>
 
+                  </div>
 
-                    {/* STARS */}
+                  <div className={styles.stars}>
+                    ★★★★★
+                  </div>
 
-                    <div className={styles.stars}>
-                      ★★★★★
-                    </div>
+                  <p className={styles.review}>
+                    {testimonial.review}
+                  </p>
 
-
-                    {/* REVIEW */}
-
-                    <p className={styles.review}>
-                      {testimonial.review}
-                    </p>
-
-                  </article>
-
-                )
-              )}
+                </article>
+              ))}
 
             </div>
-
-
-            {/* RIGHT ARROW */}
 
             <button
               type="button"
@@ -280,11 +249,9 @@ export default function TourHighlights() {
             </button>
 
           </div>
-
         </div>
 
       </div>
-
     </section>
   );
 }

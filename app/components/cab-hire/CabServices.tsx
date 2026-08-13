@@ -1,7 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./CabServices.module.css";
-import { ArrowRight, Building2, CarFront, Plane, Gem } from "lucide-react";
+
+import {
+  ArrowRight,
+  Building2,
+  CarFront,
+  Plane,
+  Gem,
+} from "lucide-react";
+
 import { cabServices } from "./CabServicesData";
 
 const icons = [Building2, CarFront, Plane, Gem];
@@ -9,7 +18,6 @@ const icons = [Building2, CarFront, Plane, Gem];
 export default function CabServices() {
   return (
     <section className={styles.section}>
-
       <div className={styles.container}>
 
         <div className={styles.heading}>
@@ -17,13 +25,18 @@ export default function CabServices() {
         </div>
 
         <div className={styles.grid}>
+
           {cabServices.map((service, index) => {
             const Icon = icons[index];
 
             return (
-              <article className={styles.card} key={service.title}>
+              <article
+                className={styles.card}
+                key={service.slug}
+              >
 
                 <div className={styles.imageWrap}>
+
                   <img
                     src={service.image}
                     alt={service.title}
@@ -32,26 +45,32 @@ export default function CabServices() {
                   <div className={styles.icon}>
                     <Icon size={21} />
                   </div>
+
                 </div>
 
                 <div className={styles.body}>
+
                   <h3>{service.title}</h3>
 
                   <p>{service.description}</p>
 
-                  <a href="/contact" className={styles.button}>
+                  <Link
+                    href={`/cab/${service.slug}`}
+                    className={styles.button}
+                  >
                     Book Now
                     <ArrowRight size={16} />
-                  </a>
+                  </Link>
+
                 </div>
 
               </article>
             );
           })}
+
         </div>
 
       </div>
-
     </section>
   );
 }

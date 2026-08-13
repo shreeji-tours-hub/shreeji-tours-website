@@ -1,5 +1,13 @@
-export const cabServices = [
+export type CabService = {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+};
+
+export const cabServices: CabService[] = [
   {
+    slug: "mumbai-local",
     title: "Mumbai Local",
     description:
       "Best cabs for local travel in Mumbai. 4 / 8 / 12 hour packages available.",
@@ -8,6 +16,7 @@ export const cabServices = [
   },
 
   {
+    slug: "outstation-cabs",
     title: "Outstation Cabs",
     description:
       "Comfortable and affordable outstation cabs for one way or round trips.",
@@ -16,6 +25,7 @@ export const cabServices = [
   },
 
   {
+    slug: "airport-transfer",
     title: "Airport Transfer",
     description:
       "On-time pickup and drop to Mumbai Airport with 24×7 availability.",
@@ -24,6 +34,7 @@ export const cabServices = [
   },
 
   {
+    slug: "luxury-car-hire",
     title: "Luxury Car Hire",
     description:
       "Travel in style with luxury cars perfect for business trips and events.",

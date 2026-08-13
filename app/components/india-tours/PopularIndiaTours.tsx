@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./PopularIndiaTours.module.css";
 import { Clock3, ArrowRight } from "lucide-react";
 
@@ -8,11 +9,9 @@ import { indiaTours } from "./PopularIndiaToursData";
 export default function PopularIndiaTours() {
   return (
     <section className={styles.section}>
-
       <div className={styles.container}>
 
         <div className={styles.heading}>
-
           <span>POPULAR TOUR PACKAGES</span>
 
           <h2>
@@ -24,7 +23,6 @@ export default function PopularIndiaTours() {
             <b>○</b>
             <i></i>
           </div>
-
         </div>
 
         <div className={styles.grid}>
@@ -33,7 +31,7 @@ export default function PopularIndiaTours() {
 
             <div
               className={styles.card}
-              key={tour.title}
+              key={tour.slug}
             >
 
               <div className={styles.imageWrap}>
@@ -62,10 +60,13 @@ export default function PopularIndiaTours() {
                   {tour.duration}
                 </div>
 
-                <button className={styles.details}>
+                <Link
+                  href={`/india-tours/${tour.slug}`}
+                  className={styles.details}
+                >
                   View Details
                   <ArrowRight size={15} />
-                </button>
+                </Link>
 
               </div>
 
@@ -76,7 +77,6 @@ export default function PopularIndiaTours() {
         </div>
 
       </div>
-
     </section>
   );
 }

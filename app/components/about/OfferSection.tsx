@@ -1,10 +1,13 @@
+"use client";
+
+import Link from "next/link";
+
 import styles from "./OfferSection.module.css";
 import { offerData } from "./OfferData";
 
 export default function OfferSection() {
   return (
     <section className={styles.section}>
-
       <div className={styles.container}>
 
         <div className={styles.heading}>
@@ -17,15 +20,23 @@ export default function OfferSection() {
             Travel Experiences Designed Around You
           </h2>
 
+          <div className={styles.decoration}>
+            <i />
+            <b>○</b>
+            <i />
+          </div>
+
         </div>
+
 
         <div className={styles.grid}>
 
           {offerData.map((item) => (
 
-            <article
+            <Link
+              href={`/about/${item.slug}`}
               className={styles.card}
-              key={item.title}
+              key={item.slug}
             >
 
               <img
@@ -43,16 +54,19 @@ export default function OfferSection() {
                   {item.text}
                 </p>
 
+                <span className={styles.viewMore}>
+                  VIEW DETAILS →
+                </span>
+
               </div>
 
-            </article>
+            </Link>
 
           ))}
 
         </div>
 
       </div>
-
     </section>
   );
 }
