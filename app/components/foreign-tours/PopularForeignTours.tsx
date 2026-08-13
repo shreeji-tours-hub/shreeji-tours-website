@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./PopularForeignTours.module.css";
-
 import {
   CalendarDays,
   MapPinned,
   ArrowRight,
 } from "lucide-react";
 
+import styles from "./PopularForeignTours.module.css";
 import { popularForeignTours } from "./PopularForeignToursData";
 
 export default function PopularForeignTours() {
@@ -19,9 +18,7 @@ export default function PopularForeignTours() {
         <div className={styles.heading}>
           <span>POPULAR PACKAGES</span>
 
-          <h2>
-            Most Popular Tours for Foreigners
-          </h2>
+          <h2>Most Popular Tours for Foreigners</h2>
 
           <div className={styles.decoration}>
             <i />
@@ -31,15 +28,10 @@ export default function PopularForeignTours() {
         </div>
 
         <div className={styles.grid}>
-
           {popularForeignTours.map((tour) => (
-            <Link
-              key={tour.slug}
-              href={`/foreign-tours/${tour.slug}`}
-              className={styles.card}
-            >
-              <div className={styles.imageWrap}>
+            <div className={styles.card} key={tour.slug}>
 
+              <div className={styles.imageWrap}>
                 <img
                   src={tour.image}
                   alt={tour.title}
@@ -48,21 +40,17 @@ export default function PopularForeignTours() {
                 <span className={styles.duration}>
                   {tour.duration}
                 </span>
-
               </div>
 
               <div className={styles.cardBody}>
 
-                <h3>
-                  {tour.title}
-                </h3>
+                <h3>{tour.title}</h3>
 
                 <p className={styles.route}>
                   {tour.route}
                 </p>
 
                 <div className={styles.info}>
-
                   <span>
                     <CalendarDays size={14} />
                     {tour.duration}
@@ -72,27 +60,30 @@ export default function PopularForeignTours() {
                     <MapPinned size={14} />
                     {tour.details}
                   </span>
-
                 </div>
 
-                <span className={styles.details}>
+                <Link
+                  href={`/foreign-tours/${tour.slug}`}
+                  className={styles.details}
+                >
                   View Details
                   <ArrowRight size={15} />
-                </span>
+                </Link>
 
               </div>
-            </Link>
+            </div>
           ))}
-
         </div>
 
-        <Link
-          href="/tours"
-          className={styles.allTours}
-        >
-          View All Tours
-          <ArrowRight size={17} />
-        </Link>
+        <div className={styles.bottomButton}>
+          <Link
+            href="/foreign-tours"
+            className={styles.allTours}
+          >
+            View All Foreign Tours
+            <ArrowRight size={17} />
+          </Link>
+        </div>
 
       </div>
     </section>

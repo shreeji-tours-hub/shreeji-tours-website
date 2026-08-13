@@ -26,7 +26,7 @@ export const navbarLinks = [
 
   {
     label: "International Tours",
-    href: "/international",
+    href: "/international-tours",
   },
 
   {

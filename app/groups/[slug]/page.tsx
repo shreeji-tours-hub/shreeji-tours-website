@@ -5,7 +5,7 @@ import Footer from "@/app/components/Footer";
 
 import { popularGroupTours } from "@/app/components/group-tours/PopularGroupToursData";
 
-import styles from "../../TourDetail.module.css";
+import styles from "./GroupTour.module.css";
 
 interface Props {
   params: Promise<{
@@ -16,19 +16,16 @@ interface Props {
 export default async function GroupTourPage({ params }: Props) {
   const { slug } = await params;
 
+  const decodedSlug = decodeURIComponent(slug).trim().toLowerCase();
+
   const tour = popularGroupTours.find(
-    (item) => item.slug === slug
+    (item) =>
+      item.slug?.trim().toLowerCase() === decodedSlug
   );
 
   if (!tour) {
     notFound();
   }
-
-  const tourCode = tour.slug
-    .split("-")
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
 
   return (
     <>
@@ -46,47 +43,63 @@ export default async function GroupTourPage({ params }: Props) {
 
           <div className={styles.heroOverlay}>
             <div className={styles.heroContent}>
-
-              <span className={styles.label}>
+              <span className={styles.heroLabel}>
                 GROUP TOUR PACKAGE
               </span>
 
-              <h1>{tour.title}</h1>
+              <h1 className={styles.heroTitle}>
+                {tour.title}
+              </h1>
 
-              <p>{tour.route}</p>
-
+              <p className={styles.heroDescription}>
+                {tour.route}
+              </p>
             </div>
           </div>
         </section>
 
         {/* TOUR INFORMATION */}
         <section className={styles.infoSection}>
-          <div className={styles.container}>
-
+          <div className={styles.infoContainer}>
             <div className={styles.infoGrid}>
 
               <div className={styles.infoItem}>
-                <span>Duration</span>
-                <strong>{tour.duration}</strong>
+                <span className={styles.infoLabel}>
+                  Duration
+                </span>
+                <strong className={styles.infoValue}>
+                  {tour.duration}
+                </strong>
               </div>
 
               <div className={styles.infoItem}>
-                <span>Route</span>
-                <strong>{tour.route}</strong>
+                <span className={styles.infoLabel}>
+                  Route
+                </span>
+                <strong className={styles.infoValue}>
+                  {tour.route}
+                </strong>
               </div>
 
               <div className={styles.infoItem}>
-                <span>Experience</span>
-                <strong>{tour.description}</strong>
+                <span className={styles.infoLabel}>
+                  Experience
+                </span>
+                <strong className={styles.infoValue}>
+                  {tour.description}
+                </strong>
               </div>
 
               <div className={styles.infoItem}>
-                <span>Tour Code</span>
-                <strong>{tourCode}</strong>
+                <span className={styles.infoLabel}>
+                  Tour Type
+                </span>
+                <strong className={styles.infoValue}>
+                  Group Tour
+                </strong>
               </div>
 
             </div>
-
           </div>
         </section>
 
@@ -94,43 +107,43 @@ export default async function GroupTourPage({ params }: Props) {
         <section className={styles.overviewSection}>
           <div className={styles.container}>
 
-            <div className={styles.contentGrid}>
+            <div className={styles.overviewGrid}>
 
-              <div className={styles.mainContent}>
-
-                <span className={styles.label}>
+              <div>
+                <span className={styles.sectionLabel}>
                   ABOUT THE TOUR
                 </span>
 
-                <h2>{tour.title}</h2>
+                <h2 className={styles.overviewTitle}>
+                  {tour.title}
+                </h2>
 
-                <p className={styles.overview}>
+                <p className={styles.overviewText}>
                   {tour.overview}
                 </p>
 
                 <div className={styles.highlights}>
-
-                  <h3>Tour Highlights</h3>
+                  <h3 className={styles.highlightsTitle}>
+                    Tour Highlights
+                  </h3>
 
                   <div className={styles.highlightGrid}>
+                    {tour.highlights.map((highlight, index) => (
+                      <div
+                        className={styles.highlight}
+                        key={index}
+                      >
+                        <span className={styles.highlightIcon}>
+                          ✓
+                        </span>
 
-                    {tour.highlights.map(
-                      (highlight, index) => (
-                        <div
-                          className={styles.highlight}
-                          key={index}
-                        >
-                          <span>✓</span>
-
-                          <p>{highlight}</p>
-                        </div>
-                      )
-                    )}
-
+                        <p className={styles.highlightText}>
+                          {highlight}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-
                 </div>
-
               </div>
 
               <div className={styles.sideImage}>
@@ -141,7 +154,6 @@ export default async function GroupTourPage({ params }: Props) {
               </div>
 
             </div>
-
           </div>
         </section>
 
@@ -150,44 +162,38 @@ export default async function GroupTourPage({ params }: Props) {
           <div className={styles.container}>
 
             <div className={styles.sectionHeading}>
-
-              <span className={styles.label}>
+              <span className={styles.sectionLabel}>
                 YOUR JOURNEY
               </span>
 
               <h2>Day-Wise Itinerary</h2>
-
             </div>
 
             <div className={styles.itineraryLayout}>
 
               <div className={styles.itinerary}>
-
                 {tour.itinerary.map((day) => (
                   <div
                     className={styles.day}
                     key={day.day}
                   >
-
                     <div className={styles.dayNumber}>
                       {day.day}
                     </div>
 
                     <div className={styles.dayContent}>
-
                       <h3>{day.title}</h3>
 
                       <p>{day.description}</p>
 
-                      <span className={styles.overnight}>
-                        Overnight: {day.overnight}
-                      </span>
-
+                      {day.overnight && (
+                        <span className={styles.overnight}>
+                          Overnight: {day.overnight}
+                        </span>
+                      )}
                     </div>
-
                   </div>
                 ))}
-
               </div>
 
               {/* ENQUIRY */}
@@ -195,19 +201,12 @@ export default async function GroupTourPage({ params }: Props) {
                 className={styles.enquiryCard}
                 id="enquire"
               >
-
                 <h3>Enquire Now</h3>
 
                 <p>
                   Fill in the form and our travel
                   expert will contact you shortly.
                 </p>
-
-                <input
-                  value={tourCode}
-                  readOnly
-                  aria-label="Tour Code"
-                />
 
                 <input
                   placeholder="Full Name"
@@ -257,15 +256,9 @@ export default async function GroupTourPage({ params }: Props) {
                 >
                   SEND ENQUIRY
                 </button>
-
-                <div className={styles.tourCode}>
-                  TOUR CODE: {tourCode}
-                </div>
-
               </aside>
 
             </div>
-
           </div>
         </section>
 
@@ -276,8 +269,7 @@ export default async function GroupTourPage({ params }: Props) {
             <div className={styles.inclusionGrid}>
 
               <div className={styles.inclusionBox}>
-
-                <span className={styles.label}>
+                <span className={styles.sectionLabel}>
                   INCLUDED
                 </span>
 
@@ -291,12 +283,10 @@ export default async function GroupTourPage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
-
               </div>
 
               <div className={styles.inclusionBox}>
-
-                <span className={styles.label}>
+                <span className={styles.sectionLabel}>
                   NOT INCLUDED
                 </span>
 
@@ -310,76 +300,10 @@ export default async function GroupTourPage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
-
-              </div>
-
-              {/* CUSTOM TOUR */}
-              <div className={styles.customizeCard}>
-
-                <img
-                  src={tour.image}
-                  alt="Customize your group tour"
-                />
-
-                <div className={styles.customizeContent}>
-
-                  <h3>
-                    Want a Customized Tour?
-                  </h3>
-
-                  <p>
-                    Tell us what you want and we
-                    will create a personalized
-                    group journey for you.
-                  </p>
-
-                  <a
-                    href="#enquire"
-                    className={styles.customizeButton}
-                  >
-                    Customize Tour
-                  </a>
-
-                </div>
-
               </div>
 
             </div>
-
           </div>
-        </section>
-
-        {/* CTA */}
-        <section className={styles.cta}>
-
-          <div className={styles.ctaContent}>
-
-            <div>
-
-              <span className={styles.sectionLabel}>
-                PLAN YOUR GROUP JOURNEY
-              </span>
-
-              <h2>
-                Ready to Explore {tour.title}?
-              </h2>
-
-              <p>
-                Join us for an unforgettable group
-                travel experience.
-              </p>
-
-            </div>
-
-            <a
-              href="#enquire"
-              className={styles.ctaButton}
-            >
-              BOOK NOW →
-            </a>
-
-          </div>
-
         </section>
 
       </main>

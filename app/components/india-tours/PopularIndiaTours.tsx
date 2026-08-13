@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./PopularIndiaTours.module.css";
 import { Clock3, ArrowRight } from "lucide-react";
 
+import styles from "./PopularIndiaTours.module.css";
 import { indiaTours } from "./PopularIndiaToursData";
 
 export default function PopularIndiaTours() {
@@ -14,28 +14,23 @@ export default function PopularIndiaTours() {
         <div className={styles.heading}>
           <span>POPULAR TOUR PACKAGES</span>
 
-          <h2>
-            Explore Our Most Popular India Tours
-          </h2>
+          <h2>Explore Our Most Popular India Tours</h2>
 
           <div className={styles.decoration}>
-            <i></i>
+            <i />
             <b>○</b>
-            <i></i>
+            <i />
           </div>
         </div>
 
         <div className={styles.grid}>
-
           {indiaTours.map((tour) => (
-
             <div
               className={styles.card}
               key={tour.slug}
             >
 
               <div className={styles.imageWrap}>
-
                 <img
                   src={tour.image}
                   alt={tour.title}
@@ -44,7 +39,6 @@ export default function PopularIndiaTours() {
                 <span className={styles.tag}>
                   {tour.tag}
                 </span>
-
               </div>
 
               <div className={styles.cardContent}>
@@ -69,11 +63,8 @@ export default function PopularIndiaTours() {
                 </Link>
 
               </div>
-
             </div>
-
           ))}
-
         </div>
 
       </div>

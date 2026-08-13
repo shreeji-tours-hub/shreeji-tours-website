@@ -14,9 +14,7 @@ export default function PopularGroupTours() {
         <div className={styles.heading}>
           <span>POPULAR GROUP TOURS</span>
 
-          <h2>
-            Explore Our Best Group Experiences
-          </h2>
+          <h2>Explore Our Best Group Experiences</h2>
 
           <div className={styles.decoration}>
             <i />
@@ -26,11 +24,13 @@ export default function PopularGroupTours() {
         </div>
 
         <div className={styles.grid}>
+
           {popularGroupTours.map((tour) => (
             <div
               className={styles.card}
               key={tour.slug}
             >
+
               <div className={styles.imageWrap}>
 
                 <img
@@ -40,7 +40,9 @@ export default function PopularGroupTours() {
 
                 <span
                   className={styles.duration}
-                  style={{ background: tour.color }}
+                  style={{
+                    background: tour.color,
+                  }}
                 >
                   {tour.duration}
                 </span>
@@ -49,7 +51,9 @@ export default function PopularGroupTours() {
 
               <div className={styles.cardBody}>
 
-                <h3>{tour.title}</h3>
+                <h3>
+                  {tour.title}
+                </h3>
 
                 <p className={styles.route}>
                   {tour.route}
@@ -69,6 +73,7 @@ export default function PopularGroupTours() {
 
                 </div>
 
+                {/* DETAIL PAGE */}
                 <Link
                   href={`/groups/${tour.slug}`}
                   className={styles.details}
@@ -77,16 +82,21 @@ export default function PopularGroupTours() {
                 </Link>
 
               </div>
+
             </div>
           ))}
+
         </div>
 
-        <Link
-          href="/groups"
-          className={styles.allTours}
-        >
-          View All Group Tours →
-        </Link>
+        {/* ALL GROUP TOURS */}
+        <div className={styles.bottomButton}>
+          <Link
+            href="/groups"
+            className={styles.allTours}
+          >
+            View All Group Tours →
+          </Link>
+        </div>
 
       </div>
     </section>

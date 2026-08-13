@@ -1,0 +1,882 @@
+/* =========================================================
+   INTERNATIONAL TOUR PAGE
+========================================================= */
+
+.page {
+  width: 100%;
+  background: #fff;
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   HERO / FULL SCREEN BANNER
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 90px);
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.62) 42%,
+      rgba(0, 0, 0, 0.28) 75%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+.heroContent {
+  width: min(1400px, 90%);
+  margin: 0 auto;
+
+  color: #fff;
+  padding-top: 40px;
+}
+
+.heroLabel {
+  display: inline-block;
+
+  margin-bottom: 28px;
+  padding: 11px 22px;
+
+  background: #8f1111;
+  color: #fff;
+
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  max-width: 1050px;
+
+  margin: 0 0 28px;
+
+  color: #fff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(52px, 6vw, 100px);
+  font-weight: 700;
+
+  line-height: 0.98;
+}
+
+.heroDescription {
+  max-width: 950px;
+
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   TOUR INFORMATION
+========================================================= */
+
+.infoSection {
+  width: 100%;
+  background: #8f1111;
+  color: #fff;
+}
+
+.infoContainer {
+  width: min(1400px, 90%);
+  margin: 0 auto;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.infoItem {
+  min-height: 115px;
+
+  padding: 25px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.infoItem:last-child {
+  border-right: none;
+}
+
+.infoLabel {
+  margin-bottom: 12px;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.infoValue {
+  color: #fff;
+
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.container {
+  width: min(1400px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.overviewSection {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.sectionLabel {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #d49b00;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.overviewTitle {
+  margin: 0 0 25px;
+
+  color: #171717;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.1;
+}
+
+.overviewText {
+  max-width: 900px;
+
+  margin: 0;
+
+  color: #555;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlights {
+  margin-top: 50px;
+}
+
+.highlightsTitle {
+  margin: 0 0 25px;
+
+  color: #171717;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+}
+
+.highlightGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 50px;
+  row-gap: 18px;
+}
+
+.highlight {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.highlightIcon {
+  width: 24px;
+  height: 24px;
+
+  flex: 0 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #8f1111;
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.highlightText {
+  margin: 0;
+
+  color: #444;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SIDE IMAGE
+========================================================= */
+
+.sideImage {
+  width: 100%;
+  height: 500px;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+}
+
+.sideImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   ITINERARY
+========================================================= */
+
+.itinerarySection {
+  padding: 100px 0;
+
+  background: #f7f5f1;
+}
+
+.sectionHeading {
+  margin-bottom: 55px;
+
+  text-align: left;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+
+  color: #171717;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.1;
+}
+
+.itineraryLayout {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 400px;
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   DAYS
+========================================================= */
+
+.itinerary {
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+
+  padding: 30px;
+
+  border: 1px solid #e5ddd4;
+}
+
+.day {
+  display: grid;
+
+  grid-template-columns: 70px 1fr;
+
+  gap: 25px;
+
+  padding: 0 0 40px;
+  margin-bottom: 40px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.day:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: none;
+}
+
+.dayNumber {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #8f1111;
+  color: #fff;
+
+  border-radius: 50%;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dayContent h3 {
+  margin: 0 0 12px;
+
+  color: #171717;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+}
+
+.dayContent p {
+  margin: 0 0 12px;
+
+  color: #555;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.overnight {
+  display: inline-block;
+
+  color: #8f1111;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ENQUIRY CARD
+========================================================= */
+
+.enquiryCard {
+  position: sticky;
+  top: 30px;
+
+  padding: 35px;
+
+  background: #fff;
+
+  border-top: 5px solid #8f1111;
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.enquiryCard h3 {
+  margin: 0 0 12px;
+
+  color: #171717;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+}
+
+.enquiryCard > p {
+  margin: 0 0 25px;
+
+  color: #666;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.enquiryCard input,
+.enquiryCard select,
+.enquiryCard textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 14px;
+  padding: 14px 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 3px;
+
+  background: #fff;
+  color: #333;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.enquiryCard input:focus,
+.enquiryCard select:focus,
+.enquiryCard textarea:focus {
+  border-color: #8f1111;
+
+  box-shadow:
+    0 0 0 2px rgba(143, 17, 17, 0.08);
+}
+
+.enquiryCard textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.enquiryButton {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #8f1111;
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.enquiryButton:hover {
+  background: #681010;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   INCLUSIONS / EXCLUSIONS
+========================================================= */
+
+.inclusionSection {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.inclusionGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+}
+
+.inclusionBox {
+  padding: 40px;
+
+  background: #f7f5f1;
+
+  border: 1px solid #e5ddd4;
+}
+
+.inclusionBox h2 {
+  margin: 0 0 30px;
+
+  color: #171717;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 40px;
+}
+
+.inclusionBox ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.inclusionBox li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-bottom: 18px;
+
+  color: #444;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.inclusionBox li span {
+  width: 23px;
+  height: 23px;
+
+  flex: 0 0 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #8f1111;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CUSTOMIZE CARD
+========================================================= */
+
+.customizeCard {
+  grid-column: 1 / -1;
+
+  position: relative;
+
+  min-height: 350px;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.customizeCard img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.55;
+}
+
+.customizeContent {
+  position: relative;
+  z-index: 2;
+
+  max-width: 650px;
+
+  padding: 70px 60px;
+
+  color: #fff;
+}
+
+.customizeContent h3 {
+  margin: 0 0 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 42px;
+}
+
+.customizeContent p {
+  margin: 0 0 30px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.customizeButton {
+  display: inline-block;
+
+  padding: 14px 28px;
+
+  background: #8f1111;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.customizeButton:hover {
+  background: #681010;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .hero {
+    height: calc(100vh - 80px);
+    min-height: 600px;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .infoItem:nth-child(2) {
+    border-right: none;
+  }
+
+  .infoItem:nth-child(1),
+  .infoItem:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .overviewGrid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .sideImage {
+    height: 450px;
+  }
+
+  .itineraryLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiryCard {
+    position: relative;
+    top: auto;
+  }
+}
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    height: 650px;
+    min-height: 650px;
+  }
+
+  .heroContent {
+    width: 88%;
+  }
+
+  .heroLabel {
+    font-size: 12px;
+
+    padding: 9px 15px;
+
+    margin-bottom: 20px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoItem {
+    border-right: none;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .infoItem:last-child {
+    border-bottom: none;
+  }
+
+  .overviewSection,
+  .itinerarySection,
+  .inclusionSection {
+    padding: 65px 0;
+  }
+
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .inclusionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .customizeCard {
+    grid-column: auto;
+  }
+
+  .customizeContent {
+    padding: 50px 30px;
+  }
+
+  .customizeContent h3 {
+    font-size: 32px;
+  }
+
+  .enquiryCard {
+    padding: 25px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .hero {
+    height: 600px;
+    min-height: 600px;
+  }
+
+  .heroContent {
+    width: calc(100% - 30px);
+  }
+
+  .heroTitle {
+    font-size: 38px;
+
+    line-height: 1.05;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+  }
+
+  .heroLabel {
+    font-size: 10px;
+
+    padding: 8px 12px;
+  }
+
+  .infoItem {
+    min-height: 90px;
+
+    padding: 20px;
+  }
+
+  .infoValue {
+    font-size: 14px;
+  }
+
+  .day {
+    grid-template-columns: 45px 1fr;
+
+    gap: 15px;
+  }
+
+  .dayNumber {
+    width: 42px;
+    height: 42px;
+
+    font-size: 14px;
+  }
+
+  .dayContent h3 {
+    font-size: 20px;
+  }
+
+  .dayContent p {
+    font-size: 14px;
+  }
+
+  .inclusionBox {
+    padding: 25px;
+  }
+
+  .inclusionBox h2 {
+    font-size: 32px;
+  }
+}

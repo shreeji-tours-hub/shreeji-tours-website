@@ -5,7 +5,7 @@ import Footer from "@/app/components/Footer";
 
 import { cabServices } from "@/app/components/cab-hire/CabServicesData";
 
-import styles from "../../TourDetail.module.css";
+import styles from "./CabHire.module.css";
 
 interface Props {
   params: Promise<{

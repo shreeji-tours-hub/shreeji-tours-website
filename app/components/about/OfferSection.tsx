@@ -12,9 +12,7 @@ export default function OfferSection() {
 
         <div className={styles.heading}>
 
-          <span>
-            WHAT WE OFFER
-          </span>
+          <span>WHAT WE OFFER</span>
 
           <h2>
             Travel Experiences Designed Around You
@@ -28,11 +26,9 @@ export default function OfferSection() {
 
         </div>
 
-
         <div className={styles.grid}>
 
           {offerData.map((item) => (
-
             <Link
               href={`/about/${item.slug}`}
               className={styles.card}
@@ -46,13 +42,9 @@ export default function OfferSection() {
 
               <div className={styles.content}>
 
-                <h3>
-                  {item.title}
-                </h3>
+                <h3>{item.title}</h3>
 
-                <p>
-                  {item.text}
-                </p>
+                <p>{item.text}</p>
 
                 <span className={styles.viewMore}>
                   VIEW DETAILS →
@@ -61,7 +53,6 @@ export default function OfferSection() {
               </div>
 
             </Link>
-
           ))}
 
         </div>

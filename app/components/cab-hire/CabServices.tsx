@@ -21,7 +21,15 @@ export default function CabServices() {
       <div className={styles.container}>
 
         <div className={styles.heading}>
+          <span>TRAVEL WITH COMFORT</span>
+
           <h2>Our Cab Hire Services</h2>
+
+          <div className={styles.decoration}>
+            <i />
+            <b>○</b>
+            <i />
+          </div>
         </div>
 
         <div className={styles.grid}>
@@ -36,7 +44,6 @@ export default function CabServices() {
               >
 
                 <div className={styles.imageWrap}>
-
                   <img
                     src={service.image}
                     alt={service.title}
@@ -45,7 +52,6 @@ export default function CabServices() {
                   <div className={styles.icon}>
                     <Icon size={21} />
                   </div>
-
                 </div>
 
                 <div className={styles.body}>
@@ -54,13 +60,15 @@ export default function CabServices() {
 
                   <p>{service.description}</p>
 
-                  <Link
-                    href={`/cab/${service.slug}`}
-                    className={styles.button}
-                  >
-                    Book Now
-                    <ArrowRight size={16} />
-                  </Link>
+                  <div className={styles.buttonWrap}>
+                    <Link
+                      href={`/cab/${service.slug}`}
+                      className={styles.button}
+                    >
+                      Book Now
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
 
                 </div>
 

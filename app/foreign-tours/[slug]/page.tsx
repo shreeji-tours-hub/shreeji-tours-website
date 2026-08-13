@@ -24,12 +24,6 @@ export default async function ForeignTourPage({ params }: Props) {
     notFound();
   }
 
-  const tourCode = tour.slug
-    .split("-")
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
-
   return (
     <>
       <Navbar />
@@ -37,38 +31,101 @@ export default async function ForeignTourPage({ params }: Props) {
       <main className={styles.page}>
 
         {/* =====================================================
-            HERO
+            HERO / FULL WIDTH BANNER
         ===================================================== */}
 
-        <section className={styles.hero}>
+     <section
+  className={styles.hero}
+  style={{
+    position: "relative",
+    width: "100%",
+    height: "calc(100vh - 90px)",
+    minHeight: "700px",
+    overflow: "hidden",
+  }}
+>
+  <img
+    src={tour.heroImage}
+    alt={tour.title}
+    className={styles.heroImage}
+    style={{
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      objectPosition: "center",
+      display: "block",
+    }}
+  />
 
-          <img
-            src={tour.image}
-            alt={tour.title}
-            className={styles.heroImage}
-          />
+  <div
+    className={styles.heroOverlay}
+    style={{
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      background:
+        "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
+    }}
+  >
+    <div
+      className={styles.heroContent}
+      style={{
+        width: "min(1400px, 90%)",
+        margin: "0 auto",
+        color: "#fff",
+      }}
+    >
+      <span
+        className={styles.label}
+        style={{
+          display: "inline-block",
+          background: "#a80000",
+          color: "#fff",
+          padding: "12px 22px",
+          marginBottom: "28px",
+          borderRadius: "4px",
+          fontSize: "15px",
+          fontWeight: 700,
+          letterSpacing: "1px",
+          textTransform: "uppercase",
+        }}
+      >
+        TOURS FOR FOREIGNERS
+      </span>
 
-          <div className={styles.heroOverlay}>
+      <h1
+        style={{
+          maxWidth: "1000px",
+          margin: "0 0 25px",
+          color: "#fff",
+          fontFamily: 'Georgia, "Times New Roman", serif',
+          fontSize: "clamp(55px, 6vw, 100px)",
+          fontWeight: 700,
+          lineHeight: 0.98,
+        }}
+      >
+        {tour.title}
+      </h1>
 
-            <div className={styles.heroContent}>
-
-              <span className={styles.label}>
-                TOURS FOR FOREIGNERS
-              </span>
-
-              <h1>
-                {tour.title}
-              </h1>
-
-              <p>
-                {tour.description}
-              </p>
-
-            </div>
-
-          </div>
-
-        </section>
+      <p
+        style={{
+          maxWidth: "1000px",
+          margin: 0,
+          color: "#fff",
+          fontSize: "20px",
+          lineHeight: 1.65,
+        }}
+      >
+        {tour.description}
+      </p>
+    </div>
+  </div>
+</section>
 
 
         {/* =====================================================
@@ -76,43 +133,33 @@ export default async function ForeignTourPage({ params }: Props) {
         ===================================================== */}
 
         <section className={styles.infoSection}>
-
           <div className={styles.container}>
 
             <div className={styles.infoGrid}>
 
               <div className={styles.infoItem}>
                 <span>Duration</span>
-                <strong>
-                  {tour.duration}
-                </strong>
+                <strong>{tour.duration}</strong>
               </div>
 
               <div className={styles.infoItem}>
                 <span>Route</span>
-                <strong>
-                  {tour.route}
-                </strong>
+                <strong>{tour.route}</strong>
               </div>
 
               <div className={styles.infoItem}>
                 <span>Experience</span>
-                <strong>
-                  {tour.details}
-                </strong>
+                <strong>{tour.details}</strong>
               </div>
 
               <div className={styles.infoItem}>
                 <span>Tour Type</span>
-                <strong>
-                  Private / Customized
-                </strong>
+                <strong>Private / Customized</strong>
               </div>
 
             </div>
 
           </div>
-
         </section>
 
 
@@ -121,12 +168,9 @@ export default async function ForeignTourPage({ params }: Props) {
         ===================================================== */}
 
         <section className={styles.overviewSection}>
-
           <div className={styles.container}>
 
             <div className={styles.contentGrid}>
-
-              {/* LEFT CONTENT */}
 
               <div className={styles.mainContent}>
 
@@ -134,43 +178,28 @@ export default async function ForeignTourPage({ params }: Props) {
                   DISCOVER INDIA
                 </span>
 
-                <h2>
-                  Tour Overview
-                </h2>
+                <h2>Tour Overview</h2>
 
                 <p className={styles.overview}>
                   {tour.overview}
                 </p>
 
-
-                {/* HIGHLIGHTS */}
-
                 <div className={styles.highlights}>
 
-                  <h3>
-                    Tour Highlights
-                  </h3>
+                  <h3>Tour Highlights</h3>
 
                   <div className={styles.highlightGrid}>
 
                     {tour.highlights.map(
                       (highlight, index) => (
-
                         <div
                           className={styles.highlight}
                           key={index}
                         >
+                          <span>✓</span>
 
-                          <span>
-                            ✓
-                          </span>
-
-                          <p>
-                            {highlight}
-                          </p>
-
+                          <p>{highlight}</p>
                         </div>
-
                       )
                     )}
 
@@ -180,15 +209,9 @@ export default async function ForeignTourPage({ params }: Props) {
 
               </div>
 
-
-              {/* RIGHT IMAGE */}
-
-              
-
             </div>
 
           </div>
-
         </section>
 
 
@@ -197,7 +220,6 @@ export default async function ForeignTourPage({ params }: Props) {
         ===================================================== */}
 
         <section className={styles.itinerarySection}>
-
           <div className={styles.container}>
 
             <div className={styles.sectionHeading}>
@@ -206,16 +228,11 @@ export default async function ForeignTourPage({ params }: Props) {
                 YOUR JOURNEY
               </span>
 
-              <h2>
-                Day-Wise Itinerary
-              </h2>
+              <h2>Day-Wise Itinerary</h2>
 
             </div>
 
-
             <div className={styles.itineraryLayout}>
-
-              {/* ITINERARY */}
 
               <div className={styles.itinerary}>
 
@@ -230,16 +247,11 @@ export default async function ForeignTourPage({ params }: Props) {
                       {day.day}
                     </div>
 
-
                     <div className={styles.dayContent}>
 
-                      <h3>
-                        {day.title}
-                      </h3>
+                      <h3>{day.title}</h3>
 
-                      <p>
-                        {day.description}
-                      </p>
+                      <p>{day.description}</p>
 
                       {day.overnight && (
                         <div className={styles.overnight}>
@@ -256,26 +268,19 @@ export default async function ForeignTourPage({ params }: Props) {
               </div>
 
 
-              {/* ENQUIRY */}
+              {/* =====================================================
+                  ENQUIRY
+              ===================================================== */}
 
               <aside className={styles.enquiryCard}>
 
-                <h3>
-                  Enquire Now
-                </h3>
+                <h3>Enquire Now</h3>
 
                 <p>
                   Fill in your details and our
                   travel expert will contact you
                   shortly.
                 </p>
-
-
-                <input
-                  value={tourCode}
-                  readOnly
-                  aria-label="Tour Code"
-                />
 
                 <input
                   type="text"
@@ -333,30 +338,28 @@ export default async function ForeignTourPage({ params }: Props) {
                   SEND ENQUIRY
                 </button>
 
-                <div className={styles.tourCode}>
-                  TOUR CODE: {tourCode}
-                </div>
-
               </aside>
 
             </div>
 
           </div>
-
         </section>
 
 
         {/* =====================================================
-            INCLUSIONS / EXCLUSIONS / CUSTOMIZE
+            INCLUSIONS / EXCLUSIONS
         ===================================================== */}
 
         <section className={styles.inclusionSection}>
-
           <div className={styles.container}>
 
-            <div className={styles.inclusionGrid}>
+            <div
+              className={`${styles.inclusionGrid} ${styles.twoColumns}`}
+            >
 
-              {/* INCLUSIONS */}
+              {/* =====================================================
+                  INCLUSIONS
+              ===================================================== */}
 
               <div className={styles.inclusionBox}>
 
@@ -364,34 +367,30 @@ export default async function ForeignTourPage({ params }: Props) {
                   INCLUDED
                 </span>
 
-                <h2>
-                  Inclusions
-                </h2>
+                <h2>Inclusions</h2>
 
                 <ul>
 
-                  {tour.inclusions.map(
-                    (item) => (
+                  {tour.inclusions.map((item) => (
 
-                      <li key={item}>
+                    <li key={item}>
 
-                        <span>
-                          ✓
-                        </span>
+                      <span>✓</span>
 
-                        {item}
+                      {item}
 
-                      </li>
+                    </li>
 
-                    )
-                  )}
+                  ))}
 
                 </ul>
 
               </div>
 
 
-              {/* EXCLUSIONS */}
+              {/* =====================================================
+                  EXCLUSIONS
+              ===================================================== */}
 
               <div className={styles.inclusionBox}>
 
@@ -399,112 +398,29 @@ export default async function ForeignTourPage({ params }: Props) {
                   NOT INCLUDED
                 </span>
 
-                <h2>
-                  Exclusions
-                </h2>
+                <h2>Exclusions</h2>
 
                 <ul>
 
-                  {tour.exclusions.map(
-                    (item) => (
+                  {tour.exclusions.map((item) => (
 
-                      <li key={item}>
+                    <li key={item}>
 
-                        <span>
-                          ✕
-                        </span>
+                      <span>✕</span>
 
-                        {item}
+                      {item}
 
-                      </li>
+                    </li>
 
-                    )
-                  )}
+                  ))}
 
                 </ul>
 
               </div>
 
-
-              {/* CUSTOMIZE */}
-
-              <div className={styles.customizeCard}>
-
-                <img
-                  src={tour.image}
-                  alt="Customize your India tour"
-                />
-
-                <div className={styles.customizeContent}>
-
-                  <h3>
-                    Want a Custom Tour?
-                  </h3>
-
-                  <p>
-                    Tell us your interests,
-                    preferences and travel dates.
-                    We will create a personalized
-                    India experience for you.
-                  </p>
-
-                  <a
-                    href="/contact"
-                    className={styles.customizeButton}
-                  >
-                    Customize Tour →
-                  </a>
-
-                </div>
-
-              </div>
-
             </div>
 
           </div>
-
-        </section>
-
-
-        {/* =====================================================
-            CTA
-        ===================================================== */}
-
-        <section className={styles.cta}>
-
-          <div className={styles.container}>
-
-            <div className={styles.ctaContent}>
-
-              <div>
-
-                <span className={styles.sectionLabel}>
-                  PLAN YOUR JOURNEY
-                </span>
-
-                <h2>
-                  Ready to Explore {tour.title}?
-                </h2>
-
-                <p>
-                  Book your unforgettable India
-                  experience with Shreeji Tours &
-                  Travels today.
-                </p>
-
-              </div>
-
-              <a
-                href="/contact"
-                className={styles.ctaButton}
-              >
-                BOOK NOW →
-              </a>
-
-            </div>
-
-          </div>
-
         </section>
 
       </main>

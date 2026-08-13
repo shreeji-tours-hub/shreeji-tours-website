@@ -1,0 +1,617 @@
+/* =========================================================
+   CAB HIRE DETAIL PAGE
+========================================================= */
+
+.page {
+  background: #f7f5f1;
+  color: #1b1b1b;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.container {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 78vh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #111;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.38) 38%,
+      rgba(0, 0, 0, 0.08) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.heroContent {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+
+  padding-bottom: 80px;
+
+  color: #fff;
+}
+
+.heroContent h1 {
+  margin: 12px 0 12px;
+
+  max-width: 850px;
+
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+.heroContent p {
+  margin: 0;
+
+  max-width: 650px;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.label {
+  display: inline-block;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  color: #c8102e;
+}
+
+
+/* =========================================================
+   SERVICE INFORMATION
+========================================================= */
+
+.infoSection {
+  background: #fff;
+  border-bottom: 1px solid #e8e5df;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 42px 0;
+}
+
+.infoItem {
+  min-height: 70px;
+
+  padding: 0 28px;
+
+  border-right: 1px solid #e5e2dc;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+}
+
+.infoItem:first-child {
+  padding-left: 0;
+}
+
+.infoItem:last-child {
+  border-right: none;
+}
+
+.infoItem span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+
+  color: #888;
+}
+
+.infoItem strong {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.overviewSection {
+  padding: 100px 0;
+  background: #f7f5f1;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(380px, 0.9fr);
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.mainContent {
+  min-width: 0;
+}
+
+.mainContent h2 {
+  margin: 12px 0 22px;
+
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.overview {
+  max-width: 680px;
+
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: #626262;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlights {
+  margin-top: 45px;
+}
+
+.highlights h3 {
+  margin: 0 0 22px;
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px 30px;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+}
+
+.highlight span {
+  flex-shrink: 0;
+
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #c8102e;
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.highlight p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  color: #555;
+}
+
+
+/* =========================================================
+   SIDE IMAGE
+========================================================= */
+
+.sideImage {
+  width: 100%;
+  height: 540px;
+
+  overflow: hidden;
+}
+
+.sideImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   BOOKING / RESERVATION
+========================================================= */
+
+.itinerarySection {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.sectionHeading {
+  margin-bottom: 55px;
+}
+
+.sectionHeading h2 {
+  margin: 10px 0 0;
+
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.itineraryLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 370px;
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   BOOKING CONTENT
+========================================================= */
+
+.itineraryLayout .mainContent h3 {
+  margin: 0 0 15px;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.itineraryLayout .mainContent .overview {
+  margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   ENQUIRY CARD
+========================================================= */
+
+.enquiryCard {
+  padding: 32px;
+
+  background: #f7f5f1;
+
+  border: 1px solid #e2dfd9;
+
+  position: sticky;
+  top: 30px;
+}
+
+.enquiryCard h3 {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.enquiryCard > p {
+  margin: 0 0 24px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #777;
+}
+
+.enquiryCard input,
+.enquiryCard select,
+.enquiryCard textarea {
+  width: 100%;
+
+  margin-bottom: 12px;
+  padding: 13px 14px;
+
+  border: 1px solid #dcd8d1;
+  border-radius: 0;
+
+  background: #fff;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  color: #222;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+.enquiryCard textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.enquiryCard input:focus,
+.enquiryCard select:focus,
+.enquiryCard textarea:focus {
+  border-color: #c8102e;
+}
+
+.enquiryButton {
+  width: 100%;
+
+  margin-top: 5px;
+  padding: 14px 20px;
+
+  border: none;
+
+  background: #c8102e;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.enquiryButton:hover {
+  background: #a90d26;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  padding: 80px 0;
+
+  background: #c8102e;
+  color: #fff;
+}
+
+.ctaContent {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.ctaContent h2 {
+  margin: 10px 0;
+
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.ctaContent p {
+  margin: 0;
+
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ctaButton {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: #fff;
+  color: #c8102e;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .hero {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .heroContent {
+    padding-bottom: 55px;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .infoItem {
+    padding: 20px;
+    border-bottom: 1px solid #e5e2dc;
+  }
+
+  .infoItem:nth-child(2) {
+    border-right: none;
+  }
+
+  .infoItem:nth-child(3),
+  .infoItem:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .sideImage {
+    height: 450px;
+  }
+
+  .itineraryLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiryCard {
+    position: relative;
+    top: auto;
+  }
+
+  .ctaContent {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero {
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .heroImage {
+    object-position: center;
+  }
+
+  .heroContent {
+    width: 88%;
+    padding-bottom: 40px;
+  }
+
+  .heroContent h1 {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  .heroContent p {
+    font-size: 14px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    padding: 25px 0;
+  }
+
+  .infoItem,
+  .infoItem:first-child {
+    padding: 17px 0;
+
+    border-right: none;
+    border-bottom: 1px solid #e5e2dc;
+  }
+
+  .infoItem:last-child {
+    border-bottom: none;
+  }
+
+  .overviewSection,
+  .itinerarySection {
+    padding: 70px 0;
+  }
+
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sideImage {
+    height: 350px;
+  }
+
+  .enquiryCard {
+    padding: 24px;
+  }
+
+  .cta {
+    padding: 65px 0;
+  }
+
+  .ctaContent {
+    width: 88%;
+  }
+}

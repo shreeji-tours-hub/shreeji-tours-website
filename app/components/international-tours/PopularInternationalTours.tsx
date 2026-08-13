@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarDays, MapPin } from "lucide-react";
+import {
+  CalendarDays,
+  MapPin,
+} from "lucide-react";
 
 import styles from "./PopularInternationalTours.module.css";
 import { popularInternationalTours } from "./PopularInternationalToursData";
@@ -29,6 +32,7 @@ export default function PopularInternationalTours() {
               className={styles.card}
               key={tour.slug}
             >
+
               <div className={styles.imageWrap}>
                 <img
                   src={tour.image}
@@ -41,6 +45,7 @@ export default function PopularInternationalTours() {
               </div>
 
               <div className={styles.cardBody}>
+
                 <h3>{tour.title}</h3>
 
                 <p className={styles.route}>
@@ -48,6 +53,7 @@ export default function PopularInternationalTours() {
                 </p>
 
                 <div className={styles.info}>
+
                   <span>
                     <CalendarDays size={13} />
                     {tour.duration}
@@ -57,25 +63,30 @@ export default function PopularInternationalTours() {
                     <MapPin size={13} />
                     {tour.description}
                   </span>
+
                 </div>
 
                 <Link
-                  href={`/international/${tour.slug}`}
+                  href={`/international-tours/${tour.slug}`}
                   className={styles.details}
                 >
                   View Details →
                 </Link>
+
               </div>
+
             </div>
           ))}
         </div>
 
-        <Link
-          href="/international"
-          className={styles.allTours}
-        >
-          View All International Tours →
-        </Link>
+        <div className={styles.bottomButton}>
+          <Link
+            href="/international-tours"
+            className={styles.allTours}
+          >
+            View All International Tours →
+          </Link>
+        </div>
 
       </div>
     </section>
