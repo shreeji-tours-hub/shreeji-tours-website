@@ -1,54 +1,45 @@
 "use client";
 
 import { useState } from "react";
-
-
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaWhatsapp,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 
 import styles from "./Navbar.module.css";
 
 import {
   navbarLinks,
-  navbarContact,
-  navbarSocialLinks,
 } from "./NavbarData";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const pathname = usePathname();
+
   return (
     <>
-
-  
-
       {/* =========================
           MAIN NAVBAR
       ========================= */}
 
       <header className={styles.navbar}>
-
         <div className={styles.navInner}>
-
 
           {/* LOGO */}
 
-          <a
+          <Link
             href="/"
             className={styles.logo}
           >
-
             <div className={styles.logoSymbol}>
               🦚
             </div>
 
             <div className={styles.logoContent}>
-
               <div className={styles.logoText}>
                 Shreeji Tours & Travels
               </div>
@@ -56,73 +47,52 @@ export default function Navbar() {
               <div className={styles.logoTagline}>
                 MAKE TOUR EASY
               </div>
-
             </div>
+          </Link>
 
-          </a>
-
-
-          {/* DESKTOP MENU */}
+          {/* =========================
+              NAVIGATION LINKS
+          ========================= */}
 
           <nav
             className={`${styles.navLinks} ${
-              mobileOpen
-                ? styles.mobileActive
-                : ""
+              mobileOpen ? styles.mobileActive : ""
             }`}
           >
-
-            {navbarLinks.map((item, index) => (
-
-              <a
-                key={index}
+            {navbarLinks.map((item) => (
+              <Link
+                key={item.href}
                 href={item.href}
                 className={
-                  index === 0
+                  pathname === item.href
                     ? styles.active
                     : ""
                 }
-                onClick={() =>
-                  setMobileOpen(false)
-                }
+                onClick={() => setMobileOpen(false)}
               >
-
-                <span>
-                  {item.label}
-                </span>
-
-               
-
-              </a>
-
+                <span>{item.label}</span>
+              </Link>
             ))}
-
           </nav>
 
-
-          {/* MOBILE BUTTON */}
+          {/* =========================
+              MOBILE MENU BUTTON
+          ========================= */}
 
           <button
             className={styles.mobileMenu}
-            onClick={() =>
-              setMobileOpen(!mobileOpen)
-            }
+            onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation"
           >
-
-          
-
+            {mobileOpen ? (
+              <FaTimes />
+            ) : (
+              <FaBars />
+            )}
           </button>
 
         </div>
-
       </header>
-
-
-      {/* =========================
-          WHATSAPP BUTTON
-      ========================= */}
-
     </>
   );
 }
