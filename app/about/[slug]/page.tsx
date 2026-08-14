@@ -5,7 +5,7 @@ import Footer from "@/app/components/Footer";
 
 import { offerData } from "@/app/components/about/OfferData";
 
-import styles from "../../TourDetail.module.css";
+import styles from "./OfferDetail.module.css";
 
 interface Props {
   params: Promise<{
@@ -13,9 +13,7 @@ interface Props {
   }>;
 }
 
-export default async function OfferPage({
-  params,
-}: Props) {
+export default async function OfferPage({ params }: Props) {
   const { slug } = await params;
 
   const offer = offerData.find(
@@ -42,23 +40,21 @@ export default async function OfferPage({
             className={styles.heroImage}
           />
 
-          <div className={styles.heroOverlay}>
+          <div className={styles.overlay}></div>
 
-            <div className={styles.heroContent}>
+          <div className={styles.heroContent}>
 
-              <span className={styles.label}>
-                WHAT WE OFFER
-              </span>
+            <span className={styles.label}>
+              WHAT WE OFFER
+            </span>
 
-              <h1>
-                {offer.title}
-              </h1>
+            <h1>
+              {offer.title}
+            </h1>
 
-              <p>
-                {offer.text}
-              </p>
-
-            </div>
+            <p>
+              {offer.text}
+            </p>
 
           </div>
 
@@ -75,6 +71,7 @@ export default async function OfferPage({
 
               <div className={styles.infoItem}>
                 <span>Service</span>
+
                 <strong>
                   {offer.title}
                 </strong>
@@ -82,6 +79,7 @@ export default async function OfferPage({
 
               <div className={styles.infoItem}>
                 <span>Category</span>
+
                 <strong>
                   Travel Services
                 </strong>
@@ -89,6 +87,7 @@ export default async function OfferPage({
 
               <div className={styles.infoItem}>
                 <span>Experience</span>
+
                 <strong>
                   Personalized Travel
                 </strong>
@@ -96,6 +95,7 @@ export default async function OfferPage({
 
               <div className={styles.infoItem}>
                 <span>Service Code</span>
+
                 <strong>
                   {offer.slug
                     .split("-")
@@ -122,7 +122,7 @@ export default async function OfferPage({
 
               <div className={styles.mainContent}>
 
-                <span className={styles.label}>
+                <span className={styles.sectionLabel}>
                   ABOUT THE SERVICE
                 </span>
 

@@ -241,11 +241,7 @@ export default async function CabPage({ params }: Props) {
                   expert will contact you shortly.
                 </p>
 
-                <input
-                  value={serviceCode}
-                  readOnly
-                  aria-label="Service Code"
-                />
+               
 
                 <input
                   placeholder="Full Name"

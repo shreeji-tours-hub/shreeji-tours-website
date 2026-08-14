@@ -103,29 +103,25 @@ export default function Footer() {
               GOOGLE REVIEW
           ========================= */}
 
-          <a
-            href={footerReviews.googleReviewLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.googleReview}
-          >
+     <a
+  href={footerReviews.googleReviewLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.googleReview}
+>
+  <div className={styles.googleLogo}>
+    <img
+      src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786695053/images_rstxap.png"
+      alt="Google Reviews"
+    />
+  </div>
 
-            <div className={styles.googleLogo}>
-              Google
-            </div>
+  <div className={styles.googleText}>
+    <strong>Excellent</strong>
 
-            <div className={styles.googleText}>
-              <strong>
-                Excellent
-              </strong>
-
-              <span>
-                ★★★★★
-              </span>
-            </div>
-
-          </a>
-
+    <span>★★★★★</span>
+  </div>
+</a>
         </div>
 
 

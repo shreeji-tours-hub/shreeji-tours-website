@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import styles from "./ForeignToursSection.module.css";
-import { foreignTours } from "./ForeignToursData";
+
+import { popularForeignTours } from "@/app/components/foreign-tours/PopularForeignToursData";
 
 export default function ForeignToursSection() {
   return (
@@ -11,8 +12,6 @@ export default function ForeignToursSection() {
       id="foreigners"
     >
       <div className={styles.container}>
-
-        {/* HEADING */}
 
         <div className={styles.heading}>
 
@@ -32,23 +31,20 @@ export default function ForeignToursSection() {
 
         </div>
 
-
-        {/* TOUR GRID */}
-
         <div className={styles.grid}>
 
-          {foreignTours.map((tour) => (
+          {popularForeignTours.map((tour) => (
 
             <Link
+              key={tour.slug}
               href={`/foreign-tours/${tour.slug}`}
               className={styles.card}
-              key={tour.slug}
             >
 
               <img
                 className={styles.image}
                 src={tour.image}
-                alt={tour.alt}
+                alt={tour.title}
               />
 
               <div className={styles.cardContent}>

@@ -1,0 +1,1053 @@
+/* =========================================================
+   INDIA TOUR DETAIL PAGE
+========================================================= */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f5f1;
+  color: #1b1b1b;
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: calc(100vh - 90px);
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.58) 32%,
+      rgba(0, 0, 0, 0.20) 65%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+.heroContent {
+  position: relative;
+
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding-bottom: 85px;
+
+  color: #fff;
+}
+
+.heroContent .label {
+  color: #f4b52d;
+}
+
+.heroContent h1 {
+  max-width: 950px;
+
+  margin: 10px 0 15px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 1.02;
+  font-weight: 500;
+
+  letter-spacing: -1.5px;
+
+  color: #fff;
+}
+
+.heroContent p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   COMMON LABEL
+========================================================= */
+
+.label {
+  display: inline-block;
+
+  color: #8f1111;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TOUR INFORMATION
+========================================================= */
+
+.infoSection {
+  width: 100%;
+
+  background: #fff;
+
+  border-bottom: 1px solid #e5e1da;
+}
+
+.infoGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 38px 0;
+}
+
+.infoItem {
+  min-width: 0;
+  min-height: 68px;
+
+  padding: 0 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 7px;
+
+  border-right: 1px solid #e5e1da;
+}
+
+.infoItem:first-child {
+  padding-left: 0;
+}
+
+.infoItem:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.infoItem span {
+  color: #888;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.infoItem strong {
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.overviewSection {
+  padding: 100px 0;
+
+  background: #f7f5f1;
+}
+
+.contentGrid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.75fr);
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+.mainContent {
+  min-width: 0;
+}
+
+.mainContent h2 {
+  max-width: 650px;
+
+  margin: 10px 0 22px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #1b1b1b;
+
+  font-size: clamp(35px, 4vw, 52px);
+  line-height: 1.08;
+  font-weight: 500;
+
+  letter-spacing: -1px;
+}
+
+.overview {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #606060;
+
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+.highlights {
+  margin-top: 42px;
+}
+
+.highlights h3 {
+  margin: 0 0 20px;
+
+  color: #222;
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.highlightGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px 28px;
+}
+
+.highlight {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+}
+
+.highlight span {
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  background: #8f1111;
+
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.highlight p {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   TOUR IMAGE
+========================================================= */
+
+.sideImage {
+  width: 100%;
+  height: 480px;
+
+  overflow: hidden;
+
+  border-radius: 3px;
+
+  background: #ddd;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.sideImage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================================
+   ITINERARY
+========================================================= */
+
+.itinerarySection {
+  padding: 100px 0;
+
+  background: #fff;
+}
+
+.sectionHeading {
+  margin-bottom: 55px;
+}
+
+.sectionHeading h2 {
+  margin: 10px 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #1b1b1b;
+
+  font-size: clamp(35px, 4vw, 50px);
+  line-height: 1.1;
+  font-weight: 500;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   ITINERARY + ENQUIRY ALIGNMENT
+========================================================= */
+
+.itineraryLayout {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 370px;
+
+  gap: 65px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   DAY TIMELINE
+========================================================= */
+
+.itinerary {
+  position: relative;
+
+  padding-left: 0;
+}
+
+.itinerary::before {
+  content: "";
+
+  position: absolute;
+
+  left: 20px;
+  top: 22px;
+  bottom: 22px;
+
+  width: 1px;
+
+  background: #ded9d1;
+}
+
+.day {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 42px minmax(0, 1fr);
+
+  gap: 20px;
+
+  padding-bottom: 38px;
+}
+
+.day:last-child {
+  padding-bottom: 0;
+}
+
+.dayNumber {
+  position: relative;
+
+  z-index: 2;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #8f1111;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 0 6px #fff;
+}
+
+.dayContent {
+  min-width: 0;
+
+  padding-top: 2px;
+}
+
+.dayContent h3 {
+  margin: 0 0 8px;
+
+  color: #8f1111;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.dayContent p {
+  margin: 0 0 12px;
+
+  color: #5e5e5e;
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.overnight {
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-left: 2px solid #f4b52d;
+
+  background: #f7f5f1;
+
+  color: #777;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   ENQUIRY CARD
+========================================================= */
+
+.enquiryCard {
+  position: sticky;
+  top: 30px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  background: #f7f5f1;
+
+  border: 1px solid #e1ddd5;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.07);
+}
+
+.enquiryCard h3 {
+  margin: 0 0 8px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #1b1b1b;
+
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.enquiryCard > p {
+  margin: 0 0 22px;
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.enquiryCard input,
+.enquiryCard select,
+.enquiryCard textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-bottom: 11px;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d9d4cc;
+  border-radius: 0;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #222;
+
+  font-family: inherit;
+
+  font-size: 13px;
+}
+
+.enquiryCard textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+.enquiryCard input:focus,
+.enquiryCard select:focus,
+.enquiryCard textarea:focus {
+  border-color: #8f1111;
+
+  box-shadow:
+    0 0 0 2px rgba(143, 17, 17, 0.07);
+}
+
+.enquiryButton {
+  width: 100%;
+
+  margin-top: 5px;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  background: #8f1111;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.enquiryButton:hover {
+  background: #6f0d0d;
+
+  transform: translateY(-2px);
+}
+
+.tourCode {
+  margin-top: 15px;
+
+  color: #999;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   INCLUSIONS / EXCLUSIONS
+========================================================= */
+
+.inclusionSection {
+  padding: 90px 0;
+
+  background: #f7f5f1;
+}
+
+.inclusionGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+
+  align-items: stretch;
+}
+
+.inclusionBox {
+  min-width: 0;
+
+  padding: 32px;
+
+  background: #fff;
+
+  border: 1px solid #e3ded6;
+}
+
+.inclusionBox h2 {
+  margin: 8px 0 23px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #1b1b1b;
+
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.inclusionBox ul {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.inclusionBox li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 11px 0;
+
+  border-bottom: 1px solid #eee;
+
+  color: #555;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+.inclusionBox li:last-child {
+  border-bottom: none;
+}
+
+.inclusionBox li span {
+  flex-shrink: 0;
+
+  color: #8f1111;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  padding: 75px 0;
+
+  background: #8f1111;
+
+  color: #fff;
+}
+
+.ctaContent {
+  width: min(1180px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 45px;
+}
+
+.sectionLabel {
+  display: block;
+
+  color: #f4b52d;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.ctaContent h2 {
+  margin: 10px 0 12px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #fff;
+
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.ctaContent p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: #fff;
+
+  color: #8f1111;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .hero {
+    height: 70vh;
+    min-height: 520px;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .infoItem {
+    padding: 20px;
+
+    border-bottom: 1px solid #e5e1da;
+  }
+
+  .infoItem:first-child {
+    padding-left: 20px;
+  }
+
+  .infoItem:nth-child(2) {
+    border-right: none;
+  }
+
+  .infoItem:nth-child(3),
+  .infoItem:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .sideImage {
+    height: 430px;
+  }
+
+  .itineraryLayout {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .enquiryCard {
+    position: relative;
+    top: auto;
+
+    max-width: 500px;
+  }
+
+  .ctaContent {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+
+  /* HERO */
+
+  .hero {
+    height: 500px;
+    min-height: 500px;
+  }
+
+  .heroImage {
+    object-position: center center;
+  }
+
+  .heroContent {
+    width: calc(100% - 30px);
+
+    padding-bottom: 45px;
+  }
+
+  .heroContent h1 {
+    font-size: 40px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .heroContent p {
+    font-size: 14px;
+  }
+
+
+  /* INFORMATION */
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+
+    padding: 20px 0;
+  }
+
+  .infoItem,
+  .infoItem:first-child {
+    min-height: auto;
+
+    padding: 16px 0;
+
+    border-right: none;
+    border-bottom: 1px solid #e5e1da;
+  }
+
+  .infoItem:last-child {
+    border-bottom: none;
+  }
+
+
+  /* OVERVIEW */
+
+  .overviewSection {
+    padding: 65px 0;
+  }
+
+  .mainContent h2 {
+    font-size: 34px;
+  }
+
+  .overview {
+    font-size: 14px;
+  }
+
+  .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sideImage {
+    height: 350px;
+  }
+
+
+  /* ITINERARY */
+
+  .itinerarySection {
+    padding: 65px 0;
+  }
+
+  .sectionHeading {
+    margin-bottom: 40px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 34px;
+  }
+
+  .itinerary::before {
+    left: 19px;
+  }
+
+  .day {
+    grid-template-columns: 38px minmax(0, 1fr);
+
+    gap: 15px;
+
+    padding-bottom: 30px;
+  }
+
+  .dayNumber {
+    width: 38px;
+    height: 38px;
+
+    font-size: 11px;
+  }
+
+  .dayContent h3 {
+    font-size: 18px;
+  }
+
+  .dayContent p {
+    font-size: 13px;
+  }
+
+
+  /* ENQUIRY */
+
+  .enquiryCard {
+    padding: 23px;
+
+    max-width: none;
+  }
+
+
+  /* INCLUSIONS */
+
+  .inclusionSection {
+    padding: 65px 0;
+  }
+
+  .inclusionGrid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .inclusionBox {
+    padding: 25px;
+  }
+
+  .inclusionBox h2 {
+    font-size: 27px;
+  }
+
+
+  /* CTA */
+
+  .cta {
+    padding: 60px 0;
+  }
+
+  .ctaContent {
+    width: calc(100% - 30px);
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .hero {
+    height: 450px;
+    min-height: 450px;
+  }
+
+  .heroContent h1 {
+    font-size: 34px;
+  }
+
+  .heroContent p {
+    font-size: 13px;
+  }
+
+  .sideImage {
+    height: 300px;
+  }
+
+  .mainContent h2,
+  .sectionHeading h2 {
+    font-size: 30px;
+  }
+}

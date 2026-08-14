@@ -5,8 +5,7 @@ import Footer from "@/app/components/Footer";
 
 import { indiaTours } from "@/app/components/india-tours/PopularIndiaToursData";
 
-import styles from "../../TourDetail.module.css";
-
+import styles from "./IndiaTourDetail.module.css";
 interface Props {
   params: Promise<{
     slug: string;
@@ -245,68 +244,64 @@ export default async function IndiaTourPage({
 
               {/* ENQUIRY */}
 
-              <aside className={styles.enquiryCard}>
+              <aside className={styles.enquiryCard} id="enquire">
 
-                <h3>
-                  Enquire Now
-                </h3>
+  <h3>
+    Enquire Now
+  </h3>
 
-                <p>
-                  Fill in the form and our travel
-                  expert will contact you shortly.
-                </p>
+  <p>
+    Fill in the form and our travel
+    expert will contact you shortly.
+  </p>
 
-                <input
-                  value={tourCode}
-                  readOnly
-                  aria-label="Tour Code"
-                />
+  <input
+    placeholder="Full Name"
+    aria-label="Full Name"
+  />
 
-                <input
-                  placeholder="Full Name"
-                />
+  <input
+    type="email"
+    placeholder="Email Address"
+    aria-label="Email Address"
+  />
 
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                />
+  <input
+    type="tel"
+    placeholder="Mobile Number"
+    aria-label="Mobile Number"
+  />
 
-                <input
-                  type="tel"
-                  placeholder="Mobile Number"
-                />
+  <input
+    type="date"
+    aria-label="Travel Date"
+  />
 
-                <input
-                  type="date"
-                />
+  <select defaultValue="" aria-label="Number of Travelers">
+    <option value="" disabled>
+      Number of Travelers
+    </option>
 
-                <select defaultValue="">
-                  <option value="" disabled>
-                    Number of Travelers
-                  </option>
+    <option>1 - 2</option>
+    <option>3 - 5</option>
+    <option>6 - 10</option>
+    <option>10+</option>
+  </select>
 
-                  <option>1 - 2</option>
-                  <option>3 - 5</option>
-                  <option>6 - 10</option>
-                  <option>10+</option>
-                </select>
+  <textarea
+    placeholder="Additional Requirements"
+    rows={4}
+    aria-label="Additional Requirements"
+  />
 
-                <textarea
-                  placeholder="Additional Requirements"
-                  rows={4}
-                />
+  <button
+    type="button"
+    className={styles.enquiryButton}
+  >
+    SEND ENQUIRY
+  </button>
 
-                <button
-                  className={styles.enquiryButton}
-                >
-                  SEND ENQUIRY
-                </button>
-
-                <div className={styles.tourCode}>
-                  TOUR CODE: {tourCode}
-                </div>
-
-              </aside>
+</aside>
 
             </div>
 
@@ -377,35 +372,8 @@ export default async function IndiaTourPage({
 
               {/* CUSTOM TOUR */}
 
-              <div className={styles.customizeCard}>
+             
 
-                <img
-                  src={tour.image}
-                  alt="Customize your India tour"
-                />
-
-                <div className={styles.customizeContent}>
-
-                  <h3>
-                    Want a Customized Tour?
-                  </h3>
-
-                  <p>
-                    Tell us what you want and
-                    we will create a personalized
-                    journey for you.
-                  </p>
-
-                  <a
-                    href="#enquire"
-                    className={styles.customizeButton}
-                  >
-                    Customize Tour
-                  </a>
-
-                </div>
-
-              </div>
 
             </div>
 

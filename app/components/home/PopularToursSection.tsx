@@ -42,11 +42,7 @@ export default function PopularToursSection() {
 
             <Link
               href={`/tours/${tour.slug}`}
-              className={`${styles.card} ${
-                tour.featured
-                  ? styles.featured
-                  : ""
-              }`}
+              className={styles.card}
               key={tour.slug}
             >
 
@@ -55,43 +51,21 @@ export default function PopularToursSection() {
                 alt={tour.title}
               />
 
-              {tour.featured ? (
+              <div className={styles.cardContent}>
 
-                <div className={styles.featuredContent}>
+                <h3>
+                  {tour.title}
+                </h3>
 
-                  <h3>
-                    {tour.title}
-                  </h3>
+                <p>
+                  {tour.duration}
+                </p>
 
-                  <p>
-                    {tour.duration}
-                  </p>
+                <span className={styles.viewTour}>
+                  VIEW DETAILS <span>→</span>
+                </span>
 
-                  <span>
-                    View Details →
-                  </span>
-
-                </div>
-
-              ) : (
-
-                <div className={styles.cardContent}>
-
-                  <h3>
-                    {tour.title}
-                  </h3>
-
-                  <p>
-                    {tour.duration}
-                  </p>
-
-                  <span>
-                    View Details →
-                  </span>
-
-                </div>
-
-              )}
+              </div>
 
             </Link>
 
