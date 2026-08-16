@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import styles from "./CabRates.module.css";
+
 import {
   Building2,
   CarFront,
   Plane,
   Clock,
   UserRound,
+  Plus,
 } from "lucide-react";
 
 import { cabRates } from "./CabRatesData";
@@ -18,9 +21,16 @@ const iconMap = {
 };
 
 export default function CabRates() {
+  const [openVehicle, setOpenVehicle] = useState<string | null>(null);
+
+  const toggleVehicle = (vehicleId: string) => {
+    setOpenVehicle((current) =>
+      current === vehicleId ? null : vehicleId
+    );
+  };
+
   return (
     <section className={styles.section}>
-
       <div className={styles.container}>
 
         <div className={styles.heading}>
@@ -41,7 +51,10 @@ export default function CabRates() {
             return (
               <div className={styles.card} key={rate.title}>
 
-                <div className={`${styles.cardHeader} ${styles[rate.type]}`}>
+                {/* CARD HEADER */}
+                <div
+                  className={`${styles.cardHeader} ${styles[rate.type]}`}
+                >
                   <Icon size={25} />
 
                   <div>
@@ -50,14 +63,51 @@ export default function CabRates() {
                   </div>
                 </div>
 
+                {/* CARD BODY */}
                 <div className={styles.body}>
-                  {rate.vehicles.map((vehicle) => (
-                    <div className={styles.vehicle} key={vehicle}>
-                      <CarFront size={17} />
-                      <span>{vehicle}</span>
-                    </div>
-                  ))}
 
+                  {rate.vehicles.map((vehicle, index) => {
+                    const vehicleId = `${rate.type}-${index}`;
+
+                    const isOpen = openVehicle === vehicleId;
+
+                    return (
+                      <div
+                        className={styles.vehicleWrapper}
+                        key={vehicle.name}
+                      >
+                        {/* VEHICLE ROW */}
+                        <div className={styles.vehicle}>
+                          <div className={styles.vehicleName}>
+                            <CarFront size={17} />
+                            <span>{vehicle.name}</span>
+                          </div>
+
+                          <button
+                            className={`${styles.plusButton} ${
+                              isOpen ? styles.open : ""
+                            }`}
+                            onClick={() => toggleVehicle(vehicleId)}
+                            aria-label={`Show price for ${vehicle.name}`}
+                          >
+                            <Plus size={18} />
+                          </button>
+                        </div>
+
+                        {/* PRICE DROPDOWN */}
+                        <div
+                          className={`${styles.priceDropdown} ${
+                            isOpen ? styles.show : ""
+                          }`}
+                        >
+                          <span>Rental Price</span>
+                          <strong>{vehicle.price}</strong>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  {/* NOTE */}
                   <div className={styles.note}>
                     {rate.type === "local" ? (
                       <Clock size={16} />
@@ -67,15 +117,14 @@ export default function CabRates() {
 
                     <span>{rate.note}</span>
                   </div>
-                </div>
 
+                </div>
               </div>
             );
           })}
         </div>
 
       </div>
-
     </section>
   );
 }

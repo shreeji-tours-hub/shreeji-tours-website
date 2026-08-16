@@ -15,10 +15,8 @@
 
 .footerMain {
   width: min(1250px, calc(100% - 50px));
-
   margin: 0 auto;
-
-  padding: 38px 0 32px;
+  padding: 42px 0 35px;
 
   display: grid;
 
@@ -63,12 +61,11 @@
 ========================================================= */
 
 .columnTitle {
-  margin: 0 0 16px;
+  margin: 0 0 17px;
 
   color: #ffffff;
 
-  font-size: 15px;
-
+  font-size: 16px;
   font-weight: 700;
 
   line-height: 1.3;
@@ -84,10 +81,9 @@
 
   max-width: 310px;
 
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
 
-  font-size: 12px;
-
+  font-size: 14px;
   line-height: 1.7;
 }
 
@@ -99,22 +95,21 @@
 .tripadvisor {
   display: inline-block;
 
-  margin-top: 17px;
+  margin-top: 18px;
 
   text-decoration: none;
-
   color: #ffffff;
 }
 
 .tripadvisorTop {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
 
 .tripadvisorCircle {
-  width: 27px;
-  height: 27px;
+  width: 29px;
+  height: 29px;
 
   border: 2px solid #00a680;
   border-radius: 50%;
@@ -125,12 +120,12 @@
 
   color: #00d09c;
 
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
 }
 
 .tripadvisorTop > span {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -138,15 +133,15 @@
   display: flex;
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .stars {
   color: #ffd000;
 
-  font-size: 14px;
+  font-size: 15px;
 
   letter-spacing: 1px;
 }
@@ -154,7 +149,7 @@
 .reviewCount {
   color: rgba(255, 255, 255, 0.85);
 
-  font-size: 10px;
+  font-size: 11px;
 }
 
 
@@ -163,17 +158,17 @@
 ========================================================= */
 
 .googleReview {
-  width: 100px;
+  width: 105px;
 
-  min-height: 55px;
+  min-height: 58px;
 
-  margin-top: 12px;
+  margin-top: 13px;
 
-  padding: 7px 8px;
+  padding: 8px;
 
   background: #ffffff;
 
-  border-radius: 3px;
+  border-radius: 4px;
 
   display: flex;
   flex-direction: column;
@@ -182,7 +177,7 @@
   text-decoration: none;
 
   box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.15);
+    0 2px 6px rgba(0, 0, 0, 0.15);
 
   transition: transform 0.2s ease;
 }
@@ -194,8 +189,7 @@
 .googleLogo {
   color: #4285f4;
 
-  font-size: 14px;
-
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -205,19 +199,19 @@
   align-items: center;
   justify-content: space-between;
 
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .googleText strong {
   color: #444444;
 
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .googleText span {
   color: #f5b400;
 
-  font-size: 8px;
+  font-size: 9px;
 
   letter-spacing: 0;
 }
@@ -235,17 +229,17 @@
 }
 
 .links li {
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 .links a {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 13px;
 
-  line-height: 1.45;
+  line-height: 1.5;
 
   transition:
     color 0.2s ease,
@@ -268,7 +262,7 @@
 
   flex-direction: column;
 
-  gap: 10px;
+  gap: 11px;
 }
 
 .contactItem {
@@ -276,13 +270,13 @@
 
   align-items: flex-start;
 
-  gap: 8px;
+  gap: 9px;
 
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
 
   text-decoration: none;
 
-  font-size: 11px;
+  font-size: 13px;
 
   line-height: 1.5;
 }
@@ -295,6 +289,10 @@
   margin-top: 2px;
 }
 
+.contactItem:hover {
+  color: #ffffff;
+}
+
 
 /* =========================================================
    SOCIAL
@@ -305,14 +303,14 @@
 
   align-items: center;
 
-  gap: 9px;
+  gap: 10px;
 
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .social a {
-  width: 31px;
-  height: 31px;
+  width: 33px;
+  height: 33px;
 
   display: flex;
 
@@ -327,7 +325,7 @@
 
   color: #ffffff;
 
-  font-size: 13px;
+  font-size: 14px;
 
   text-decoration: none;
 
@@ -352,7 +350,7 @@
 .bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 
-  padding: 15px 0;
+  padding: 16px 0;
 }
 
 .bottomInner {
@@ -372,23 +370,23 @@
 .copyright {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
 
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .bottomLinks {
   display: flex;
 
-  gap: 20px;
+  gap: 22px;
 }
 
 .bottomLinks a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
 
   text-decoration: none;
 
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .bottomLinks a:hover {
@@ -449,8 +447,7 @@
 
   margin-left: 7px;
 
-  font-size: 13px;
-
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -466,35 +463,47 @@
   display: inline;
 }
 
+
 /* =====================================================
    PLAN YOUR JOURNEY
 ===================================================== */
 
+/* =====================================================
+   PLAN YOUR JOURNEY — FULL WIDTH
+===================================================== */
+
 .journeySection {
-  width: min(1450px, 94%);
+  width: 100%;
+
   min-height: 210px;
 
-  margin: 0 auto 40px;
-  padding: 25px 35px;
+  margin: 0;
+
+  padding: 30px 5%;
 
   background: #fffaf2;
 
   display: grid;
+
   grid-template-columns: 1.4fr 1fr 190px;
 
   align-items: center;
+
   gap: 35px;
 
-  border: 1px solid #eee4d7;
-  border-radius: 5px;
+  border: none;
+
+  border-radius: 0;
 
   overflow: hidden;
+
+  box-sizing: border-box;
 }
 
 
-/* =========================
-   LEFT CONTENT
-========================= */
+/* =====================================================
+   JOURNEY CONTENT
+===================================================== */
 
 .journeyContent {
   padding: 5px 0;
@@ -507,10 +516,12 @@
 
   color: #8c1717;
 
-  font-size: 12px;
+  font-size: 13px;
+
   font-weight: 800;
 
   letter-spacing: 1px;
+
   text-transform: uppercase;
 }
 
@@ -519,7 +530,8 @@
 
   color: #222;
 
-  font-size: 28px;
+  font-size: 30px;
+
   line-height: 1.2;
 
   font-weight: 700;
@@ -533,27 +545,30 @@
   color: #555;
 
   font-size: 14px;
-  line-height: 1.6;
+
+  line-height: 1.65;
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* =====================================================
+   JOURNEY BUTTON
+===================================================== */
 
 .journeyButton {
   display: inline-block;
 
-  padding: 10px 20px;
+  padding: 11px 22px;
 
   background: #b51c19;
+
   color: #fff;
 
   border-radius: 4px;
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 13px;
+
   font-weight: 700;
 
   transition:
@@ -563,13 +578,14 @@
 
 .journeyButton:hover {
   background: #8c1717;
+
   transform: translateY(-2px);
 }
 
 
-/* =========================
-   CONTACT DETAILS
-========================= */
+/* =====================================================
+   JOURNEY CONTACT
+===================================================== */
 
 .journeyContact {
   display: flex;
@@ -601,9 +617,9 @@
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 13px;
 
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .journeyContact svg {
@@ -619,9 +635,9 @@
 }
 
 
-/* =========================
-   IMAGE
-========================= */
+/* =====================================================
+   JOURNEY IMAGE
+===================================================== */
 
 .journeyImage {
   align-self: stretch;
@@ -640,6 +656,7 @@
   height: 100%;
 
   object-fit: cover;
+
   object-position: center;
 
   transition: transform 0.4s ease;
@@ -651,7 +668,7 @@
 
 
 /* =====================================================
-   TABLET
+   TABLET — JOURNEY
 ===================================================== */
 
 @media (max-width: 1000px) {
@@ -667,163 +684,12 @@
   .journeyImage {
     display: none;
   }
-
 }
 
 
 /* =====================================================
-   MOBILE
+   TABLET — FOOTER
 ===================================================== */
-
-@media (max-width: 650px) {
-
-  .journeySection {
-    width: calc(100% - 30px);
-
-    grid-template-columns: 1fr;
-
-    gap: 20px;
-
-    padding: 25px 20px;
-  }
-
-  .journeyContent h2 {
-    font-size: 24px;
-  }
-
-  .journeyContent p {
-    font-size: 13px;
-  }
-
-  .journeyContact {
-    padding: 15px;
-  }
-
-  .journeyContact a,
-  .journeyContact div {
-    font-size: 12px;
-  }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 650px) {
-
-  .journeySection {
-    width: 92%;
-
-    grid-template-columns: 1fr;
-
-    padding: 22px;
-
-    gap: 20px;
-  }
-
-  .journeyContent h2 {
-    font-size: 20px;
-  }
-
-  .journeyContent p {
-    font-size: 11px;
-  }
-
-  .journeyContact {
-    padding: 14px;
-  }
-
-  .journeyImage {
-    display: block;
-
-    height: 180px;
-    min-height: 180px;
-  }
-
-}
-
-
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .journeyContainer {
-    grid-template-columns: 1.4fr 1fr 140px;
-  }
-
-  .journeyContent {
-    padding: 22px;
-  }
-
-  .journeyContact {
-    padding: 20px;
-  }
-
-  .journeyImage {
-    min-height: 150px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .journeySection {
-    padding: 30px 0;
-  }
-
-  .journeyContainer {
-    width: calc(100% - 30px);
-
-    grid-template-columns: 1fr;
-
-    min-height: auto;
-  }
-
-  .journeyContent {
-    padding: 25px;
-    border-right: none;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .journeyLabel {
-    font-size: 16px;
-  }
-
-  .journeyContent p {
-    font-size: 12px;
-  }
-
-  .journeyContact {
-    padding: 22px 25px;
-
-    border-right: none;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .journeyContact a,
-  .journeyContact > div {
-    font-size: 11px;
-  }
-
-  .journeyImage {
-    height: 190px;
-    min-height: 190px;
-  }
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
 
 @media (max-width: 1050px) {
 
@@ -836,10 +702,6 @@
     row-gap: 30px;
   }
 
-  .brandColumn {
-    grid-column: span 1;
-  }
-
   .column,
   .contactColumn {
     border-left: 1px solid rgba(255, 255, 255, 0.18);
@@ -847,9 +709,9 @@
 }
 
 
-/* =========================================================
+/* =====================================================
    SMALL TABLET
-========================================================= */
+===================================================== */
 
 @media (max-width: 800px) {
 
@@ -874,8 +736,57 @@
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .journeySection {
+    width: 92%;
+
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding: 25px 20px;
+
+    gap: 20px;
+  }
+
+  .journeyContent {
+    padding: 0;
+  }
+
+  .journeyContent h2 {
+    font-size: 24px;
+  }
+
+  .journeyContent p {
+    font-size: 13px;
+  }
+
+  .journeyContact {
+    padding: 15px;
+  }
+
+  .journeyContact a,
+  .journeyContact div {
+    font-size: 13px;
+  }
+
+  .journeyImage {
+    display: block;
+
+    height: 180px;
+
+    min-height: 180px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -885,7 +796,7 @@
 
     grid-template-columns: 1fr;
 
-    padding: 38px 0 28px;
+    padding: 40px 0 30px;
 
     gap: 30px;
   }
@@ -908,17 +819,17 @@
   .description {
     max-width: 100%;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.7;
   }
 
   .columnTitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .links a {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .links li {
@@ -926,7 +837,7 @@
   }
 
   .contactItem {
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.55;
   }
@@ -942,7 +853,7 @@
   }
 
   .copyright {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .bottomLinks {
@@ -952,7 +863,7 @@
   }
 
   .bottomLinks a {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .floatingWhatsapp {

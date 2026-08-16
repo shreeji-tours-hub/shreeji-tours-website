@@ -49,9 +49,7 @@ export default function CabServices() {
                     alt={service.title}
                   />
 
-                  <div className={styles.icon}>
-                    <Icon size={21} />
-                  </div>
+                
                 </div>
 
                 <div className={styles.body}>
@@ -60,15 +58,7 @@ export default function CabServices() {
 
                   <p>{service.description}</p>
 
-                  <div className={styles.buttonWrap}>
-                    <Link
-                      href={`/cab/${service.slug}`}
-                      className={styles.button}
-                    >
-                      Book Now
-                      <ArrowRight size={16} />
-                    </Link>
-                  </div>
+                  
 
                 </div>
 

@@ -8,3 +8,9 @@ export const bookingFields = [
   "Vehicle Type",
   "Drop / Destination",
 ];
+
+export const dutyTypes = [
+  "Local",
+  "Outstation",
+  "Airport Transfer",
+];

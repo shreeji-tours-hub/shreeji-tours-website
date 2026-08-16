@@ -4,10 +4,22 @@ export const cabRates = [
     subtitle: "8 Hours / 80 Kms",
     type: "local",
     vehicles: [
-      "Swift Dzire / Etios",
-      "Toyota Innova (6+1)",
-      "Innova Crysta (6+1)",
-      "Tempo Traveller (12+1)",
+      {
+        name: "Swift Dzire / Etios",
+        price: "₹2,500",
+      },
+      {
+        name: "Toyota Innova (6+1)",
+        price: "₹3,500",
+      },
+      {
+        name: "Innova Crysta (6+1)",
+        price: "₹4,000",
+      },
+      {
+        name: "Tempo Traveller (12+1)",
+        price: "₹5,500",
+      },
     ],
     note: "Extra km: ₹14/km | Extra hour: ₹250/hr",
   },
@@ -17,10 +29,22 @@ export const cabRates = [
     subtitle: "Outstation Per Km",
     type: "outstation",
     vehicles: [
-      "Swift Dzire / Etios",
-      "Toyota Innova (6+1)",
-      "Innova Crysta (6+1)",
-      "Tempo Traveller (12+1)",
+      {
+        name: "Swift Dzire / Etios",
+        price: "₹14/km",
+      },
+      {
+        name: "Toyota Innova (6+1)",
+        price: "₹18/km",
+      },
+      {
+        name: "Innova Crysta (6+1)",
+        price: "₹20/km",
+      },
+      {
+        name: "Tempo Traveller (12+1)",
+        price: "₹28/km",
+      },
     ],
     note: "Driver Allowance: ₹500/day",
   },
@@ -30,10 +54,22 @@ export const cabRates = [
     subtitle: "One Way",
     type: "airport",
     vehicles: [
-      "Mumbai to Airport (Sedan)",
-      "Mumbai to Airport (Innova)",
-      "Mumbai to Airport (Innova Crysta)",
-      "Mumbai to Airport (Luxury Car)",
+      {
+        name: "Mumbai to Airport (Sedan)",
+        price: "₹1,200",
+      },
+      {
+        name: "Mumbai to Airport (Innova)",
+        price: "₹1,800",
+      },
+      {
+        name: "Mumbai to Airport (Innova Crysta)",
+        price: "₹2,200",
+      },
+      {
+        name: "Mumbai to Airport (Luxury Car)",
+        price: "₹3,500",
+      },
     ],
     note: "Toll, Parking & Night Charges Extra",
   },

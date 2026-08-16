@@ -9,6 +9,7 @@ import ValuesSection from "./about/ValuesSection";
 import LeadershipSection from "./about/LeadershipSection";
 import OfferSection from "./about/OfferSection";
 import WhyChooseUs from "./about/WhyChooseUs";
+import ContactCTA from "../components/contact/ContactCTA";
 
 export default function AboutPage() {
   return (
@@ -26,6 +27,8 @@ export default function AboutPage() {
       <OfferSection />
 
       <WhyChooseUs />
+
+      <ContactCTA/>
 
       <Footer />
     </main>

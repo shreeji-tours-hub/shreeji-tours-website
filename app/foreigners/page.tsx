@@ -10,6 +10,8 @@ import WhyTravelForeign from "../components/foreign-tours/WhyTravelForeign";
 import IndiaDestinations from "../components/foreign-tours/IndiaDestinations";
 import ForeignTestimonials from "../components/foreign-tours/ForeignTestimonials";
 import ForeignTourCTA from "../components/foreign-tours/ForeignTourCTA";
+import ContactCTA from "../components/contact/ContactCTA";
+
 
 export default function ForeignersPage() {
   return (
@@ -29,6 +31,8 @@ export default function ForeignersPage() {
       <ForeignTestimonials />
 
       <ForeignTourCTA />
+
+      <ContactCTA/>
 
       <Footer />
     </main>

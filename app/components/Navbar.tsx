@@ -34,7 +34,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(false)}
         >
           <img
-            src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786885575/Shreeji_logo_sdrwof.png"
+            src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786899430/WhatsApp_Image_2026-08-16_at_15.49.04-removebg-preview_nqkobb.png"
             alt="Shreeji Tours & Travels"
           />
         </Link>

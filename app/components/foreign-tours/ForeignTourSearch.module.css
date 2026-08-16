@@ -1,87 +1,165 @@
+/* =========================================================
+   SECTION
+========================================================= */
+
 .section {
-  position: relative;
-  z-index: 5;
-
   width: 100%;
+  padding: 28px 0;
 
-  margin-top: -30px;
-
-  padding-bottom: 28px;
+  background: #f8f5f0;
 }
 
-.searchBox {
-  width: min(1120px, calc(100% - 60px));
 
-  margin: auto;
-  padding: 12px 14px;
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.searchBox {
+  width: min(1200px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 20px 24px;
 
   display: grid;
 
   grid-template-columns:
-    1.05fr
+    1.2fr
     1fr
     1fr
-    205px;
+    auto;
 
-  gap: 14px;
+  align-items: end;
 
-  background: #fff;
+  gap: 18px;
 
-  border-radius: 14px;
+  background: #ffffff;
 
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.13);
+  border: 1px solid #e9e2da;
+
+  border-radius: 8px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.field {
+  min-width: 0;
 }
 
 .field label {
   display: block;
 
-  margin: 0 0 7px 4px;
+  margin-bottom: 7px;
 
   color: #333;
 
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 13px;
+
+  font-weight: 600;
 }
 
+
+/* =========================================================
+   SELECT
+========================================================= */
+
 .select {
-  height: 44px;
+  position: relative;
+
+  width: 100%;
+  height: 46px;
 
   display: flex;
   align-items: center;
 
-  gap: 8px;
+  border: 1px solid #ddd6ce;
 
-  padding: 0 11px;
+  border-radius: 5px;
 
-  border: 1px solid #ddd;
-  border-radius: 7px;
+  background: #fff;
 
-  background: white;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.select svg:first-child {
-  color: #8f1111;
+.select:focus-within {
+  border-color: #8c1717;
+
+  box-shadow: 0 0 0 2px rgba(140, 23, 23, 0.08);
 }
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.icon {
+  flex-shrink: 0;
+
+  margin-left: 13px;
+
+  color: #8c1717;
+}
+
+
+/* =========================================================
+   SELECT ELEMENT
+========================================================= */
 
 .select select {
-  flex: 1;
+  width: 100%;
+  height: 100%;
 
-  min-width: 0;
+  padding: 0 38px 0 10px;
 
   border: none;
   outline: none;
 
   background: transparent;
 
-  font-size: 12px;
+  color: #444;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.button {
-  height: 44px;
 
-  border: none;
-  border-radius: 7px;
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.chevron {
+  position: absolute;
+
+  right: 12px;
+
+  pointer-events: none;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.button {
+  height: 46px;
+
+  padding: 0 22px;
 
   display: flex;
   align-items: center;
@@ -89,38 +167,78 @@
 
   gap: 8px;
 
-  background: #8f1111;
+  border: none;
 
-  color: white;
+  border-radius: 5px;
+
+  background: #8c1717;
+
+  color: #ffffff;
+
+  font-family: inherit;
 
   font-size: 13px;
+
   font-weight: 700;
 
+  white-space: nowrap;
+
   cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .button:hover {
-  background: #720909;
+  background: #6d0707;
+
+  transform: translateY(-2px);
 }
 
-@media (max-width: 850px) {
+.button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
   .searchBox {
     grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
   }
 
   .button {
-    grid-column: span 2;
+    width: 100%;
   }
 }
 
-@media (max-width: 550px) {
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 20px 0;
+  }
+
   .searchBox {
     width: calc(100% - 30px);
 
+    padding: 18px;
+
     grid-template-columns: 1fr;
+
+    gap: 14px;
   }
 
+  .select,
   .button {
-    grid-column: auto;
+    height: 44px;
   }
 }

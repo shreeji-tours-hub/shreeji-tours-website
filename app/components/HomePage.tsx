@@ -9,6 +9,8 @@ import PopularToursSection from "./home/PopularToursSection";
 import CabHireSection from "./home/CabHireSection";
 import TravelStatsSection from "./home/TravelStatsSection";
 import TourHighlights from "./home/TourHighlights";
+import ContactCTA from "../components/contact/ContactCTA";
+
 
 export default function HomePage() {
   return (
@@ -22,7 +24,9 @@ export default function HomePage() {
         <CabHireSection />
         <TravelStatsSection />
         <TourHighlights/>
+        <ContactCTA/>
       </main>
+
 
       <Footer />
     </>

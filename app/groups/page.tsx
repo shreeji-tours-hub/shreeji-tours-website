@@ -10,6 +10,8 @@ import WhyGroupTravel from "../components/group-tours/WhyGroupTravel";
 import GroupDestinations from "../components/group-tours/GroupDestinations";
 import GroupTestimonials from "../components/group-tours/GroupTestimonials";
 import GroupTourCTA from "../components/group-tours/GroupTourCTA";
+import ContactCTA from "../components/contact/ContactCTA";
+
 
 export default function GroupsPage() {
   return (
@@ -23,6 +25,7 @@ export default function GroupsPage() {
       <GroupDestinations />
       <GroupTestimonials />
       <GroupTourCTA />
+      <ContactCTA/>
 
       <Footer />
     </main>

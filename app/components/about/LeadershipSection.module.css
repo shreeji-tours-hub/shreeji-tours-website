@@ -15,7 +15,7 @@
 
 .heading span {
   color: #8c1717;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -64,17 +64,17 @@
 
 .info h3 {
   margin: 3px 0 3px;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .info strong {
   color: #8c1717;
-  font-size: 11px;
+  font-size: 17px;
 }
 
 .info p {
   color: #555;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.65;
 }
 

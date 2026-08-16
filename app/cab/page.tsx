@@ -10,6 +10,9 @@ import CabFleet from "../components/cab-hire/CabFleet";
 import WhyChooseCab from "../components/cab-hire/WhyChooseCab";
 import CabBooking from "../components/cab-hire/CabBooking";
 import CabCTA from "../components/cab-hire/CabCTA";
+import ContactCTA from "../components/contact/ContactCTA";
+
+
 
 export default function CabPage() {
   return (
@@ -20,9 +23,11 @@ export default function CabPage() {
 
       <CabRates />
 
+      <CabFleet />
+
       <CabServices />
 
-      <CabFleet />
+      
 
       <div className="cab-bottom-grid">
         <WhyChooseCab />
@@ -30,6 +35,8 @@ export default function CabPage() {
       </div>
 
       <CabCTA />
+
+      <ContactCTA/>
 
       <Footer />
     </main>

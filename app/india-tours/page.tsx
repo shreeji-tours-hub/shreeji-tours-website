@@ -8,6 +8,8 @@ import TourSearch from "../components/india-tours/TourSearch";
 import PopularIndiaTours from "../components/india-tours/PopularIndiaTours";
 import WhyTravelWithUs from "../components/india-tours/WhyTravelWithUs";
 import IndiaToursCTA from "../components/india-tours/IndiaToursCTA";
+import ContactCTA from "../components/contact/ContactCTA";
+
 
 export default function IndiaToursPage() {
   return (
@@ -23,6 +25,8 @@ export default function IndiaToursPage() {
       <WhyTravelWithUs />
 
       <IndiaToursCTA/>
+
+      <ContactCTA/>
 
       
       <Footer />

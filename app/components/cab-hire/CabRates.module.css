@@ -121,6 +121,119 @@
   color: #8f1111;
 }
 
+/* =========================================================
+   VEHICLE
+========================================================= */
+
+.vehicleWrapper {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.vehicle {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 0;
+}
+
+.vehicleName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #333;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   PLUS BUTTON
+========================================================= */
+
+.plusButton {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  background: #fff;
+  color: #6d0707;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.plusButton:hover {
+  background: #6d0707;
+  color: #fff;
+}
+
+.plusButton svg {
+  transition: transform 0.25s ease;
+}
+
+.plusButton.open svg {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   PRICE DROPDOWN
+========================================================= */
+
+.priceDropdown {
+  max-height: 0;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  background: #faf7f5;
+  border-radius: 6px;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.25s ease;
+}
+
+.priceDropdown.show {
+  max-height: 60px;
+
+  padding: 10px 12px;
+
+  margin-bottom: 8px;
+
+  opacity: 1;
+}
+
+.priceDropdown span {
+  font-size: 12px;
+  color: #777;
+}
+
+.priceDropdown strong {
+  font-size: 14px;
+  color: #6d0707;
+}
+
 @media (max-width: 800px) {
   .grid {
     grid-template-columns: 1fr;

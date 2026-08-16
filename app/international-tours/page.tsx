@@ -10,6 +10,7 @@ import WhyInternationalTravel from "../components/international-tours/WhyInterna
 import InternationalDestinations from "../components/international-tours/InternationalDestinations";
 import InternationalTestimonials from "../components/international-tours/InternationalTestimonials";
 import InternationalTourCTA from "../components/international-tours/InternationalTourCTA";
+import ContactCTA from "../components/contact/ContactCTA";
 
 export default function InternationalPage() {
   return (
@@ -23,6 +24,7 @@ export default function InternationalPage() {
       <InternationalDestinations />
       <InternationalTestimonials />
       <InternationalTourCTA />
+      <ContactCTA/>
 
       <Footer />
     </main>
