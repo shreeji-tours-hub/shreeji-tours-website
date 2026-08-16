@@ -24,9 +24,9 @@ export default function ForeignToursSection() {
           </h2>
 
           <div className={styles.decoration}>
-            <i></i>
+            <i />
             <b>○</b>
-            <i></i>
+            <i />
           </div>
 
         </div>
@@ -56,10 +56,6 @@ export default function ForeignToursSection() {
                 <p className={styles.cardDescription}>
                   {tour.description}
                 </p>
-
-                <span className={styles.viewTour}>
-                  VIEW TOUR →
-                </span>
 
               </div>
 

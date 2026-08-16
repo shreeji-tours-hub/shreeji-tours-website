@@ -1,7 +1,5 @@
 export const heroData = {
-  title: "Explore Incredible India",
-
-  subtitle: "With Local Travel Experts",
+  
 
   exploreButton: "Explore Tours",
 

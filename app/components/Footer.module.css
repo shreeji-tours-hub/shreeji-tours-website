@@ -466,6 +466,360 @@
   display: inline;
 }
 
+/* =====================================================
+   PLAN YOUR JOURNEY
+===================================================== */
+
+.journeySection {
+  width: min(1450px, 94%);
+  min-height: 210px;
+
+  margin: 0 auto 40px;
+  padding: 25px 35px;
+
+  background: #fffaf2;
+
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 190px;
+
+  align-items: center;
+  gap: 35px;
+
+  border: 1px solid #eee4d7;
+  border-radius: 5px;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.journeyContent {
+  padding: 5px 0;
+}
+
+.journeyLabel {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #8c1717;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.journeyContent h2 {
+  margin: 0 0 9px;
+
+  color: #222;
+
+  font-size: 28px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.journeyContent p {
+  max-width: 650px;
+
+  margin: 0 0 16px;
+
+  color: #555;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.journeyButton {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  background: #b51c19;
+  color: #fff;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.journeyButton:hover {
+  background: #8c1717;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTACT DETAILS
+========================= */
+
+.journeyContact {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 16px 20px;
+
+  background: #fff;
+
+  border: 1px solid #eee5da;
+
+  border-radius: 6px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.journeyContact a,
+.journeyContact div {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #444;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+.journeyContact svg {
+  flex-shrink: 0;
+
+  color: #b51c19;
+
+  margin-top: 2px;
+}
+
+.journeyContact a:hover {
+  color: #8c1717;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.journeyImage {
+  align-self: stretch;
+
+  min-height: 175px;
+
+  overflow: hidden;
+
+  border-radius: 4px;
+}
+
+.journeyImage img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.journeyImage:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .journeySection {
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 25px;
+
+    padding: 25px;
+  }
+
+  .journeyImage {
+    display: none;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .journeySection {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 25px 20px;
+  }
+
+  .journeyContent h2 {
+    font-size: 24px;
+  }
+
+  .journeyContent p {
+    font-size: 13px;
+  }
+
+  .journeyContact {
+    padding: 15px;
+  }
+
+  .journeyContact a,
+  .journeyContact div {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .journeySection {
+    width: 92%;
+
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+
+    gap: 20px;
+  }
+
+  .journeyContent h2 {
+    font-size: 20px;
+  }
+
+  .journeyContent p {
+    font-size: 11px;
+  }
+
+  .journeyContact {
+    padding: 14px;
+  }
+
+  .journeyImage {
+    display: block;
+
+    height: 180px;
+    min-height: 180px;
+  }
+
+}
+
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .journeyContainer {
+    grid-template-columns: 1.4fr 1fr 140px;
+  }
+
+  .journeyContent {
+    padding: 22px;
+  }
+
+  .journeyContact {
+    padding: 20px;
+  }
+
+  .journeyImage {
+    min-height: 150px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .journeySection {
+    padding: 30px 0;
+  }
+
+  .journeyContainer {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .journeyContent {
+    padding: 25px;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .journeyLabel {
+    font-size: 16px;
+  }
+
+  .journeyContent p {
+    font-size: 12px;
+  }
+
+  .journeyContact {
+    padding: 22px 25px;
+
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .journeyContact a,
+  .journeyContact > div {
+    font-size: 11px;
+  }
+
+  .journeyImage {
+    height: 190px;
+    min-height: 190px;
+  }
+}
 
 /* =========================================================
    TABLET

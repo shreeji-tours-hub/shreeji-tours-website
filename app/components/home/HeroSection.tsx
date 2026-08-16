@@ -29,15 +29,7 @@ export default function HeroSection() {
       <div className={styles.heroContent}>
         <div className={styles.heroCopy}>
 
-          {/* TITLE */}
-          <h1 className={styles.heroTitle}>
-            {heroData.title}
-          </h1>
-
-          {/* SCRIPT TITLE */}
-          <div className={styles.heroScript}>
-            {heroData.subtitle}
-          </div>
+          
 
         </div>
       </div>

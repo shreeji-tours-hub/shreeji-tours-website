@@ -119,21 +119,14 @@ export default function TourHighlights() {
 
           <div className={styles.sectionHeader}>
             <div>
-              <span className={styles.sectionLabel}>
-                TOURS FOR FOREIGNERS
-              </span>
+            
 
               <h2>
-                Specially Designed for International Travelers
+                GALLERY
               </h2>
             </div>
 
-            <Link
-              href="/tours"
-              className={styles.viewGallery}
-            >
-              View All Tours
-            </Link>
+            
           </div>
 
           <div className={styles.galleryGrid}>

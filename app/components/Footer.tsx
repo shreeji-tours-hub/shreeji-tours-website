@@ -6,7 +6,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  ExternalLink,
 } from "lucide-react";
 
 import {
@@ -27,15 +26,88 @@ import {
   footerCopyright,
 } from "./FooterData";
 
-
 export default function Footer() {
-
   return (
-
     <footer
       className={styles.footer}
       id="contact"
     >
+
+      {/* =====================================================
+    PLAN YOUR JOURNEY
+===================================================== */}
+
+<div className={styles.journeySection}>
+
+  {/* LEFT CONTENT */}
+  <div className={styles.journeyContent}>
+
+    <span className={styles.journeyLabel}>
+      LET'S PLAN YOUR NEXT JOURNEY
+    </span>
+
+    <h2>
+      Your journey starts here.
+    </h2>
+
+    <p>
+      Whether you're looking for a spiritual pilgrimage, family vacation,
+      honeymoon, corporate event, luxury holiday, or an unforgettable
+      India trip, Shreeji Tours & Travels is here to make your journey
+      easy and memorable.
+    </p>
+
+    <a
+      href="/contact"
+      className={styles.journeyButton}
+    >
+      Contact Us
+    </a>
+
+  </div>
+
+
+  {/* CONTACT DETAILS */}
+  <div className={styles.journeyContact}>
+
+    <a href={`tel:${footerContact.phone1}`}>
+      <Phone size={14} />
+      <span>{footerContact.phone1}</span>
+    </a>
+
+    <a href={`tel:${footerContact.phone2}`}>
+      <Phone size={14} />
+      <span>{footerContact.phone2}</span>
+    </a>
+
+    <a href={`mailto:${footerContact.email}`}>
+      <Mail size={14} />
+      <span>{footerContact.email}</span>
+    </a>
+
+    <a href={`mailto:${footerContact.email2}`}>
+      <Mail size={14} />
+      <span>{footerContact.email2}</span>
+    </a>
+
+    <div>
+      <MapPin size={14} />
+      <span>{footerContact.address}</span>
+    </div>
+
+  </div>
+
+
+  {/* IMAGE */}
+  <div className={styles.journeyImage}>
+    <img
+      src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786886105/pexels-silverkblack-36729940_marxpd.jpg"
+      alt="Travel consultant"
+    />
+  </div>
+
+</div>
+
 
       {/* =====================================================
           MAIN FOOTER
@@ -43,10 +115,7 @@ export default function Footer() {
 
       <div className={styles.footerMain}>
 
-
-        {/* =====================================================
-            ABOUT / BRAND
-        ===================================================== */}
+        {/* ABOUT / BRAND */}
 
         <div className={styles.brandColumn}>
 
@@ -54,15 +123,11 @@ export default function Footer() {
             About Shreeji Tours & Travels
           </h3>
 
-
           <p className={styles.description}>
             {footerBrand.description}
           </p>
 
-
-          {/* =========================
-              TRIPADVISOR
-          ========================= */}
+          {/* TRIPADVISOR */}
 
           <a
             href={footerReviews.tripadvisorLink}
@@ -70,9 +135,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className={styles.tripadvisor}
           >
-
             <div className={styles.tripadvisorTop}>
-
               <div className={styles.tripadvisorCircle}>
                 ✓
               </div>
@@ -80,12 +143,9 @@ export default function Footer() {
               <span>
                 Tripadvisor
               </span>
-
             </div>
 
-
             <div className={styles.tripadvisorBottom}>
-
               <span className={styles.stars}>
                 ★★★★★
               </span>
@@ -93,41 +153,32 @@ export default function Footer() {
               <span className={styles.reviewCount}>
                 {footerBrand.tripadvisorReviews}
               </span>
-
             </div>
-
           </a>
 
 
-          {/* =========================
-              GOOGLE REVIEW
-          ========================= */}
+          {/* GOOGLE REVIEW */}
 
-     <a
-  href={footerReviews.googleReviewLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className={styles.googleReview}
->
-  <div className={styles.googleLogo}>
-    <img
-      src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786695053/images_rstxap.png"
-      alt="Google Reviews"
-    />
-  </div>
+          <a
+            href={footerReviews.googleReviewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.googleReview}
+          >
+            <div className={styles.googleLogo}>
+              <img
+                src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786886193/rev_b8nqzw.jpg"
+                alt="Google Reviews"
+              />
+            </div>
 
-  <div className={styles.googleText}>
-    <strong>Excellent</strong>
+          
+          </a>
 
-    <span>★★★★★</span>
-  </div>
-</a>
         </div>
 
 
-        {/* =====================================================
-            QUICK LINKS
-        ===================================================== */}
+        {/* QUICK LINKS */}
 
         <div className={styles.column}>
 
@@ -135,33 +186,20 @@ export default function Footer() {
             Quick Links
           </h3>
 
-
           <ul className={styles.links}>
-
-            {footerQuickLinks.map(
-              (link, index) => (
-
-                <li key={index}>
-
-                  <a href={link.href}>
-
-                    {link.label}
-
-                  </a>
-
-                </li>
-
-              )
-            )}
-
+            {footerQuickLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
         </div>
 
 
-        {/* =====================================================
-            POPULAR TOURS
-        ===================================================== */}
+        {/* POPULAR TOURS */}
 
         <div className={styles.column}>
 
@@ -169,33 +207,20 @@ export default function Footer() {
             Popular Tours
           </h3>
 
-
           <ul className={styles.links}>
-
-            {footerPopularTours.map(
-              (tour, index) => (
-
-                <li key={index}>
-
-                  <a href="#tours">
-
-                    {tour}
-
-                  </a>
-
-                </li>
-
-              )
-            )}
-
+            {footerPopularTours.map((tour, index) => (
+              <li key={index}>
+                <a href="#tours">
+                  {tour}
+                </a>
+              </li>
+            ))}
           </ul>
 
         </div>
 
 
-        {/* =====================================================
-            SERVICES
-        ===================================================== */}
+        {/* SERVICES */}
 
         <div className={styles.column}>
 
@@ -203,33 +228,20 @@ export default function Footer() {
             Our Services
           </h3>
 
-
           <ul className={styles.links}>
-
-            {footerServices.map(
-              (service, index) => (
-
-                <li key={index}>
-
-                  <a href={service.href}>
-
-                    {service.label}
-
-                  </a>
-
-                </li>
-
-              )
-            )}
-
+            {footerServices.map((service, index) => (
+              <li key={index}>
+                <a href={service.href}>
+                  {service.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
         </div>
 
 
-        {/* =====================================================
-            CONTACT
-        ===================================================== */}
+        {/* CONTACT */}
 
         <div className={styles.contactColumn}>
 
@@ -237,107 +249,49 @@ export default function Footer() {
             Contact Us
           </h3>
 
-
           <div className={styles.contactList}>
-
-
-            {/* PHONE 1 */}
 
             <a
               href={`tel:${footerContact.phone1}`}
               className={styles.contactItem}
             >
-
-              <Phone
-                size={14}
-                strokeWidth={2}
-              />
-
-              <span>
-                {footerContact.phone1}
-              </span>
-
+              <Phone size={14} strokeWidth={2} />
+              <span>{footerContact.phone1}</span>
             </a>
-
-
-            {/* PHONE 2 */}
 
             <a
               href={`tel:${footerContact.phone2}`}
               className={styles.contactItem}
             >
-
-              <Phone
-                size={14}
-                strokeWidth={2}
-              />
-
-              <span>
-                {footerContact.phone2}
-              </span>
-
+              <Phone size={14} strokeWidth={2} />
+              <span>{footerContact.phone2}</span>
             </a>
-
-
-            {/* EMAIL */}
 
             <a
               href={`mailto:${footerContact.email}`}
               className={styles.contactItem}
             >
-
-              <Mail
-                size={14}
-                strokeWidth={2}
-              />
-
-              <span>
-                {footerContact.email}
-              </span>
-
+              <Mail size={14} strokeWidth={2} />
+              <span>{footerContact.email}</span>
             </a>
-
-
-            {/* SECOND EMAIL */}
 
             <a
               href={`mailto:${footerContact.email2}`}
               className={styles.contactItem}
             >
-
-              <Mail
-                size={14}
-                strokeWidth={2}
-              />
-
-              <span>
-                {footerContact.email2}
-              </span>
-
+              <Mail size={14} strokeWidth={2} />
+              <span>{footerContact.email2}</span>
             </a>
 
-
-            {/* ADDRESS */}
-
             <div className={styles.contactItem}>
-
-              <MapPin
-                size={16}
-                strokeWidth={2}
-              />
-
-              <span>
-                {footerContact.address}
-              </span>
-
+              <MapPin size={16} strokeWidth={2} />
+              <span>{footerContact.address}</span>
             </div>
 
           </div>
 
 
-          {/* =========================
-              SOCIAL ICONS
-          ========================= */}
+          {/* SOCIAL ICONS */}
 
           <div className={styles.social}>
 
@@ -348,7 +302,6 @@ export default function Footer() {
               <FaFacebookF />
             </a>
 
-
             <a
               href={footerSocialLinks.instagram}
               aria-label="Instagram"
@@ -356,14 +309,12 @@ export default function Footer() {
               <FaInstagram />
             </a>
 
-
             <a
               href={footerSocialLinks.youtube}
               aria-label="YouTube"
             >
               <FaYoutube />
             </a>
-
 
             <a
               href={footerSocialLinks.whatsapp}
@@ -381,25 +332,18 @@ export default function Footer() {
       </div>
 
 
-      {/* =====================================================
-          BOTTOM BAR
-      ===================================================== */}
+      {/* BOTTOM BAR */}
 
       <div className={styles.bottom}>
 
         <div className={styles.bottomInner}>
 
           <p className={styles.copyright}>
-
             © {footerCopyright.year}{" "}
-
             {footerCopyright.text}
-
           </p>
 
-
           <div className={styles.bottomLinks}>
-
             <a href="#">
               Privacy Policy
             </a>
@@ -407,7 +351,6 @@ export default function Footer() {
             <a href="#">
               Terms & Conditions
             </a>
-
           </div>
 
         </div>
@@ -415,9 +358,7 @@ export default function Footer() {
       </div>
 
 
-      {/* =====================================================
-          FLOATING WHATSAPP
-      ===================================================== */}
+      {/* FLOATING WHATSAPP */}
 
       <a
         href={footerSocialLinks.whatsapp}
@@ -426,15 +367,11 @@ export default function Footer() {
         className={styles.floatingWhatsapp}
         aria-label="WhatsApp"
       >
-
-        <FaWhatsapp
-          className={styles.whatsappIcon}
-        />
+        <FaWhatsapp className={styles.whatsappIcon} />
 
         <span className={styles.whatsappText}>
           WhatsApp Us
         </span>
-
       </a>
 
     </footer>

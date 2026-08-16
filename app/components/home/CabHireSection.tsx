@@ -32,16 +32,16 @@ export default function CabHireSection() {
 
           </h2>
 
-          <p>
-            {cabHireData.description}
-          </p>
+         <p>
+  {cabHireData.description}
+</p>
 
-          <a
-            href={cabHireData.buttonLink}
-            className={styles.button}
-          >
-            {cabHireData.buttonText}
-          </a>
+<a
+  href="/cab"
+  className={styles.button}
+>
+  {cabHireData.buttonText}
+</a>
 
         </div>
 

@@ -1,17 +1,30 @@
 "use client";
 
-import Link from "next/link";
-
+import { useRef } from "react";
 import styles from "./OfferSection.module.css";
 import { offerData } from "./OfferData";
 
 export default function OfferSection() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const slide = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    const amount = sliderRef.current.clientWidth * 0.8;
+
+    sliderRef.current.scrollBy({
+      left: direction === "right" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
 
-        <div className={styles.heading}>
+        {/* HEADING */}
 
+        <div className={styles.heading}>
           <span>WHAT WE OFFER</span>
 
           <h2>
@@ -23,37 +36,67 @@ export default function OfferSection() {
             <b>○</b>
             <i />
           </div>
-
         </div>
 
-        <div className={styles.grid}>
 
-          {offerData.map((item) => (
-            <Link
-              href={`/about/${item.slug}`}
-              className={styles.card}
-              key={item.slug}
-            >
+        {/* SLIDER */}
 
-              <img
-                src={item.image}
-                alt={item.title}
-              />
+        <div className={styles.sliderWrapper}>
 
-              <div className={styles.content}>
+          <button
+            className={`${styles.arrow} ${styles.arrowLeft}`}
+            onClick={() => slide("left")}
+            aria-label="Previous"
+          >
+            ‹
+          </button>
 
-                <h3>{item.title}</h3>
 
-                <p>{item.text}</p>
+          <div
+            className={styles.slider}
+            ref={sliderRef}
+          >
 
-                <span className={styles.viewMore}>
-                  VIEW DETAILS →
-                </span>
+            {offerData.map((item) => (
+              <div
+                className={styles.card}
+                key={item.slug}
+              >
+
+                <div className={styles.imageWrap}>
+
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                  />
+
+                </div>
+
+                <div className={styles.content}>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+
+                  <p>
+                    {item.text}
+                  </p>
+
+                </div>
 
               </div>
+            ))}
 
-            </Link>
-          ))}
+          </div>
+
+
+          <button
+            className={`${styles.arrow} ${styles.arrowRight}`}
+            onClick={() => slide("right")}
+            aria-label="Next"
+          >
+            ›
+          </button>
 
         </div>
 

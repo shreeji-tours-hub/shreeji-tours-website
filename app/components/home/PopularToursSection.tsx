@@ -6,70 +6,100 @@ import styles from "./PopularToursSection.module.css";
 import { popularTours } from "./PopularToursData";
 
 export default function PopularToursSection() {
+  const featuredTour = popularTours[0];
+  const otherTours = popularTours.slice(1);
+
   return (
-    <section
-      className={styles.section}
-      id="tours"
-    >
+    <section className={styles.section} id="tours">
       <div className={styles.container}>
 
         {/* HEADING */}
 
         <div className={styles.heading}>
-
           <span className={styles.headingLabel}>
             EXPLORE THE BEST OF INDIA
           </span>
 
-          <h2>
-            Popular India Tours
-          </h2>
+          <h2>View More Tours</h2>
 
           <div className={styles.decoration}>
             <i></i>
             <b>○</b>
             <i></i>
           </div>
-
         </div>
 
 
-        {/* TOUR GRID */}
+        {/* SINGLE TOUR ROW */}
 
-        <div className={styles.grid}>
+        <div className={styles.tourRow}>
 
-          {popularTours.map((tour) => (
+          {/* FEATURED TOUR — LEFT */}
 
-            <Link
-              href={`/tours/${tour.slug}`}
-              className={styles.card}
-              key={tour.slug}
-            >
+          {featuredTour && (
+            <div className={styles.featuredCard}>
 
               <img
-                src={tour.image}
-                alt={tour.title}
+                src={featuredTour.image}
+                alt={featuredTour.title}
               />
 
-              <div className={styles.cardContent}>
+              <div className={styles.featuredContent}>
 
                 <h3>
-                  {tour.title}
+                  {featuredTour.title}
                 </h3>
 
                 <p>
-                  {tour.duration}
+                  {featuredTour.description ||
+                    "Explore the vibrant city of Mumbai with our exciting sightseeing experience."}
                 </p>
 
-                <span className={styles.viewTour}>
-                  VIEW DETAILS <span>→</span>
-                </span>
+                {/* ONLY THIS IS CLICKABLE */}
+
+                <Link
+                  href="/india-tours"
+                  className={styles.featuredButton}
+                >
+                  View All Tours
+                </Link>
 
               </div>
+            </div>
+          )}
 
-            </Link>
 
-          ))}
+          {/* OTHER TOURS — NOT CLICKABLE */}
+
+          <div className={styles.toursGrid}>
+
+            {otherTours.map((tour) => (
+              <div
+                key={tour.slug}
+                className={styles.card}
+              >
+
+                <img
+                  src={tour.image}
+                  alt={tour.title}
+                />
+
+                <div className={styles.cardContent}>
+
+                  <h3>
+                    {tour.title}
+                  </h3>
+
+                  <p>
+                    {tour.duration}
+                  </p>
+
+                </div>
+
+              </div>
+            ))}
+
+          </div>
 
         </div>
 

@@ -84,14 +84,6 @@ export const footerServices = [
     href: "#",
   },
   {
-    label: "Visa Assistance",
-    href: "#",
-  },
-  {
-    label: "Travel Insurance",
-    href: "#",
-  },
-  {
     label: "Corporate Tours",
     href: "#",
   },

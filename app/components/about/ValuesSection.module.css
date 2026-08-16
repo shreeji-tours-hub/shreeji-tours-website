@@ -1,159 +1,222 @@
+/* =========================================================
+   VALUES SECTION
+========================================================= */
+
 .section {
-  padding: 70px 0;
+  width: 100%;
+  padding: 75px 0;
   background: #fffaf5;
 }
 
 .container {
-  width: min(1100px, 90%);
+  width: min(1180px, calc(100% - 50px));
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.95fr 1.05fr;
 
-  gap: 70px;
-
+  gap: 75px;
   align-items: center;
 }
 
 
-/* =========================
-   LEFT SIDE
-========================= */
+/* =========================================================
+   LEFT — MISSION & VISION
+========================================================= */
 
 .left {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  align-items: center;
+  background: #ffffff;
+
+  border: 1px solid #eee4dc;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(80, 30, 10, 0.06);
 }
 
 .box {
-  padding: 25px 30px;
+  position: relative;
 
-  border-right: 1px solid #ddd;
+  padding: 35px 25px;
 
   text-align: center;
+
+  background: #ffffff;
 }
 
-.box:nth-child(2) {
-  border-right: none;
+.box:first-child {
+  border-right: 1px solid #e8ddd5;
 }
 
 .box svg {
-  color: #e6a900;
+  width: 34px;
+  height: 34px;
 
-  width: 28px;
-  height: 28px;
+  color: #d3a100;
 
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+
+  stroke-width: 1.7;
 }
 
 .box h3 {
-  margin: 12px 0 10px;
+  margin: 8px 0 12px;
 
-  font-size: 16px;
+  color: #8c1717;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
 
   text-transform: uppercase;
 }
 
 .box p {
-  font-size: 13px;
-
-  line-height: 1.7;
-
-  color: #555;
-
   margin: 0;
+
+  color: #666;
+
+  font-size: 13px;
+  line-height: 1.75;
 }
 
 
-/* =========================
-   RIGHT SIDE
-========================= */
+/* =========================================================
+   RIGHT — CORE VALUES
+========================================================= */
 
 .values {
-  max-width: 500px;
-
-  margin: 0 auto;
+  max-width: 560px;
 }
 
 .values > span {
+  display: block;
+
+  margin-bottom: 8px;
+
   color: #8c1717;
 
   font-size: 12px;
-
   font-weight: 800;
 
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .values h2 {
-  font-size: 30px;
+  position: relative;
 
-  margin: 8px 0 25px;
+  margin: 0 0 28px;
 
-  color: #222;
+  color: #182b49;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  font-weight: 700;
 }
+
+
+/* Small gold line under heading */
+
+.values h2::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 2px;
+
+  margin-top: 12px;
+
+  background: #d3a100;
+}
+
+
+/* =========================================================
+   VALUE LIST
+========================================================= */
 
 .valueList {
   display: flex;
-
   flex-direction: column;
 
-  gap: 18px;
+  gap: 0;
+
+  border-top: 1px solid #e6ddd6;
 }
 
 .value {
   display: flex;
 
-  gap: 12px;
-
   align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #e6ddd6;
+
+  transition:
+    padding-left 0.25s ease,
+    background 0.25s ease;
+}
+
+.value:hover {
+  padding-left: 6px;
 }
 
 .value svg {
   flex-shrink: 0;
 
+  width: 20px;
+  height: 20px;
+
+  padding: 5px;
+
+  box-sizing: content-box;
+
   color: #8c1717;
 
-  margin-top: 2px;
+  background: #fff2e5;
+
+  border-radius: 50%;
+
+  stroke-width: 2;
 }
 
 .value p {
   margin: 0;
 
-  font-size: 13px;
+  color: #555;
 
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.65;
+}
 
-  color: #444;
+.value p strong {
+  color: #222;
+
+  font-weight: 700;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media (max-width: 768px) {
-
-  .section {
-    padding: 55px 0;
-  }
+@media (max-width: 950px) {
 
   .container {
-    width: 90%;
+    width: calc(100% - 40px);
 
     grid-template-columns: 1fr;
 
-    gap: 40px;
-  }
-
-  .left {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .box {
-    padding: 20px 15px;
+    gap: 45px;
   }
 
   .values {
@@ -162,20 +225,70 @@
 
 }
 
-@media (max-width: 500px) {
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+
+    gap: 40px;
+  }
 
   .left {
     grid-template-columns: 1fr;
   }
 
   .box {
-    border-right: none;
-
-    border-bottom: 1px solid #ddd;
+    padding: 30px 25px;
   }
 
-  .box:last-child {
-    border-bottom: none;
+  .box:first-child {
+    border-right: none;
+
+    border-bottom: 1px solid #e8ddd5;
+  }
+
+  .values h2 {
+    font-size: 27px;
+  }
+
+  .value {
+    gap: 12px;
+
+    padding: 14px 0;
+  }
+
+  .value p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .section {
+    padding: 45px 0;
+  }
+
+  .values h2 {
+    font-size: 25px;
+  }
+
+  .box p {
+    font-size: 12.5px;
   }
 
 }

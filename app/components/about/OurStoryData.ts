@@ -12,5 +12,5 @@ export const ourStoryData = {
   ],
 
   image:
-    "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1000&q=85",
+    "https://res.cloudinary.com/dcaiszxcb/image/upload/v1786884920/Gemini_Generated_Image_50rlgj50rlgj50rl_szn8xi.png",
 };
