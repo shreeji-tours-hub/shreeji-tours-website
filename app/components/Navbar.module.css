@@ -1,34 +1,24 @@
-
-
 /* =========================
    NAVBAR
 ========================= */
 
 .navbar {
   width: 100%;
-
   height: 78px;
-
   background: #6d0707;
-
-  border-bottom: 1px solid #eeeeee;
-
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   position: fixed;
-
-  z-index: 100;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .navInner {
   width: min(1250px, calc(100% - 40px));
-
   height: 100%;
-
   margin: auto;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
@@ -39,21 +29,14 @@
 
 .logo {
   display: flex;
-
   align-items: center;
-
-  gap: 9px;
-
-  color: inherit;
-
+  gap: 10px;
   text-decoration: none;
-
   flex-shrink: 0;
 }
 
 .logoSymbol {
   font-size: 38px;
-
   line-height: 1;
 }
 
@@ -63,25 +46,17 @@
 
 .logoText {
   color: #e1bb16;
-
   font-family: Georgia, serif;
-
   font-size: 22px;
-
   font-weight: 700;
-
   white-space: nowrap;
 }
 
 .logoTagline {
-  margin-top: 1px;
-
-  color: #fffcfc;
-
+  margin-top: 2px;
+  color: #ffffff;
   font-size: 8px;
-
   font-weight: 600;
-
   letter-spacing: 1px;
 }
 
@@ -91,75 +66,57 @@
 ========================= */
 
 .navLinks {
-  height: 100%;
-
   display: flex;
-
   align-items: center;
-
+  height: 100%;
   gap: 25px;
 }
 
 .navLinks a {
   height: 100%;
-
   display: flex;
-
   align-items: center;
-
-  gap: 4px;
-
-  position: relative;
-
   color: #ffffff;
-
   text-decoration: none;
-
   font-size: 13px;
-
   font-weight: 500;
-
-  white-space: nowrap;
-
-  transition: color 0.2s ease;
+  position: relative;
+  transition: 0.3s;
 }
 
-.navLinks a:hover,
-.navLinks a.active {
+.navLinks a:hover {
   color: #ddac1a;
 }
 
-.navLinks a.active::after {
+/* Active link */
+
+.active {
+  color: #ddac1a !important;
+}
+
+.active::after {
   content: "";
-
   position: absolute;
-
   left: 0;
-
   right: 0;
-
   bottom: 0;
-
   height: 3px;
-
   background: #f5b400;
 }
 
 
 /* =========================
-   MOBILE MENU
+   MOBILE BUTTON
 ========================= */
 
 .mobileMenu {
   display: none;
-
-  border: none;
-
   background: transparent;
-
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
   cursor: pointer;
-
-  color: #222222;
+  z-index: 1100;
 }
 
 
@@ -169,44 +126,24 @@
 
 .whatsappButton {
   position: fixed;
-
   right: 0;
-
   top: 90px;
-
   z-index: 999;
-
   display: flex;
-
   align-items: center;
-
   gap: 7px;
-
   padding: 10px 15px;
-
   background: #25d366;
-
   color: white;
-
   text-decoration: none;
-
   border-radius: 22px 0 0 22px;
-
   font-size: 12px;
-
   font-weight: 600;
-
-  box-shadow: 0 3px 12px rgba(0,0,0,0.18);
-
-  transition: 0.25s;
+  box-shadow: 0 3px 12px rgba(0,0,0,.18);
 }
 
 .whatsappButton svg {
-  font-size: 19px;
-}
-
-.whatsappButton:hover {
-  padding-right: 20px;
+  font-size: 18px;
 }
 
 
@@ -214,19 +151,19 @@
    TABLET
 ========================= */
 
-@media (max-width: 1100px) {
+@media (max-width:1100px){
 
-  .navLinks {
-    gap: 14px;
-  }
+.navLinks{
+  gap:14px;
+}
 
-  .navLinks a {
-    font-size: 11px;
-  }
+.navLinks a{
+  font-size:11px;
+}
 
-  .logoText {
-    font-size: 18px;
-  }
+.logoText{
+  font-size:18px;
+}
 
 }
 
@@ -235,101 +172,97 @@
    MOBILE
 ========================= */
 
-@media (max-width: 850px) {
+@media (max-width:850px){
 
-  .topbar {
-    display: none;
-  }
+.navbar{
+  height:70px;
+}
 
-  .navbar {
-    height: 70px;
-  }
+.navInner{
+  width:calc(100% - 30px);
+}
 
-  .navInner {
-    width: calc(100% - 30px);
-  }
+.logoText{
+  font-size:18px;
+}
 
-  .logoText {
-    font-size: 18px;
-  }
+.logoSymbol{
+  font-size:30px;
+}
 
-  .logoSymbol {
-    font-size: 30px;
-  }
+/* Hamburger */
 
-  .mobileMenu {
-    display: flex;
+.mobileMenu{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    align-items: center;
+/* Mobile Menu */
 
-    justify-content: center;
-  }
+.navLinks{
+  position:fixed;
+  top:70px;
+  left:0;
+  width:100%;
+  background:#ffffff;
+  display:none;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  z-index:999;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
 
-  .navLinks {
-    position: absolute;
+.mobileActive{
+  display:flex;
+}
 
-    top: 70px;
+/* Links */
 
-    left: 0;
+.navLinks a{
+  width:100%;
+  height:auto;
+  padding:18px 24px;
+  color:#222222;
+  font-size:16px;
+  border-bottom:1px solid #eeeeee;
+}
 
-    width: 100%;
+/* Hover */
 
-    height: auto;
+.navLinks a:hover{
+  background:#fafafa;
+  color:#ddac1a;
+}
 
-    padding: 15px 20px;
+/* Active */
 
-    display: none;
+.active{
+  color:#ddac1a !important;
+  border-left:4px solid #ddac1a;
+  padding-left:20px !important;
+}
 
-    flex-direction: column;
+.active::after{
+  display:none;
+}
 
-    align-items: stretch;
+/* Whatsapp */
 
-    gap: 0;
+.whatsappButton{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  right:20px;
+  bottom:20px;
+  top:auto;
+  justify-content:center;
+  padding:0;
+}
 
-    background: #ffffff;
-
-    box-shadow:
-      0 8px 20px rgba(0,0,0,0.12);
-  }
-
-  .navLinks.mobileActive {
-    display: flex;
-  }
-
-  .navLinks a {
-    height: auto;
-
-    padding: 15px 5px;
-
-    font-size: 14px;
-
-    border-bottom: 1px solid #eeeeee;
-  }
-
-  .navLinks a.active::after {
-    display: none;
-  }
-
-  .whatsappButton {
-    top: auto;
-
-    bottom: 85px;
-
-    right: 15px;
-
-    width: 52px;
-
-    height: 52px;
-
-    padding: 0;
-
-    justify-content: center;
-
-    border-radius: 50%;
-  }
-
-  .whatsappButton span {
-    display: none;
-  }
+.whatsappButton span{
+  display:none;
+}
 
 }

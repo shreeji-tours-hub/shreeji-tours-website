@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import {
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 
 import styles from "./Navbar.module.css";
 
@@ -12,6 +18,8 @@ import {
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const pathname = usePathname();
+
   return (
     <header className={styles.navbar}>
       <div className={styles.navInner}>
@@ -20,7 +28,7 @@ export default function Navbar() {
             LOGO
         ========================= */}
 
-        <a
+        <Link
           href="/"
           className={styles.logo}
           onClick={() => setMobileOpen(false)}
@@ -29,11 +37,11 @@ export default function Navbar() {
             src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786885575/Shreeji_logo_sdrwof.png"
             alt="Shreeji Tours & Travels"
           />
-        </a>
+        </Link>
 
 
         {/* =========================
-            DESKTOP / MOBILE MENU
+            NAVIGATION LINKS
         ========================= */}
 
         <nav
@@ -41,15 +49,19 @@ export default function Navbar() {
             mobileOpen ? styles.mobileActive : ""
           }`}
         >
-          {navbarLinks.map((item, index) => (
-            <a
-              key={index}
+          {navbarLinks.map((item) => (
+            <Link
+              key={item.href}
               href={item.href}
-              className={index === 0 ? styles.active : ""}
+              className={
+                pathname === item.href
+                  ? styles.active
+                  : ""
+              }
               onClick={() => setMobileOpen(false)}
             >
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -69,9 +81,11 @@ export default function Navbar() {
           }
           aria-expanded={mobileOpen}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          {mobileOpen ? (
+            <FaTimes />
+          ) : (
+            <FaBars />
+          )}
         </button>
 
       </div>
