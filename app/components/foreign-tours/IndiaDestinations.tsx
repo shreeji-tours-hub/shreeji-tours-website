@@ -1,12 +1,26 @@
 "use client";
 
+import { useRef } from "react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import styles from "./IndiaDestinations.module.css";
-
-import { ArrowRight } from "lucide-react";
-
-import { indiaDestinations } from "./IndiaDestinationsData";
+import { indiaTours } from "../india-tours/PopularIndiaToursData";
 
 export default function IndiaDestinations() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    const amount = 220;
+
+    sliderRef.current.scrollBy({
+      left: direction === "right" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -21,30 +35,47 @@ export default function IndiaDestinations() {
           </div>
         </div>
 
-        <div className={styles.grid}>
-          {indiaDestinations.map((destination) => (
-            <a
-              href="/tours"
-              className={styles.card}
-              key={destination.name}
-            >
-              <img
-                src={destination.image}
-                alt={destination.name}
-              />
+        <div className={styles.sliderWrapper}>
 
-              <span>{destination.name}</span>
-            </a>
-          ))}
+          <button
+            type="button"
+            className={`${styles.arrow} ${styles.leftArrow}`}
+            onClick={() => scroll("left")}
+            aria-label="Previous destinations"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <div
+            ref={sliderRef}
+            className={styles.grid}
+          >
+            {indiaTours.map((tour) => (
+              <Link
+                href={`/india-tours/${tour.slug}`}
+                className={styles.card}
+                key={tour.slug}
+              >
+                <img
+                  src={tour.image}
+                  alt={tour.title}
+                />
+
+                <span>{tour.title}</span>
+              </Link>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className={`${styles.arrow} ${styles.rightArrow}`}
+            onClick={() => scroll("right")}
+            aria-label="Next destinations"
+          >
+            <ChevronRight size={20} />
+          </button>
+
         </div>
-
-        <a
-          href="/tours"
-          className={styles.button}
-        >
-          Explore All Destinations
-          <ArrowRight size={16} />
-        </a>
 
       </div>
     </section>

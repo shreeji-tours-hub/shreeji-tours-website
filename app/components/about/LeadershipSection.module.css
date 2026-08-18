@@ -51,13 +51,16 @@
 /* =========================================================
    TESTIMONIAL GRID
 ========================================================= */
+/* =========================================================
+   TESTIMONIAL GRID
+========================================================= */
 
 .grid {
   display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 35px;
+
+  align-items: stretch;
 }
 
 
@@ -66,13 +69,17 @@
 ========================================================= */
 
 .card {
-  display: flex;
+  display: grid;
 
-  align-items: center;
+  grid-template-columns: 145px minmax(0, 1fr);
 
-  gap: 28px;
+  align-items: start;
 
-  padding: 35px;
+  gap: 30px;
+
+  min-height: 240px;
+
+  padding: 38px;
 
   background: #ffffff;
 
@@ -90,7 +97,7 @@
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
   border-color: #e3d4c7;
 
@@ -129,7 +136,12 @@
 ========================================================= */
 
 .info {
-  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
 }
 
 .info h3 {
@@ -147,11 +159,13 @@
 .info strong {
   display: block;
 
-  margin-bottom: 13px;
+  margin-bottom: 14px;
 
   color: #8c1717;
 
   font-size: 17px;
+
+  line-height: 1.4;
 
   font-weight: 700;
 }
@@ -163,11 +177,10 @@
 
   font-size: 16px;
 
-  line-height: 1.8;
+  line-height: 1.75;
 
   text-align: left;
 }
-
 
 /* =========================================================
    TABLET
@@ -181,12 +194,15 @@
 
   .grid {
     grid-template-columns: 1fr;
+
+    gap: 25px;
   }
 
   .card {
+    min-height: auto;
+
     padding: 32px;
   }
-
 }
 
 
@@ -218,24 +234,34 @@
   }
 
   .grid {
+    grid-template-columns: 1fr;
+
     gap: 22px;
   }
 
   .card {
+    display: flex;
+
     flex-direction: column;
 
     align-items: center;
 
+    min-height: 0;
+
+    padding: 32px 26px;
+
+    gap: 22px;
+
     text-align: center;
-
-    padding: 32px 24px;
-
-    border-radius: 14px;
   }
 
   .card img {
     width: 130px;
     height: 130px;
+  }
+
+  .info {
+    width: 100%;
   }
 
   .info h3 {
@@ -253,7 +279,6 @@
 
     text-align: left;
   }
-
 }
 
 

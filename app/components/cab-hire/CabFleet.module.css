@@ -16,7 +16,7 @@
 
 .heading h2 {
   margin: 0;
-  font-size: 23px;
+  font-size: 25px;
   color: #171717;
 }
 
@@ -71,7 +71,7 @@
 
   color: #222;
 
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .card span {
@@ -81,7 +81,7 @@
   gap: 4px;
 
   color: #555;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 @media (max-width: 850px) {

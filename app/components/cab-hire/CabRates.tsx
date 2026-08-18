@@ -33,6 +33,7 @@ export default function CabRates() {
     <section className={styles.section}>
       <div className={styles.container}>
 
+        {/* HEADING */}
         <div className={styles.heading}>
           <h2>Cab Rental Rates</h2>
 
@@ -43,6 +44,7 @@ export default function CabRates() {
           </div>
         </div>
 
+        {/* CARDS */}
         <div className={styles.grid}>
           {cabRates.map((rate) => {
             const Icon =
@@ -57,7 +59,7 @@ export default function CabRates() {
                 >
                   <Icon size={25} />
 
-                  <div>
+                  <div className={styles.headerText}>
                     <strong>{rate.title}</strong>
                     <span>({rate.subtitle})</span>
                   </div>
@@ -68,7 +70,6 @@ export default function CabRates() {
 
                   {rate.vehicles.map((vehicle, index) => {
                     const vehicleId = `${rate.type}-${index}`;
-
                     const isOpen = openVehicle === vehicleId;
 
                     return (
@@ -76,6 +77,7 @@ export default function CabRates() {
                         className={styles.vehicleWrapper}
                         key={vehicle.name}
                       >
+
                         {/* VEHICLE ROW */}
                         <div className={styles.vehicle}>
                           <div className={styles.vehicleName}>
@@ -84,10 +86,13 @@ export default function CabRates() {
                           </div>
 
                           <button
+                            type="button"
                             className={`${styles.plusButton} ${
                               isOpen ? styles.open : ""
                             }`}
-                            onClick={() => toggleVehicle(vehicleId)}
+                            onClick={() =>
+                              toggleVehicle(vehicleId)
+                            }
                             aria-label={`Show price for ${vehicle.name}`}
                           >
                             <Plus size={18} />
@@ -100,9 +105,27 @@ export default function CabRates() {
                             isOpen ? styles.show : ""
                           }`}
                         >
-                          <span>Rental Price</span>
-                          <strong>{vehicle.price}</strong>
+                          {/* RENTAL PRICE */}
+                          <div className={styles.priceHeader}>
+                            <span>Rental Price</span>
+
+                            <strong>
+                              {vehicle.price}
+                            </strong>
+                          </div>
+
+                          {/* EXTRA DETAILS */}
+                          <div className={styles.vehicleDetails}>
+                            {vehicle.details.map(
+                              (detail, detailIndex) => (
+                                <span key={detailIndex}>
+                                  {detail}
+                                </span>
+                              )
+                            )}
+                          </div>
                         </div>
+
                       </div>
                     );
                   })}

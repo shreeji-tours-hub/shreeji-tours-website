@@ -1,26 +1,36 @@
-.section {
-  padding: 55px 0 45px;
+/* =========================================================
+   SECTION
+========================================================= */
 
+.section {
+  width: 100%;
+  padding: 55px 0 45px;
   background: #fff;
 }
 
 .container {
-  width: min(1200px, 92%);
-
-  margin: auto;
+  width: min(1260px, calc(100% - 50px));
+  margin: 0 auto;
 }
+
+
+/* =========================================================
+   HEADING
+========================================================= */
 
 .heading {
   text-align: center;
-
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .heading span {
+  display: block;
+
   color: #8c1717;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
+  letter-spacing: 1.8px;
 }
 
 .heading h2 {
@@ -30,12 +40,18 @@
 
   font-family: Georgia, serif;
 
-  font-size: 27px;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
 }
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
 
 .decoration {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -51,36 +67,72 @@
 
 .decoration b {
   color: #8c1717;
-
-  font-size: 16px;
+  font-size: 14px;
 }
+
+
+/* =========================================================
+   TOUR GRID
+========================================================= */
 
 .grid {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 
-  gap: 18px;
+  gap: 15px;
+
+  width: 100%;
 }
 
+
+/* =========================================================
+   CARD
+========================================================= */
+
 .card {
+  min-width: 0;
+
   overflow: hidden;
 
   background: #fff;
 
   border: 1px solid #eee;
 
-  border-radius: 8px;
+  border-radius: 9px;
 
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+
+  border-color: #e3d8cc;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
 
 .imageWrap {
   position: relative;
 
-  height: 150px;
+  width: 100%;
+  height: 145px;
 
   overflow: hidden;
+
+  background: #eee;
 }
 
 .imageWrap img {
@@ -90,15 +142,26 @@
   display: block;
 
   object-fit: cover;
+
+  transition: transform 0.45s ease;
 }
+
+.card:hover .imageWrap img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
 
 .tag {
   position: absolute;
 
-  top: 9px;
-  left: 9px;
+  top: 8px;
+  left: 8px;
 
-  padding: 5px 9px;
+  padding: 4px 7px;
 
   background: #f5b400;
 
@@ -106,33 +169,72 @@
 
   border-radius: 4px;
 
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.15);
 }
 
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
 .cardContent {
+  display: flex;
+  flex-direction: column;
+
   padding: 13px;
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .cardContent h3 {
   margin: 0 0 5px;
 
-  font-size: 15px;
-
   color: #333;
+
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
 }
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
 
 .location {
   margin: 0 0 9px;
 
-  font-size: 10px;
-
   color: #777;
+
+  font-size: 10px;
+  line-height: 1.4;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+
+/* =========================================================
+   DURATION
+========================================================= */
 
 .duration {
   display: flex;
-
   align-items: center;
 
   gap: 5px;
@@ -143,15 +245,24 @@
 }
 
 .duration svg {
+  flex-shrink: 0;
+
+  width: 14px;
+  height: 14px;
+
   color: #f5b400;
 }
 
+
+/* =========================================================
+   DETAILS BUTTON
+========================================================= */
+
 .details {
-  margin-top: 12px;
+  margin-top: 11px;
 
-  padding: 8px 12px;
+  padding: 7px 10px;
 
-  border: none;
   border-radius: 4px;
 
   background: #f5b400;
@@ -163,24 +274,176 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 7px;
+  gap: 6px;
 
-  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-@media (max-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+.details:hover {
+  background: #d99e00;
+
+  transform: translateY(-1px);
+}
+
+.details svg {
+  width: 14px;
+  height: 14px;
+
+  transition: transform 0.2s ease;
+}
+
+.details:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .container {
+    width: calc(100% - 40px);
   }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
 }
 
-@media (max-width: 550px) {
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 50px 0 40px;
+  }
+
+  .heading {
+    margin-bottom: 28px;
+  }
+
+  .heading h2 {
+    font-size: 26px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .imageWrap {
+    height: 150px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .imageWrap {
+    height: 165px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .section {
+    padding: 45px 0 35px;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .heading {
+    margin-bottom: 25px;
+  }
+
+  .heading span {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
+  .decoration i {
+    width: 35px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .imageWrap {
     height: 190px;
   }
+
+  .cardContent {
+    padding: 15px;
+  }
+
+  .cardContent h3 {
+    font-size: 16px;
+  }
+
+  .location {
+    font-size: 11px;
+  }
+
+  .duration {
+    font-size: 11px;
+  }
+
+  .details {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .heading h2 {
+    font-size: 22px;
+  }
+
+  .imageWrap {
+    height: 180px;
+  }
+
 }

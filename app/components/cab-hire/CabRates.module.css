@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: 22px 0 12px;
+  padding: 28px 0 18px;
   background: #fff;
 }
 
@@ -9,70 +9,89 @@
   margin: auto;
 }
 
+/* =========================
+   HEADING
+========================= */
+
 .heading {
   text-align: center;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .heading h2 {
   margin: 0;
-
-  font-size: 25px;
+  font-size: 30px;
+  line-height: 1.25;
   color: #171717;
+  font-weight: 700;
 }
 
 .line {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 7px;
-  margin-top: 5px;
+  gap: 8px;
+  margin-top: 7px;
 }
 
 .line i {
-  width: 35px;
+  width: 42px;
   height: 2px;
   background: #8f1111;
 }
 
 .line b {
   color: #8f1111;
-  font-size: 10px;
+  font-size: 14px;
 }
+
+/* =========================
+   GRID
+========================= */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
+
+/* =========================
+   CARD
+========================= */
 
 .card {
   overflow: hidden;
-
   border: 1px solid #e5e5e5;
   border-radius: 10px;
-
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  background: #fff;
 }
 
+/* =========================
+   CARD HEADER
+========================= */
+
 .cardHeader {
-  min-height: 48px;
+  min-height: 58px;
 
   display: flex;
   align-items: center;
-  gap: 12px;
 
-  padding: 9px 15px;
+  gap: 13px;
+  padding: 11px 17px;
 
   color: white;
 }
 
 .cardHeader strong {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
 }
 
 .cardHeader span {
-  font-size: 11px;
+  font-size: 13px;
+  line-height: 1.3;
 }
 
 .local,
@@ -85,77 +104,64 @@
   color: #111;
 }
 
+/* =========================
+   BODY
+========================= */
+
 .body {
-  padding: 7px 15px 10px;
+  padding: 9px 17px 13px;
 }
 
-.vehicle {
-  min-height: 36px;
-
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  border-bottom: 1px solid #e5e5e5;
-
-  font-size: 12px;
-}
-
-.vehicle svg {
-  color: #555;
-}
-
-.note {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  padding-top: 11px;
-
-  color: #555;
-
-  font-size: 11px;
-}
-
-.note svg {
-  color: #8f1111;
-}
-
-/* =========================================================
+/* =========================
    VEHICLE
-========================================================= */
+========================= */
 
 .vehicleWrapper {
+  width: 100%;
   border-bottom: 1px solid #eeeeee;
 }
 
 .vehicle {
-  min-height: 48px;
+  width: 100%;
+  min-height: 55px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 8px 0;
+  padding: 9px 0;
+
+  box-sizing: border-box;
 }
 
 .vehicleName {
+  min-width: 0;
+
   display: flex;
   align-items: center;
-  gap: 10px;
+
+  gap: 11px;
 
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
 }
 
+.vehicleName svg {
+  flex-shrink: 0;
+  color: #555;
+}
 
-/* =========================================================
+/* =========================
    PLUS BUTTON
-========================================================= */
+========================= */
 
 .plusButton {
-  width: 30px;
-  height: 30px;
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
 
   display: flex;
   align-items: center;
@@ -171,8 +177,7 @@
 
   transition:
     background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+    color 0.25s ease;
 }
 
 .plusButton:hover {
@@ -181,6 +186,8 @@
 }
 
 .plusButton svg {
+  width: 20px;
+  height: 20px;
   transition: transform 0.25s ease;
 }
 
@@ -188,54 +195,193 @@
   transform: rotate(45deg);
 }
 
-
-/* =========================================================
+/* =========================
    PRICE DROPDOWN
-========================================================= */
+========================= */
 
 .priceDropdown {
+  width: 100%;
+  box-sizing: border-box;
+
   max-height: 0;
   overflow: hidden;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 12px;
+  padding: 0 14px;
 
   background: #faf7f5;
-  border-radius: 6px;
+  border-radius: 7px;
 
   opacity: 0;
 
   transition:
-    max-height 0.3s ease,
-    padding 0.3s ease,
+    max-height 0.35s ease,
+    padding 0.35s ease,
     opacity 0.25s ease;
 }
 
 .priceDropdown.show {
-  max-height: 60px;
+  max-height: 320px;
 
-  padding: 10px 12px;
+  padding: 14px;
 
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 
   opacity: 1;
 }
 
-.priceDropdown span {
-  font-size: 12px;
-  color: #777;
+/* =========================
+   RENTAL PRICE
+========================= */
+
+.priceHeader {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 10px;
 }
 
-.priceDropdown strong {
+.priceHeader span {
+  flex-shrink: 0;
+
   font-size: 14px;
-  color: #6d0707;
+  line-height: 1.5;
+
+  color: #666;
+  font-weight: 500;
 }
+
+.priceHeader strong {
+  min-width: 0;
+
+  font-size: 18px;
+  line-height: 1.45;
+
+  color: #6d0707;
+  font-weight: 700;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   EXTRA DETAILS
+========================= */
+
+.vehicleDetails {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.vehicleDetails span {
+  display: block;
+
+  width: 100%;
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  color: #555;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding-top: 14px;
+
+  color: #555;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.note svg {
+  flex-shrink: 0;
+
+  width: 18px;
+  height: 18px;
+
+  margin-top: 1px;
+
+  color: #8f1111;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 800px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .heading h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: calc(100% - 25px);
+  }
+
+  .heading h2 {
+    font-size: 26px;
+  }
+
+  .cardHeader strong {
+    font-size: 17px;
+  }
+
+  .vehicleName {
+    font-size: 15px;
+  }
+
+  .priceHeader {
+    display: block;
+  }
+
+  .priceHeader span {
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .priceHeader strong {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+  }
+
+  .vehicleDetails span {
+    font-size: 14px;
   }
 }
