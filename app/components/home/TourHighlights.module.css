@@ -4,9 +4,7 @@
 
 .section {
   width: 100%;
-
   background: #ffffff;
-
   padding: 55px 0 65px;
 }
 
@@ -17,15 +15,12 @@
 
 .container {
   width: min(1380px, calc(100% - 50px));
-
   margin: 0 auto;
 
   display: grid;
-
   grid-template-columns: 1fr 1.45fr;
 
   gap: 45px;
-
   align-items: start;
 }
 
@@ -45,17 +40,11 @@
 
 .sectionHeader {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
-
-/* ==================================================
-   GALLERY HEADER
-================================================== */
 
 .sectionHeader h2 {
   margin: 0;
@@ -63,12 +52,12 @@
   color: #182c4c;
 
   font-size: 25px;
+  line-height: 1.25;
   font-weight: 700;
 }
 
 .viewGallery {
   border: none;
-
   background: transparent;
 
   color: #182c4c;
@@ -82,10 +71,76 @@
   transition: color 0.2s ease;
 }
 
+.viewGallery:hover {
+  color: #8d0808;
+}
+
+
+/* ==================================================
+   GALLERY GRID
+================================================== */
+
+.galleryGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 100px);
+
+  gap: 11px;
+}
+
+
+/* ==================================================
+   GALLERY IMAGE
+================================================== */
+
+.galleryItem {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #eeeeee;
+  display: block;
+  text-decoration: none;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.galleryItem:hover .imageWrapper img {
+  transform: scale(1.07);
+}
+
+
+/* ==================================================
+   TESTIMONIAL SECTION
+================================================== */
+
+.testimonialSection {
+  min-width: 0;
+}
+
 
 /* ==================================================
    TESTIMONIAL HEADER
 ================================================== */
+
+.testimonialHeader {
+  text-align: center;
+
+  margin-bottom: 20px;
+}
 
 .testimonialHeader span {
   display: block;
@@ -106,13 +161,172 @@
   color: #111111;
 
   font-size: 27px;
+  line-height: 1.25;
+
   font-weight: 700;
+}
+
+
+/* ==================================================
+   HEADER DOT
+================================================== */
+
+.headerDot {
+  width: 7px;
+  height: 7px;
+
+  background: #6d0707;
+
+  border-radius: 50%;
+
+  margin: 8px auto 0;
+}
+
+
+/* ==================================================
+   TESTIMONIAL WRAPPER
+================================================== */
+
+.testimonialWrapper {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+
+/* ==================================================
+   ARROWS
+================================================== */
+
+.arrow {
+  flex: 0 0 36px;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border-radius: 50%;
+  border: 1px solid #e2e2e2;
+
+  background: #ffffff;
+
+  color: #777777;
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.arrow:hover {
+  background: #6d0707;
+  border-color: #6d0707;
+  color: #ffffff;
+}
+
+.arrow:active {
+  transform: scale(0.94);
+}
+
+
+/* ==================================================
+   TESTIMONIAL CARDS
+================================================== */
+
+.testimonials {
+  flex: 1;
+
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+
+/* ==================================================
+   TESTIMONIAL CARD
+================================================== */
+
+.testimonialCard {
+  min-width: 0;
+
+  min-height: 185px;
+
+  padding: 19px 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #ededed;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.09);
 }
 
 
 /* ==================================================
    CUSTOMER
 ================================================== */
+
+.customer {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* ==================================================
+   CUSTOMER AVATAR
+================================================== */
+
+.customer img {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  flex-shrink: 0;
+}
+
+
+/* ==================================================
+   CUSTOMER INFORMATION
+================================================== */
+
+.customerInfo {
+  min-width: 0;
+}
 
 .customer h3 {
   margin: 0;
@@ -136,11 +350,9 @@
   color: #555555;
 
   font-size: 12px;
-
   line-height: 1.3;
 
   display: flex;
-
   align-items: center;
 
   gap: 5px;
@@ -153,11 +365,9 @@
 
 .flag {
   display: inline-flex;
-
   align-items: center;
 
   font-size: 13px;
-
   line-height: 1;
 }
 
@@ -169,12 +379,11 @@
 .stars {
   width: 100%;
 
-  margin-top: 11px;
+  margin-top: 12px;
 
   color: #1caa59;
 
   font-size: 15px;
-
   line-height: 1;
 
   letter-spacing: 2px;
@@ -188,16 +397,16 @@
 ================================================== */
 
 .review {
-  margin: 12px 0 0;
+  margin: 13px 0 0;
 
   color: #444444;
 
   font-size: 13px;
-
   line-height: 1.6;
 
   text-align: center;
 }
+
 
 /* ==================================================
    TABLET
@@ -208,20 +417,40 @@
   .container {
     grid-template-columns: 1fr;
 
-    gap: 45px;
+    gap: 50px;
   }
-
-
-  /* Bigger gallery */
 
   .galleryGrid {
-    grid-template-rows:
-      repeat(2, 110px);
+    grid-template-rows: repeat(2, 120px);
   }
 
+  .testimonialCard {
+    min-height: 170px;
+  }
+}
+
+
+/* ==================================================
+   SMALL TABLET
+================================================== */
+
+@media (max-width: 850px) {
+
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 110px);
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   .testimonialCard {
-    min-height: 150px;
+    padding: 17px 13px;
   }
 }
 
@@ -233,58 +462,80 @@
 @media (max-width: 700px) {
 
   .section {
-    padding: 40px 0 50px;
+    padding: 45px 0 55px;
   }
-
 
   .container {
     width: calc(100% - 30px);
+
+    gap: 40px;
   }
 
 
   /* Gallery */
 
-  .galleryGrid {
-    grid-template-columns:
-      repeat(2, 1fr);
+  .sectionHeader {
+    margin-bottom: 15px;
+  }
 
-    grid-template-rows:
-      repeat(4, 100px);
+  .sectionHeader h2 {
+    font-size: 23px;
+  }
+
+  .viewGallery {
+    font-size: 13px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows: repeat(4, 120px);
+
+    gap: 10px;
   }
 
 
   /* Testimonials */
+
+  .testimonialHeader {
+    margin-bottom: 18px;
+  }
+
+  .testimonialHeader span {
+    font-size: 12px;
+  }
+
+  .testimonialHeader h2 {
+    font-size: 24px;
+  }
 
   .testimonials {
     grid-template-columns: 1fr;
   }
 
 
-  /*
-    Only show one testimonial
-    on mobile.
-  */
+  /* Only one testimonial on mobile */
 
   .testimonialCard:not(:first-child) {
     display: none;
   }
 
-
   .testimonialCard {
     min-height: auto;
+
+    padding: 20px 17px;
   }
 
 
   /* Arrows */
 
   .arrow {
-    flex: 0 0 32px;
+    flex: 0 0 34px;
 
-    width: 32px;
+    width: 34px;
+    height: 34px;
 
-    height: 32px;
-
-    font-size: 24px;
+    font-size: 23px;
   }
 }
 
@@ -295,27 +546,60 @@
 
 @media (max-width: 450px) {
 
+  .section {
+    padding: 40px 0 50px;
+  }
+
+  .container {
+    width: calc(100% - 25px);
+  }
+
+
   .sectionHeader h2 {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .viewGallery {
+    font-size: 12px;
+  }
+
+
+  .galleryGrid {
+    grid-template-rows: repeat(4, 105px);
+
+    gap: 8px;
+  }
+
+
+  .testimonialHeader span {
     font-size: 11px;
   }
 
   .testimonialHeader h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
-  .testimonialWrapper {
-    gap: 6px;
+
+  .customer h3 {
+    font-size: 14px;
   }
+
+  .customer p {
+    font-size: 11px;
+  }
+
+  .review {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
 
   .arrow {
-    flex: 0 0 29px;
+    flex: 0 0 30px;
 
-    width: 29px;
+    width: 30px;
+    height: 30px;
 
-    height: 29px;
+    font-size: 21px;
   }
 }

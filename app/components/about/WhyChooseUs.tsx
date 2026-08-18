@@ -51,9 +51,7 @@ export default function WhyChooseUs() {
             OUR ACHIEVEMENTS
           </span>
 
-          <h2>
-            Trusted by Travelers
-          </h2>
+          
 
           <div className={styles.stats}>
 

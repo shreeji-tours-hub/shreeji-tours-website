@@ -45,9 +45,11 @@ export default function Footer() {
 
         <div className={styles.brandColumn}>
 
-          <h3 className={styles.columnTitle}>
-            About Shreeji Tours & Travels
-          </h3>
+          <img
+  src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786899430/WhatsApp_Image_2026-08-16_at_15.49.04-removebg-preview_nqkobb.png"
+  alt="Shreeji Tours & Travels"
+  className={styles.footerLogo}
+/>
 
           <p className={styles.description}>
             {footerBrand.description}
@@ -56,11 +58,11 @@ export default function Footer() {
           {/* TRIPADVISOR */}
 
           <a
-            href={footerReviews.tripadvisorLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.tripadvisor}
-          >
+  href="https://www.tripadvisor.in/Attraction_Review-g304554-d15697131-Reviews-Shreeji_Tours_n_Travels-Mumbai_Maharashtra.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.tripadvisor}
+>
             <div className={styles.tripadvisorTop}>
               <div className={styles.tripadvisorCircle}>
                 ✓
@@ -86,7 +88,7 @@ export default function Footer() {
           {/* GOOGLE REVIEW */}
 
           <a
-            href={footerReviews.googleReviewLink}
+            href="https://share.google/iwzoH7qJBgbfY3qzL"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.googleReview}

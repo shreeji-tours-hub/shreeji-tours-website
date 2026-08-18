@@ -1,13 +1,13 @@
 export const valuesData = {
   mission: {
-    title: "Our Mission",
-    text: "To provide exceptional travel experiences through personalized service, professional support, and carefully designed itineraries that create lifelong memories.",
-  },
+  title: "Our Mission",
+  text: "To create exceptional travel experiences through personalized service, thoughtful planning, and carefully designed itineraries that turn every journey into a lasting memory.",
+},
 
-  vision: {
-    title: "Our Vision",
-    text: "To become one of India's most trusted travel companies by promoting responsible tourism, delivering outstanding customer satisfaction, and building long-term relationships with travelers worldwide.",
-  },
+vision: {
+  title: "Our Vision",
+  text: "To become one of India’s most trusted travel companies by delivering outstanding service, promoting responsible tourism, and building meaningful, long-term relationships with travelers worldwide.",
+},
 
   values: [
     {

@@ -29,7 +29,7 @@ export default function TravelStatsSection() {
             destination and have more fun!
           </p>
 
-          <a href="#tours" className={styles.button}>
+          <a href="/india-tours" className={styles.button}>
             Explore Our Tours
             <span>↗</span>
           </a>
