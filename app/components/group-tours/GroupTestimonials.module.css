@@ -1,78 +1,269 @@
+/* =========================================================
+   SECTION
+========================================================= */
+
 .section {
-  padding: 20px 0 25px;
-  background: white;
+  width: 100%;
+
+  padding: 28px 0 32px;
+
+  background: #fff;
 }
 
 .container {
   width: min(1260px, calc(100% - 50px));
-  margin: auto;
+
+  margin: 0 auto;
 }
+
+/* =========================================================
+   HEADING
+========================================================= */
 
 .heading {
   text-align: center;
-  margin-bottom: 15px;
+
+  margin-bottom: 24px;
 }
 
 .heading h2 {
   margin: 0;
-  font-size: 23px;
+
   color: #171717;
+
+  font-family: Georgia, serif;
+
+  font-size: 27px;
+  line-height: 1.3;
+
+  font-weight: 700;
 }
+
+/* =========================================================
+   GRID
+========================================================= */
 
 .grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+
+  gap: 16px;
 }
+
+/* =========================================================
+   CARD
+========================================================= */
 
 .card {
   display: flex;
-  gap: 12px;
+  align-items: center;
 
-  padding: 15px;
+  gap: 15px;
 
-  border: 1px solid #eee;
-  border-radius: 9px;
+  min-height: 90px;
 
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  padding: 15px 16px;
+
+  background: #fff;
+
+  border: 1px solid #e8e8e8;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
+.card:hover {
+  transform: translateY(-3px);
+
+  border-color: #d9c8b8;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.09);
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
 .card img {
-  width: 65px;
-  height: 65px;
+  width: 68px;
+  height: 68px;
 
   flex-shrink: 0;
 
   object-fit: cover;
+
   border-radius: 50%;
+
+  border: 2px solid #b47a2b;
+
+  padding: 2px;
+
+  background: #fff;
 }
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card > div {
+  min-width: 0;
+}
+
+/* =========================================================
+   REVIEW
+========================================================= */
 
 .card p {
-  margin: 0 0 7px;
+  margin: 0 0 9px;
 
-  font-size: 11px;
-  line-height: 1.5;
   color: #444;
+
+  font-size: 13px;
+
+  line-height: 1.55;
 }
 
-.card strong,
-.card span {
-  display: block;
-}
+/* =========================================================
+   NAME
+========================================================= */
 
 .card strong {
+  display: block;
+
   color: #951414;
-  font-size: 11px;
+
+  font-size: 14px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
 }
+
+/* =========================================================
+   ROLE / LOCATION
+========================================================= */
 
 .card span {
-  margin-top: 2px;
+  display: block;
+
+  margin-top: 3px;
+
   color: #777;
-  font-size: 9px;
+
+  font-size: 11px;
+
+  line-height: 1.4;
 }
 
-@media (max-width: 700px) {
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 25px 0 30px;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .heading {
+    margin-bottom: 20px;
+  }
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .card {
+    min-height: 85px;
+
+    padding: 13px;
+
+    gap: 14px;
+  }
+
+  .card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .card strong {
+    font-size: 14px;
+  }
+
+  .card span {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .heading h2 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .card p {
+    font-size: 11px;
+  }
+
+  .card strong {
+    font-size: 13px;
+  }
+
+  .card span {
+    font-size: 10px;
   }
 }

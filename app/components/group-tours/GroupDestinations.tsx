@@ -30,9 +30,6 @@ export default function GroupDestinations() {
           ))}
         </div>
 
-        <a href="/tours" className={styles.button}>
-          Explore All Destinations →
-        </a>
       </div>
     </section>
   );

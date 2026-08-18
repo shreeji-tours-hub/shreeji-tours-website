@@ -1,16 +1,35 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
-import { CalendarDays, MapPin } from "lucide-react";
+
+import {
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  CalendarDays,
+} from "lucide-react";
 
 import styles from "./PopularGroupTours.module.css";
 import { popularGroupTours } from "./PopularGroupToursData";
 
 export default function PopularGroupTours() {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!sliderRef.current) return;
+
+    sliderRef.current.scrollBy({
+      left: direction === "right" ? 330 : -330,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
 
+        {/* HEADING */}
         <div className={styles.heading}>
           <span>POPULAR GROUP TOURS</span>
 
@@ -18,84 +37,99 @@ export default function PopularGroupTours() {
 
           <div className={styles.decoration}>
             <i />
-            <b>○</b>
+            <b>◆</b>
             <i />
           </div>
         </div>
 
-        <div className={styles.grid}>
+        {/* SLIDER */}
+        <div className={styles.sliderWrapper}>
 
-          {popularGroupTours.map((tour) => (
-            <div
-              className={styles.card}
-              key={tour.slug}
-            >
+          {/* LEFT ARROW */}
+          <button
+            type="button"
+            className={`${styles.arrow} ${styles.leftArrow}`}
+            onClick={() => scroll("left")}
+            aria-label="Previous group tours"
+          >
+            <ChevronLeft size={20} />
+          </button>
 
-              <div className={styles.imageWrap}>
+          {/* CARDS */}
+          <div
+            ref={sliderRef}
+            className={styles.grid}
+          >
+            {popularGroupTours.map((tour) => (
+              <Link
+                href={`/groups/${tour.slug}`}
+                className={styles.cardLink}
+                key={tour.slug}
+              >
+                <div className={styles.card}>
 
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                />
+                  {/* IMAGE */}
+                  <div className={styles.imageWrap}>
+                    <img
+                      src={tour.image}
+                      alt={tour.title}
+                    />
 
-                <span
-                  className={styles.duration}
-                  style={{
-                    background: tour.color,
-                  }}
-                >
-                  {tour.duration}
-                </span>
+                    <span
+                      className={styles.duration}
+                      style={{
+                        background: tour.color,
+                      }}
+                    >
+                      {tour.duration}
+                    </span>
+                  </div>
 
-              </div>
+                  {/* BODY */}
+                  <div className={styles.cardBody}>
 
-              <div className={styles.cardBody}>
+                    <h3>{tour.title}</h3>
 
-                <h3>
-                  {tour.title}
-                </h3>
+                    <p className={styles.route}>
+                      {tour.route}
+                    </p>
 
-                <p className={styles.route}>
-                  {tour.route}
-                </p>
+                    <div className={styles.info}>
 
-                <div className={styles.info}>
+                      <span>
+                        <CalendarDays size={15} />
+                        {tour.duration}
+                      </span>
 
-                  <span>
-                    <CalendarDays size={14} />
-                    {tour.duration}
-                  </span>
+                      <span>
+                        <MapPin size={15} />
+                        {tour.description}
+                      </span>
 
-                  <span>
-                    <MapPin size={14} />
-                    {tour.description}
-                  </span>
+                    </div>
+
+                  </div>
 
                 </div>
+              </Link>
+            ))}
+          </div>
 
-                {/* DETAIL PAGE */}
-                <Link
-                  href={`/groups/${tour.slug}`}
-                  className={styles.details}
-                >
-                  View Details →
-                </Link>
-
-              </div>
-
-            </div>
-          ))}
+          {/* RIGHT ARROW */}
+          <button
+            type="button"
+            className={`${styles.arrow} ${styles.rightArrow}`}
+            onClick={() => scroll("right")}
+            aria-label="Next group tours"
+          >
+            <ChevronRight size={20} />
+          </button>
 
         </div>
 
         {/* ALL GROUP TOURS */}
         <div className={styles.bottomButton}>
-          <Link
-            href="/groups"
-            className={styles.allTours}
-          >
-            View All Group Tours →
-          </Link>
+        
         </div>
 
       </div>

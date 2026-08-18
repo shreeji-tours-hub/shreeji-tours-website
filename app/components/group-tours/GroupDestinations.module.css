@@ -74,22 +74,6 @@
   );
 }
 
-.button {
-  display: block;
-  width: max-content;
-
-  margin: 15px auto 0;
-  padding: 8px 22px;
-
-  border: 1px solid #951414;
-  border-radius: 5px;
-
-  color: #951414;
-  text-decoration: none;
-
-  font-size: 11px;
-  font-weight: 700;
-}
 
 @media (max-width: 800px) {
   .grid {

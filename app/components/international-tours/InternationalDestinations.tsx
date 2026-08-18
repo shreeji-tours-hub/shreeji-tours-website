@@ -29,10 +29,6 @@ export default function InternationalDestinations() {
             </div>
           ))}
         </div>
-
-        <a href="/international" className={styles.button}>
-          Explore All Destinations →
-        </a>
       </div>
     </section>
   );
