@@ -107,11 +107,11 @@ export const footerContact = {
 
 
 export const footerSocialLinks = {
-  facebook: "#",
+  facebook: "https://www.facebook.com/shreejitnt/",
 
-  instagram: "#",
+  instagram: "https://www.instagram.com/shreejitoursntravels",
 
-  youtube: "#",
+  youtube: "https://www.youtube.com/c/ShreejiToursnTravels",
 
   whatsapp:
     "https://wa.me/919969422936",
