@@ -253,10 +253,13 @@
    TOUR CONTENT
 ========================================================= */
 
-.cardContent {
-  min-height: 66px;
+/* =========================================================
+   TOUR CONTENT — LARGER FONTS
+========================================================= */
 
-  padding: 9px 7px 10px;
+.cardContent {
+  min-height: 75px;
+  padding: 11px 8px 12px;
 
   display: flex;
   flex-direction: column;
@@ -270,19 +273,19 @@
 
   color: #222;
 
-  font-size: 12px;
-  line-height: 1.25;
+  font-size: 15px;
+  line-height: 1.3;
 
   font-weight: 700;
 }
 
 .cardContent p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
 
   color: #777;
 
-  font-size: 9px;
-  line-height: 1.3;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 
@@ -388,14 +391,12 @@
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 400px) {
-
-  .heading h2 {
-    font-size: 24px;
+@media (max-width: 600px) {
+  .cardContent h3 {
+    font-size: 16px;
   }
 
-  .toursGrid {
-    grid-template-columns: 1fr;
+  .cardContent p {
+    font-size: 12px;
   }
-
 }

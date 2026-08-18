@@ -7,10 +7,8 @@ import { popularForeignTours } from "@/app/components/foreign-tours/PopularForei
 
 export default function ForeignToursSection() {
   return (
-    <section
-      className={styles.section}
-      id="foreigners"
-    >
+    <section className={styles.section} id="foreigners">
+
       <div className={styles.container}>
 
         <div className={styles.heading}>
@@ -31,6 +29,7 @@ export default function ForeignToursSection() {
 
         </div>
 
+
         <div className={styles.grid}>
 
           {popularForeignTours.map((tour) => (
@@ -41,11 +40,15 @@ export default function ForeignToursSection() {
               className={styles.card}
             >
 
-              <img
-                className={styles.image}
-                src={tour.image}
-                alt={tour.title}
-              />
+              <div className={styles.imageWrap}>
+
+                <img
+                  className={styles.image}
+                  src={tour.image}
+                  alt={tour.title}
+                />
+
+              </div>
 
               <div className={styles.cardContent}>
 
@@ -66,6 +69,7 @@ export default function ForeignToursSection() {
         </div>
 
       </div>
+
     </section>
   );
 }
