@@ -22,8 +22,7 @@ export default function GroupsPage() {
       <GroupTourSearch />
       <PopularGroupTours />
       <WhyGroupTravel />
-      <GroupDestinations />
-      <GroupTestimonials />
+      
       <GroupTourCTA />
       <ContactCTA/>
 

@@ -1,145 +1,19 @@
 /* =========================
-   SECTION
-========================= */
-
-.section {
-  width: 100%;
-  padding: 25px 0;
-  background: #ffffff;
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta {
-  width: min(1450px, calc(100% - 100px));
-  min-height: 190px;
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: stretch;
-
-  background: #951414;
-
-  border-radius: 10px;
-
-  overflow: visible;
-}
-
-
-/* =========================
-   LEFT LUGGAGE
-========================= */
-
-.luggage {
-  width: 210px;
-  min-height: 190px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #841111;
-
-  overflow: hidden;
-
-  border-radius: 10px 0 0 10px;
-}
-
-.luggage img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-/* =========================
-   CONTENT
-========================= */
-
-.content {
-  flex: 1;
-
-  padding: 30px;
-}
-
-.content h2 {
-  margin: 0 0 12px;
-
-  color: #ffffff;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 32px;
-  line-height: 1.15;
-  font-weight: 700;
-}
-
-.content p {
-  margin: 0 0 17px;
-
-  color: #ffffff;
-
-  font-size: 14px;
-  line-height: 1.5;
-
-  max-width: 650px;
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.button {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 15px;
-
-  padding: 13px 20px;
-
-  background: #f5b400;
-  color: #111111;
-
-  text-decoration: none;
-
-  border-radius: 3px;
-
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.button span {
-  font-size: 22px;
-  line-height: 1;
-}
-
-
-/* =========================
-   RIGHT PHOTOS
+   RIGHT IMAGE GRID
 ========================= */
 
 .polaroids {
-  width: 500px;
-  min-width: 500px;
+  position: relative;
+
+  width: 430px;
+  min-width: 430px;
+  height: 150px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  gap: 20px;
-
-  padding: 20px 25px;
+  padding: 0;
 
   overflow: visible;
 }
@@ -150,61 +24,98 @@
 ========================= */
 
 .polaroid {
-  width: 140px;
-  height: 125px;
+  position: absolute;
 
-  padding: 9px;
+  width: 120px;
+  height: 100px;
 
-  flex-shrink: 0;
+  padding: 7px;
 
-  background: #ffffff;
+  background: #fff;
+
+  box-sizing: border-box;
 
   box-shadow:
-    0 5px 14px rgba(0, 0, 0, 0.18);
+    0 5px 12px rgba(0, 0, 0, 0.20);
 
   transition:
-    transform 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 1;
 }
 
+
+/* =========================
+   IMAGE
+========================= */
+
 .polaroid img {
+  display: block;
+
   width: 100%;
   height: 100%;
-
-  display: block;
 
   object-fit: cover;
 }
 
 
 /* =========================
-   DIFFERENT DIRECTIONS
+   FIRST IMAGE
 ========================= */
 
 .photo1 {
-  transform: rotate(-9deg);
+  left: 45px;
+
+  transform: rotate(-6deg);
+
+  z-index: 1;
 }
+
+
+/* =========================
+   SECOND IMAGE
+========================= */
 
 .photo2 {
-  transform: rotate(2deg);
+  left: 155px;
+
+  transform: rotate(1deg);
+
+  z-index: 2;
 }
+
+
+/* =========================
+   THIRD IMAGE
+========================= */
 
 .photo3 {
-  transform: rotate(9deg);
+  left: 265px;
+
+  transform: rotate(6deg);
+
+  z-index: 1;
 }
 
 
-/* HOVER */
+/* =========================
+   HOVER
+========================= */
 
 .photo1:hover {
-  transform: rotate(-9deg) scale(1.08);
+  transform: rotate(-6deg) translateY(-7px) scale(1.06);
+  z-index: 10;
 }
 
 .photo2:hover {
-  transform: rotate(2deg) scale(1.08);
+  transform: rotate(1deg) translateY(-7px) scale(1.06);
+  z-index: 10;
 }
 
 .photo3:hover {
-  transform: rotate(9deg) scale(1.08);
+  transform: rotate(6deg) translateY(-7px) scale(1.06);
+  z-index: 10;
 }
 
 
@@ -214,31 +125,29 @@
 
 @media (max-width: 1100px) {
 
-  .cta {
-    width: calc(100% - 40px);
-  }
-
-  .luggage {
-    width: 160px;
-  }
-
   .polaroids {
-    width: 390px;
-    min-width: 390px;
-
-    gap: 10px;
+    width: 350px;
+    min-width: 350px;
+    height: 130px;
   }
 
   .polaroid {
-    width: 105px;
-    height: 100px;
-    padding: 7px;
+    width: 100px;
+    height: 85px;
+    padding: 6px;
   }
 
-  .content h2 {
-    font-size: 27px;
+  .photo1 {
+    left: 25px;
   }
 
+  .photo2 {
+    left: 120px;
+  }
+
+  .photo3 {
+    left: 215px;
+  }
 }
 
 
@@ -248,56 +157,58 @@
 
 @media (max-width: 750px) {
 
-  .section {
-    padding: 20px 0;
-  }
-
-  .cta {
-    width: calc(100% - 30px);
-
-    flex-direction: column;
-
-    overflow: hidden;
-  }
-
-  .luggage {
-    width: 100%;
-    height: 150px;
-    min-height: 150px;
-
-    border-radius: 10px 10px 0 0;
-  }
-
-  .luggage img {
-    object-fit: cover;
-  }
-
-  .content {
-    padding: 25px 20px;
-  }
-
-  .content h2 {
-    font-size: 25px;
-  }
-
-  .content p {
-    font-size: 13px;
-  }
-
   .polaroids {
     width: 100%;
     min-width: 0;
+    height: 120px;
 
-    padding: 20px 15px 30px;
-
-    gap: 12px;
+    margin-top: 5px;
   }
 
   .polaroid {
     width: 100px;
-    height: 90px;
-
-    padding: 7px;
+    height: 85px;
   }
 
+  .photo1 {
+    left: calc(50% - 150px);
+  }
+
+  .photo2 {
+    left: calc(50% - 50px);
+  }
+
+  .photo3 {
+    left: calc(50% + 50px);
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+  .polaroids {
+    height: 105px;
+  }
+
+  .polaroid {
+    width: 82px;
+    height: 70px;
+    padding: 5px;
+  }
+
+  .photo1 {
+    left: calc(50% - 120px);
+  }
+
+  .photo2 {
+    left: calc(50% - 40px);
+  }
+
+  .photo3 {
+    left: calc(50% + 40px);
+  }
 }

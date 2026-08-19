@@ -4,126 +4,132 @@
 
 .section {
   width: 100%;
+  padding: 25px 0;
 
-  padding: 10px 0 0;
-
-  background: #fff;
+  background: #ffffff;
 }
 
 
 /* =========================================================
-   CTA
+   MAIN CTA
 ========================================================= */
 
 .cta {
-  position: relative;
+  width: min(1450px, calc(100% - 80px));
 
-  width: min(1260px, calc(100% - 50px));
+  min-height: 190px;
 
-  min-height: 105px;
+  margin: 0 auto;
 
-  margin: auto;
-
-  padding: 20px 32px;
+  display: flex;
+  align-items: stretch;
 
   overflow: hidden;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: #951414;
 
-  gap: 30px;
-
-  border-radius: 10px 10px 0 0;
-
-  background: #7f0808;
-
-  color: white;
+  border-radius: 11px;
 }
 
 
 /* =========================================================
-   BACKGROUND PATTERN
+   LEFT IMAGE
 ========================================================= */
 
-.pattern {
-  position: absolute;
+.luggage {
+  width: 262px;
+  min-width: 262px;
 
-  inset: 0;
+  height: 100%;
 
-  opacity: 0.18;
+  flex-shrink: 0;
 
-  background-image:
-    url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=20");
+  overflow: hidden;
 
-  background-size: cover;
+  background: #841111;
+}
 
-  background-position: center;
+.luggage img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
 }
 
 
 /* =========================================================
-   CTA CONTENT
+   CONTENT
 ========================================================= */
-
-.content,
-.button {
-  position: relative;
-
-  z-index: 1;
-}
 
 .content {
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 25px 38px;
+
+  min-width: 0;
 }
 
 .content h2 {
-  margin: 0 0 7px;
+  margin: 0 0 12px;
+
+  color: #ffffff;
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 38px;
+  line-height: 1.15;
 
   font-weight: 700;
-
-  color: #ffffff !important;
 }
 
 .content p {
-  margin: 0;
+  margin: 0 0 20px;
 
-  font-size: 14px;
-  line-height: 1.5;
+  max-width: 780px;
 
-  color: rgba(255, 255, 255, 0.92);
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+  line-height: 1.45;
 }
 
 
 /* =========================================================
-   CTA BUTTON
+   BUTTON
 ========================================================= */
 
 .button {
-  display: flex;
+  width: fit-content;
+
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 9px;
+  gap: 18px;
 
-  padding: 13px 23px;
-
-  border-radius: 5px;
+  padding: 16px 24px;
 
   background: #f5b400;
-
-  color: #111;
+  color: #111111;
 
   text-decoration: none;
 
-  font-size: 14px;
-  font-weight: 800;
+  border-radius: 4px;
 
-  white-space: nowrap;
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+  font-weight: 700;
 
   transition:
     transform 0.2s ease,
@@ -131,206 +137,263 @@
 }
 
 .button:hover {
-  background: #ffc62b;
+  background: #ffc329;
 
   transform: translateY(-2px);
 }
 
-
-/* =========================================================
-   TRUST BAR
-========================================================= */
-
-.trust {
-  width: min(1260px, calc(100% - 50px));
-
-  min-height: 78px;
-
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(5, 1fr);
-
-  border: 1px solid #eee;
-
-  background: #fff9f2;
+.button span {
+  line-height: 1;
 }
 
 
 /* =========================================================
-   TRUST ITEMS
+   RIGHT POLAROIDS
 ========================================================= */
 
-.trust div {
-  display: flex;
+.polaroids {
+  width: 390px;
+  min-width: 390px;
 
-  flex-direction: column;
+  display: flex;
 
   align-items: center;
   justify-content: center;
 
-  min-height: 70px;
+  gap: 10px;
 
-  padding: 10px;
+  padding: 20px 25px;
 
-  border-right: 1px solid #eadfd3;
-
-  text-align: center;
-}
-
-.trust div:last-child {
-  border-right: none;
-}
-
-.trust strong {
-  color: #8f1111;
-
-  font-size: 14px;
-
-  line-height: 1.3;
-
-  font-weight: 800;
-}
-
-.trust span {
-  margin-top: 4px;
-
-  color: #444;
-
-  font-size: 12px;
-
-  line-height: 1.35;
+  overflow: visible;
 }
 
 
-/* =========================================================
+/* =========================
+   POLAROID IMAGE GROUP
+========================= */
+
+.polaroids {
+  width: 430px;
+  min-width: 430px;
+
+  height: 150px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+/* =========================
+   POLAROID
+========================= */
+
+.polaroid {
+  position: absolute;
+
+  width: 120px;
+  height: 100px;
+
+  padding: 7px;
+
+  background: #fff;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.20);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 2;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.polaroid img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   LEFT POLAROID
+   ↖
+========================= */
+
+.photo1 {
+  left: 35px;
+  top: 25px;
+
+  transform: rotate(-8deg);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   CENTER POLAROID
+   ↑
+========================= */
+
+.photo2 {
+  left: 155px;
+  top: 20px;
+
+  transform: rotate(1deg);
+
+  z-index: 3;
+}
+
+
+/* =========================
+   RIGHT POLAROID
+   ↗
+========================= */
+
+.photo3 {
+  left: 275px;
+  top: 25px;
+
+  transform: rotate(8deg);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.photo1:hover {
+  transform: rotate(-8deg) translateY(-8px) scale(1.07);
+  z-index: 10;
+}
+
+.photo2:hover {
+  transform: rotate(1deg) translateY(-8px) scale(1.07);
+  z-index: 10;
+}
+
+.photo3:hover {
+  transform: rotate(8deg) translateY(-8px) scale(1.07);
+  z-index: 10;
+}
+
+
+/* =========================
    TABLET
-========================================================= */
+========================= */
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
 
-  .cta {
-    padding: 20px 25px;
+  .polaroids {
+    width: 350px;
+    min-width: 350px;
+    height: 130px;
   }
 
-  .content h2 {
-    font-size: 25px;
+  .polaroid {
+    width: 100px;
+    height: 85px;
+    padding: 6px;
   }
 
-  .content p {
-    font-size: 13px;
+  .photo1 {
+    left: 20px;
+    top: 23px;
   }
 
-  .button {
-    font-size: 13px;
-
-    padding: 12px 19px;
+  .photo2 {
+    left: 115px;
+    top: 18px;
   }
 
-  .trust strong {
-    font-size: 13px;
-  }
-
-  .trust span {
-    font-size: 11px;
+  .photo3 {
+    left: 210px;
+    top: 23px;
   }
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 
-  .cta {
-    width: calc(100% - 30px);
-
-    min-height: auto;
-
-    padding: 24px 20px;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 18px;
-  }
-
-  .content h2 {
-    font-size: 23px;
-  }
-
-  .content p {
-    font-size: 13px;
-
-    line-height: 1.55;
-  }
-
-  .button {
+  .polaroids {
     width: 100%;
+    min-width: 0;
 
-    justify-content: center;
+    height: 120px;
 
-    padding: 13px 18px;
-
-    font-size: 14px;
+    margin-top: 5px;
   }
 
-  .trust {
-    width: calc(100% - 30px);
-
-    grid-template-columns: repeat(2, 1fr);
+  .polaroid {
+    width: 100px;
+    height: 85px;
   }
 
-  .trust div {
-    min-height: 65px;
+  .photo1 {
+    left: calc(50% - 150px);
+    top: 22px;
   }
 
-  .trust div:nth-child(2) {
-    border-right: none;
+  .photo2 {
+    left: calc(50% - 50px);
+    top: 17px;
   }
 
-  .trust div:last-child {
-    grid-column: span 2;
-
-    border-top: 1px solid #eadfd3;
-  }
-
-  .trust strong {
-    font-size: 13px;
-  }
-
-  .trust span {
-    font-size: 11px;
+  .photo3 {
+    left: calc(50% + 50px);
+    top: 22px;
   }
 }
 
 
-/* =========================================================
+/* =========================
    SMALL MOBILE
-========================================================= */
+========================= */
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 
-  .content h2 {
-    font-size: 21px;
+  .polaroids {
+    height: 105px;
   }
 
-  .content p {
-    font-size: 12px;
+  .polaroid {
+    width: 82px;
+    height: 70px;
+    padding: 5px;
   }
 
-  .button {
-    font-size: 13px;
+  .photo1 {
+    left: calc(50% - 120px);
+    top: 20px;
   }
 
-  .trust strong {
-    font-size: 12px;
+  .photo2 {
+    left: calc(50% - 40px);
+    top: 15px;
   }
 
-  .trust span {
-    font-size: 10px;
+  .photo3 {
+    left: calc(50% + 40px);
+    top: 20px;
   }
 }

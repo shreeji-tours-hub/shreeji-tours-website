@@ -21,8 +21,7 @@ export default function InternationalPage() {
       <InternationalTourSearch />
       <PopularInternationalTours />
       <WhyInternationalTravel />
-      <InternationalDestinations />
-      <InternationalTestimonials />
+     
       <InternationalTourCTA />
       <ContactCTA/>
 

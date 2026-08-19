@@ -1,65 +1,58 @@
 "use client";
 
 import styles from "./ForeignTourCTA.module.css";
-
 import { ArrowRight } from "lucide-react";
-
 import { foreignTourCTA } from "./ForeignTourCTAData";
 
 export default function ForeignTourCTA() {
   return (
     <section className={styles.section}>
-
       <div className={styles.cta}>
 
-        <div className={styles.pattern} />
+      
 
+        {/* CONTENT */}
         <div className={styles.content}>
           <h2>{foreignTourCTA.title}</h2>
 
           <p>{foreignTourCTA.text}</p>
+
+          <a
+            href="/contact"
+            className={styles.button}
+          >
+            <span>{foreignTourCTA.button}</span>
+            <ArrowRight size={19} strokeWidth={2} />
+          </a>
         </div>
 
-        <a
-          href="/contact"
-          className={styles.button}
-        >
-          {foreignTourCTA.button}
+        {/* RIGHT POLAROIDS */}
+        <div className={styles.polaroids}>
 
-          <ArrowRight size={18} />
-        </a>
+          <div className={`${styles.polaroid} ${styles.photo1}`}>
+            <img
+              src={foreignTourCTA.images[0]}
+              alt="Travel destination"
+            />
+          </div>
 
-      </div>
+          <div className={`${styles.polaroid} ${styles.photo2}`}>
+            <img
+              src={foreignTourCTA.images[1]}
+              alt="Travel destination"
+            />
+          </div>
 
-      <div className={styles.trust}>
+          <div className={`${styles.polaroid} ${styles.photo3}`}>
+            <img
+              src={foreignTourCTA.images[2]}
+              alt="Travel destination"
+            />
+          </div>
 
-        <div>
-          <strong>1000+</strong>
-          <span>Happy Travelers</span>
-        </div>
-
-        <div>
-          <strong>Best Price</strong>
-          <span>Guarantee</span>
-        </div>
-
-        <div>
-          <strong>No Hidden</strong>
-          <span>Charges</span>
-        </div>
-
-        <div>
-          <strong>Secure</strong>
-          <span>Payments</span>
-        </div>
-
-        <div>
-          <strong>Trusted Travel</strong>
-          <span>Partner</span>
         </div>
 
       </div>
-
     </section>
   );
 }

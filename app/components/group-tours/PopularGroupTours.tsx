@@ -55,7 +55,7 @@ export default function PopularGroupTours() {
             <ChevronLeft size={20} />
           </button>
 
-          {/* CARDS */}
+          {/* TOUR CARDS */}
           <div
             ref={sliderRef}
             className={styles.grid}
@@ -75,17 +75,12 @@ export default function PopularGroupTours() {
                       alt={tour.title}
                     />
 
-                    <span
-                      className={styles.duration}
-                      style={{
-                        background: tour.color,
-                      }}
-                    >
+                    <span className={styles.durationBadge}>
                       {tour.duration}
                     </span>
                   </div>
 
-                  {/* BODY */}
+                  {/* CARD BODY */}
                   <div className={styles.cardBody}>
 
                     <h3>{tour.title}</h3>
@@ -125,11 +120,6 @@ export default function PopularGroupTours() {
             <ChevronRight size={20} />
           </button>
 
-        </div>
-
-        {/* ALL GROUP TOURS */}
-        <div className={styles.bottomButton}>
-        
         </div>
 
       </div>

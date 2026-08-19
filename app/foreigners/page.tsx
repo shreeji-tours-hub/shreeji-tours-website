@@ -26,9 +26,7 @@ export default function ForeignersPage() {
 
       <WhyTravelForeign />
 
-      <IndiaDestinations />
-
-      <ForeignTestimonials />
+      
 
       <ForeignTourCTA />
 

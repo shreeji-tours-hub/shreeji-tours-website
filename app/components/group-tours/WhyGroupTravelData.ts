@@ -1,38 +1,38 @@
 export const groupTravelReasons = [
   {
-    title: "Shared Experiences",
-    description: "Create unforgettable memories together.",
+    title: "Customized Itineraries",
+    description: "Tours designed as per your preferences and budget",
     image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?auto=format&fit=crop&w=300&q=80",
   },
   {
-    title: "Expert Group Leaders",
-    description: "Professional guides throughout your journey.",
+    title: "Expert Local Guides",
+    description: "Experienced and professional tour guides",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80",
   },
   {
     title: "Comfortable Transport",
-    description: "Safe and comfortable group transportation.",
+    description: "Well maintained vehicles for a safe journey",
     image:
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=300&q=80",
   },
   {
     title: "Handpicked Hotels",
-    description: "Comfortable stays selected for groups.",
+    description: "Quality stays for a comfortable experience",
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=300&q=80",
   },
   {
-    title: "24×7 Assistance",
-    description: "Support whenever your group needs us.",
+    title: "24×7 Customer Support",
+    description: "We are with you at every step of your journey",
     image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=300&q=80",
   },
   {
-    title: "Best Group Prices",
-    description: "Great experiences at group-friendly prices.",
+    title: "Best Price Guaranteed",
+    description: "No hidden charges and best price assurance",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=200&q=80",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=300&q=80",
   },
 ];

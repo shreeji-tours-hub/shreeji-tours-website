@@ -26,12 +26,7 @@ export default function TourCTA() {
             LEFT LUGGAGE IMAGE
         ========================= */}
 
-        <div className={styles.luggage}>
-          <img
-            src="https://images.unsplash.com/photo-1553531384-397c80973a0b?auto=format&fit=crop&w=600&q=85"
-            alt="Travel luggage"
-          />
-        </div>
+      
 
 
         {/* =========================
