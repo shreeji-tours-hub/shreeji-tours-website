@@ -28,11 +28,6 @@ export default function TravelStatsSection() {
             pace, you’ll connect more meaningfully with your
             destination and have more fun!
           </p>
-
-          <a href="/india-tours" className={styles.button}>
-            Explore Our Tours
-            <span>↗</span>
-          </a>
         </div>
 
         {/* STATS */}

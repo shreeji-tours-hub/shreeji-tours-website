@@ -12,5 +12,5 @@ export const ourStoryData = {
   ],
 
   image:
-    "https://res.cloudinary.com/dcaiszxcb/image/upload/v1786884920/Gemini_Generated_Image_50rlgj50rlgj50rl_szn8xi.png",
+    "https://res.cloudinary.com/dz9hxvxa/image/upload/v1787637174/ChatGPT_Image_Aug_25_2026_11_22_30_AM.png",
 };

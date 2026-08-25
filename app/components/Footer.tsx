@@ -15,6 +15,8 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
+import { FaXTwitter } from "react-icons/fa6";
+
 import {
   footerBrand,
   footerQuickLinks,
@@ -85,23 +87,19 @@ export default function Footer() {
           </a>
 
 
-          {/* GOOGLE REVIEW */}
-
           <a
-            href="https://share.google/iwzoH7qJBgbfY3qzL"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.googleReview}
-          >
-            <div className={styles.googleLogo}>
-              <img
-                src="https://res.cloudinary.com/dcaiszxcb/image/upload/v1786886193/rev_b8nqzw.jpg"
-                alt="Google Reviews"
-              />
-            </div>
-
-          
-          </a>
+  href="https://share.google/iwzoH7qJBgbfY3qzL"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.googleReview}
+>
+  <div className={styles.googleLogo}>
+    <img
+      src="/images/google_review_clean_transparent.png"
+      alt="Google Reviews"
+    />
+  </div>
+</a>
 
         </div>
 
@@ -218,6 +216,21 @@ export default function Footer() {
 
           </div>
 
+            {/* =====================================================
+      GOOGLE MAP
+  ===================================================== */}
+
+  <div className={styles.mapContainer}>
+
+    <iframe
+      src="https://www.google.com/maps?q=Supershva%20Theatre%2C%20E%20Wing%2C%20Flat%20No%3A%20403%2C%20Old%20Nagardas%20Rd%2C%20Andheri%20East%2C%20Mumbai%20400069&output=embed"
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Shreeji Tours & Travels Location"
+    />
+
+  </div>
+
 
           {/* SOCIAL ICONS */}
 
@@ -245,13 +258,13 @@ export default function Footer() {
             </a>
 
             <a
-              href={footerSocialLinks.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp />
-            </a>
+  href="https://x.com/ShreejiTnT"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="X (Twitter)"
+>
+  <FaXTwitter />
+</a>
 
           </div>
 

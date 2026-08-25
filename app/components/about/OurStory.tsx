@@ -8,19 +8,27 @@ export default function OurStory() {
 
         <div className={styles.content}>
 
+          {/* TEXT CONTENT */}
           <div className={styles.text}>
 
+            {/* LABEL */}
             <span className={styles.label}>
               {ourStoryData.label}
             </span>
 
+            {/* TITLE */}
             <h2>
               {ourStoryData.title}
             </h2>
 
+            {/* PARAGRAPHS */}
             {ourStoryData.paragraphs.map((paragraph, index) => {
               const phrase = "Shreeji Tours n Travels";
 
+              /*
+                If the paragraph does not contain
+                "Shreeji Tours n Travels", display it normally.
+              */
               if (!paragraph.includes(phrase)) {
                 return (
                   <p key={index}>
@@ -29,17 +37,22 @@ export default function OurStory() {
                 );
               }
 
+              /*
+                Split the paragraph around
+                "Shreeji Tours n Travels"
+              */
               const parts = paragraph.split(phrase);
 
               return (
                 <p key={index}>
                   {parts.map((part, partIndex) => (
                     <span key={partIndex}>
+
+                      {/* BOLD COMPANY NAME + TAGLINE */}
                       {partIndex > 0 && (
-                        <>
-                          <span>{phrase}</span>{" "}
-                          <strong>(make tour easy)</strong>
-                        </>
+                        <strong>
+                          {phrase} (Make Tour Easy)
+                        </strong>
                       )}
 
                       {part}
@@ -51,6 +64,7 @@ export default function OurStory() {
 
           </div>
 
+          {/* IMAGE */}
           <div className={styles.imageWrapper}>
             <img
               src={ourStoryData.image}
