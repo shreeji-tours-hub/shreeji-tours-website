@@ -58,7 +58,7 @@ export default function PopularToursSection() {
                 {/* ONLY THIS IS CLICKABLE */}
 
                 <Link
-                  href="/india-tours"
+                  href="/foreigners"
                   className={styles.featuredButton}
                 >
                   View All Tours

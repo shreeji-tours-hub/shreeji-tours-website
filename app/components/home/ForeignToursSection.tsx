@@ -11,6 +11,7 @@ export default function ForeignToursSection() {
 
       <div className={styles.container}>
 
+        {/* HEADING */}
         <div className={styles.heading}>
 
           <span className={styles.headingLabel}>
@@ -30,10 +31,10 @@ export default function ForeignToursSection() {
         </div>
 
 
+        {/* TOUR CARDS */}
         <div className={styles.grid}>
 
           {popularForeignTours.map((tour) => (
-
             <Link
               key={tour.slug}
               href={`/foreign-tours/${tour.slug}`}
@@ -41,13 +42,11 @@ export default function ForeignToursSection() {
             >
 
               <div className={styles.imageWrap}>
-
                 <img
                   className={styles.image}
                   src={tour.image}
                   alt={tour.title}
                 />
-
               </div>
 
               <div className={styles.cardContent}>
@@ -63,9 +62,19 @@ export default function ForeignToursSection() {
               </div>
 
             </Link>
-
           ))}
 
+        </div>
+
+
+        {/* ONE VIEW MORE BUTTON FOR THE WHOLE SECTION */}
+        <div className={styles.viewMoreWrapper}>
+          <Link
+            href="/foreigners"
+            className={styles.viewMoreButton}
+          >
+            View More
+          </Link>
         </div>
 
       </div>

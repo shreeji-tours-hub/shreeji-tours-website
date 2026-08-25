@@ -1,126 +1,53 @@
 /* =========================================================
-   INDIA TOUR DETAIL PAGE
+   PAGE
 ========================================================= */
 
 .page {
   width: 100%;
-  min-height: 100vh;
-  background: #f7f5f1;
-  color: #1b1b1b;
+  background: #fff;
+  color: #171717;
   overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container {
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
+  width: min(1200px, calc(100% - 40px));
+  margin: auto;
 }
 
 
 /* =========================================================
    HERO
+   SAME BANNER BEHAVIOUR AS FOREIGN TOURS
 ========================================================= */
 
 .hero {
   position: relative;
-
-  width: 100%;
-  height: calc(100vh - 90px);
-  min-height: 600px;
-
   overflow: hidden;
-
-  background: #111;
 }
 
 .heroImage {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
   display: block;
-
-  object-fit: cover;
-  object-position: center center;
 }
 
 .heroOverlay {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  align-items: flex-end;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.58) 32%,
-      rgba(0, 0, 0, 0.20) 65%,
-      rgba(0, 0, 0, 0.05) 100%
-    );
+  pointer-events: none;
 }
 
 .heroContent {
-  position: relative;
-
-  width: min(1180px, calc(100% - 40px));
-
-  margin: 0 auto;
-
-  padding-bottom: 85px;
-
-  color: #fff;
+  pointer-events: none;
 }
-
-.heroContent .label {
-  color: #f4b52d;
-}
-
-.heroContent h1 {
-  max-width: 950px;
-
-  margin: 10px 0 15px;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(48px, 6vw, 78px);
-  line-height: 1.02;
-  font-weight: 500;
-
-  letter-spacing: -1.5px;
-
-  color: #fff;
-}
-
-.heroContent p {
-  max-width: 700px;
-
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   COMMON LABEL
-========================================================= */
 
 .label {
-  display: inline-block;
-
-  color: #8f1111;
-
+  color: #d9a441;
   font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 
@@ -129,210 +56,234 @@
 ========================================================= */
 
 .infoSection {
-  width: 100%;
-
-  background: #fff;
-
-  border-bottom: 1px solid #e5e1da;
+  background: #8f1111;
 }
 
 .infoGrid {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
-  padding: 38px 0;
 }
 
 .infoItem {
-  min-width: 0;
-  min-height: 68px;
-
-  padding: 0 28px;
+  min-height: 86px;
+  padding: 20px 24px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  gap: 7px;
-
-  border-right: 1px solid #e5e1da;
-}
-
-.infoItem:first-child {
-  padding-left: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .infoItem:last-child {
-  padding-right: 0;
-  border-right: none;
+  border-right: 0;
 }
 
 .infoItem span {
-  color: #888;
+  display: block;
+  margin-bottom: 8px;
+
+  color: #f2dcdc;
 
   font-size: 10px;
-  font-weight: 600;
-
-  letter-spacing: 1.5px;
+  font-weight: 700;
 
   text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 
 .infoItem strong {
-  color: #222;
+  display: block;
 
-  font-size: 14px;
-  font-weight: 600;
+  color: #fff;
 
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 700;
 }
 
 
 /* =========================================================
    OVERVIEW
+   SAME AS FOREIGN TOUR
 ========================================================= */
 
 .overviewSection {
-  padding: 100px 0;
-
-  background: #f7f5f1;
+  padding: 58px 0 65px;
+  background: #fff;
 }
 
 .contentGrid {
   display: grid;
-
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.75fr);
-
-  gap: 75px;
-
-  align-items: center;
+  grid-template-columns: 1fr;
 }
 
 .mainContent {
-  min-width: 0;
+  width: 100%;
+}
+
+.sectionLabel {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #d99a00;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .mainContent h2 {
-  max-width: 650px;
+  margin: 0 0 20px;
 
-  margin: 10px 0 22px;
+  color: #102d61;
 
   font-family: Georgia, "Times New Roman", serif;
 
-  color: #1b1b1b;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 700;
+}
 
-  font-size: clamp(35px, 4vw, 52px);
-  line-height: 1.08;
-  font-weight: 500;
 
-  letter-spacing: -1px;
+/* =========================================================
+   OVERVIEW BOX
+========================================================= */
+
+.overviewBox {
+  max-width: 1100px;
+
+  margin-bottom: 38px;
+  padding: 22px 26px;
+
+  background: #faf8f5;
+
+  border-left: 4px solid #d99a00;
+  border-radius: 6px;
 }
 
 .overview {
-  max-width: 680px;
-
   margin: 0;
 
-  color: #606060;
+  color: #4d4d4d;
 
-  font-size: 15px;
-  line-height: 1.85;
+  font-size: 16px;
+  line-height: 1.9;
 }
 
 
 /* =========================================================
    HIGHLIGHTS
+   SAME AS FOREIGN TOUR
 ========================================================= */
 
 .highlights {
-  margin-top: 42px;
+  margin-top: 30px;
+}
+
+.highlightsHeader {
+  margin-bottom: 20px;
+}
+
+.highlightLabel {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #d99a00;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 .highlights h3 {
-  margin: 0 0 20px;
+  margin: 0;
 
-  color: #222;
+  color: #102d61;
 
-  font-size: 19px;
-  font-weight: 600;
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+  line-height: 1.25;
 }
+
+
+/* =========================================================
+   HIGHLIGHT GRID
+========================================================= */
 
 .highlightGrid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 
-  gap: 16px 28px;
+  gap: 14px 18px;
+
+  max-width: 1050px;
 }
 
 .highlight {
-  min-width: 0;
+  min-height: 65px;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 
-  gap: 11px;
+  gap: 14px;
+
+  padding: 15px 18px;
+
+  background: #fff;
+
+  border: 1px solid #e8e1d8;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.highlight span {
+.highlight:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.highlightIcon {
   flex-shrink: 0;
 
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 1px;
+  background: #8f1111;
 
   border-radius: 50%;
 
-  background: #8f1111;
-
   color: #fff;
 
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .highlight p {
   margin: 0;
 
-  color: #555;
+  color: #3e3e3e;
 
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-
-/* =========================================================
-   TOUR IMAGE
-========================================================= */
-
-.sideImage {
-  width: 100%;
-  height: 480px;
-
-  overflow: hidden;
-
-  border-radius: 3px;
-
-  background: #ddd;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.12);
-}
-
-.sideImage img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-  object-position: center;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 
@@ -341,192 +292,171 @@
 ========================================================= */
 
 .itinerarySection {
-  padding: 100px 0;
+  padding: 45px 0;
 
-  background: #fff;
+  background: #f8f5f0;
 }
 
 .sectionHeading {
-  margin-bottom: 55px;
+  margin-bottom: 28px;
+
+  text-align: center;
 }
 
 .sectionHeading h2 {
-  margin: 10px 0 0;
+  margin: 7px 0 0;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, serif;
 
-  color: #1b1b1b;
+  font-size: 32px;
 
-  font-size: clamp(35px, 4vw, 50px);
-  line-height: 1.1;
-  font-weight: 500;
+  color: #132f5b;
+}
 
-  letter-spacing: -1px;
+.sectionHeading .label {
+  color: #d99a00;
 }
 
 
 /* =========================================================
-   ITINERARY + ENQUIRY ALIGNMENT
+   ITINERARY LAYOUT
 ========================================================= */
 
 .itineraryLayout {
   display: grid;
 
-  grid-template-columns: minmax(0, 1fr) 370px;
+  grid-template-columns: 1fr 340px;
 
-  gap: 65px;
+  gap: 28px;
 
   align-items: start;
 }
 
+.itinerary {
+  padding: 20px;
+
+  background: white;
+
+  border: 1px solid #e5ddd4;
+
+  border-radius: 8px;
+}
+
 
 /* =========================================================
-   DAY TIMELINE
+   DAY
 ========================================================= */
 
-.itinerary {
-  position: relative;
-
-  padding-left: 0;
-}
-
-.itinerary::before {
-  content: "";
-
-  position: absolute;
-
-  left: 20px;
-  top: 22px;
-  bottom: 22px;
-
-  width: 1px;
-
-  background: #ded9d1;
-}
-
 .day {
-  position: relative;
-
   display: grid;
 
-  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-columns: 48px 1fr;
 
-  gap: 20px;
+  gap: 17px;
 
-  padding-bottom: 38px;
+  padding-bottom: 24px;
+
+  margin-bottom: 24px;
+
+  border-bottom: 1px solid #eee;
 }
 
 .day:last-child {
+  border: 0;
+
+  margin: 0;
+
   padding-bottom: 0;
 }
 
 .dayNumber {
-  position: relative;
-
-  z-index: 2;
-
-  width: 42px;
-  height: 42px;
+  width: 45px;
+  height: 45px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
+  background: #f4b52d;
+
   border-radius: 50%;
 
-  background: #8f1111;
+  font-weight: bold;
 
-  color: #fff;
+  font-size: 16px;
 
-  font-size: 12px;
-  font-weight: 700;
-
-  box-shadow:
-    0 0 0 6px #fff;
-}
-
-.dayContent {
-  min-width: 0;
-
-  padding-top: 2px;
+  color: #171717;
 }
 
 .dayContent h3 {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 
-  color: #8f1111;
+  font-family: Georgia, serif;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
 
-  font-size: 21px;
-  line-height: 1.25;
+  color: #132f5b;
 }
 
 .dayContent p {
-  margin: 0 0 12px;
+  margin: 0;
 
-  color: #5e5e5e;
+  color: #555;
 
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 13px;
+
+  line-height: 1.7;
 }
 
 .overnight {
   display: inline-block;
 
-  padding: 6px 10px;
+  margin-top: 6px;
 
-  border-left: 2px solid #f4b52d;
+  color: #8f1111;
 
-  background: #f7f5f1;
+  font-size: 12px;
 
-  color: #777;
-
-  font-size: 11px;
+  font-weight: bold;
 }
 
 
 /* =========================================================
-   ENQUIRY CARD
+   ENQUIRY
 ========================================================= */
 
 .enquiryCard {
   position: sticky;
-  top: 30px;
 
-  width: 100%;
+  top: 20px;
 
-  box-sizing: border-box;
+  padding: 22px;
 
-  padding: 30px;
+  background: white;
 
-  background: #f7f5f1;
+  border: 1px solid #e5ddd4;
 
-  border: 1px solid #e1ddd5;
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
 }
 
 .enquiryCard h3 {
   margin: 0 0 8px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  color: #8f1111;
 
-  color: #1b1b1b;
+  font-family: Georgia, serif;
 
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 28px;
 }
 
-.enquiryCard > p {
-  margin: 0 0 22px;
-
-  color: #777;
+.enquiryCard p {
+  color: #666;
 
   font-size: 13px;
+
   line-height: 1.6;
+
+  margin: 0 0 15px;
 }
 
 .enquiryCard input,
@@ -536,129 +466,102 @@
 
   box-sizing: border-box;
 
-  margin-bottom: 11px;
+  margin-bottom: 10px;
 
-  padding: 13px 14px;
+  padding: 11px;
 
-  border: 1px solid #d9d4cc;
-  border-radius: 0;
+  border: 1px solid #ddd;
 
-  outline: none;
+  border-radius: 4px;
 
-  background: #fff;
-
-  color: #222;
+  font-size: 12px;
 
   font-family: inherit;
 
-  font-size: 13px;
-}
-
-.enquiryCard textarea {
-  min-height: 100px;
-
-  resize: vertical;
+  background: white;
 }
 
 .enquiryCard input:focus,
 .enquiryCard select:focus,
 .enquiryCard textarea:focus {
-  border-color: #8f1111;
+  outline: none;
 
-  box-shadow:
-    0 0 0 2px rgba(143, 17, 17, 0.07);
+  border-color: #8f1111;
+}
+
+.enquiryCard textarea {
+  resize: vertical;
 }
 
 .enquiryButton {
   width: 100%;
 
-  margin-top: 5px;
+  padding: 13px;
 
-  padding: 14px 20px;
+  border: 0;
 
-  border: none;
+  border-radius: 4px;
 
   background: #8f1111;
 
-  color: #fff;
+  color: white;
 
-  font-family: inherit;
+  font-weight: bold;
 
-  font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 1.5px;
+  font-size: 12px;
 
   cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
 }
 
 .enquiryButton:hover {
-  background: #6f0d0d;
-
-  transform: translateY(-2px);
-}
-
-.tourCode {
-  margin-top: 15px;
-
-  color: #999;
-
-  text-align: center;
-
-  font-size: 10px;
-  font-weight: 600;
-
-  letter-spacing: 1.3px;
+  background: #681010;
 }
 
 
 /* =========================================================
    INCLUSIONS / EXCLUSIONS
+   KEPT FROM INDIA TOUR
 ========================================================= */
 
 .inclusionSection {
-  padding: 90px 0;
-
-  background: #f7f5f1;
+  padding: 50px 0;
 }
 
 .inclusionGrid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
 
-  gap: 25px;
+  gap: 22px;
 
-  align-items: stretch;
+  align-items: start;
 }
 
 .inclusionBox {
-  min-width: 0;
+  padding: 28px;
 
-  padding: 32px;
+  border: 1px solid #e5ddd4;
 
-  background: #fff;
+  border-radius: 8px;
 
-  border: 1px solid #e3ded6;
+  background: white;
 }
 
 .inclusionBox h2 {
-  margin: 8px 0 23px;
+  margin: 5px 0 20px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, serif;
 
-  color: #1b1b1b;
+  font-size: 38px;
 
-  font-size: 30px;
-  font-weight: 500;
+  line-height: 1.1;
+
+  color: #132f5b;
 }
 
 .inclusionBox ul {
   padding: 0;
+
   margin: 0;
 
   list-style: none;
@@ -677,111 +580,144 @@
 
   color: #555;
 
-  font-size: 13px;
+  font-size: 14px;
 
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .inclusionBox li:last-child {
   border-bottom: none;
 }
 
-.inclusionBox li span {
-  flex-shrink: 0;
+.inclusionIcon {
+  color: #25883b;
 
-  color: #8f1111;
+  font-weight: bold;
 
-  font-weight: 700;
+  font-size: 15px;
+
+  min-width: 16px;
+}
+
+.exclusionIcon {
+  color: #b00000;
+
+  font-weight: bold;
+
+  font-size: 15px;
+
+  min-width: 16px;
 }
 
 
 /* =========================================================
    CTA
+   KEPT FROM INDIA TOUR
 ========================================================= */
 
 .cta {
-  padding: 75px 0;
-
   background: #8f1111;
 
-  color: #fff;
+  padding: 28px 0;
+
+  color: white;
 }
 
 .ctaContent {
-  width: min(1180px, calc(100% - 40px));
+  max-width: 1000px;
 
-  margin: 0 auto;
+  margin: auto;
+
+  padding: 0 20px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
-  gap: 45px;
+  gap: 25px;
 }
 
-.sectionLabel {
+.cta .sectionLabel {
   display: block;
 
-  color: #f4b52d;
+  margin-bottom: 7px;
 
-  font-size: 11px;
-  font-weight: 700;
+  color: #f4b000;
 
-  letter-spacing: 2px;
+  font-size: 10px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
-.ctaContent h2 {
-  margin: 10px 0 12px;
+.cta h2 {
+  margin: 0 0 6px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  color: white;
 
-  color: #fff;
+  font-family: Georgia, serif;
 
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.1;
-  font-weight: 500;
+  font-size: 25px;
 }
 
-.ctaContent p {
+.cta p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.85);
+  color: #ddd;
 
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+
+  line-height: 1.5;
 }
 
 .ctaButton {
-  flex-shrink: 0;
-
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  padding: 15px 25px;
+  padding: 11px 20px;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: #f4b000;
 
-  color: #fff;
+  color: #171717;
 
   text-decoration: none;
 
   font-size: 11px;
-  font-weight: 700;
 
-  letter-spacing: 1.4px;
+  font-weight: bold;
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
+  border-radius: 4px;
+
+  white-space: nowrap;
 }
 
-.ctaButton:hover {
-  background: #fff;
 
-  color: #8f1111;
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .contentGrid,
+  .itineraryLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiryCard {
+    position: static;
+  }
+
+  .inclusionGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 
@@ -789,232 +725,71 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 700px) {
 
-  .hero {
-    height: 70vh;
-    min-height: 520px;
-  }
-
-  .infoGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .infoItem {
-    padding: 20px;
-
-    border-bottom: 1px solid #e5e1da;
-  }
-
-  .infoItem:first-child {
-    padding-left: 20px;
-  }
-
-  .infoItem:nth-child(2) {
-    border-right: none;
-  }
-
-  .infoItem:nth-child(3),
-  .infoItem:nth-child(4) {
-    border-bottom: none;
-  }
-
-  .contentGrid {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .sideImage {
-    height: 430px;
-  }
-
-  .itineraryLayout {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-  }
-
-  .enquiryCard {
-    position: relative;
-    top: auto;
-
-    max-width: 500px;
-  }
-
-  .ctaContent {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .container {
-    width: calc(100% - 30px);
-  }
-
-
-  /* HERO */
-
-  .hero {
-    height: 500px;
-    min-height: 500px;
-  }
-
-  .heroImage {
-    object-position: center center;
-  }
-
+  .container,
   .heroContent {
-    width: calc(100% - 30px);
-
-    padding-bottom: 45px;
+    width: calc(100% - 24px);
   }
+
+  /*
+     Hero dimensions are intentionally controlled
+     by the inline styles in page.tsx so the India
+     hero follows the Foreign Tours banner.
+  */
 
   .heroContent h1 {
-    font-size: 40px;
-
-    letter-spacing: -0.8px;
+    font-size: 34px !important;
   }
 
   .heroContent p {
-    font-size: 14px;
+    font-size: 13px !important;
   }
-
-
-  /* INFORMATION */
 
   .infoGrid {
-    grid-template-columns: 1fr;
-
-    padding: 20px 0;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .infoItem,
-  .infoItem:first-child {
-    min-height: auto;
-
-    padding: 16px 0;
-
-    border-right: none;
-    border-bottom: 1px solid #e5e1da;
+  .infoItem {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .infoItem:last-child {
-    border-bottom: none;
+  .infoItem:nth-child(2) {
+    border-right: 0;
   }
-
-
-  /* OVERVIEW */
 
   .overviewSection {
-    padding: 65px 0;
+    padding: 45px 0 50px;
   }
 
   .mainContent h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .overview {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .highlightGrid {
     grid-template-columns: 1fr;
   }
 
-  .sideImage {
-    height: 350px;
-  }
-
-
-  /* ITINERARY */
-
-  .itinerarySection {
-    padding: 65px 0;
-  }
-
-  .sectionHeading {
-    margin-bottom: 40px;
-  }
-
   .sectionHeading h2 {
-    font-size: 34px;
-  }
-
-  .itinerary::before {
-    left: 19px;
-  }
-
-  .day {
-    grid-template-columns: 38px minmax(0, 1fr);
-
-    gap: 15px;
-
-    padding-bottom: 30px;
-  }
-
-  .dayNumber {
-    width: 38px;
-    height: 38px;
-
-    font-size: 11px;
-  }
-
-  .dayContent h3 {
-    font-size: 18px;
-  }
-
-  .dayContent p {
-    font-size: 13px;
-  }
-
-
-  /* ENQUIRY */
-
-  .enquiryCard {
-    padding: 23px;
-
-    max-width: none;
-  }
-
-
-  /* INCLUSIONS */
-
-  .inclusionSection {
-    padding: 65px 0;
+    font-size: 29px;
   }
 
   .inclusionGrid {
     grid-template-columns: 1fr;
-
-    gap: 18px;
-  }
-
-  .inclusionBox {
-    padding: 25px;
   }
 
   .inclusionBox h2 {
-    font-size: 27px;
-  }
-
-
-  /* CTA */
-
-  .cta {
-    padding: 60px 0;
+    font-size: 34px;
   }
 
   .ctaContent {
-    width: calc(100% - 30px);
+    flex-direction: column;
+
+    align-items: flex-start;
   }
 
   .ctaButton {
@@ -1024,30 +799,110 @@
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
 ========================================================= */
 
-@media (max-width: 430px) {
-
-  .hero {
-    height: 450px;
-    min-height: 450px;
-  }
+@media (max-width: 450px) {
 
   .heroContent h1 {
-    font-size: 34px;
+    font-size: 28px !important;
   }
 
   .heroContent p {
+    font-size: 12px !important;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoItem {
+    border-right: 0;
+
+    padding: 15px 18px;
+  }
+
+  .infoItem:last-child {
+    border-bottom: 0;
+  }
+
+  .mainContent h2 {
+    font-size: 29px;
+  }
+
+  .overviewBox {
+    padding: 18px 20px;
+  }
+
+  .overview {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .highlights h3 {
+    font-size: 26px;
+  }
+
+  .highlight {
+    padding: 13px 14px;
+  }
+
+  .highlight p {
     font-size: 13px;
   }
 
-  .sideImage {
-    height: 300px;
+  .itinerary {
+    padding: 16px;
   }
 
-  .mainContent h2,
-  .sectionHeading h2 {
-    font-size: 30px;
+  .day {
+    grid-template-columns: 42px 1fr;
+
+    gap: 10px;
+  }
+
+  .dayNumber {
+    width: 40px;
+
+    height: 40px;
+
+    font-size: 14px;
+  }
+
+  .dayContent h3 {
+    font-size: 16px;
+  }
+
+  .dayContent p {
+    font-size: 12px;
+  }
+
+  .overnight {
+    font-size: 11px;
+  }
+
+  .enquiryCard {
+    padding: 18px;
+  }
+
+  .enquiryCard h3 {
+    font-size: 25px;
+  }
+
+  .inclusionBox {
+    padding: 22px;
+  }
+
+  .inclusionBox h2 {
+    font-size: 31px;
+  }
+
+  .inclusionBox li {
+    font-size: 13px;
+  }
+
+  .cta h2 {
+    font-size: 22px;
   }
 }

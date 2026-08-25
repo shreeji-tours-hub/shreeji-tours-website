@@ -1,12 +1,12 @@
 "use client";
 
 import styles from "./WhyTravelForeign.module.css";
+import { travelReasons } from "./WhyTravelForeignData";
 
-import { whyTravelForeign } from "./WhyTravelForeignData";
-
-export default function WhyTravelForeign() {
+export default function WhyTravelWithUs() {
   return (
     <section className={styles.section}>
+
       <div className={styles.container}>
 
         {/* HEADING */}
@@ -14,48 +14,44 @@ export default function WhyTravelForeign() {
           <span>WHY TRAVEL WITH US?</span>
 
           <h2>
-            Why Travel With Shreeji Tours n Travels?
+            Travel With Confidence
           </h2>
-
-          <div className={styles.decoration}>
-            <i />
-            <b>◆</b>
-            <i />
-          </div>
         </div>
+
 
         {/* REASONS */}
         <div className={styles.grid}>
 
-          {whyTravelForeign.map((item) => (
+          {travelReasons.map((reason) => (
+
             <div
               className={styles.item}
-              key={item.title}
+              key={reason.title}
             >
 
               {/* IMAGE */}
-              <div className={styles.imageWrap}>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                />
-              </div>
+              <img
+                src={reason.image}
+                alt={reason.title}
+                className={styles.reasonImage}
+              />
 
-              {/* CONTENT */}
-              <div className={styles.content}>
+              <h3>
+                {reason.title}
+              </h3>
 
-                <h3>{item.title}</h3>
-
-                <p>{item.text}</p>
-
-              </div>
+              <p>
+                {reason.description}
+              </p>
 
             </div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

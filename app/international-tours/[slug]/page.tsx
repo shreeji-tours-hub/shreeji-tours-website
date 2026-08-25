@@ -22,6 +22,14 @@ export default async function InternationalTourPage({
     .trim()
     .toLowerCase();
 
+  /*
+   * IMPORTANT:
+   * Your actual data export is:
+   *
+   * popularInternationalTours
+   *
+   * Do NOT use internationalTours here.
+   */
   const tour = popularInternationalTours.find(
     (item) =>
       item.slug?.trim().toLowerCase() === decodedSlug
@@ -31,15 +39,35 @@ export default async function InternationalTourPage({
     notFound();
   }
 
+  /*
+   * Generate tour code from slug.
+   *
+   * Example:
+   * singapore-tour
+   * becomes
+   * ST
+   *
+   * dubai-tour
+   * becomes
+   * DT
+   */
+  const tourCode = tour.slug
+    .split("-")
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
   return (
     <>
       <Navbar />
 
       <main className={styles.page}>
 
-        {/* =========================
+        {/* =====================================================
             HERO
-        ========================= */}
+            SAME STRUCTURE AS INDIA TOUR DETAIL PAGE
+        ===================================================== */}
+
         <section className={styles.hero}>
 
           <img
@@ -49,76 +77,95 @@ export default async function InternationalTourPage({
           />
 
           <div className={styles.heroOverlay}>
+
             <div className={styles.heroContent}>
 
-              <span className={styles.heroLabel}>
+              <span className={styles.label}>
                 INTERNATIONAL TOUR PACKAGE
               </span>
 
-              <h1 className={styles.heroTitle}>
+              <h1>
                 {tour.title}
               </h1>
 
-              <p className={styles.heroDescription}>
+              <p>
                 {tour.route}
               </p>
 
             </div>
+
           </div>
 
         </section>
 
 
-        {/* =========================
+        {/* =====================================================
             TOUR INFORMATION
-        ========================= */}
+        ===================================================== */}
+
         <section className={styles.infoSection}>
 
-          <div className={styles.infoContainer}>
+          <div className={styles.container}>
 
             <div className={styles.infoGrid}>
 
+              {/* DURATION */}
+
               <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>
+
+                <span>
                   Duration
                 </span>
 
-                <strong className={styles.infoValue}>
+                <strong>
                   {tour.duration}
                 </strong>
+
               </div>
 
 
+              {/* ROUTE */}
+
               <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>
+
+                <span>
                   Route
                 </span>
 
-                <strong className={styles.infoValue}>
+                <strong>
                   {tour.route}
                 </strong>
+
               </div>
 
 
+              {/* EXPERIENCE */}
+
               <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>
+
+                <span>
                   Experience
                 </span>
 
-                <strong className={styles.infoValue}>
+                <strong>
                   {tour.description}
                 </strong>
+
               </div>
 
 
+              {/* TOUR CODE */}
+
               <div className={styles.infoItem}>
-                <span className={styles.infoLabel}>
-                  Tour Type
+
+                <span>
+                  Tour Code
                 </span>
 
-                <strong className={styles.infoValue}>
-                  International
+                <strong>
+                  {tourCode}
                 </strong>
+
               </div>
 
             </div>
@@ -128,40 +175,62 @@ export default async function InternationalTourPage({
         </section>
 
 
-        {/* =========================
+        {/* =====================================================
             OVERVIEW
-        ========================= */}
+        ===================================================== */}
+
         <section className={styles.overviewSection}>
 
           <div className={styles.container}>
 
-            <div className={styles.overviewGrid}>
+            <div className={styles.contentGrid}>
 
-              <div>
+              <div className={styles.mainContent}>
 
                 <span className={styles.sectionLabel}>
-                  ABOUT THE TOUR
+                  DISCOVER THE WORLD
                 </span>
 
-                <h2 className={styles.overviewTitle}>
-                  {tour.title}
+                <h2>
+                  Tour Overview
                 </h2>
 
-                <p className={styles.overviewText}>
-                  {tour.overview}
-                </p>
 
+                {/* OVERVIEW BOX */}
+
+                <div className={styles.overviewBox}>
+
+                  <p className={styles.overview}>
+                    {tour.overview}
+                  </p>
+
+                </div>
+
+
+                {/* =================================================
+                    TOUR HIGHLIGHTS
+                ================================================= */}
 
                 <div className={styles.highlights}>
 
-                  <h3 className={styles.highlightsTitle}>
-                    Tour Highlights
-                  </h3>
+                  <div className={styles.highlightsHeader}>
+
+                    <span className={styles.highlightLabel}>
+                      EXPERIENCE THE BEST
+                    </span>
+
+                    <h3>
+                      Tour Highlights
+                    </h3>
+
+                  </div>
+
 
                   <div className={styles.highlightGrid}>
 
                     {tour.highlights.map(
                       (highlight, index) => (
+
                         <div
                           className={styles.highlight}
                           key={index}
@@ -173,29 +242,18 @@ export default async function InternationalTourPage({
                             ✓
                           </span>
 
-                          <p
-                            className={styles.highlightText}
-                          >
+                          <p>
                             {highlight}
                           </p>
 
                         </div>
+
                       )
                     )}
 
                   </div>
 
                 </div>
-
-              </div>
-
-
-              <div className={styles.sideImage}>
-
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                />
 
               </div>
 
@@ -206,16 +264,17 @@ export default async function InternationalTourPage({
         </section>
 
 
-        {/* =========================
+        {/* =====================================================
             ITINERARY
-        ========================= */}
+        ===================================================== */}
+
         <section className={styles.itinerarySection}>
 
           <div className={styles.container}>
 
             <div className={styles.sectionHeading}>
 
-              <span className={styles.sectionLabel}>
+              <span className={styles.label}>
                 YOUR JOURNEY
               </span>
 
@@ -227,6 +286,10 @@ export default async function InternationalTourPage({
 
 
             <div className={styles.itineraryLayout}>
+
+              {/* =================================================
+                  DAYS
+              ================================================= */}
 
               <div className={styles.itinerary}>
 
@@ -252,12 +315,15 @@ export default async function InternationalTourPage({
                         {day.description}
                       </p>
 
+
                       {day.overnight && (
+
                         <span
                           className={styles.overnight}
                         >
                           Overnight: {day.overnight}
                         </span>
+
                       )}
 
                     </div>
@@ -269,9 +335,10 @@ export default async function InternationalTourPage({
               </div>
 
 
-              {/* =========================
-                  ENQUIRY
-              ========================= */}
+              {/* =================================================
+                  ENQUIRY FORM
+              ================================================= */}
+
               <aside
                 className={styles.enquiryCard}
                 id="enquire"
@@ -282,10 +349,12 @@ export default async function InternationalTourPage({
                 </h3>
 
                 <p>
-                  Fill in the form and our travel
+                  Fill in your details and our travel
                   expert will contact you shortly.
                 </p>
 
+
+                {/* FULL NAME */}
 
                 <input
                   type="text"
@@ -294,12 +363,16 @@ export default async function InternationalTourPage({
                 />
 
 
+                {/* EMAIL */}
+
                 <input
                   type="email"
                   placeholder="Email Address"
                   aria-label="Email Address"
                 />
 
+
+                {/* MOBILE */}
 
                 <input
                   type="tel"
@@ -308,11 +381,15 @@ export default async function InternationalTourPage({
                 />
 
 
+                {/* TRAVEL DATE */}
+
                 <input
                   type="date"
                   aria-label="Travel Date"
                 />
 
+
+                {/* NUMBER OF TRAVELERS */}
 
                 <select
                   defaultValue=""
@@ -345,12 +422,110 @@ export default async function InternationalTourPage({
                 </select>
 
 
+                {/* NUMBER OF NIGHTS */}
+
+                <select
+                  defaultValue=""
+                  aria-label="Number of Nights"
+                >
+
+                  <option
+                    value=""
+                    disabled
+                  >
+                    Number of Nights
+                  </option>
+
+                  <option value="1">
+                    1 Night
+                  </option>
+
+                  <option value="2">
+                    2 Nights
+                  </option>
+
+                  <option value="3">
+                    3 Nights
+                  </option>
+
+                  <option value="4">
+                    4 Nights
+                  </option>
+
+                  <option value="5">
+                    5 Nights
+                  </option>
+
+                  <option value="6">
+                    6 Nights
+                  </option>
+
+                  <option value="7">
+                    7 Nights
+                  </option>
+
+                  <option value="8">
+                    8 Nights
+                  </option>
+
+                  <option value="9">
+                    9 Nights
+                  </option>
+
+                  <option value="10+">
+                    10+ Nights
+                  </option>
+
+                </select>
+
+
+                {/* HOTEL CATEGORY */}
+
+                <select
+                  defaultValue=""
+                  aria-label="Select Hotel"
+                >
+
+                  <option
+                    value=""
+                    disabled
+                  >
+                    Select Hotel
+                  </option>
+
+                  <option value="5-star">
+                    5 Star
+                  </option>
+
+                  <option value="4-star">
+                    4 Star
+                  </option>
+
+                  <option value="3-star">
+                    3 Star
+                  </option>
+
+                  <option value="2-star">
+                    2 Star
+                  </option>
+
+                  <option value="budget">
+                    Budget
+                  </option>
+
+                </select>
+
+
+                {/* ADDITIONAL REQUIREMENTS */}
+
                 <textarea
                   placeholder="Additional Requirements"
                   rows={4}
                   aria-label="Additional Requirements"
                 />
 
+
+                {/* SUBMIT */}
 
                 <button
                   type="button"
@@ -368,20 +543,23 @@ export default async function InternationalTourPage({
         </section>
 
 
-        {/* =========================
+        {/* =====================================================
             INCLUSIONS / EXCLUSIONS
-        ========================= */}
+        ===================================================== */}
+
         <section className={styles.inclusionSection}>
 
           <div className={styles.container}>
 
             <div className={styles.inclusionGrid}>
 
-              {/* INCLUSIONS */}
+              {/* =================================================
+                  INCLUSIONS
+              ================================================= */}
 
               <div className={styles.inclusionBox}>
 
-                <span className={styles.sectionLabel}>
+                <span className={styles.label}>
                   INCLUDED
                 </span>
 
@@ -395,11 +573,13 @@ export default async function InternationalTourPage({
 
                     <li key={item}>
 
-                      <span>
+                      <span className={styles.inclusionIcon}>
                         ✓
                       </span>
 
-                      {item}
+                      <span>
+                        {item}
+                      </span>
 
                     </li>
 
@@ -410,11 +590,13 @@ export default async function InternationalTourPage({
               </div>
 
 
-              {/* EXCLUSIONS */}
+              {/* =================================================
+                  EXCLUSIONS
+              ================================================= */}
 
               <div className={styles.inclusionBox}>
 
-                <span className={styles.sectionLabel}>
+                <span className={styles.label}>
                   NOT INCLUDED
                 </span>
 
@@ -428,11 +610,13 @@ export default async function InternationalTourPage({
 
                     <li key={item}>
 
-                      <span>
+                      <span className={styles.exclusionIcon}>
                         ✕
                       </span>
 
-                      {item}
+                      <span>
+                        {item}
+                      </span>
 
                     </li>
 
@@ -447,6 +631,9 @@ export default async function InternationalTourPage({
           </div>
 
         </section>
+
+
+       
 
       </main>
 

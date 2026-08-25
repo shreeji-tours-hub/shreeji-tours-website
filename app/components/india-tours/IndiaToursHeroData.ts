@@ -1,5 +1,5 @@
 export const indiaToursHeroData = {
-  breadcrumb: "Home / India Tours",
+  breadcrumb: "Discover India",
 
   title: "India Tour Packages",
 

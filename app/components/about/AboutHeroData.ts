@@ -1,5 +1,5 @@
 export const aboutHeroData = {
-  label: "ABOUT US",
+  label: "OUR STORY",
 
   title: "Your Trusted",
 

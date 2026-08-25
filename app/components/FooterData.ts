@@ -102,7 +102,7 @@ export const footerContact = {
     "shreejitourstravels@gmail.com",
 
   address:
-    "Supershva Theatre, E Wing, Flat No: 403, Old Nagardas Rd, Andheri East, Mumbai - 400069",
+    "Supershva Eternia, D Wing, Flat No: 403, Old Nagardas Rd, Andheri East, Mumbai - 400069",
 };
 
 

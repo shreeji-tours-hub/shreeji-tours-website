@@ -24,6 +24,20 @@ export default async function ForeignTourPage({ params }: Props) {
     notFound();
   }
 
+  /*
+    Uses tour.code if it exists in your tour data.
+    Otherwise, it falls back to the tour slug.
+    
+    Example:
+    rajasthan-discovery
+    becomes
+    RAJASTHAN-DISCOVERY
+  */
+  const tourCode =
+    "code" in tour && tour.code
+      ? String(tour.code)
+      : tour.slug.toUpperCase();
+
   return (
     <>
       <Navbar />
@@ -32,100 +46,101 @@ export default async function ForeignTourPage({ params }: Props) {
 
         {/* =====================================================
             HERO / FULL WIDTH BANNER
+            NO CHANGES
         ===================================================== */}
 
-     <section
-  className={styles.hero}
-  style={{
-    position: "relative",
-    width: "100%",
-    height: "calc(100vh - 90px)",
-    minHeight: "700px",
-    overflow: "hidden",
-  }}
->
-  <img
-    src={tour.heroImage}
-    alt={tour.title}
-    className={styles.heroImage}
-    style={{
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      objectPosition: "center",
-      display: "block",
-    }}
-  />
+        <section
+          className={styles.hero}
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "calc(100vh - 90px)",
+            minHeight: "700px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={tour.heroImage}
+            alt={tour.title}
+            className={styles.heroImage}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+            }}
+          />
 
-  <div
-    className={styles.heroOverlay}
-    style={{
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      alignItems: "center",
-      background:
-        "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
-    }}
-  >
-    <div
-      className={styles.heroContent}
-      style={{
-        width: "min(1400px, 90%)",
-        margin: "0 auto",
-        color: "#fff",
-      }}
-    >
-      <span
-        className={styles.label}
-        style={{
-          display: "inline-block",
-          background: "#a80000",
-          color: "#fff",
-          padding: "12px 22px",
-          marginBottom: "28px",
-          borderRadius: "4px",
-          fontSize: "15px",
-          fontWeight: 700,
-          letterSpacing: "1px",
-          textTransform: "uppercase",
-        }}
-      >
-        TOURS FOR FOREIGNERS
-      </span>
+          <div
+            className={styles.heroOverlay}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              background:
+                "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
+            }}
+          >
+            <div
+              className={styles.heroContent}
+              style={{
+                width: "min(1400px, 90%)",
+                margin: "0 auto",
+                color: "#fff",
+              }}
+            >
+              <span
+                className={styles.label}
+                style={{
+                  display: "inline-block",
+                  background: "#a80000",
+                  color: "#fff",
+                  padding: "12px 22px",
+                  marginBottom: "28px",
+                  borderRadius: "4px",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                }}
+              >
+                TOURS FOR FOREIGNERS
+              </span>
 
-      <h1
-        style={{
-          maxWidth: "1000px",
-          margin: "0 0 25px",
-          color: "#fff",
-          fontFamily: 'Georgia, "Times New Roman", serif',
-          fontSize: "clamp(55px, 6vw, 100px)",
-          fontWeight: 700,
-          lineHeight: 0.98,
-        }}
-      >
-        {tour.title}
-      </h1>
+              <h1
+                style={{
+                  maxWidth: "1000px",
+                  margin: "0 0 25px",
+                  color: "#fff",
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  fontSize: "clamp(55px, 6vw, 100px)",
+                  fontWeight: 700,
+                  lineHeight: 0.98,
+                }}
+              >
+                {tour.title}
+              </h1>
 
-      <p
-        style={{
-          maxWidth: "1000px",
-          margin: 0,
-          color: "#fff",
-          fontSize: "20px",
-          lineHeight: 1.65,
-        }}
-      >
-        {tour.description}
-      </p>
-    </div>
-  </div>
-</section>
+              <p
+                style={{
+                  maxWidth: "1000px",
+                  margin: 0,
+                  color: "#fff",
+                  fontSize: "20px",
+                  lineHeight: 1.65,
+                }}
+              >
+                {tour.description}
+              </p>
+            </div>
+          </div>
+        </section>
 
 
         {/* =====================================================
@@ -153,8 +168,8 @@ export default async function ForeignTourPage({ params }: Props) {
               </div>
 
               <div className={styles.infoItem}>
-                <span>Tour Type</span>
-                <strong>Private / Customized</strong>
+                <span>Tour Code</span>
+                <strong>{tourCode}</strong>
               </div>
 
             </div>
@@ -180,13 +195,24 @@ export default async function ForeignTourPage({ params }: Props) {
 
                 <h2>Tour Overview</h2>
 
-                <p className={styles.overview}>
-                  {tour.overview}
-                </p>
+                <div className={styles.overviewBox}>
+                  <p className={styles.overview}>
+                    {tour.overview}
+                  </p>
+                </div>
+
+
+                {/* TOUR HIGHLIGHTS */}
 
                 <div className={styles.highlights}>
 
-                  <h3>Tour Highlights</h3>
+                  <div className={styles.highlightsHeader}>
+                    <span className={styles.highlightLabel}>
+                      EXPERIENCE THE BEST
+                    </span>
+
+                    <h3>Tour Highlights</h3>
+                  </div>
 
                   <div className={styles.highlightGrid}>
 
@@ -196,7 +222,9 @@ export default async function ForeignTourPage({ params }: Props) {
                           className={styles.highlight}
                           key={index}
                         >
-                          <span>✓</span>
+                          <span className={styles.highlightIcon}>
+                            ✓
+                          </span>
 
                           <p>{highlight}</p>
                         </div>
@@ -282,25 +310,30 @@ export default async function ForeignTourPage({ params }: Props) {
                   shortly.
                 </p>
 
+
                 <input
                   type="text"
                   placeholder="Full Name"
                 />
+
 
                 <input
                   type="email"
                   placeholder="Email Address"
                 />
 
+
                 <input
                   type="tel"
                   placeholder="Mobile Number"
                 />
 
+
                 <input
                   type="date"
                   aria-label="Travel Date"
                 />
+
 
                 <input
                   type="number"
@@ -308,28 +341,50 @@ export default async function ForeignTourPage({ params }: Props) {
                   min="1"
                 />
 
+
+                {/* NUMBER OF NIGHTS */}
+
+                <input
+                  type="number"
+                  placeholder="Number of Nights"
+                  min="1"
+                />
+
+
+                {/* SELECT HOTEL */}
+
                 <select defaultValue="">
                   <option value="" disabled>
-                    Select Package
+                    Select Hotel
                   </option>
 
-                  <option value="standard">
-                    Standard
+                  <option value="5-star">
+                    5 Star
                   </option>
 
-                  <option value="deluxe">
-                    Deluxe
+                  <option value="4-star">
+                    4 Star
                   </option>
 
-                  <option value="premium">
-                    Premium
+                  <option value="3-star">
+                    3 Star
+                  </option>
+
+                  <option value="2-star">
+                    2 Star
+                  </option>
+
+                  <option value="budget">
+                    Budget
                   </option>
                 </select>
+
 
                 <textarea
                   placeholder="Additional Requirements"
                   rows={4}
                 />
+
 
                 <button
                   type="button"
@@ -353,9 +408,7 @@ export default async function ForeignTourPage({ params }: Props) {
         <section className={styles.inclusionSection}>
           <div className={styles.container}>
 
-            <div
-              className={`${styles.inclusionGrid} ${styles.twoColumns}`}
-            >
+            <div className={styles.inclusionGrid}>
 
               {/* =====================================================
                   INCLUSIONS
@@ -363,11 +416,17 @@ export default async function ForeignTourPage({ params }: Props) {
 
               <div className={styles.inclusionBox}>
 
-                <span className={styles.sectionLabel}>
-                  INCLUDED
-                </span>
+                <div className={styles.inclusionHeader}>
+                  <span className={styles.sectionLabel}>
+                    INCLUDED
+                  </span>
 
-                <h2>Inclusions</h2>
+                  <h2>Inclusions</h2>
+
+                  <p>
+                    What's included in your tour package
+                  </p>
+                </div>
 
                 <ul>
 
@@ -375,9 +434,13 @@ export default async function ForeignTourPage({ params }: Props) {
 
                     <li key={item}>
 
-                      <span>✓</span>
+                      <span className={styles.inclusionIcon}>
+                        ✓
+                      </span>
 
-                      {item}
+                      <span className={styles.inclusionText}>
+                        {item}
+                      </span>
 
                     </li>
 
@@ -394,11 +457,17 @@ export default async function ForeignTourPage({ params }: Props) {
 
               <div className={styles.inclusionBox}>
 
-                <span className={styles.sectionLabel}>
-                  NOT INCLUDED
-                </span>
+                <div className={styles.inclusionHeader}>
+                  <span className={styles.sectionLabel}>
+                    NOT INCLUDED
+                  </span>
 
-                <h2>Exclusions</h2>
+                  <h2>Exclusions</h2>
+
+                  <p>
+                    Expenses not covered in the tour package
+                  </p>
+                </div>
 
                 <ul>
 
@@ -406,9 +475,15 @@ export default async function ForeignTourPage({ params }: Props) {
 
                     <li key={item}>
 
-                      <span>✕</span>
+                      <span
+                        className={`${styles.inclusionIcon} ${styles.exclusionIcon}`}
+                      >
+                        ✕
+                      </span>
 
-                      {item}
+                      <span className={styles.inclusionText}>
+                        {item}
+                      </span>
 
                     </li>
 

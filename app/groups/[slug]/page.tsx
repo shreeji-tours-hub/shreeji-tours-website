@@ -16,7 +16,9 @@ interface Props {
 export default async function GroupTourPage({ params }: Props) {
   const { slug } = await params;
 
-  const decodedSlug = decodeURIComponent(slug).trim().toLowerCase();
+  const decodedSlug = decodeURIComponent(slug)
+    .trim()
+    .toLowerCase();
 
   const tour = popularGroupTours.find(
     (item) =>
@@ -27,14 +29,33 @@ export default async function GroupTourPage({ params }: Props) {
     notFound();
   }
 
+  /*
+   * Create a tour code from the slug.
+   *
+   * Example:
+   * golden-triangle-tour
+   * becomes:
+   * GTT
+   */
+  const tourCode = tour.slug
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
   return (
     <>
       <Navbar />
 
       <main className={styles.page}>
 
-        {/* HERO */}
+        {/* =====================================================
+            HERO / FULL WIDTH BANNER
+        ===================================================== */}
+
         <section className={styles.hero}>
+
           <img
             src={tour.image}
             alt={tour.title}
@@ -42,7 +63,9 @@ export default async function GroupTourPage({ params }: Props) {
           />
 
           <div className={styles.heroOverlay}>
+
             <div className={styles.heroContent}>
+
               <span className={styles.heroLabel}>
                 GROUP TOUR PACKAGE
               </span>
@@ -54,164 +77,282 @@ export default async function GroupTourPage({ params }: Props) {
               <p className={styles.heroDescription}>
                 {tour.route}
               </p>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* TOUR INFORMATION */}
+
+        {/* =====================================================
+            TOUR INFORMATION
+        ===================================================== */}
+
         <section className={styles.infoSection}>
-          <div className={styles.infoContainer}>
+
+          <div className={styles.container}>
+
             <div className={styles.infoGrid}>
 
+              {/* DURATION */}
+
               <div className={styles.infoItem}>
+
                 <span className={styles.infoLabel}>
                   Duration
                 </span>
+
                 <strong className={styles.infoValue}>
                   {tour.duration}
                 </strong>
+
               </div>
 
+
+              {/* ROUTE */}
+
               <div className={styles.infoItem}>
+
                 <span className={styles.infoLabel}>
                   Route
                 </span>
+
                 <strong className={styles.infoValue}>
                   {tour.route}
                 </strong>
+
               </div>
 
+
+              {/* EXPERIENCE */}
+
               <div className={styles.infoItem}>
+
                 <span className={styles.infoLabel}>
                   Experience
                 </span>
+
                 <strong className={styles.infoValue}>
                   {tour.description}
                 </strong>
+
               </div>
 
+
+              {/* TOUR CODE */}
+
               <div className={styles.infoItem}>
+
                 <span className={styles.infoLabel}>
-                  Tour Type
+                  Tour Code
                 </span>
+
                 <strong className={styles.infoValue}>
-                  Group Tour
+                  {tourCode}
                 </strong>
+
               </div>
 
             </div>
+
           </div>
+
         </section>
 
-        {/* OVERVIEW */}
+
+        {/* =====================================================
+            OVERVIEW
+        ===================================================== */}
+
         <section className={styles.overviewSection}>
+
           <div className={styles.container}>
 
-            <div className={styles.overviewGrid}>
+            <div className={styles.mainContent}>
 
-              <div>
-                <span className={styles.sectionLabel}>
-                  ABOUT THE TOUR
-                </span>
+              {/* SECTION LABEL */}
 
-                <h2 className={styles.overviewTitle}>
-                  {tour.title}
-                </h2>
+              <span className={styles.sectionLabel}>
+                ABOUT THE TOUR
+              </span>
 
-                <p className={styles.overviewText}>
+
+              {/* TITLE */}
+
+              <h2>
+                Tour Overview
+              </h2>
+
+
+              {/* OVERVIEW BOX */}
+
+              <div className={styles.overviewBox}>
+
+                <p className={styles.overview}>
                   {tour.overview}
                 </p>
 
-                <div className={styles.highlights}>
-                  <h3 className={styles.highlightsTitle}>
+              </div>
+
+
+              {/* =================================================
+                  TOUR HIGHLIGHTS
+              ================================================= */}
+
+              <div className={styles.highlights}>
+
+                <div className={styles.highlightsHeader}>
+
+                  <span className={styles.highlightLabel}>
+                    EXPERIENCE THE BEST
+                  </span>
+
+                  <h3>
                     Tour Highlights
                   </h3>
 
-                  <div className={styles.highlightGrid}>
-                    {tour.highlights.map((highlight, index) => (
+                </div>
+
+
+                <div className={styles.highlightGrid}>
+
+                  {tour.highlights.map(
+                    (highlight, index) => (
+
                       <div
                         className={styles.highlight}
                         key={index}
                       >
+
                         <span className={styles.highlightIcon}>
                           ✓
                         </span>
 
-                        <p className={styles.highlightText}>
+                        <p>
                           {highlight}
                         </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
 
-              <div className={styles.sideImage}>
-                <img
-                  src={tour.image}
-                  alt={tour.title}
-                />
+                      </div>
+
+                    )
+                  )}
+
+                </div>
+
               </div>
 
             </div>
+
           </div>
+
         </section>
 
-        {/* ITINERARY */}
+
+        {/* =====================================================
+            ITINERARY
+        ===================================================== */}
+
         <section className={styles.itinerarySection}>
+
           <div className={styles.container}>
 
+            {/* SECTION HEADING */}
+
             <div className={styles.sectionHeading}>
+
               <span className={styles.sectionLabel}>
                 YOUR JOURNEY
               </span>
 
-              <h2>Day-Wise Itinerary</h2>
+              <h2>
+                Day-Wise Itinerary
+              </h2>
+
             </div>
+
+
+            {/* ITINERARY + ENQUIRY */}
 
             <div className={styles.itineraryLayout}>
 
+
+              {/* =================================================
+                  ITINERARY
+              ================================================= */}
+
               <div className={styles.itinerary}>
+
                 {tour.itinerary.map((day) => (
+
                   <div
                     className={styles.day}
                     key={day.day}
                   >
+
+                    {/* DAY NUMBER */}
+
                     <div className={styles.dayNumber}>
                       {day.day}
                     </div>
 
-                    <div className={styles.dayContent}>
-                      <h3>{day.title}</h3>
 
-                      <p>{day.description}</p>
+                    {/* DAY CONTENT */}
+
+                    <div className={styles.dayContent}>
+
+                      <h3>
+                        {day.title}
+                      </h3>
+
+                      <p>
+                        {day.description}
+                      </p>
 
                       {day.overnight && (
                         <span className={styles.overnight}>
                           Overnight: {day.overnight}
                         </span>
                       )}
+
                     </div>
+
                   </div>
+
                 ))}
+
               </div>
 
-              {/* ENQUIRY */}
+
+              {/* =================================================
+                  ENQUIRY FORM
+              ================================================= */}
+
               <aside
                 className={styles.enquiryCard}
                 id="enquire"
               >
-                <h3>Enquire Now</h3>
+
+                <h3>
+                  Enquire Now
+                </h3>
 
                 <p>
-                  Fill in the form and our travel
+                  Fill in your details and our travel
                   expert will contact you shortly.
                 </p>
 
+
+                {/* FULL NAME */}
+
                 <input
+                  type="text"
                   placeholder="Full Name"
                   aria-label="Full Name"
                 />
+
+
+                {/* EMAIL */}
 
                 <input
                   type="email"
@@ -219,30 +360,129 @@ export default async function GroupTourPage({ params }: Props) {
                   aria-label="Email Address"
                 />
 
+
+                {/* MOBILE */}
+
                 <input
                   type="tel"
                   placeholder="Mobile Number"
                   aria-label="Mobile Number"
                 />
 
+
+                {/* TRAVEL DATE */}
+
                 <input
                   type="date"
                   aria-label="Travel Date"
                 />
 
+
+                {/* NUMBER OF TRAVELERS */}
+
+                <input
+                  type="number"
+                  placeholder="Number of Travelers"
+                  min="1"
+                  aria-label="Number of Travelers"
+                />
+
+
+                {/* NUMBER OF NIGHTS */}
+
                 <select
                   defaultValue=""
-                  aria-label="Number of Travelers"
+                  aria-label="Number of Nights"
                 >
-                  <option value="" disabled>
-                    Number of Travelers
+
+                  <option
+                    value=""
+                    disabled
+                  >
+                    Number of Nights
                   </option>
 
-                  <option value="1-2">1 - 2</option>
-                  <option value="3-5">3 - 5</option>
-                  <option value="6-10">6 - 10</option>
-                  <option value="10+">10+</option>
+                  <option value="1">
+                    1 Night
+                  </option>
+
+                  <option value="2">
+                    2 Nights
+                  </option>
+
+                  <option value="3">
+                    3 Nights
+                  </option>
+
+                  <option value="4">
+                    4 Nights
+                  </option>
+
+                  <option value="5">
+                    5 Nights
+                  </option>
+
+                  <option value="6">
+                    6 Nights
+                  </option>
+
+                  <option value="7">
+                    7 Nights
+                  </option>
+
+                  <option value="8">
+                    8 Nights
+                  </option>
+
+                  <option value="9">
+                    9 Nights
+                  </option>
+
+                  <option value="10+">
+                    10+ Nights
+                  </option>
+
                 </select>
+
+
+                {/* SELECT HOTEL */}
+
+                <select
+                  defaultValue=""
+                  aria-label="Select Hotel"
+                >
+
+                  <option
+                    value=""
+                    disabled
+                  >
+                    Select Hotel
+                  </option>
+
+                  <option value="5-star">
+                    5 Star
+                  </option>
+
+                  <option value="4-star">
+                    4 Star
+                  </option>
+
+                  <option value="3-star">
+                    3 Star
+                  </option>
+
+                  <option value="2-star">
+                    2 Star
+                  </option>
+
+                  <option value="budget">
+                    Budget
+                  </option>
+
+                </select>
+
+
+                {/* ADDITIONAL REQUIREMENTS */}
 
                 <textarea
                   placeholder="Additional Requirements"
@@ -250,65 +490,139 @@ export default async function GroupTourPage({ params }: Props) {
                   aria-label="Additional Requirements"
                 />
 
+
+                {/* SUBMIT */}
+
                 <button
                   type="button"
                   className={styles.enquiryButton}
                 >
                   SEND ENQUIRY
                 </button>
+
               </aside>
 
             </div>
+
           </div>
+
         </section>
 
-        {/* INCLUSIONS / EXCLUSIONS */}
+
+        {/* =====================================================
+            INCLUSIONS / EXCLUSIONS
+        ===================================================== */}
+
         <section className={styles.inclusionSection}>
+
           <div className={styles.container}>
 
             <div className={styles.inclusionGrid}>
 
-              <div className={styles.inclusionBox}>
-                <span className={styles.sectionLabel}>
-                  INCLUDED
-                </span>
 
-                <h2>Inclusions</h2>
+              {/* =================================================
+                  INCLUSIONS
+              ================================================= */}
+
+              <div className={styles.inclusionBox}>
+
+                <div className={styles.inclusionHeader}>
+
+                  <span className={styles.sectionLabel}>
+                    INCLUDED
+                  </span>
+
+                  <h2>
+                    Inclusions
+                  </h2>
+
+                  <p>
+                    What's included in your tour package
+                  </p>
+
+                </div>
+
 
                 <ul>
+
                   {tour.inclusions.map((item) => (
+
                     <li key={item}>
-                      <span>✓</span>
-                      {item}
+
+                      <span className={styles.inclusionIcon}>
+                        ✓
+                      </span>
+
+                      <span className={styles.inclusionText}>
+                        {item}
+                      </span>
+
                     </li>
+
                   ))}
+
                 </ul>
+
               </div>
 
-              <div className={styles.inclusionBox}>
-                <span className={styles.sectionLabel}>
-                  NOT INCLUDED
-                </span>
 
-                <h2>Exclusions</h2>
+              {/* =================================================
+                  EXCLUSIONS
+              ================================================= */}
+
+              <div className={styles.inclusionBox}>
+
+                <div className={styles.inclusionHeader}>
+
+                  <span className={styles.sectionLabel}>
+                    NOT INCLUDED
+                  </span>
+
+                  <h2>
+                    Exclusions
+                  </h2>
+
+                  <p>
+                    Expenses not covered in the tour package
+                  </p>
+
+                </div>
+
 
                 <ul>
+
                   {tour.exclusions.map((item) => (
+
                     <li key={item}>
-                      <span>✕</span>
-                      {item}
+
+                      <span
+                        className={`${styles.inclusionIcon} ${styles.exclusionIcon}`}
+                      >
+                        ✕
+                      </span>
+
+                      <span className={styles.inclusionText}>
+                        {item}
+                      </span>
+
                     </li>
+
                   ))}
+
                 </ul>
+
               </div>
 
             </div>
+
           </div>
+
         </section>
 
       </main>
 
       <Footer />
+
     </>
   );
 }
