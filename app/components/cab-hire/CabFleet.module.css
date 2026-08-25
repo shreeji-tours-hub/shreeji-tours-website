@@ -1,97 +1,495 @@
+/* =========================================================
+   SECTION
+========================================================= */
+
 .section {
   width: 100%;
-  padding: 8px 0 20px;
-  background: #fff;
+
+  padding: 75px 0 85px;
+
+  background: #faf8f5;
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container {
-  width: min(1260px, calc(100% - 50px));
-  margin: auto;
+  width: min(1200px, calc(100% - 50px));
+
+  margin: 0 auto;
 }
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
 
 .heading {
   text-align: center;
-  margin-bottom: 9px;
+
+  max-width: 760px;
+
+  margin: 0 auto 48px;
 }
+
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #8f1111;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
 
 .heading h2 {
   margin: 0;
-  font-size: 25px;
+
   color: #171717;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(32px, 4vw, 44px);
+
+  line-height: 1.15;
+
+  font-weight: 700;
 }
 
-.line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-}
 
-.line i {
-  width: 32px;
-  height: 1px;
-  background: #8f1111;
-}
-
-.line b {
+.heading h2 span {
   color: #8f1111;
+}
+
+
+.heading p {
+  max-width: 650px;
+
+  margin: 17px auto 0;
+
+  color: #666;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HEADING DECORATION
+========================================================= */
+
+.headingLine {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+
+.headingLine span {
+  width: 45px;
+
+  height: 1px;
+
+  background: #b58a00;
+}
+
+
+.headingLine b {
+  color: #b58a00;
+
   font-size: 9px;
 }
 
-.grid {
+
+/* =========================================================
+   TWO LIST CONTAINERS
+========================================================= */
+
+.lists {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 13px;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 28px;
+
+  align-items: stretch;
 }
 
-.card {
-  padding: 8px;
 
-  text-align: center;
+/* =========================================================
+   MAIN CARD
+========================================================= */
 
-  border: 1px solid #e6e6e6;
-  border-radius: 9px;
+.listCard {
+  position: relative;
 
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 32px 34px 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e6dfd5;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 35px rgba(50, 35, 20, 0.07);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.image {
-  height: 85px;
-}
 
-.image img {
+/* subtle top gold line */
+
+.listCard::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
   width: 100%;
-  height: 100%;
 
-  object-fit: contain;
+  height: 3px;
+
+  background: #b58a00;
 }
 
-.card h3 {
-  margin: 5px 0;
 
-  color: #222;
+.listCard:hover {
+  transform: translateY(-4px);
 
-  font-size: 18px;
+  box-shadow:
+    0 18px 42px rgba(50, 35, 20, 0.11);
 }
 
-.card span {
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.cardHeader {
   display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding-bottom: 24px;
+
+  margin-bottom: 8px;
+
+  border-bottom: 1px solid #eee7df;
+}
+
+
+.headerIcon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
   align-items: center;
   justify-content: center;
-  gap: 4px;
 
-  color: #555;
-  font-size: 15px;
+  color: #b58a00;
+
+  border: 1px solid rgba(181, 138, 0, 0.65);
+
+  border-radius: 50%;
+
+  background: #fffdf7;
 }
 
-@media (max-width: 850px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+
+.cardEyebrow {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #a17a00;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+
+.cardHeader h3 {
+  margin: 0;
+
+  color: #8f1111;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 26px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   VEHICLE LIST
+========================================================= */
+
+.vehicleList {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   VEHICLE ITEM
+========================================================= */
+
+.vehicleItem {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 48px;
+
+  padding: 8px 4px;
+
+  border-bottom: 1px solid #f0ece7;
+
+  transition:
+    padding-left 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.vehicleItem:last-child {
+  border-bottom: none;
+}
+
+
+.vehicleItem:hover {
+  padding-left: 9px;
+
+  background: #fcfaf7;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.number {
+  width: 36px;
+
+  flex-shrink: 0;
+
+  color: #b58a00;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   VEHICLE NAME
+========================================================= */
+
+.vehicleName {
+  color: #3c3c3c;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   LUXURY CARD
+========================================================= */
+
+.luxuryCard {
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fffdf8 100%
+    );
+}
+
+
+.luxuryCard .headerIcon {
+  background: #fffaf0;
+}
+
+
+.luxuryCard .vehicleName {
+  font-weight: 600;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 60px 0 70px;
+  }
+
+
+  .container {
+    width: min(92%, 700px);
+  }
+
+
+  .lists {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+
+  .listCard {
+    padding: 28px 30px;
   }
 }
 
-@media (max-width: 550px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 50px 0 60px;
+  }
+
+
+  .container {
+    width: calc(100% - 30px);
+  }
+
+
+  .heading {
+    margin-bottom: 32px;
+  }
+
+
+  .heading h2 {
+    font-size: 30px;
+  }
+
+
+  .heading p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  .headingLine {
+    margin-top: 16px;
+  }
+
+
+  .headingLine span {
+    width: 35px;
+  }
+
+
+  .lists {
+    gap: 20px;
+  }
+
+
+  .listCard {
+    padding: 24px 20px 22px;
+
+    border-radius: 10px;
+  }
+
+
+  .cardHeader {
+    gap: 13px;
+
+    padding-bottom: 20px;
+  }
+
+
+  .headerIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .cardHeader h3 {
+    font-size: 22px;
+  }
+
+
+  .cardEyebrow {
+    font-size: 9px;
+  }
+
+
+  .vehicleItem {
+    min-height: 45px;
+
+    padding: 7px 2px;
+  }
+
+
+  .number {
+    width: 31px;
+
+    font-size: 11px;
+  }
+
+
+  .vehicleName {
+    font-size: 14px;
   }
 }

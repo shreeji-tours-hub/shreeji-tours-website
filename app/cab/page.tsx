@@ -34,7 +34,7 @@ export default function CabPage() {
         <CabBooking />
       </div>
 
-      <CabCTA />
+
 
       <ContactCTA/>
 

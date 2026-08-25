@@ -1,32 +1,31 @@
-export const cabFleet = [
-  {
-    name: "Swift Dzire / Etios",
-    capacity: "4+1",
-    image:
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=85",
-  },
-  {
-    name: "Toyota Innova",
-    capacity: "6+1",
-    image:
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=85",
-  },
-  {
-    name: "Innova Crysta",
-    capacity: "6+1",
-    image:
-      "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=700&q=85",
-  },
-  {
-    name: "Tempo Traveller",
-    capacity: "12+1",
-    image:
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=85",
-  },
-  {
-    name: "Luxury Cars",
-    capacity: "4+1",
-    image:
-      "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=700&q=85",
-  },
-];
+export const cabFleet = {
+  vehicles: [
+    "Swift Dzire",
+    "Kia Carrien",
+    "Ertiga",
+    "Innova Crysta",
+    "Innova Hycross",
+    "Toyota Fortuner",
+    "13 Seater Tempo Traveller",
+    "13 Seater SML",
+    "Force 16 Seater Urbania",
+    "17 Seater Tempo Traveller",
+    "20 Seater Bus",
+    "26 Seater Bus",
+    "30 Seater Bus",
+    "36 Seater Bus",
+    "43 - 45 Seater Bus",
+  ],
+
+  luxuryVehicles: [
+    "Mercedes S350",
+    "Toyota Vellfire",
+    "Kia Carnival",
+    "Kia Carnival Limousine +",
+    "Range Rover Sport HSE",
+    "Audi A6",
+    "Mercedes GLS350",
+    "Mercedes E220",
+    "Mercedes V220",
+  ],
+};

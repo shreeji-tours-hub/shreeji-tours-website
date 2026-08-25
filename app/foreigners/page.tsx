@@ -28,7 +28,7 @@ export default function ForeignersPage() {
 
       
 
-      <ForeignTourCTA />
+
 
       <ContactCTA/>
 
