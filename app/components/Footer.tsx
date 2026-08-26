@@ -6,6 +6,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  ArrowUp,
 } from "lucide-react";
 
 import {
@@ -223,7 +224,7 @@ export default function Footer() {
   <div className={styles.mapContainer}>
 
     <iframe
-      src="https://www.google.com/maps?q=Supershva%20Theatre%2C%20E%20Wing%2C%20Flat%20No%3A%20403%2C%20Old%20Nagardas%20Rd%2C%20Andheri%20East%2C%20Mumbai%20400069&output=embed"
+      src="https://www.google.com/maps?q=Supershva%20Eternia%2C%20E%20Wing%2C%20Flat%20No%3A%20403%2C%20Old%20Nagardas%20Rd%2C%20Andheri%20East%2C%20Mumbai%20400069&output=embed"
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
       title="Shreeji Tours & Travels Location"
@@ -236,38 +237,43 @@ export default function Footer() {
 
           <div className={styles.social}>
 
-            <a
-              href={footerSocialLinks.facebook}
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
+  <a
+    href={footerSocialLinks.facebook}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebookF />
+  </a>
 
-            <a
-              href={footerSocialLinks.instagram}
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
+  <a
+    href={footerSocialLinks.instagram}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram />
+  </a>
 
-            <a
-              href={footerSocialLinks.youtube}
-              aria-label="YouTube"
-            >
-              <FaYoutube />
-            </a>
+  <a
+    href={footerSocialLinks.youtube}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube"
+  >
+    <FaYoutube />
+  </a>
 
-            <a
-  href="https://x.com/ShreejiTnT"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="X (Twitter)"
->
-  <FaXTwitter />
-</a>
+  <a
+    href="https://x.com/ShreejiTnT"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X (Twitter)"
+  >
+    <FaXTwitter />
+  </a>
 
-          </div>
-
+</div>
         </div>
 
       </div>
@@ -299,21 +305,44 @@ export default function Footer() {
       </div>
 
 
-      {/* FLOATING WHATSAPP */}
+      {/* FLOATING BUTTONS */}
 
-      <a
-        href={footerSocialLinks.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.floatingWhatsapp}
-        aria-label="WhatsApp"
-      >
-        <FaWhatsapp className={styles.whatsappIcon} />
+<div className={styles.floatingButtons}>
 
-        <span className={styles.whatsappText}>
-          WhatsApp Us
-        </span>
-      </a>
+  {/* BACK TO TOP */}
+
+  <button
+    type="button"
+    className={styles.backToTop}
+    aria-label="Back to top"
+    onClick={() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }}
+  >
+    <ArrowUp size={24} strokeWidth={2.5} />
+  </button>
+
+
+  {/* WHATSAPP */}
+
+  <a
+    href={footerSocialLinks.whatsapp}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.floatingWhatsapp}
+    aria-label="WhatsApp"
+  >
+    <FaWhatsapp className={styles.whatsappIcon} />
+
+    <span className={styles.whatsappText}>
+      WhatsApp Us
+    </span>
+  </a>
+
+</div>
 
     </footer>
   );

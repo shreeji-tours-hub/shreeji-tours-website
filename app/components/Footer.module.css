@@ -999,3 +999,144 @@
     display: none;
   }
 }
+
+/* =========================================================
+   FLOATING BUTTONS
+   ========================================================= */
+
+.floatingButtons {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 180px;
+  height: 120px;
+
+  z-index: 9999;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.backToTop {
+  position: absolute;
+
+  right: 0;
+  bottom: 60px;
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #a70d0d;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  pointer-events: auto;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.backToTop:hover {
+  background: #8d0b0b;
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.floatingWhatsapp {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background: #25d366;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  text-decoration: none;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  pointer-events: auto;
+
+  transition: width 0.3s ease,
+              border-radius 0.3s ease;
+}
+
+
+/* WhatsApp icon */
+
+.whatsappIcon {
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  min-width: 30px;
+  min-height: 30px;
+
+  margin: 0;
+}
+
+
+/* Text */
+
+.whatsappText {
+  white-space: nowrap;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  margin-left: 10px;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+
+/* Expand to the LEFT */
+
+.floatingWhatsapp:hover {
+  width: 160px;
+  border-radius: 30px;
+
+  justify-content: flex-start;
+}
+
+.floatingWhatsapp:hover .whatsappIcon {
+  margin-left: 15px;
+}
+
+.floatingWhatsapp:hover .whatsappText {
+  opacity: 1;
+}
