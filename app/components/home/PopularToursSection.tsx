@@ -20,7 +20,7 @@ export default function PopularToursSection() {
             EXPLORE THE BEST OF INDIA
           </span>
 
-          <h2>View More Tours</h2>
+          <h2>Popular India Tours</h2>
 
           <div className={styles.decoration}>
             <i></i>
@@ -58,15 +58,19 @@ export default function PopularToursSection() {
                 {/* ONLY THIS IS CLICKABLE */}
 
                 <Link
-                  href="/foreigners"
-                  className={styles.featuredButton}
-                >
-                  View All Tours
-                </Link>
+  href="https://www.tripadvisor.in/Attraction_Review-g304554-d15697131-Reviews-Shreeji_Tours_n_Travels-Mumbai_Maharashtra.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.featuredButton}
+>
+  View All Tours
+</Link>
 
               </div>
             </div>
           )}
+
+          
 
 
           {/* OTHER TOURS — NOT CLICKABLE */}
@@ -102,6 +106,18 @@ export default function PopularToursSection() {
           </div>
 
         </div>
+
+        {/* VIEW MORE BUTTON */}
+<div className={styles.viewMoreWrapper}>
+  <Link
+    href="https://www.tripadvisor.in/Attraction_Review-g304554-d15697131-Reviews-Shreeji_Tours_n_Travels-Mumbai_Maharashtra.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.viewMoreButton}
+  >
+    View More
+  </Link>
+</div>
 
       </div>
     </section>

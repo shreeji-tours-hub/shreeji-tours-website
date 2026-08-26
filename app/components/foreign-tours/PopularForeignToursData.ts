@@ -606,3 +606,55 @@ export const popularForeignTours = [
     ],
   },
 ];
+
+// =========================================================
+// HOMEPAGE - TOURS FOR FOREIGNERS
+// =========================================================
+
+export const featuredForeignTours = [
+  {
+    slug: "mumbai-sightseeing-tours",
+    title: "Mumbai Sightseeing Tours",
+    description:
+      "Explore the vibrant city of Mumbai, its iconic landmarks, culture and coastal beauty.",
+    image:
+      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    slug: "elephanta-caves-tours",
+    title: "Elephanta Caves Tours",
+    description:
+      "Discover the UNESCO World Heritage Site of Elephanta Caves and experience its ancient rock-cut heritage.",
+    image:
+  "https://s7ap1.scene7.com/is/image/incredibleindia/1-elephanta-caves-mumbai-maharashtra-attr-hero?qlt=82&ts=1727355530211",
+  },
+
+  {
+    slug: "food-culture-tours",
+    title: "Food & Culture Tours",
+    description:
+      "Taste India's rich cuisine and experience the colourful traditions, markets and culture of Mumbai.",
+    image:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    slug: "bollywood-experience",
+    title: "Bollywood Experience",
+    description:
+      "Step into the world of Indian cinema and discover the glamour, music and culture of Bollywood.",
+    image:
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    slug: "golden-triangle",
+    title: "Golden Triangle Tours",
+    description:
+      "Discover Delhi, Agra and Jaipur through India's iconic monuments, heritage and royal culture.",
+    image:
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85",
+  },
+
+];

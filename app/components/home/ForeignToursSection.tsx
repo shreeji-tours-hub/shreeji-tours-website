@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./ForeignToursSection.module.css";
 
-import { popularForeignTours } from "@/app/components/foreign-tours/PopularForeignToursData";
+import { featuredForeignTours } from "@/app/components/foreign-tours/PopularForeignToursData";
 
 export default function ForeignToursSection() {
   return (
@@ -34,7 +34,7 @@ export default function ForeignToursSection() {
         {/* TOUR CARDS */}
         <div className={styles.grid}>
 
-          {popularForeignTours.map((tour) => (
+          {featuredForeignTours.map((tour) => (
             <Link
               key={tour.slug}
               href={`/foreign-tours/${tour.slug}`}
