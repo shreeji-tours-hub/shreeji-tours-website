@@ -385,7 +385,7 @@ export default async function InternationalTourPage({
 
                 <div className={styles.dateField}>
   <label htmlFor="start-date">
-    Start Date
+    Tour Date
   </label>
 
   <input
@@ -397,92 +397,20 @@ export default async function InternationalTourPage({
 
                 {/* NUMBER OF TRAVELERS */}
 
-                <select
-                  defaultValue=""
-                  aria-label="Number of Travelers"
-                >
-
-                  <option
-                    value=""
-                    disabled
-                  >
-                    Number of Travelers
-                  </option>
-
-                  <option value="1-2">
-                    1 - 2
-                  </option>
-
-                  <option value="3-5">
-                    3 - 5
-                  </option>
-
-                  <option value="6-10">
-                    6 - 10
-                  </option>
-
-                  <option value="10+">
-                    10+
-                  </option>
-
-                </select>
+                <input
+                  type="number"
+                  placeholder="Number of Travelers"
+                  min="1"
+                />
 
 
                 {/* NUMBER OF NIGHTS */}
 
-                <select
-                  defaultValue=""
-                  aria-label="Number of Nights"
-                >
-
-                  <option
-                    value=""
-                    disabled
-                  >
-                    Number of Nights
-                  </option>
-
-                  <option value="1">
-                    1 Night
-                  </option>
-
-                  <option value="2">
-                    2 Nights
-                  </option>
-
-                  <option value="3">
-                    3 Nights
-                  </option>
-
-                  <option value="4">
-                    4 Nights
-                  </option>
-
-                  <option value="5">
-                    5 Nights
-                  </option>
-
-                  <option value="6">
-                    6 Nights
-                  </option>
-
-                  <option value="7">
-                    7 Nights
-                  </option>
-
-                  <option value="8">
-                    8 Nights
-                  </option>
-
-                  <option value="9">
-                    9 Nights
-                  </option>
-
-                  <option value="10+">
-                    10+ Nights
-                  </option>
-
-                </select>
+                <input
+                  type="number"
+                  placeholder="Number of Nights"
+                  min="1"
+                />
 
 
                 {/* HOTEL CATEGORY */}

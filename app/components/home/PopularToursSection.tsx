@@ -110,7 +110,7 @@ export default function PopularToursSection() {
         {/* VIEW MORE BUTTON */}
 <div className={styles.viewMoreWrapper}>
   <Link
-    href="https://www.tripadvisor.in/Attraction_Review-g304554-d15697131-Reviews-Shreeji_Tours_n_Travels-Mumbai_Maharashtra.html"
+    href="/india-tours"
     target="_blank"
     rel="noopener noreferrer"
     className={styles.viewMoreButton}

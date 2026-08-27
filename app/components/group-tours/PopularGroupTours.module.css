@@ -1,5 +1,5 @@
 /* =========================================================
-   SECTION
+   SECTION 
 ========================================================= */
 
 .section {
@@ -15,7 +15,7 @@
 
 
 /* =========================================================
-   HEADING
+   HEADING 
 ========================================================= */
 
 .heading {
@@ -48,7 +48,7 @@
 
 
 /* =========================================================
-   DECORATION
+   DECORATION 
 ========================================================= */
 
 .decoration {
@@ -75,6 +75,69 @@
 
 
 /* =========================================================
+   FILTERS
+========================================================= */
+
+.filters {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.filterButton {
+  border: 1px solid #d8d8d8;
+
+  background: #fff;
+
+  color: #555;
+
+  padding: 9px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filterButton:hover {
+  border-color: #951414;
+
+  color: #951414;
+}
+
+.activeFilter {
+  background: #951414;
+
+  border-color: #951414;
+
+  color: #fff;
+}
+
+.activeFilter:hover {
+  background: #951414;
+
+  border-color: #951414;
+
+  color: #fff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
    TOUR GRID
    DESKTOP - 5 CARDS PER ROW
 ========================================================= */
@@ -82,7 +145,10 @@
 .grid {
   display: grid;
 
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    5,
+    minmax(0, 1fr)
+  );
 
   gap: 20px;
 
@@ -295,6 +361,46 @@
 
 
 /* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.emptyState {
+  width: 100%;
+
+  padding: 55px 20px;
+
+  text-align: center;
+
+  border: 1px solid #e8e8e8;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.emptyState h3 {
+  margin: 0 0 8px;
+
+  color: #172d4d;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+}
+
+.emptyState p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
    TABLET
    3 CARDS PER ROW
 ========================================================= */
@@ -355,6 +461,23 @@
     font-size: 22px;
   }
 
+  /* FILTERS */
+
+  .filters {
+    gap: 7px;
+
+    margin-top: 15px;
+  }
+
+  .filterButton {
+    padding: 8px 10px;
+
+    font-size: 11px;
+
+    line-height: 1.25;
+  }
+
+
   .grid {
     grid-template-columns: 1fr;
 
@@ -383,6 +506,120 @@
 
   .durationBadge {
     font-size: 11px;
+  }
+
+  .emptyState {
+    padding: 45px 15px;
+  }
+
+}
+
+/* =========================================================
+   GROUP TOUR REGISTRATION
+========================================================= */
+
+.registrationSection {
+  width: 100%;
+  padding: 70px 0;
+  background: #f8f5ef;
+  margin-top: 70px;
+}
+
+.registrationContent {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.registrationContent .sectionLabel {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #d99a00;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.registrationContent h2 {
+  margin: 0 0 14px;
+
+  color: #172d4d;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.registrationContent p {
+  max-width: 700px;
+  margin: 0 auto 28px;
+
+  color: #555;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.registrationButton {
+  display: inline-block;
+
+  padding: 14px 28px;
+
+  background: #a80000;
+  color: #fff;
+
+  border-radius: 5px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.registrationButton:hover {
+  background: #8f0000;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .registrationSection {
+    padding: 50px 20px;
+  }
+
+  .registrationContent h2 {
+    font-size: 30px;
+  }
+
+  .registrationContent p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .registrationButton {
+    padding: 13px 22px;
+    font-size: 13px;
   }
 
 }

@@ -367,6 +367,37 @@
   color: #333;
 }
 
+/* =========================================================
+   PRICE NOTE
+========================================================= */
+
+.priceNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid #eee7df;
+
+  color: #8f1111;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.priceNote svg {
+  flex-shrink: 0;
+  color: #8f1111;
+}
+
 
 /* =========================================================
    TABLET
@@ -492,4 +523,20 @@
   .vehicleName {
     font-size: 14px;
   }
+
+  .priceNote {
+  margin-top: 17px;
+  padding-top: 13px;
+
+  gap: 8px;
+
+  font-size: 14px;
+}
+
+.priceNote svg {
+  width: 17px;
+  height: 17px;
+}
+
+
 }

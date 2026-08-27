@@ -331,7 +331,7 @@ export default async function ForeignTourPage({ params }: Props) {
 
                 <div className={styles.dateField}>
   <label htmlFor="start-date">
-    Start Date
+    Tour Date
   </label>
 
   <input

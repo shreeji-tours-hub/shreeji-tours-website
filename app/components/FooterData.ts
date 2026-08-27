@@ -17,35 +17,35 @@ export const footerQuickLinks = [
   },
   {
     label: "About Us",
-    href: "#about",
+    href: "/about",
   },
   {
     label: "India Tours",
-    href: "#tours",
+    href: "/india-tours",
   },
   {
     label: "Tours for Foreigners",
-    href: "#foreigners",
+    href: "/foreigners",
   },
   {
     label: "International Tours",
-    href: "#international",
+    href: "/international-tours",
   },
   {
     label: "Cab Hire",
-    href: "#cab",
+    href: "/cab",
   },
   {
     label: "Group Tours",
-    href: "#groups",
+    href: "/groups",
   },
   {
     label: "Happy Clients",
-    href: "#reviews",
+    href: "/gallery",
   },
   {
     label: "Contact Us",
-    href: "#contact",
+    href: "/contact",
   },
 ];
 
@@ -73,11 +73,11 @@ export const footerServices = [
   },
   {
     label: "Cab Hire",
-    href: "#cab",
+    href: "/cab",
   },
   {
     label: "Group Tours",
-    href: "#groups",
+    href: "/groups",
   },
   {
     label: "Customized Tours",
@@ -103,6 +103,9 @@ export const footerContact = {
 
   address:
     "Supershva Eternia, D Wing, Flat No: 403, Old Nagardas Rd, Andheri East, Mumbai - 400069",
+
+  mapQuery:
+    "Shreeji Tours n Travels, Andheri East, Mumbai, Maharashtra",
 };
 
 

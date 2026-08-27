@@ -223,14 +223,17 @@ export default function Footer() {
 
   <div className={styles.mapContainer}>
 
-    <iframe
-      src="https://www.google.com/maps?q=Supershva%20Eternia%2C%20E%20Wing%2C%20Flat%20No%3A%20403%2C%20Old%20Nagardas%20Rd%2C%20Andheri%20East%2C%20Mumbai%20400069&output=embed"
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Shreeji Tours & Travels Location"
-    />
+  <iframe
+    src={`https://www.google.com/maps?q=${encodeURIComponent(
+      footerContact.mapQuery
+    )}&output=embed`}
+    loading="lazy"
+    allowFullScreen
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Shreeji Tours and Travels Location"
+  />
 
-  </div>
+</div>
 
 
           {/* SOCIAL ICONS */}

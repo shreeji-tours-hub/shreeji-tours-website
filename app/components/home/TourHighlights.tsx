@@ -122,7 +122,7 @@ export default function TourHighlights() {
             
 
               <h2>
-                GALLERY
+                Moments of our Tours
               </h2>
             </div>
 

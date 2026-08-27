@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./CabFleet.module.css";
-import { CarFront, Crown } from "lucide-react";
+import { CarFront, Crown, Clock } from "lucide-react";
 import { cabFleet } from "./CabFleetData";
 
 export default function CabFleet() {
@@ -84,6 +84,11 @@ export default function CabFleet() {
 
             </div>
 
+            <div className={styles.priceNote}>
+  <Clock size={18} strokeWidth={2} />
+  <span>Price Available on Request</span>
+</div>
+
           </div>
 
 
@@ -128,6 +133,11 @@ export default function CabFleet() {
               ))}
 
             </div>
+
+            <div className={styles.priceNote}>
+  <Clock size={18} strokeWidth={2} />
+  <span>Price Available on Request</span>
+</div>
 
           </div>
 

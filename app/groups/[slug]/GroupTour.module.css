@@ -1,74 +1,45 @@
 /* =========================================================
    GROUP TOUR DETAIL PAGE
-   SAME INTERNAL UI AS FOREIGN TOURS
+   SAME UI STRUCTURE AS INDIA TOUR DETAIL
 ========================================================= */
 
 .page {
   width: 100%;
   min-height: 100vh;
 
-  background: #fff;
-  color: #171717;
+  background: #f7f5f1;
+  color: #1b1b1b;
 
   overflow-x: hidden;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
 }
 
 
-/* =========================================================
-   COMMON CONTAINER
-========================================================= */
-
 .container {
   width: min(1180px, calc(100% - 40px));
+
   margin: 0 auto;
 }
 
 
 /* =========================================================
-   HERO / FULL WIDTH BANNER
+   GROUP TOUR HERO
 ========================================================= */
 
 .hero {
   position: relative;
 
   width: 100%;
+  height: 632px;
 
-  /*
-    Large banner exactly like the
-    foreign-tour internal page.
-  */
-  height: calc(100vh - 90px);
-
-  min-height: 700px;
+  background-size: cover;
+  background-position: center;
 
   overflow: hidden;
-
-  background: #111;
-}
-
-
-.heroImage {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-  object-position: center center;
 }
 
 
 /* =========================================================
-   HERO OVERLAY
+   DARK OVERLAY
 ========================================================= */
 
 .heroOverlay {
@@ -76,20 +47,15 @@
 
   inset: 0;
 
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  align-items: center;
-
   background:
     linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.55) 45%,
-      rgba(0, 0, 0, 0.20) 100%
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.18) 35%,
+      rgba(0, 0, 0, 0.78) 100%
     );
+
+  z-index: 1;
 }
 
 
@@ -98,38 +64,38 @@
 ========================================================= */
 
 .heroContent {
-  position: relative;
+  position: absolute;
 
-  width: min(1400px, 90%);
+  left: max(
+    11.2%,
+    40px
+  );
 
-  margin: 0 auto;
+  bottom: 96px;
+
+  z-index: 2;
+
+  max-width: 1150px;
 
   color: #fff;
 }
 
 
 /* =========================================================
-   HERO LABEL
+   HERO EYEBROW
 ========================================================= */
 
-.heroLabel {
-  display: inline-block;
+.heroEyebrow {
+  display: block;
 
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 
-  padding: 12px 22px;
+  color: #e0a400;
 
-  background: #a80000;
+  font-size: 13px;
+  font-weight: 800;
 
-  color: #fff;
-
-  border-radius: 4px;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 
   text-transform: uppercase;
 }
@@ -140,71 +106,65 @@
 ========================================================= */
 
 .heroTitle {
-  max-width: 1000px;
-
-  margin: 0 0 25px;
-
-  color: #fff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(55px, 6vw, 100px);
-
-  font-weight: 700;
-
-  line-height: 0.98;
-
-  letter-spacing: -1.5px;
-}
-
-
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
-
-.heroDescription {
-  max-width: 1000px;
-
   margin: 0;
 
   color: #fff;
 
-  font-size: 20px;
+  font-family: Georgia, serif;
 
-  line-height: 1.65;
+  font-size: clamp(
+    54px,
+    5.2vw,
+    76px
+  );
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
 }
 
 
 /* =========================================================
-   TOUR INFORMATION
+   HERO ROUTE
 ========================================================= */
 
-.infoSection {
-  width: 100%;
-
-  background: #8f1111;
+.heroRoute {
+  margin: 22px 0 0;
 
   color: #fff;
+
+  font-size: 19px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
 }
 
 
-.infoGrid {
+/* =========================================================
+   TOUR INFORMATION BAR
+========================================================= */
+
+.infoBar {
+  width: 100%;
+
   display: grid;
 
   grid-template-columns:
     repeat(4, 1fr);
+
+  background: #fff;
+
+  border-bottom: 1px solid #eee;
 }
 
 
 .infoItem {
-  min-width: 0;
+  min-height: 105px;
 
-  min-height: 90px;
-
-  padding: 20px 24px;
+  padding: 25px 38px;
 
   display: flex;
 
@@ -212,8 +172,9 @@
 
   justify-content: center;
 
-  border-right:
-    1px solid rgba(255, 255, 255, 0.22);
+  gap: 8px;
+
+  border-right: 1px solid #e5e5e5;
 }
 
 
@@ -223,43 +184,41 @@
 
 
 .infoLabel {
-  display: block;
+  color: #8a8a8a;
 
-  margin-bottom: 8px;
-
-  color: #f2dcdc;
-
-  font-size: 10px;
+  font-size: 11px;
 
   font-weight: 700;
 
-  text-transform: uppercase;
-
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
 }
 
 
-.infoValue {
-  display: block;
+.infoItem strong {
+  color: #172d4d;
 
-  color: #fff;
+  font-size: 16px;
 
-  font-size: 15px;
-
-  line-height: 1.5;
+  line-height: 1.4;
 
   font-weight: 700;
 }
-
 
 /* =========================================================
-   OVERVIEW SECTION
+   OVERVIEW
 ========================================================= */
 
 .overviewSection {
-  padding: 65px 0 75px;
+  padding: 58px 0 65px;
 
   background: #fff;
+}
+
+
+.contentGrid {
+  display: grid;
+
+  grid-template-columns: 1fr;
 }
 
 
@@ -267,31 +226,6 @@
   width: 100%;
 }
 
-
-/* =========================================================
-   SECTION LABEL
-========================================================= */
-
-.sectionLabel {
-  display: block;
-
-  margin-bottom: 8px;
-
-  color: #d99a00;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   OVERVIEW TITLE
-========================================================= */
 
 .mainContent > h2 {
   margin: 0 0 20px;
@@ -303,7 +237,7 @@
     "Times New Roman",
     serif;
 
-  font-size: 42px;
+  font-size: 38px;
 
   line-height: 1.2;
 
@@ -318,9 +252,9 @@
 .overviewBox {
   max-width: 1100px;
 
-  margin-bottom: 42px;
+  margin-bottom: 38px;
 
-  padding: 24px 28px;
+  padding: 22px 26px;
 
   background: #faf8f5;
 
@@ -343,7 +277,7 @@
 
 
 /* =========================================================
-   HIGHLIGHTS
+   TOUR HIGHLIGHTS
 ========================================================= */
 
 .highlights {
@@ -352,22 +286,22 @@
 
 
 .highlightsHeader {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 
 .highlightLabel {
   display: block;
 
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 
   color: #d99a00;
 
-  font-size: 12px;
+  font-size: 11px;
 
   font-weight: 800;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
 
   text-transform: uppercase;
 }
@@ -383,11 +317,9 @@
     "Times New Roman",
     serif;
 
-  font-size: 38px;
+  font-size: 30px;
 
-  line-height: 1.2;
-
-  font-weight: 700;
+  line-height: 1.25;
 }
 
 
@@ -399,49 +331,67 @@
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(2, 1fr);
 
-  gap: 16px 28px;
+  gap: 14px 18px;
+
+  max-width: 1050px;
 }
 
 
-/* =========================================================
-   HIGHLIGHT ITEM
-========================================================= */
-
 .highlight {
-  min-width: 0;
+  min-height: 65px;
 
   display: flex;
 
-  align-items: flex-start;
+  align-items: center;
 
-  gap: 12px;
+  gap: 14px;
 
-  padding: 2px 0;
+  padding: 15px 18px;
+
+  background: #fff;
+
+  border:
+    1px solid #e8e1d8;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.highlight:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 
 .highlightIcon {
   flex-shrink: 0;
 
-  width: 27px;
-  height: 27px;
+  width: 28px;
+  height: 28px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  margin-top: 1px;
+  background: #8f1111;
 
   border-radius: 50%;
 
-  background: #8f1111;
-
   color: #fff;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 }
@@ -450,7 +400,7 @@
 .highlight p {
   margin: 0;
 
-  color: #444;
+  color: #3e3e3e;
 
   font-size: 14px;
 
@@ -459,47 +409,38 @@
 
 
 /* =========================================================
-   ITINERARY SECTION
+   ITINERARY
 ========================================================= */
 
 .itinerarySection {
-  padding: 100px 0;
+  padding: 45px 0;
 
-  background: #fff;
+  background: #f8f5f0;
 }
 
 
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
 .sectionHeading {
-  margin-bottom: 55px;
+  margin-bottom: 28px;
+
+  text-align: center;
 }
 
 
 .sectionHeading .sectionLabel {
-  margin-bottom: 8px;
+  color: #d99a00;
 }
 
 
 .sectionHeading h2 {
-  margin: 0;
-
-  color: #102d61;
+  margin: 7px 0 0;
 
   font-family:
     Georgia,
-    "Times New Roman",
     serif;
 
-  font-size: clamp(35px, 4vw, 50px);
+  font-size: 32px;
 
-  line-height: 1.1;
-
-  font-weight: 700;
-
-  letter-spacing: -1px;
+  color: #132f5b;
 }
 
 
@@ -511,36 +452,27 @@
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1fr) 370px;
+    1fr 340px;
 
-  gap: 65px;
+  gap: 28px;
 
   align-items: start;
 }
 
 
 /* =========================================================
-   ITINERARY TIMELINE
+   ITINERARY CARD
 ========================================================= */
 
 .itinerary {
-  position: relative;
-}
+  padding: 20px;
 
+  background: #fff;
 
-.itinerary::before {
-  content: "";
+  border:
+    1px solid #e5ddd4;
 
-  position: absolute;
-
-  left: 20px;
-
-  top: 22px;
-  bottom: 22px;
-
-  width: 1px;
-
-  background: #ded9d1;
+  border-radius: 8px;
 }
 
 
@@ -549,75 +481,62 @@
 ========================================================= */
 
 .day {
-  position: relative;
-
   display: grid;
 
   grid-template-columns:
-    42px minmax(0, 1fr);
+    48px 1fr;
 
-  gap: 20px;
+  gap: 17px;
 
-  padding-bottom: 38px;
+  padding-bottom: 24px;
+
+  margin-bottom: 24px;
+
+  border-bottom:
+    1px solid #eee;
 }
 
 
 .day:last-child {
+  border: 0;
+
+  margin: 0;
+
   padding-bottom: 0;
 }
 
 
-/* =========================================================
-   DAY NUMBER
-========================================================= */
-
 .dayNumber {
-  position: relative;
-
-  z-index: 2;
-
-  width: 42px;
-  height: 42px;
+  width: 45px;
+  height: 45px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
-
   background: #f4b52d;
 
+  border-radius: 50%;
+
+  font-weight: bold;
+
+  font-size: 16px;
+
   color: #171717;
-
-  font-size: 14px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   DAY CONTENT
-========================================================= */
-
-.dayContent {
-  min-width: 0;
 }
 
 
 .dayContent h3 {
-  margin: 0 0 7px;
-
-  color: #102d61;
+  margin: 0 0 6px;
 
   font-family:
     Georgia,
-    "Times New Roman",
     serif;
 
-  font-size: 19px;
+  font-size: 18px;
 
-  line-height: 1.35;
+  color: #132f5b;
 }
 
 
@@ -626,26 +545,22 @@
 
   color: #555;
 
-  font-size: 14px;
+  font-size: 13px;
 
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
-
-/* =========================================================
-   OVERNIGHT
-========================================================= */
 
 .overnight {
   display: inline-block;
 
-  margin-top: 8px;
+  margin-top: 6px;
 
   color: #8f1111;
 
   font-size: 12px;
 
-  font-weight: 700;
+  font-weight: bold;
 }
 
 
@@ -658,7 +573,7 @@
 
   top: 20px;
 
-  padding: 26px;
+  padding: 22px;
 
   background: #fff;
 
@@ -666,9 +581,6 @@
     1px solid #e5ddd4;
 
   border-radius: 8px;
-
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 
@@ -679,29 +591,22 @@
 
   font-family:
     Georgia,
-    "Times New Roman",
     serif;
 
-  font-size: 30px;
-
-  line-height: 1.2;
+  font-size: 28px;
 }
 
 
 .enquiryCard > p {
-  margin: 0 0 18px;
-
   color: #666;
 
   font-size: 13px;
 
   line-height: 1.6;
+
+  margin: 0 0 15px;
 }
 
-
-/* =========================================================
-   FORM FIELDS
-========================================================= */
 
 .enquiryCard input,
 .enquiryCard select,
@@ -712,20 +617,18 @@
 
   margin-bottom: 10px;
 
-  padding: 12px;
+  padding: 11px;
 
   border:
     1px solid #ddd;
 
   border-radius: 4px;
 
-  background: #fff;
-
-  color: #222;
+  font-size: 12px;
 
   font-family: inherit;
 
-  font-size: 13px;
+  background: #fff;
 }
 
 
@@ -744,40 +647,62 @@
 
 
 /* =========================================================
+   DATE FIELD
+========================================================= */
+
+.dateField {
+  width: 100%;
+}
+
+
+.dateField label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #171717;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.dateField input {
+  width: 100%;
+}
+
+
+/* =========================================================
    ENQUIRY BUTTON
 ========================================================= */
 
 .enquiryButton {
   width: 100%;
 
-  margin-top: 4px;
-
   padding: 13px;
 
   border: 0;
 
-  border-radius: 5px;
+  border-radius: 4px;
 
   background: #8f1111;
 
   color: #fff;
 
-  font-size: 13px;
+  font-weight: bold;
 
-  font-weight: 700;
+  font-size: 12px;
 
   cursor: pointer;
 
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    background 0.2s ease;
 }
 
 
 .enquiryButton:hover {
   background: #681010;
-
-  transform: translateY(-1px);
 }
 
 
@@ -786,7 +711,7 @@
 ========================================================= */
 
 .inclusionSection {
-  padding: 65px 0 75px;
+  padding: 50px 0;
 
   background: #fff;
 }
@@ -798,70 +723,26 @@
   grid-template-columns:
     1fr 1fr;
 
-  gap: 28px;
+  gap: 22px;
 
-  align-items: stretch;
+  align-items: start;
 }
 
-
-/* =========================================================
-   INCLUSION BOX
-========================================================= */
 
 .inclusionBox {
-  min-height: 100%;
-
-  padding: 32px;
-
-  background: #fff;
+  padding: 28px;
 
   border:
-    1px solid #e4ddd5;
+    1px solid #e5ddd4;
 
-  border-radius: 12px;
+  border-radius: 8px;
 
-  box-shadow:
-    0 4px 18px rgba(0, 0, 0, 0.06);
-}
-
-
-/* =========================================================
-   INCLUSION HEADER
-========================================================= */
-
-.inclusionHeader {
-  margin-bottom: 25px;
-
-  padding-bottom: 18px;
-
-  border-bottom:
-    1px solid #eee;
-}
-
-
-.inclusionHeader .sectionLabel {
-  margin-bottom: 7px;
-}
-
-
-.inclusionBox h2 {
-  margin: 0 0 7px;
-
-  color: #102d61;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 38px;
-
-  line-height: 1.15;
+  background: #fff;
 }
 
 
 .inclusionHeader p {
-  margin: 0;
+  margin: -12px 0 20px;
 
   color: #777;
 
@@ -871,9 +752,20 @@
 }
 
 
-/* =========================================================
-   INCLUSION LIST
-========================================================= */
+.inclusionBox h2 {
+  margin: 5px 0 20px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 38px;
+
+  line-height: 1.1;
+
+  color: #132f5b;
+}
+
 
 .inclusionBox ul {
   padding: 0;
@@ -889,74 +781,44 @@
 
   align-items: flex-start;
 
-  gap: 14px;
+  gap: 10px;
 
-  padding: 14px 0;
+  padding: 11px 0;
 
   border-bottom:
     1px solid #eee;
 
-  color: #444;
+  color: #555;
 
   font-size: 14px;
 
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 
 .inclusionBox li:last-child {
-  border-bottom: 0;
+  border-bottom: none;
 }
 
-
-/* =========================================================
-   INCLUSION ICON
-========================================================= */
 
 .inclusionIcon {
-  flex-shrink: 0;
+  color: #25883b;
 
-  width: 27px;
-  height: 27px;
+  font-weight: bold;
 
-  display: flex;
+  font-size: 15px;
 
-  align-items: center;
-  justify-content: center;
-
-  background: #25883b;
-
-  border-radius: 50%;
-
-  color: #fff;
-
-  font-size: 13px;
-
-  font-weight: 700;
+  min-width: 16px;
 }
 
-
-/* =========================================================
-   EXCLUSION ICON
-========================================================= */
 
 .exclusionIcon {
-  background: #b00000;
+  color: #b00000;
 }
 
 
-/* =========================================================
-   INCLUSION TEXT
-========================================================= */
-
 .inclusionText {
-  padding-top: 2px;
-
-  color: #444;
-
-  font-size: 14px;
-
-  line-height: 1.6;
+  flex: 1;
 }
 
 
@@ -966,26 +828,12 @@
 
 @media (max-width: 950px) {
 
-  /* HERO */
-
   .hero {
     height: 70vh;
 
-    min-height: 560px;
+    min-height: 520px;
   }
 
-
-  .heroContent {
-    width: calc(100% - 50px);
-  }
-
-
-  .heroTitle {
-    font-size: clamp(48px, 7vw, 72px);
-  }
-
-
-  /* INFO */
 
   .infoGrid {
     grid-template-columns:
@@ -994,10 +842,15 @@
 
 
   .infoItem {
-    min-height: 85px;
+    padding: 20px;
 
     border-bottom:
-      1px solid rgba(255, 255, 255, 0.2);
+      1px solid #e5e1da;
+  }
+
+
+  .infoItem:first-child {
+    padding-left: 20px;
   }
 
 
@@ -1011,25 +864,6 @@
     border-bottom: none;
   }
 
-
-  /* OVERVIEW */
-
-  .overviewSection {
-    padding: 55px 0 65px;
-  }
-
-
-  .mainContent > h2 {
-    font-size: 38px;
-  }
-
-
-  .highlightGrid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ITINERARY */
 
   .itineraryLayout {
     grid-template-columns: 1fr;
@@ -1047,309 +881,85 @@
   }
 
 
-  /* INCLUSIONS */
-
   .inclusionGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE / TABLET
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
-  .container {
-    width: calc(100% - 30px);
-  }
-
-
-  /* =======================================================
-     HERO
-  ======================================================= */
-
-  .hero {
-    height: 500px;
-
-    min-height: 500px;
-  }
-
-
-  .heroImage {
-    object-position: center center;
-  }
-
-
-  .heroOverlay {
-    align-items: flex-end;
-
-    background:
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.82) 0%,
-        rgba(0, 0, 0, 0.58) 40%,
-        rgba(0, 0, 0, 0.20) 75%,
-        rgba(0, 0, 0, 0.05) 100%
-      );
+  .container,
+  .heroContent {
+    width: calc(100% - 24px);
   }
 
 
   .heroContent {
-    width: calc(100% - 30px);
-
     padding-bottom: 45px;
   }
 
 
-  .heroLabel {
-    margin-bottom: 18px;
-
-    padding: 9px 14px;
-
-    font-size: 11px;
-  }
-
-
   .heroTitle {
-    max-width: 100%;
-
-    margin-bottom: 15px;
-
-    font-size: 40px;
-
-    line-height: 1.02;
-
-    letter-spacing: -0.8px;
+    font-size: 34px;
   }
 
 
   .heroDescription {
-    font-size: 14px;
-
-    line-height: 1.6;
+    font-size: 13px;
   }
 
-
-  /* =======================================================
-     INFORMATION
-  ======================================================= */
 
   .infoGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
 
-  .infoItem,
-  .infoItem:nth-child(3),
-  .infoItem:nth-child(4) {
-    min-height: auto;
-
-    padding: 17px 0;
-
-    border-right: none;
-
+  .infoItem {
     border-bottom:
-      1px solid rgba(255, 255, 255, 0.2);
+      1px solid #e5e1da;
   }
 
 
-  .infoItem:last-child {
-    border-bottom: none;
+  .infoItem:nth-child(2) {
+    border-right: none;
   }
 
-
-  .infoLabel {
-    margin-bottom: 5px;
-  }
-
-
-  .infoValue {
-    font-size: 14px;
-  }
-
-
-  /* =======================================================
-     OVERVIEW
-  ======================================================= */
 
   .overviewSection {
     padding: 45px 0 50px;
   }
 
 
-  .sectionLabel {
-    font-size: 11px;
-
-    letter-spacing: 1.5px;
-  }
-
-
   .mainContent > h2 {
-    margin-bottom: 18px;
-
-    font-size: 34px;
-  }
-
-
-  .overviewBox {
-    margin-bottom: 35px;
-
-    padding: 18px 20px;
+    font-size: 32px;
   }
 
 
   .overview {
-    font-size: 14px;
-
-    line-height: 1.8;
-  }
-
-
-  .highlights {
-    margin-top: 25px;
-  }
-
-
-  .highlightsHeader {
-    margin-bottom: 20px;
-  }
-
-
-  .highlightsHeader h3 {
-    font-size: 32px;
+    font-size: 15px;
   }
 
 
   .highlightGrid {
     grid-template-columns: 1fr;
-
-    gap: 15px;
-  }
-
-
-  .highlight {
-    gap: 10px;
-  }
-
-
-  .highlightIcon {
-    width: 24px;
-    height: 24px;
-
-    font-size: 11px;
-  }
-
-
-  .highlight p {
-    font-size: 13px;
-  }
-
-
-  /* =======================================================
-     ITINERARY
-  ======================================================= */
-
-  .itinerarySection {
-    padding: 65px 0;
-  }
-
-
-  .sectionHeading {
-    margin-bottom: 40px;
   }
 
 
   .sectionHeading h2 {
-    font-size: 34px;
-  }
-
-
-  .itineraryLayout {
-    gap: 45px;
-  }
-
-
-  .itinerary::before {
-    left: 19px;
-  }
-
-
-  .day {
-    grid-template-columns:
-      38px minmax(0, 1fr);
-
-    gap: 15px;
-
-    padding-bottom: 30px;
-  }
-
-
-  .dayNumber {
-    width: 38px;
-    height: 38px;
-
-    font-size: 13px;
-  }
-
-
-  .dayContent h3 {
-    font-size: 17px;
-  }
-
-
-  .dayContent p {
-    font-size: 13px;
-
-    line-height: 1.7;
-  }
-
-
-  .overnight {
-    font-size: 11px;
-  }
-
-
-  /* =======================================================
-     ENQUIRY
-  ======================================================= */
-
-  .enquiryCard {
-    width: 100%;
-
-    max-width: none;
-
-    padding: 22px;
-
-    box-sizing: border-box;
-  }
-
-
-  .enquiryCard h3 {
-    font-size: 27px;
-  }
-
-
-  /* =======================================================
-     INCLUSIONS
-  ======================================================= */
-
-  .inclusionSection {
-    padding: 50px 0 60px;
+    font-size: 29px;
   }
 
 
   .inclusionGrid {
     grid-template-columns: 1fr;
-
-    gap: 20px;
-  }
-
-
-  .inclusionBox {
-    padding: 26px;
   }
 
 
@@ -1361,22 +971,15 @@
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 450px) {
 
-  .container {
-    width: calc(100% - 20px);
-  }
-
-
-  /* HERO */
-
   .hero {
-    height: 500px;
+    height: 450px;
 
-    min-height: 500px;
+    min-height: 450px;
   }
 
 
@@ -1387,43 +990,35 @@
   }
 
 
-  .heroLabel {
-    padding: 8px 12px;
-
-    font-size: 10px;
-  }
-
-
   .heroTitle {
-    font-size: 34px;
-
-    line-height: 1.05;
+    font-size: 28px;
   }
 
 
   .heroDescription {
-    font-size: 13px;
+    font-size: 12px;
   }
 
 
-  /* INFO */
-
-  .infoItem,
-  .infoItem:nth-child(3),
-  .infoItem:nth-child(4) {
-    padding: 15px 0;
+  .infoGrid {
+    grid-template-columns: 1fr;
   }
 
 
-  /* OVERVIEW */
+  .infoItem {
+    border-right: 0;
 
-  .overviewSection {
-    padding: 38px 0 45px;
+    padding: 15px 18px;
+  }
+
+
+  .infoItem:last-child {
+    border-bottom: 0;
   }
 
 
   .mainContent > h2 {
-    font-size: 30px;
+    font-size: 29px;
   }
 
 
@@ -1440,12 +1035,12 @@
 
 
   .highlightsHeader h3 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
 
   .highlight {
-    padding: 2px 0;
+    padding: 13px 14px;
   }
 
 
@@ -1454,26 +1049,25 @@
   }
 
 
-  /* ITINERARY */
-
-  .sectionHeading h2 {
-    font-size: 30px;
+  .itinerary {
+    padding: 16px;
   }
 
 
   .day {
     grid-template-columns:
-      40px 1fr;
+      42px 1fr;
 
-    gap: 12px;
+    gap: 10px;
   }
 
 
   .dayNumber {
     width: 40px;
+
     height: 40px;
 
-    font-size: 13px;
+    font-size: 14px;
   }
 
 
@@ -1487,22 +1081,18 @@
   }
 
 
-  /* ENQUIRY */
+  .overnight {
+    font-size: 11px;
+  }
+
 
   .enquiryCard {
-    padding: 20px;
+    padding: 18px;
   }
 
 
   .enquiryCard h3 {
     font-size: 25px;
-  }
-
-
-  /* INCLUSIONS */
-
-  .inclusionSection {
-    padding: 45px 0 55px;
   }
 
 
@@ -1512,31 +1102,12 @@
 
 
   .inclusionBox h2 {
-    font-size: 30px;
+    font-size: 31px;
   }
 
 
-  .inclusionBox li,
-  .inclusionText {
+  .inclusionBox li {
     font-size: 13px;
   }
 
-}
-
-.dateField {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.dateField label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #333;
-}
-
-.dateField input {
-  width: 100%;
-  box-sizing: border-box;
 }

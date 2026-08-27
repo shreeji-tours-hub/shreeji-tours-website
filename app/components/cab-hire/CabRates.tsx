@@ -60,9 +60,9 @@ export default function CabRates() {
                   <Icon size={25} />
 
                   <div className={styles.headerText}>
-                    <strong>{rate.title}</strong>
-                    <span>({rate.subtitle})</span>
-                  </div>
+  <strong>{rate.title}</strong>
+  <span> ({rate.subtitle})</span>
+</div>
                 </div>
 
                 {/* CARD BODY */}
@@ -130,16 +130,20 @@ export default function CabRates() {
                     );
                   })}
 
-                  {/* NOTE */}
-                  <div className={styles.note}>
-                    {rate.type === "local" ? (
-                      <Clock size={16} />
-                    ) : (
-                      <UserRound size={16} />
-                    )}
+                  {/* NOTES */}
+<div className={styles.note}>
+  <Clock size={18} />
 
-                    <span>{rate.note}</span>
-                  </div>
+  <div className={styles.noteContent}>
+    <span>{rate.note}</span>
+
+    {(rate.type === "local" || rate.type === "outstation") && (
+      <span className={styles.secondaryNote}>
+        Local and outstation duties cannot be merged. Both duties are charged separately.
+      </span>
+    )}
+  </div>
+</div>
 
                 </div>
               </div>

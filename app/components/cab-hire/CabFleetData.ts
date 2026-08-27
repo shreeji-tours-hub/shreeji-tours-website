@@ -4,8 +4,6 @@ export const cabFleet = {
     "Kia Carrien",
     "Ertiga",
     "Innova Crysta",
-    "Innova Hycross",
-    "Toyota Fortuner",
     "13 Seater Tempo Traveller",
     "13 Seater SML",
     "Force 16 Seater Urbania",
@@ -18,6 +16,8 @@ export const cabFleet = {
   ],
 
   luxuryVehicles: [
+    "Innova Hycross",
+    "Toyota Fortuner",
     "Mercedes S350",
     "Toyota Vellfire",
     "Kia Carnival",
@@ -27,5 +27,6 @@ export const cabFleet = {
     "Mercedes GLS350",
     "Mercedes E220",
     "Mercedes V220",
+    "BMW E / S Class",
   ],
 };

@@ -23,13 +23,14 @@ export default function ContactCTA() {
           <a
             href={contactCTAData.href}
             className={styles.button}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {contactCTAData.button}
             <span>→</span>
           </a>
 
         </div>
-
 
         <div className={styles.images}>
 

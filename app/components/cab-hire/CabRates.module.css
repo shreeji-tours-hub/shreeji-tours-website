@@ -300,29 +300,50 @@
    NOTE
 ========================= */
 
+
 .note {
   display: flex;
   align-items: flex-start;
-
   gap: 10px;
 
   padding-top: 14px;
 
-  color: #555;
+  color: #444;
 
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.55;
+
+  font-weight: 600;
 }
 
 .note svg {
   flex-shrink: 0;
 
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
 
-  margin-top: 1px;
+  margin-top: 2px;
 
   color: #8f1111;
+}
+
+.noteContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.secondaryNote {
+  display: block;
+
+  color: #444;
+
+  font-size: 15px;
+  line-height: 1.55;
+
+  font-weight: 600;
 }
 
 /* =========================

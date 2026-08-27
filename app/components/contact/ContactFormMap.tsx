@@ -78,7 +78,6 @@ export default function ContactFormMap() {
             allowFullScreen
             title="Shreeji Tours and Travels Location"
           />
-
         </div>
 
       </div>
