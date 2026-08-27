@@ -329,10 +329,16 @@ export default async function ForeignTourPage({ params }: Props) {
                 />
 
 
-                <input
-                  type="date"
-                  aria-label="Travel Date"
-                />
+                <div className={styles.dateField}>
+  <label htmlFor="start-date">
+    Start Date
+  </label>
+
+  <input
+    id="start-date"
+    type="date"
+  />
+</div>
 
 
                 <input
@@ -370,13 +376,6 @@ export default async function ForeignTourPage({ params }: Props) {
                     3 Star
                   </option>
 
-                  <option value="2-star">
-                    2 Star
-                  </option>
-
-                  <option value="budget">
-                    Budget
-                  </option>
                 </select>
 
 

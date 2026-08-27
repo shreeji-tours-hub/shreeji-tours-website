@@ -24,9 +24,7 @@ export default function IndiaToursPage() {
 
       <WhyTravelWithUs />
 
-
-
-      <ContactCTA/>
+    <IndiaToursCTA />
 
       
       <Footer />

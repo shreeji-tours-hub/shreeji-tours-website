@@ -26,11 +26,7 @@ export default function ForeignersPage() {
 
       <WhyTravelForeign />
 
-      
-
-
-
-      <ContactCTA/>
+      <ForeignTourCTA />
 
       <Footer />
     </main>

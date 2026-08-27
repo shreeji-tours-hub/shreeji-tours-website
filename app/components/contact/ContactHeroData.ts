@@ -1,5 +1,5 @@
 export const contactHeroData = {
-  label: "CONTACT US",
+  label: "GET IN TOUCH",
 
   title: "We're Here to Help You",
 

@@ -91,19 +91,13 @@
 
 .label {
   display: inline-block;
-
-  background: #8d1010;
-
+  background: transparent;
   color: white;
-
   padding: 7px 15px;
-
-  border-radius: 3px;
-
+  border: 1px solid white;
+  border-radius: 25px;
   font-size: 13px;
-
   font-weight: 700;
-
   letter-spacing: 0.07em;
 }
 

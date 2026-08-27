@@ -1,106 +1,232 @@
+/* =========================================================
+   SECTION
+========================================================= */
+
 .section {
-  padding: 25px 0;
+  padding: 30px 30px 60px;
   background: white;
 }
 
-.cta {
-  width: min(1450px, calc(100% - 100px));
-  min-height: 190px;
 
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+  max-width: 1250px;
   margin: auto;
+
+  min-height: 190px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 30px 45px;
-
-  background: #951414;
-  border-radius: 10px;
-
   overflow: hidden;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff4dd,
+      #fffaf1
+    );
 }
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .content {
-  max-width: 650px;
+  padding: 35px 45px;
+
+  max-width: 560px;
 }
+
+
+/* =========================================================
+   TITLE
+========================================================= */
 
 .content h2 {
   margin: 0 0 10px;
 
-  color: white;
+  color: #8d1010;
 
-  font-family: Georgia, serif;
-  font-size: 32px;
+  font-size: 29px;
+
+  line-height: 1.25;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .content p {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 
-  color: white;
+  color: #555;
+
   font-size: 14px;
+
+  line-height: 1.6;
 }
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
 
 .button {
   display: inline-flex;
-  align-items: center;
-  gap: 15px;
 
-  padding: 13px 20px;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 20px;
 
   background: #f5b400;
+
   color: #111;
 
   text-decoration: none;
-  border-radius: 3px;
 
-  font-size: 14px;
+  border-radius: 4px;
+
+  font-size: 13px;
+
   font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.photos {
-  width: 400px;
+.button:hover {
+  background: #e5a900;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+.images {
+  height: 190px;
 
   display: flex;
+
   align-items: center;
-  justify-content: center;
+
+  gap: 8px;
+
+  padding-right: 12px;
 }
 
-.photo {
-  width: 120px;
-  height: 105px;
 
-  padding: 7px;
+/* =========================================================
+   IMAGE
+========================================================= */
 
-  background: white;
-}
+.images img {
+  width: 150px;
 
-.photo img {
-  width: 100%;
-  height: 100%;
+  height: 130px;
+
   object-fit: cover;
+
+  border: 5px solid white;
+
+  transform: rotate(-3deg);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.photo1 {
-  transform: rotate(-8deg);
+
+/* =========================================================
+   SECOND IMAGE
+========================================================= */
+
+.images img:nth-child(2) {
+  transform: rotate(4deg);
 }
 
-.photo2 {
-  transform: rotate(2deg);
+
+/* =========================================================
+   THIRD IMAGE
+========================================================= */
+
+.images img:nth-child(3) {
+  transform: rotate(-2deg);
 }
 
-.photo3 {
-  transform: rotate(8deg);
-}
 
-@media (max-width: 800px) {
-  .cta {
-    width: calc(100% - 30px);
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .container {
     flex-direction: column;
-    gap: 25px;
+
+    text-align: center;
   }
 
-  .photos {
-    width: 100%;
+  .content {
+    padding: 35px 25px;
   }
+
+  .images {
+    width: 100%;
+
+    justify-content: center;
+
+    padding-bottom: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+  .section {
+    padding: 25px 15px 45px;
+  }
+
+  .content {
+    padding: 30px 15px;
+  }
+
+  .content h2 {
+    font-size: 25px;
+  }
+
+  .content p {
+    font-size: 13px;
+  }
+
+  .images {
+    gap: 5px;
+  }
+
+  .images img {
+    width: 100px;
+
+    height: 90px;
+
+    border-width: 4px;
+  }
+
 }

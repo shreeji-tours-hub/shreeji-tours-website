@@ -126,8 +126,13 @@ export default function TourHighlights() {
               </h2>
             </div>
 
-            
-          </div>
+             <Link
+    href="/gallery"
+    className={styles.viewGallery}
+  >
+    View More →
+  </Link>
+</div>
 
           <div className={styles.galleryGrid}>
 

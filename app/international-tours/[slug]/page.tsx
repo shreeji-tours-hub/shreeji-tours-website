@@ -383,10 +383,16 @@ export default async function InternationalTourPage({
 
                 {/* TRAVEL DATE */}
 
-                <input
-                  type="date"
-                  aria-label="Travel Date"
-                />
+                <div className={styles.dateField}>
+  <label htmlFor="start-date">
+    Start Date
+  </label>
+
+  <input
+    id="start-date"
+    type="date"
+  />
+</div>
 
 
                 {/* NUMBER OF TRAVELERS */}
@@ -503,14 +509,6 @@ export default async function InternationalTourPage({
 
                   <option value="3-star">
                     3 Star
-                  </option>
-
-                  <option value="2-star">
-                    2 Star
-                  </option>
-
-                  <option value="budget">
-                    Budget
                   </option>
 
                 </select>

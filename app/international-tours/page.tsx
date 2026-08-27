@@ -22,9 +22,7 @@ export default function InternationalPage() {
       <PopularInternationalTours />
       <WhyInternationalTravel />
      
-
-      <ContactCTA/>
-
+      <InternationalTourCTA />
       <Footer />
     </main>
   );

@@ -1,34 +1,57 @@
 "use client";
 
 import styles from "./GroupTourCTA.module.css";
-import { groupTourCTA } from "./GroupTourCTAData";
 
-export default function GroupTourCTA() {
+import { contactCTAData } from "./GroupTourCTAData";
+
+export default function ContactCTA() {
   return (
     <section className={styles.section}>
-      <div className={styles.cta}>
+
+      <div className={styles.container}>
+
         <div className={styles.content}>
-          <h2>{groupTourCTA.title}</h2>
 
-          <p>{groupTourCTA.description}</p>
+          <h2>
+            {contactCTAData.title}
+          </h2>
 
-          <a href="/contact" className={styles.button}>
-            {groupTourCTA.button}
+          <p>
+            {contactCTAData.description}
+          </p>
+
+          <a
+            href={contactCTAData.href}
+            className={styles.button}
+          >
+            {contactCTAData.button}
             <span>→</span>
           </a>
+
         </div>
 
-        <div className={styles.photos}>
-          {groupTourCTA.images.map((image, index) => (
-            <div
-              className={`${styles.photo} ${styles[`photo${index + 1}`]}`}
-              key={image}
-            >
-              <img src={image} alt="Group travel" />
-            </div>
-          ))}
+
+        <div className={styles.images}>
+
+          <img
+            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80"
+            alt="Taj Mahal"
+          />
+
+          <img
+            src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=500&q=80"
+            alt="India travel"
+          />
+
+          <img
+            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=500&q=80"
+            alt="Indian destination"
+          />
+
         </div>
+
       </div>
+
     </section>
   );
 }

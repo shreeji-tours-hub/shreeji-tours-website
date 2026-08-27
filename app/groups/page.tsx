@@ -23,8 +23,7 @@ export default function GroupsPage() {
       <PopularGroupTours />
       <WhyGroupTravel />
       
-
-      <ContactCTA/>
+      <GroupTourCTA />
 
       <Footer />
     </main>

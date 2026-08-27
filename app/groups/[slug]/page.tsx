@@ -370,12 +370,16 @@ export default async function GroupTourPage({ params }: Props) {
                 />
 
 
-                {/* TRAVEL DATE */}
+                <div className={styles.dateField}>
+  <label htmlFor="start-date">
+    Start Date
+  </label>
 
-                <input
-                  type="date"
-                  aria-label="Travel Date"
-                />
+  <input
+    id="start-date"
+    type="date"
+  />
+</div>
 
 
                 {/* NUMBER OF TRAVELERS */}
@@ -469,14 +473,6 @@ export default async function GroupTourPage({ params }: Props) {
 
                   <option value="3-star">
                     3 Star
-                  </option>
-
-                  <option value="2-star">
-                    2 Star
-                  </option>
-
-                  <option value="budget">
-                    Budget
                   </option>
 
                 </select>

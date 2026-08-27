@@ -1,11 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
 
 import {
-  ChevronLeft,
-  ChevronRight,
   MapPin,
   CalendarDays,
 } from "lucide-react";
@@ -14,17 +11,6 @@ import styles from "./PopularForeignTours.module.css";
 import { popularForeignTours } from "./PopularForeignToursData";
 
 export default function PopularForeignTours() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!sliderRef.current) return;
-
-    sliderRef.current.scrollBy({
-      left: direction === "right" ? 330 : -330,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -49,107 +35,75 @@ export default function PopularForeignTours() {
 
 
         {/* =========================
-            SLIDER
+            TOUR CARDS GRID
         ========================= */}
 
-        <div className={styles.sliderWrapper}>
+        <div className={styles.grid}>
 
-          {/* LEFT ARROW */}
+          {popularForeignTours.map((tour) => (
 
-          <button
-            type="button"
-            className={`${styles.arrow} ${styles.leftArrow}`}
-            onClick={() => scroll("left")}
-            aria-label="Previous tours"
-          >
-            <ChevronLeft size={20} />
-          </button>
+            <Link
+              key={tour.slug}
+              href={`/foreign-tours/${tour.slug}`}
+              className={styles.cardLink}
+            >
+
+              <div className={styles.card}>
+
+                {/* =========================
+                    IMAGE
+                ========================= */}
+
+                <div className={styles.imageWrap}>
+
+                  <img
+                    src={tour.image}
+                    alt={tour.title}
+                  />
+
+                  <span className={styles.duration}>
+                    {tour.duration}
+                  </span>
+
+                </div>
 
 
-          {/* TOUR CARDS */}
+                {/* =========================
+                    CARD BODY
+                ========================= */}
 
-          <div
-            ref={sliderRef}
-            className={styles.grid}
-          >
+                <div className={styles.cardBody}>
 
-            {popularForeignTours.map((tour) => (
+                  <h3>
+                    {tour.title}
+                  </h3>
 
-              <Link
-                key={tour.slug}
-                href={`/foreign-tours/${tour.slug}`}
-                className={styles.cardLink}
-              >
+                  <p className={styles.route}>
+                    {tour.route}
+                  </p>
 
-                <div className={styles.card}>
 
-                  {/* IMAGE */}
+                  <div className={styles.info}>
 
-                  <div className={styles.imageWrap}>
-
-                    <img
-                      src={tour.image}
-                      alt={tour.title}
-                    />
-
-                    <span className={styles.duration}>
+                    <span>
+                      <CalendarDays size={15} />
                       {tour.duration}
                     </span>
 
-                  </div>
-
-
-                  {/* CARD BODY */}
-
-                  <div className={styles.cardBody}>
-
-                    <h3>
-                      {tour.title}
-                    </h3>
-
-                    <p className={styles.route}>
-                      {tour.route}
-                    </p>
-
-
-                    <div className={styles.info}>
-
-                      <span>
-                        <CalendarDays size={15} />
-
-                        {tour.duration}
-                      </span>
-
-
-                      <span>
-                        <MapPin size={15} />
-
-                        {tour.details}
-                      </span>
-
-                    </div>
+                    <span>
+                      <MapPin size={15} />
+                      {tour.details}
+                    </span>
 
                   </div>
 
                 </div>
 
-              </Link>
+              </div>
 
-            ))}
+            </Link>
 
-          </div>
-
-
-          {/* RIGHT ARROW */}
-
-          <button
-            type="button"
-            className={`${styles.arrow} ${styles.rightArrow}`}
-            onClick={() => scroll("right")}
-            aria-label="Next tours"
-          >
-            <ChevronRight size={20} />
-          </button>
+          ))}
 
         </div>
 

@@ -384,10 +384,16 @@ export default async function IndiaTourPage({
                 />
 
 
-                <input
-                  type="date"
-                  aria-label="Travel Date"
-                />
+                <div className={styles.dateField}>
+  <label htmlFor="start-date">
+    Start Date
+  </label>
+
+  <input
+    id="start-date"
+    type="date"
+  />
+</div>
 
 
                 <select
@@ -502,14 +508,6 @@ export default async function IndiaTourPage({
 
                   <option>
                     3 Star
-                  </option>
-
-                  <option>
-                    2 Star
-                  </option>
-
-                  <option>
-                    Budget
                   </option>
 
                 </select>

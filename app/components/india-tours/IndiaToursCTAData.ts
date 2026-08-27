@@ -1,8 +1,8 @@
 export const contactCTAData = {
-  title: "Ready to Explore Together?",
+  title: "Can't Find Your Perfect Tour?",
 
   description:
-    "Book your seat now and be a part of our next group adventure!",
+    "Let us help you plan your dream vacation!",
 
   button: "Whatsapp Us",
 

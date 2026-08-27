@@ -1,58 +1,56 @@
 "use client";
 
 import styles from "./ForeignTourCTA.module.css";
-import { ArrowRight } from "lucide-react";
-import { foreignTourCTA } from "./ForeignTourCTAData";
 
-export default function ForeignTourCTA() {
+import { ForeignTourCTAData } from "./ForeignTourCTAData";
+
+export default function ForeignCTA() {
   return (
     <section className={styles.section}>
-      <div className={styles.cta}>
 
-      
+      <div className={styles.container}>
 
-        {/* CONTENT */}
         <div className={styles.content}>
-          <h2>{foreignTourCTA.title}</h2>
 
-          <p>{foreignTourCTA.text}</p>
+          <h2>
+            {ForeignTourCTAData.title}
+          </h2>
+
+          <p>
+            {ForeignTourCTAData.description}
+          </p>
 
           <a
-            href="/contact"
+            href={ForeignTourCTAData.href}
             className={styles.button}
           >
-            <span>{foreignTourCTA.button}</span>
-            <ArrowRight size={19} strokeWidth={2} />
+            {ForeignTourCTAData.button}
+            <span>→</span>
           </a>
+
         </div>
 
-        {/* RIGHT POLAROIDS */}
-        <div className={styles.polaroids}>
+        <div className={styles.images}>
 
-          <div className={`${styles.polaroid} ${styles.photo1}`}>
-            <img
-              src={foreignTourCTA.images[0]}
-              alt="Travel destination"
-            />
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=500&q=80"
+            alt="Taj Mahal"
+          />
 
-          <div className={`${styles.polaroid} ${styles.photo2}`}>
-            <img
-              src={foreignTourCTA.images[1]}
-              alt="Travel destination"
-            />
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=500&q=80"
+            alt="India travel"
+          />
 
-          <div className={`${styles.polaroid} ${styles.photo3}`}>
-            <img
-              src={foreignTourCTA.images[2]}
-              alt="Travel destination"
-            />
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=500&q=80"
+            alt="Indian destination"
+          />
 
         </div>
 
       </div>
+
     </section>
   );
 }

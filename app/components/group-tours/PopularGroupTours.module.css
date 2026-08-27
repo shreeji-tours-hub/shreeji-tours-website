@@ -20,7 +20,7 @@
 
 .heading {
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .heading span {
@@ -75,53 +75,18 @@
 
 
 /* =========================================================
-   SLIDER WRAPPER
-========================================================= */
-
-.sliderWrapper {
-  position: relative;
-
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-}
-
-
-/* =========================================================
-   HORIZONTAL SLIDER
-   5 CARDS VISIBLE
+   TOUR GRID
+   DESKTOP - 5 CARDS PER ROW
 ========================================================= */
 
 .grid {
   display: grid;
 
-  grid-auto-flow: column;
-
-  grid-auto-columns: calc(
-    (100% - 80px) / 5
-  );
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 
   gap: 20px;
 
   width: 100%;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  scroll-behavior: smooth;
-
-  scrollbar-width: none;
-
-  padding: 3px 2px 12px;
-
-  box-sizing: border-box;
-
-  scroll-snap-type: x mandatory;
-}
-
-.grid::-webkit-scrollbar {
-  display: none;
 }
 
 
@@ -136,8 +101,6 @@
 
   color: inherit;
   text-decoration: none;
-
-  scroll-snap-align: start;
 }
 
 .cardLink:focus-visible {
@@ -154,6 +117,8 @@
 
 .card {
   min-width: 0;
+
+  height: 100%;
 
   overflow: hidden;
 
@@ -330,60 +295,8 @@
 
 
 /* =========================================================
-   SLIDER ARROWS
-========================================================= */
-
-.arrow {
-  position: absolute;
-
-  z-index: 10;
-
-  width: 38px;
-  height: 38px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid #ddd;
-
-  border-radius: 50%;
-
-  background: #fff;
-
-  color: #951414;
-
-  box-shadow:
-    0 3px 10px rgba(0, 0, 0, 0.15);
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.arrow:hover {
-  background: #951414;
-
-  color: #fff;
-
-  transform: scale(1.05);
-}
-
-.leftArrow {
-  left: -19px;
-}
-
-.rightArrow {
-  right: -19px;
-}
-
-
-/* =========================================================
    TABLET
+   3 CARDS PER ROW
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -393,9 +306,8 @@
   }
 
   .grid {
-    grid-auto-columns: calc(
-      (100% - 40px) / 3
-    );
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
   }
 
 }
@@ -403,14 +315,14 @@
 
 /* =========================================================
    SMALL TABLET
+   2 CARDS PER ROW
 ========================================================= */
 
 @media (max-width: 750px) {
 
   .grid {
-    grid-auto-columns: calc(
-      (100% - 20px) / 2
-    );
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .imageWrap {
@@ -422,6 +334,7 @@
 
 /* =========================================================
    MOBILE
+   1 CARD PER ROW
 ========================================================= */
 
 @media (max-width: 500px) {
@@ -443,7 +356,7 @@
   }
 
   .grid {
-    grid-auto-columns: 100%;
+    grid-template-columns: 1fr;
 
     gap: 16px;
   }
@@ -470,19 +383,6 @@
 
   .durationBadge {
     font-size: 11px;
-  }
-
-  .arrow {
-    width: 34px;
-    height: 34px;
-  }
-
-  .leftArrow {
-    left: -10px;
-  }
-
-  .rightArrow {
-    right: -10px;
   }
 
 }
