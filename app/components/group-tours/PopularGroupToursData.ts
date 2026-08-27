@@ -1,4 +1,40 @@
-export const popularGroupTours = [
+export interface GroupTourItineraryDay {
+  day: number;
+  title: string;
+  description: string;
+  overnight: string;
+}
+
+export interface GroupTour {
+  slug: string;
+  title: string;
+  route: string;
+  duration: string;
+  description: string;
+  category: string;
+
+  image: string;
+  color: string;
+
+  overview: string;
+
+  highlights: string[];
+
+  itinerary: GroupTourItineraryDay[];
+
+  inclusions: string[];
+  exclusions: string[];
+
+  /**
+   * Only present on tours with category "upcoming".
+   * Used to show the departure date + price on the
+   * listing cards and on the detail page.
+   */
+  date?: string;
+  price?: string;
+}
+
+export const popularGroupTours: GroupTour[] = [
   {
     slug: "golden-triangle-group-tour",
     title: "Golden Triangle Group Tour",
@@ -555,261 +591,273 @@ export const popularGroupTours = [
   },
 
   {
-  slug: "kashmir-group-tour",
-  title: "Kashmir Group Tour",
-  route: "Srinagar – Gulmarg – Pahalgam",
-  duration: "6 Days / 5 Nights",
-  description: "Mountains, Lakes, Adventure",
-  category: "upcoming",
+    slug: "kashmir-group-tour",
+    title: "Kashmir Group Tour",
+    route: "Srinagar – Gulmarg – Pahalgam",
+    duration: "6 Days / 5 Nights",
+    description: "Mountains, Lakes, Adventure",
+    category: "upcoming",
 
-  image:
-    "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=700&q=85",
+    image:
+      "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=700&q=85",
 
-  color: "#8f1111",
+    color: "#8f1111",
 
-  overview:
-    "Experience the breathtaking beauty of Kashmir with scenic valleys, peaceful lakes, snow-covered mountains and unforgettable group experiences.",
+    overview:
+      "Experience the breathtaking beauty of Kashmir with scenic valleys, peaceful lakes, snow-covered mountains and unforgettable group experiences.",
 
-  highlights: [
-    "Explore Srinagar and Dal Lake",
-    "Enjoy the scenic beauty of Gulmarg",
-    "Visit the beautiful valleys of Pahalgam",
-    "Experience Kashmir's local culture and cuisine",
-  ],
+    highlights: [
+      "Explore Srinagar and Dal Lake",
+      "Enjoy the scenic beauty of Gulmarg",
+      "Visit the beautiful valleys of Pahalgam",
+      "Experience Kashmir's local culture and cuisine",
+    ],
 
-  itinerary: [
-    {
-      day: 1,
-      title: "Arrival in Srinagar",
-      description:
-        "Arrival in Srinagar and transfer to the hotel or houseboat. Enjoy the evening at leisure.",
-      overnight: "Srinagar",
-    },
-    {
-      day: 2,
-      title: "Srinagar Sightseeing",
-      description:
-        "Explore Srinagar including Dal Lake, Mughal Gardens and other local attractions.",
-      overnight: "Srinagar",
-    },
-    {
-      day: 3,
-      title: "Srinagar to Gulmarg",
-      description:
-        "Travel to Gulmarg and enjoy the beautiful mountain scenery and local attractions.",
-      overnight: "Gulmarg",
-    },
-    {
-      day: 4,
-      title: "Gulmarg to Pahalgam",
-      description:
-        "Travel towards Pahalgam through scenic landscapes and enjoy the peaceful surroundings.",
-      overnight: "Pahalgam",
-    },
-    {
-      day: 5,
-      title: "Pahalgam Sightseeing",
-      description:
-        "Explore the beautiful valleys and enjoy leisure time in the picturesque surroundings.",
-      overnight: "Pahalgam",
-    },
-    {
-      day: 6,
-      title: "Departure",
-      description:
-        "Breakfast and transfer for departure with wonderful memories of Kashmir.",
-      overnight: "Departure",
-    },
-  ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Srinagar",
+        description:
+          "Arrival in Srinagar and transfer to the hotel or houseboat. Enjoy the evening at leisure.",
+        overnight: "Srinagar",
+      },
+      {
+        day: 2,
+        title: "Srinagar Sightseeing",
+        description:
+          "Explore Srinagar including Dal Lake, Mughal Gardens and other local attractions.",
+        overnight: "Srinagar",
+      },
+      {
+        day: 3,
+        title: "Srinagar to Gulmarg",
+        description:
+          "Travel to Gulmarg and enjoy the beautiful mountain scenery and local attractions.",
+        overnight: "Gulmarg",
+      },
+      {
+        day: 4,
+        title: "Gulmarg to Pahalgam",
+        description:
+          "Travel towards Pahalgam through scenic landscapes and enjoy the peaceful surroundings.",
+        overnight: "Pahalgam",
+      },
+      {
+        day: 5,
+        title: "Pahalgam Sightseeing",
+        description:
+          "Explore the beautiful valleys and enjoy leisure time in the picturesque surroundings.",
+        overnight: "Pahalgam",
+      },
+      {
+        day: 6,
+        title: "Departure",
+        description:
+          "Breakfast and transfer for departure with wonderful memories of Kashmir.",
+        overnight: "Departure",
+      },
+    ],
 
-  inclusions: [
-    "Accommodation",
-    "Breakfast",
-    "Transportation",
-    "Sightseeing",
-  ],
+    inclusions: [
+      "Accommodation",
+      "Breakfast",
+      "Transportation",
+      "Sightseeing",
+    ],
 
-  exclusions: [
-    "Flights",
-    "Personal expenses",
-    "Travel insurance",
-    "Optional activities",
-  ],
-},
+    exclusions: [
+      "Flights",
+      "Personal expenses",
+      "Travel insurance",
+      "Optional activities",
+    ],
 
-{
-  slug: "rajasthan-heritage-group-tour",
-  title: "Rajasthan Heritage Group Tour",
-  route: "Jaipur – Jodhpur – Udaipur",
-  duration: "7 Days / 6 Nights",
-  description: "Forts, Palaces, Heritage",
-  category: "upcoming",
+    // TODO(Abin): placeholder — replace with the real departure date
+    date: "15 Dec 2026",
+    // TODO(Abin): placeholder — replace with the real per-person price
+    price: "₹24,999",
+  },
 
-  image:
-    "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=700&q=85",
+  {
+    slug: "rajasthan-heritage-group-tour",
+    title: "Rajasthan Heritage Group Tour",
+    route: "Jaipur – Jodhpur – Udaipur",
+    duration: "7 Days / 6 Nights",
+    description: "Forts, Palaces, Heritage",
+    category: "upcoming",
 
-  color: "#8f1111",
+    image:
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=700&q=85",
 
-  overview:
-    "Discover the royal charm of Rajasthan through magnificent forts, grand palaces, colorful markets and the rich cultural heritage of the region.",
+    color: "#8f1111",
 
-  highlights: [
-    "Explore the Pink City of Jaipur",
-    "Visit magnificent forts and palaces",
-    "Discover the historic city of Jodhpur",
-    "Experience the lakes and royal charm of Udaipur",
-  ],
+    overview:
+      "Discover the royal charm of Rajasthan through magnificent forts, grand palaces, colorful markets and the rich cultural heritage of the region.",
 
-  itinerary: [
-    {
-      day: 1,
-      title: "Arrival in Jaipur",
-      description:
-        "Arrival in Jaipur and transfer to the hotel. Evening at leisure.",
-      overnight: "Jaipur",
-    },
-    {
-      day: 2,
-      title: "Jaipur Sightseeing",
-      description:
-        "Explore Amber Fort, City Palace, Hawa Mahal and other major attractions of Jaipur.",
-      overnight: "Jaipur",
-    },
-    {
-      day: 3,
-      title: "Jaipur to Jodhpur",
-      description:
-        "Travel to Jodhpur and explore the local surroundings after arrival.",
-      overnight: "Jodhpur",
-    },
-    {
-      day: 4,
-      title: "Jodhpur Sightseeing",
-      description:
-        "Visit Mehrangarh Fort, Jaswant Thada and explore the famous blue city.",
-      overnight: "Jodhpur",
-    },
-    {
-      day: 5,
-      title: "Jodhpur to Udaipur",
-      description:
-        "Travel towards Udaipur and enjoy the scenic journey through Rajasthan.",
-      overnight: "Udaipur",
-    },
-    {
-      day: 6,
-      title: "Udaipur Sightseeing",
-      description:
-        "Explore City Palace, Lake Pichola and the beautiful attractions of Udaipur.",
-      overnight: "Udaipur",
-    },
-    {
-      day: 7,
-      title: "Departure",
-      description:
-        "Breakfast and departure with unforgettable memories of Rajasthan.",
-      overnight: "Departure",
-    },
-  ],
+    highlights: [
+      "Explore the Pink City of Jaipur",
+      "Visit magnificent forts and palaces",
+      "Discover the historic city of Jodhpur",
+      "Experience the lakes and royal charm of Udaipur",
+    ],
 
-  inclusions: [
-    "Accommodation",
-    "Breakfast",
-    "Transportation",
-    "Sightseeing",
-  ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Jaipur",
+        description:
+          "Arrival in Jaipur and transfer to the hotel. Evening at leisure.",
+        overnight: "Jaipur",
+      },
+      {
+        day: 2,
+        title: "Jaipur Sightseeing",
+        description:
+          "Explore Amber Fort, City Palace, Hawa Mahal and other major attractions of Jaipur.",
+        overnight: "Jaipur",
+      },
+      {
+        day: 3,
+        title: "Jaipur to Jodhpur",
+        description:
+          "Travel to Jodhpur and explore the local surroundings after arrival.",
+        overnight: "Jodhpur",
+      },
+      {
+        day: 4,
+        title: "Jodhpur Sightseeing",
+        description:
+          "Visit Mehrangarh Fort, Jaswant Thada and explore the famous blue city.",
+        overnight: "Jodhpur",
+      },
+      {
+        day: 5,
+        title: "Jodhpur to Udaipur",
+        description:
+          "Travel towards Udaipur and enjoy the scenic journey through Rajasthan.",
+        overnight: "Udaipur",
+      },
+      {
+        day: 6,
+        title: "Udaipur Sightseeing",
+        description:
+          "Explore City Palace, Lake Pichola and the beautiful attractions of Udaipur.",
+        overnight: "Udaipur",
+      },
+      {
+        day: 7,
+        title: "Departure",
+        description:
+          "Breakfast and departure with unforgettable memories of Rajasthan.",
+        overnight: "Departure",
+      },
+    ],
 
-  exclusions: [
-    "Flights",
-    "Personal expenses",
-    "Travel insurance",
-    "Optional activities",
-  ],
-},
+    inclusions: [
+      "Accommodation",
+      "Breakfast",
+      "Transportation",
+      "Sightseeing",
+    ],
 
-{
-  slug: "kerala-nature-backwaters-group-tour",
-  title: "Kerala Nature & Backwaters Tour",
-  route: "Kochi – Munnar – Alleppey",
-  duration: "6 Days / 5 Nights",
-  description: "Nature, Backwaters, Relaxation",
-  category: "upcoming",
+    exclusions: [
+      "Flights",
+      "Personal expenses",
+      "Travel insurance",
+      "Optional activities",
+    ],
 
-  image:
-    "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=85",
+    // TODO(Abin): placeholder — replace with the real departure date
+    date: "22 Dec 2026",
+    // TODO(Abin): placeholder — replace with the real per-person price
+    price: "₹21,499",
+  },
 
-  color: "#8f1111",
+  {
+    slug: "kerala-nature-backwaters-group-tour",
+    title: "Kerala Nature & Backwaters Tour",
+    route: "Kochi – Munnar – Alleppey",
+    duration: "6 Days / 5 Nights",
+    description: "Nature, Backwaters, Relaxation",
+    category: "upcoming",
 
-  overview:
-    "Experience the natural beauty of Kerala with lush tea plantations, peaceful backwaters, scenic landscapes and relaxing group experiences.",
+    image:
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&q=85",
 
-  highlights: [
-    "Explore the attractions of Kochi",
-    "Visit the scenic tea plantations of Munnar",
-    "Enjoy Kerala's beautiful backwaters",
-    "Experience a relaxing stay in Alleppey",
-  ],
+    color: "#8f1111",
 
-  itinerary: [
-    {
-      day: 1,
-      title: "Arrival in Kochi",
-      description:
-        "Arrival in Kochi and transfer to the hotel. Explore the surroundings at leisure.",
-      overnight: "Kochi",
-    },
-    {
-      day: 2,
-      title: "Kochi to Munnar",
-      description:
-        "Travel towards Munnar through scenic landscapes and beautiful waterfalls.",
-      overnight: "Munnar",
-    },
-    {
-      day: 3,
-      title: "Munnar Sightseeing",
-      description:
-        "Explore tea plantations, viewpoints and the scenic attractions of Munnar.",
-      overnight: "Munnar",
-    },
-    {
-      day: 4,
-      title: "Munnar to Alleppey",
-      description:
-        "Travel towards Alleppey and enjoy the peaceful surroundings of Kerala's backwaters.",
-      overnight: "Alleppey",
-    },
-    {
-      day: 5,
-      title: "Alleppey Backwater Experience",
-      description:
-        "Enjoy a relaxing backwater experience and explore the local surroundings.",
-      overnight: "Alleppey",
-    },
-    {
-      day: 6,
-      title: "Departure",
-      description:
-        "Breakfast and transfer for departure with beautiful memories of Kerala.",
-      overnight: "Departure",
-    },
-  ],
+    overview:
+      "Experience the natural beauty of Kerala with lush tea plantations, peaceful backwaters, scenic landscapes and relaxing group experiences.",
 
-  inclusions: [
-    "Accommodation",
-    "Breakfast",
-    "Transportation",
-    "Sightseeing",
-  ],
+    highlights: [
+      "Explore the attractions of Kochi",
+      "Visit the scenic tea plantations of Munnar",
+      "Enjoy Kerala's beautiful backwaters",
+      "Experience a relaxing stay in Alleppey",
+    ],
 
-  exclusions: [
-    "Flights",
-    "Personal expenses",
-    "Travel insurance",
-    "Optional activities",
-  ],
-},
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Kochi",
+        description:
+          "Arrival in Kochi and transfer to the hotel. Explore the surroundings at leisure.",
+        overnight: "Kochi",
+      },
+      {
+        day: 2,
+        title: "Kochi to Munnar",
+        description:
+          "Travel towards Munnar through scenic landscapes and beautiful waterfalls.",
+        overnight: "Munnar",
+      },
+      {
+        day: 3,
+        title: "Munnar Sightseeing",
+        description:
+          "Explore tea plantations, viewpoints and the scenic attractions of Munnar.",
+        overnight: "Munnar",
+      },
+      {
+        day: 4,
+        title: "Munnar to Alleppey",
+        description:
+          "Travel towards Alleppey and enjoy the peaceful surroundings of Kerala's backwaters.",
+        overnight: "Alleppey",
+      },
+      {
+        day: 5,
+        title: "Alleppey Backwater Experience",
+        description:
+          "Enjoy a relaxing backwater experience and explore the local surroundings.",
+        overnight: "Alleppey",
+      },
+      {
+        day: 6,
+        title: "Departure",
+        description:
+          "Breakfast and transfer for departure with beautiful memories of Kerala.",
+        overnight: "Departure",
+      },
+    ],
 
+    inclusions: [
+      "Accommodation",
+      "Breakfast",
+      "Transportation",
+      "Sightseeing",
+    ],
 
-  
+    exclusions: [
+      "Flights",
+      "Personal expenses",
+      "Travel insurance",
+      "Optional activities",
+    ],
+
+    // TODO(Abin): placeholder — replace with the real departure date
+    date: "5 Jan 2027",
+    // TODO(Abin): placeholder — replace with the real per-person price
+    price: "₹19,999",
+  },
 ];

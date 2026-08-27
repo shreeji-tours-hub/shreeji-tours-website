@@ -1,208 +1,110 @@
 /* =========================================================
    GROUP TOUR DETAIL PAGE
-   SAME UI STRUCTURE AS INDIA TOUR DETAIL
+   SAME UI STRUCTURE / THEME AS INDIA TOUR DETAIL
 ========================================================= */
 
 .page {
   width: 100%;
   min-height: 100vh;
 
-  background: #f7f5f1;
-  color: #1b1b1b;
+  background: #fff;
+  color: #171717;
 
   overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .container {
-  width: min(1180px, calc(100% - 40px));
-
+  width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
 }
 
 
 /* =========================================================
-   GROUP TOUR HERO
+   HERO
+   Height/overlay are controlled by the inline styles in
+   page.tsx (same pattern as the India tour page) — these
+   classes just hold layout hooks.
 ========================================================= */
 
 .hero {
   position: relative;
-
-  width: 100%;
-  height: 632px;
-
-  background-size: cover;
-  background-position: center;
-
   overflow: hidden;
 }
 
-
-/* =========================================================
-   DARK OVERLAY
-========================================================= */
+.heroImage {
+  display: block;
+}
 
 .heroOverlay {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.08) 0%,
-      rgba(0, 0, 0, 0.18) 35%,
-      rgba(0, 0, 0, 0.78) 100%
-    );
-
-  z-index: 1;
+  pointer-events: none;
 }
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
 
 .heroContent {
-  position: absolute;
-
-  left: max(
-    11.2%,
-    40px
-  );
-
-  bottom: 96px;
-
-  z-index: 2;
-
-  max-width: 1150px;
-
-  color: #fff;
+  pointer-events: none;
 }
 
-
-/* =========================================================
-   HERO EYEBROW
-========================================================= */
-
-.heroEyebrow {
-  display: block;
-
-  margin-bottom: 22px;
-
-  color: #e0a400;
-
-  font-size: 13px;
+.label {
+  color: #d9a441;
+  font-size: 11px;
   font-weight: 800;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 
 /* =========================================================
-   HERO TITLE
+   TOUR INFORMATION
+   SAME RED BAR AS INDIA TOUR
 ========================================================= */
 
-.heroTitle {
-  margin: 0;
-
-  color: #fff;
-
-  font-family: Georgia, serif;
-
-  font-size: clamp(
-    54px,
-    5.2vw,
-    76px
-  );
-
-  line-height: 1.05;
-
-  font-weight: 700;
-
-  letter-spacing: -1px;
+.infoSection {
+  background: #8f1111;
 }
 
-
-/* =========================================================
-   HERO ROUTE
-========================================================= */
-
-.heroRoute {
-  margin: 22px 0 0;
-
-  color: #fff;
-
-  font-size: 19px;
-
-  line-height: 1.4;
-
-  font-weight: 400;
-}
-
-
-/* =========================================================
-   TOUR INFORMATION BAR
-========================================================= */
-
-.infoBar {
-  width: 100%;
-
+.infoGrid {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  background: #fff;
-
-  border-bottom: 1px solid #eee;
+  grid-template-columns: repeat(4, 1fr);
 }
-
 
 .infoItem {
-  min-height: 105px;
-
-  padding: 25px 38px;
+  min-height: 86px;
+  padding: 20px 24px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
-  gap: 8px;
-
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
-
 
 .infoItem:last-child {
-  border-right: none;
+  border-right: 0;
 }
 
+.infoItem span {
+  display: block;
+  margin-bottom: 8px;
 
-.infoLabel {
-  color: #8a8a8a;
+  color: #f2dcdc;
 
-  font-size: 11px;
-
+  font-size: 10px;
   font-weight: 700;
 
-  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
-
 
 .infoItem strong {
-  color: #172d4d;
+  display: block;
 
-  font-size: 16px;
+  color: #fff;
 
-  line-height: 1.4;
-
+  font-size: 15px;
+  line-height: 1.5;
   font-weight: 700;
 }
+
 
 /* =========================================================
    OVERVIEW
@@ -210,37 +112,41 @@
 
 .overviewSection {
   padding: 58px 0 65px;
-
   background: #fff;
 }
 
-
 .contentGrid {
   display: grid;
-
   grid-template-columns: 1fr;
 }
-
 
 .mainContent {
   width: 100%;
 }
 
+.sectionLabel {
+  display: block;
 
-.mainContent > h2 {
+  margin-bottom: 8px;
+
+  color: #d99a00;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.mainContent h2 {
   margin: 0 0 20px;
 
   color: #102d61;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
   font-size: 38px;
-
   line-height: 1.2;
-
   font-weight: 700;
 }
 
@@ -253,17 +159,13 @@
   max-width: 1100px;
 
   margin-bottom: 38px;
-
   padding: 22px 26px;
 
   background: #faf8f5;
 
-  border-left:
-    4px solid #d99a00;
-
+  border-left: 4px solid #d99a00;
   border-radius: 6px;
 }
-
 
 .overview {
   margin: 0;
@@ -271,24 +173,21 @@
   color: #4d4d4d;
 
   font-size: 16px;
-
   line-height: 1.9;
 }
 
 
 /* =========================================================
-   TOUR HIGHLIGHTS
+   HIGHLIGHTS
 ========================================================= */
 
 .highlights {
   margin-top: 30px;
 }
 
-
 .highlightsHeader {
   margin-bottom: 20px;
 }
-
 
 .highlightLabel {
   display: block;
@@ -298,27 +197,20 @@
   color: #d99a00;
 
   font-size: 11px;
-
   font-weight: 800;
 
   letter-spacing: 1.2px;
-
   text-transform: uppercase;
 }
-
 
 .highlightsHeader h3 {
   margin: 0;
 
   color: #102d61;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
 
   font-size: 30px;
-
   line-height: 1.25;
 }
 
@@ -330,20 +222,17 @@
 .highlightGrid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 14px 18px;
 
   max-width: 1050px;
 }
 
-
 .highlight {
   min-height: 65px;
 
   display: flex;
-
   align-items: center;
 
   gap: 14px;
@@ -352,27 +241,21 @@
 
   background: #fff;
 
-  border:
-    1px solid #e8e1d8;
-
+  border: 1px solid #e8e1d8;
   border-radius: 8px;
 
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
-
 .highlight:hover {
   transform: translateY(-2px);
 
-  box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
-
 
 .highlightIcon {
   flex-shrink: 0;
@@ -381,7 +264,6 @@
   height: 28px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -392,10 +274,8 @@
   color: #fff;
 
   font-size: 14px;
-
   font-weight: 700;
 }
-
 
 .highlight p {
   margin: 0;
@@ -403,8 +283,83 @@
   color: #3e3e3e;
 
   font-size: 14px;
-
   line-height: 1.6;
+}
+
+
+/* =========================================================
+   TOUR DATE + PRICE (upcoming tours only)
+========================================================= */
+
+.tourMeta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-top: 28px;
+}
+
+.tourMetaItem {
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px 20px;
+
+  background: #fff;
+
+  border: 1px solid #e8e1d8;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tourMetaIcon {
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #8f1111;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tourMetaLabel {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #8a8a8a;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.tourMetaValue {
+  display: block;
+
+  color: #102d61;
+
+  font-size: 15px;
+  font-weight: 700;
 }
 
 
@@ -418,25 +373,20 @@
   background: #f8f5f0;
 }
 
-
 .sectionHeading {
   margin-bottom: 28px;
 
   text-align: center;
 }
 
-
 .sectionHeading .sectionLabel {
   color: #d99a00;
 }
 
-
 .sectionHeading h2 {
   margin: 7px 0 0;
 
-  font-family:
-    Georgia,
-    serif;
+  font-family: Georgia, serif;
 
   font-size: 32px;
 
@@ -451,26 +401,19 @@
 .itineraryLayout {
   display: grid;
 
-  grid-template-columns:
-    1fr 340px;
+  grid-template-columns: 1fr 340px;
 
   gap: 28px;
 
   align-items: start;
 }
 
-
-/* =========================================================
-   ITINERARY CARD
-========================================================= */
-
 .itinerary {
   padding: 20px;
 
   background: #fff;
 
-  border:
-    1px solid #e5ddd4;
+  border: 1px solid #e5ddd4;
 
   border-radius: 8px;
 }
@@ -483,8 +426,7 @@
 .day {
   display: grid;
 
-  grid-template-columns:
-    48px 1fr;
+  grid-template-columns: 48px 1fr;
 
   gap: 17px;
 
@@ -492,10 +434,8 @@
 
   margin-bottom: 24px;
 
-  border-bottom:
-    1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
-
 
 .day:last-child {
   border: 0;
@@ -505,13 +445,11 @@
   padding-bottom: 0;
 }
 
-
 .dayNumber {
   width: 45px;
   height: 45px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -526,19 +464,15 @@
   color: #171717;
 }
 
-
 .dayContent h3 {
   margin: 0 0 6px;
 
-  font-family:
-    Georgia,
-    serif;
+  font-family: Georgia, serif;
 
   font-size: 18px;
 
   color: #132f5b;
 }
-
 
 .dayContent p {
   margin: 0;
@@ -549,7 +483,6 @@
 
   line-height: 1.7;
 }
-
 
 .overnight {
   display: inline-block;
@@ -577,25 +510,20 @@
 
   background: #fff;
 
-  border:
-    1px solid #e5ddd4;
+  border: 1px solid #e5ddd4;
 
   border-radius: 8px;
 }
-
 
 .enquiryCard h3 {
   margin: 0 0 8px;
 
   color: #8f1111;
 
-  font-family:
-    Georgia,
-    serif;
+  font-family: Georgia, serif;
 
   font-size: 28px;
 }
-
 
 .enquiryCard > p {
   color: #666;
@@ -606,7 +534,6 @@
 
   margin: 0 0 15px;
 }
-
 
 .enquiryCard input,
 .enquiryCard select,
@@ -619,8 +546,7 @@
 
   padding: 11px;
 
-  border:
-    1px solid #ddd;
+  border: 1px solid #ddd;
 
   border-radius: 4px;
 
@@ -631,7 +557,6 @@
   background: #fff;
 }
 
-
 .enquiryCard input:focus,
 .enquiryCard select:focus,
 .enquiryCard textarea:focus {
@@ -639,7 +564,6 @@
 
   border-color: #8f1111;
 }
-
 
 .enquiryCard textarea {
   resize: vertical;
@@ -652,21 +576,19 @@
 
 .dateField {
   width: 100%;
-}
 
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
 .dateField label {
-  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
 
-  margin-bottom: 7px;
-
-  color: #171717;
-
-  font-size: 12px;
-
-  font-weight: 700;
+  margin-bottom: 0;
 }
-
 
 .dateField input {
   width: 100%;
@@ -696,10 +618,8 @@
 
   cursor: pointer;
 
-  transition:
-    background 0.2s ease;
+  transition: background 0.2s ease;
 }
-
 
 .enquiryButton:hover {
   background: #681010;
@@ -716,30 +636,25 @@
   background: #fff;
 }
 
-
 .inclusionGrid {
   display: grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
   gap: 22px;
 
   align-items: start;
 }
 
-
 .inclusionBox {
   padding: 28px;
 
-  border:
-    1px solid #e5ddd4;
+  border: 1px solid #e5ddd4;
 
   border-radius: 8px;
 
   background: #fff;
 }
-
 
 .inclusionHeader p {
   margin: -12px 0 20px;
@@ -751,13 +666,10 @@
   line-height: 1.5;
 }
 
-
 .inclusionBox h2 {
   margin: 5px 0 20px;
 
-  font-family:
-    Georgia,
-    serif;
+  font-family: Georgia, serif;
 
   font-size: 38px;
 
@@ -766,7 +678,6 @@
   color: #132f5b;
 }
 
-
 .inclusionBox ul {
   padding: 0;
 
@@ -774,7 +685,6 @@
 
   list-style: none;
 }
-
 
 .inclusionBox li {
   display: flex;
@@ -785,8 +695,7 @@
 
   padding: 11px 0;
 
-  border-bottom:
-    1px solid #eee;
+  border-bottom: 1px solid #eee;
 
   color: #555;
 
@@ -795,11 +704,9 @@
   line-height: 1.5;
 }
 
-
 .inclusionBox li:last-child {
   border-bottom: none;
 }
-
 
 .inclusionIcon {
   color: #25883b;
@@ -811,11 +718,9 @@
   min-width: 16px;
 }
 
-
 .exclusionIcon {
   color: #b00000;
 }
-
 
 .inclusionText {
   flex: 1;
@@ -828,49 +733,29 @@
 
 @media (max-width: 950px) {
 
-  .hero {
-    height: 70vh;
-
-    min-height: 520px;
+  .contentGrid,
+  .itineraryLayout {
+    grid-template-columns: 1fr;
   }
-
 
   .infoGrid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-
 
   .infoItem {
     padding: 20px;
 
-    border-bottom:
-      1px solid #e5e1da;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   }
-
-
-  .infoItem:first-child {
-    padding-left: 20px;
-  }
-
 
   .infoItem:nth-child(2) {
-    border-right: none;
+    border-right: 0;
   }
-
 
   .infoItem:nth-child(3),
   .infoItem:nth-child(4) {
     border-bottom: none;
   }
-
-
-  .itineraryLayout {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-  }
-
 
   .enquiryCard {
     position: relative;
@@ -880,12 +765,9 @@
     max-width: 500px;
   }
 
-
   .inclusionGrid {
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
 }
 
 
@@ -900,73 +782,49 @@
     width: calc(100% - 24px);
   }
 
-
   .heroContent {
     padding-bottom: 45px;
   }
 
-
-  .heroTitle {
-    font-size: 34px;
-  }
-
-
-  .heroDescription {
-    font-size: 13px;
-  }
-
-
   .infoGrid {
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
 
   .infoItem {
-    border-bottom:
-      1px solid #e5e1da;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   }
-
 
   .infoItem:nth-child(2) {
-    border-right: none;
+    border-right: 0;
   }
-
 
   .overviewSection {
     padding: 45px 0 50px;
   }
 
-
-  .mainContent > h2 {
+  .mainContent h2 {
     font-size: 32px;
   }
-
 
   .overview {
     font-size: 15px;
   }
 
-
   .highlightGrid {
     grid-template-columns: 1fr;
   }
-
 
   .sectionHeading h2 {
     font-size: 29px;
   }
 
-
   .inclusionGrid {
     grid-template-columns: 1fr;
   }
 
-
   .inclusionBox h2 {
     font-size: 34px;
   }
-
 }
 
 
@@ -976,34 +834,15 @@
 
 @media (max-width: 450px) {
 
-  .hero {
-    height: 450px;
-
-    min-height: 450px;
-  }
-
-
   .heroContent {
     width: calc(100% - 20px);
 
     padding-bottom: 35px;
   }
 
-
-  .heroTitle {
-    font-size: 28px;
-  }
-
-
-  .heroDescription {
-    font-size: 12px;
-  }
-
-
   .infoGrid {
     grid-template-columns: 1fr;
   }
-
 
   .infoItem {
     border-right: 0;
@@ -1011,21 +850,25 @@
     padding: 15px 18px;
   }
 
-
   .infoItem:last-child {
     border-bottom: 0;
   }
 
-
-  .mainContent > h2 {
-    font-size: 29px;
+  .tourMeta {
+    flex-direction: column;
   }
 
+  .tourMetaItem {
+    min-width: 0;
+  }
+
+  .mainContent h2 {
+    font-size: 29px;
+  }
 
   .overviewBox {
     padding: 18px 20px;
   }
-
 
   .overview {
     font-size: 14px;
@@ -1033,34 +876,27 @@
     line-height: 1.8;
   }
 
-
   .highlightsHeader h3 {
     font-size: 26px;
   }
-
 
   .highlight {
     padding: 13px 14px;
   }
 
-
   .highlight p {
     font-size: 13px;
   }
-
 
   .itinerary {
     padding: 16px;
   }
 
-
   .day {
-    grid-template-columns:
-      42px 1fr;
+    grid-template-columns: 42px 1fr;
 
     gap: 10px;
   }
-
 
   .dayNumber {
     width: 40px;
@@ -1070,44 +906,35 @@
     font-size: 14px;
   }
 
-
   .dayContent h3 {
     font-size: 16px;
   }
-
 
   .dayContent p {
     font-size: 12px;
   }
 
-
   .overnight {
     font-size: 11px;
   }
-
 
   .enquiryCard {
     padding: 18px;
   }
 
-
   .enquiryCard h3 {
     font-size: 25px;
   }
-
 
   .inclusionBox {
     padding: 22px;
   }
 
-
   .inclusionBox h2 {
     font-size: 31px;
   }
 
-
   .inclusionBox li {
     font-size: 13px;
   }
-
 }

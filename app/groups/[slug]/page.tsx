@@ -43,153 +43,161 @@ export default async function GroupTourPage({ params }: Props) {
       <main className={styles.page}>
 
         {/* =====================================================
-    HERO / FULL WIDTH BANNER
-    SAME AS INDIA TOUR BANNER
-===================================================== */}
+            HERO / FULL WIDTH BANNER
+            SAME AS INDIA TOUR BANNER
+        ===================================================== */}
 
-<section
-  className={styles.hero}
-  style={{
-    position: "relative",
-    width: "100%",
-    height: "calc(100vh - 90px)",
-    minHeight: "700px",
-    overflow: "hidden",
-  }}
->
-  <img
-    src={tour.image}
-    alt={tour.title}
-    className={styles.heroImage}
-    style={{
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      objectPosition: "center",
-      display: "block",
-    }}
-  />
+        <section
+          className={styles.hero}
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "calc(100vh - 90px)",
+            minHeight: "700px",
+            overflow: "hidden",
+          }}
+        >
+          <img
+            src={tour.image}
+            alt={tour.title}
+            className={styles.heroImage}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+            }}
+          />
 
-  <div
-    className={styles.heroOverlay}
-    style={{
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      alignItems: "center",
-      background:
-        "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
-    }}
-  >
-    <div
-      className={styles.heroContent}
-      style={{
-        width: "min(1400px, 90%)",
-        margin: "0 auto",
-        color: "#fff",
-      }}
-    >
-      <span
-        className={styles.label}
-        style={{
-          display: "inline-block",
-          background: "#a80000",
-          color: "#fff",
-          padding: "12px 22px",
-          marginBottom: "28px",
-          borderRadius: "4px",
-          fontSize: "15px",
-          fontWeight: 700,
-          letterSpacing: "1px",
-          textTransform: "uppercase",
-        }}
-      >
-        GROUP TOUR PACKAGE
-      </span>
+          <div
+            className={styles.heroOverlay}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              background:
+                "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
+            }}
+          >
+            <div
+              className={styles.heroContent}
+              style={{
+                width: "min(1400px, 90%)",
+                margin: "0 auto",
+                color: "#fff",
+              }}
+            >
+              <span
+                className={styles.label}
+                style={{
+                  display: "inline-block",
+                  background: "#a80000",
+                  color: "#fff",
+                  padding: "12px 22px",
+                  marginBottom: "28px",
+                  borderRadius: "4px",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                }}
+              >
+                GROUP TOUR PACKAGE
+              </span>
 
-      <h1
-        style={{
-          maxWidth: "1000px",
-          margin: "0 0 25px",
-          color: "#fff",
-          fontFamily: 'Georgia, "Times New Roman", serif',
-          fontSize: "clamp(55px, 6vw, 100px)",
-          fontWeight: 700,
-          lineHeight: 0.98,
-        }}
-      >
-        {tour.title}
-      </h1>
+              <h1
+                style={{
+                  maxWidth: "1000px",
+                  margin: "0 0 25px",
+                  color: "#fff",
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  fontSize: "clamp(55px, 6vw, 100px)",
+                  fontWeight: 700,
+                  lineHeight: 0.98,
+                }}
+              >
+                {tour.title}
+              </h1>
 
-      <p
-        style={{
-          margin: 0,
-          color: "#fff",
-          fontSize: "20px",
-          lineHeight: 1.65,
-        }}
-      >
-        {tour.route}
-      </p>
-    </div>
-  </div>
-</section>
-
-
-{/* =====================================================
-    TOUR INFORMATION BAR
-===================================================== */}
-
-<section className={styles.infoBar}>
-
-  <div className={styles.infoItem}>
-    <span className={styles.infoLabel}>
-      DURATION
-    </span>
-
-    <strong>
-      {tour.duration}
-    </strong>
-  </div>
+              <p
+                style={{
+                  maxWidth: "1000px",
+                  margin: 0,
+                  color: "#fff",
+                  fontSize: "20px",
+                  lineHeight: 1.65,
+                }}
+              >
+                {tour.route}
+              </p>
+            </div>
+          </div>
+        </section>
 
 
-  <div className={styles.infoItem}>
-    <span className={styles.infoLabel}>
-      ROUTE
-    </span>
+        {/* =====================================================
+            TOUR INFORMATION
+            SAME RED BAR AS INDIA TOUR
+        ===================================================== */}
 
-    <strong>
-      {tour.route}
-    </strong>
-  </div>
+        <section className={styles.infoSection}>
+          <div className={styles.container}>
+
+            <div className={styles.infoGrid}>
+
+              <div className={styles.infoItem}>
+                <span>
+                  Duration
+                </span>
+
+                <strong>
+                  {tour.duration}
+                </strong>
+              </div>
 
 
-  <div className={styles.infoItem}>
-    <span className={styles.infoLabel}>
-      EXPERIENCE
-    </span>
+              <div className={styles.infoItem}>
+                <span>
+                  Route
+                </span>
 
-    <strong>
-      {tour.description}
-    </strong>
-  </div>
+                <strong>
+                  {tour.route}
+                </strong>
+              </div>
 
 
-  <div className={styles.infoItem}>
-    <span className={styles.infoLabel}>
-      TOUR CODE
-    </span>
+              <div className={styles.infoItem}>
+                <span>
+                  Experience
+                </span>
 
-    <strong>
-      {tourCode}
-    </strong>
-  </div>
+                <strong>
+                  {tour.description}
+                </strong>
+              </div>
 
-</section>
+
+              <div className={styles.infoItem}>
+                <span>
+                  Tour Code
+                </span>
+
+                <strong>
+                  {tourCode}
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
 
 
         {/* =====================================================
@@ -276,6 +284,56 @@ export default async function GroupTourPage({ params }: Props) {
                   </div>
 
                 </div>
+
+
+                {/* =================================================
+                    TOUR DATE + PRICE
+                    ONLY SHOWN FOR UPCOMING TOURS
+                    (tours where date/price are set in the data file)
+                ================================================= */}
+
+                {tour.date && tour.price && (
+                  <div className={styles.tourMeta}>
+
+                    <div className={styles.tourMetaItem}>
+
+                      <span className={styles.tourMetaIcon}>
+                        📅
+                      </span>
+
+                      <div>
+                        <span className={styles.tourMetaLabel}>
+                          Tour Date
+                        </span>
+
+                        <span className={styles.tourMetaValue}>
+                          {tour.date}
+                        </span>
+                      </div>
+
+                    </div>
+
+
+                    <div className={styles.tourMetaItem}>
+
+                      <span className={styles.tourMetaIcon}>
+                        ₹
+                      </span>
+
+                      <div>
+                        <span className={styles.tourMetaLabel}>
+                          Price
+                        </span>
+
+                        <span className={styles.tourMetaValue}>
+                          {tour.price}
+                        </span>
+                      </div>
+
+                    </div>
+
+                  </div>
+                )}
 
               </div>
 
