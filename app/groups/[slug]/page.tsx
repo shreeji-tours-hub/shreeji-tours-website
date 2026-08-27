@@ -58,7 +58,7 @@ export default async function GroupTourPage({ params }: Props) {
   }}
 >
   <img
-    src={tour.heroImage || tour.image}
+    src={tour.image}
     alt={tour.title}
     className={styles.heroImage}
     style={{
@@ -73,18 +73,18 @@ export default async function GroupTourPage({ params }: Props) {
   />
 
   <div
-  className={styles.heroOverlay}
-  style={{
-    position: "absolute",
-    inset: 0,
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    alignItems: "flex-start",
-    background:
-      "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
-  }}
->
+    className={styles.heroOverlay}
+    style={{
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      background:
+        "linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.20) 100%)",
+    }}
+  >
     <div
       className={styles.heroContent}
       style={{
@@ -178,13 +178,14 @@ export default async function GroupTourPage({ params }: Props) {
     </strong>
   </div>
 
+
   <div className={styles.infoItem}>
     <span className={styles.infoLabel}>
       TOUR CODE
     </span>
 
     <strong>
-      {tour.tourCode}
+      {tourCode}
     </strong>
   </div>
 
