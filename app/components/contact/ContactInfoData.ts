@@ -5,17 +5,17 @@ export const contactInfoData = [
       "+91 99694 22936",
       "+91 93246 22153",
     ],
-    note: "(24x7 Available)",
+    note: "Travel Assistance 24x7 Available",
     type: "phone",
   },
 
   {
     title: "Email Us",
     lines: [
-      "contact@shreejitourstravels.in",
-      "shreejitourstravels.in@gmail.com",
+      "contact@shreejitoursntravels.in",
+      "www.shreejitoursntravels.in",
     ],
-    note: "(We reply within 24 hrs)",
+    note: "Our travel expert will contact you shortly — usually within a few hours",
     type: "email",
   },
 

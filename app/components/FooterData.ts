@@ -64,6 +64,18 @@ export const footerPopularTours = [
 
 export const footerServices = [
   {
+    label: "Tours for Foreigners",
+    href: "/foreigners",
+  },
+  {
+    label: "India Tours",
+    href: "/india-tours",
+  },
+  {
+    label: "International Tours",
+    href: "/international-tours",
+  },
+  {
     label: "Airport Transfers",
     href: "#",
   },
@@ -96,10 +108,10 @@ export const footerContact = {
   phone2: "+91 9324622153",
 
   email:
-    "contact@shreejitourstravels.in",
+    "contact@shreejitoursntravels.in",
 
   email2:
-    "shreejitourstravels@gmail.com",
+    "www.shreejitoursntravels.in",
 
   address:
     "Supershva Eternia, D Wing, Flat No: 403, Old Nagardas Rd, Andheri East, Mumbai - 400069",
@@ -132,5 +144,5 @@ export const footerCopyright = {
   year: "2026",
 
   text:
-    "Shreeji Tours & Travels. All Rights Reserved.",
+    "Shreeji Tours n Travels. All Rights Reserved.",
 };

@@ -183,8 +183,7 @@ export default function PopularGroupTours() {
             </h2>
 
             <p>
-              Ready to travel with us? Fill out the registration form
-              below to join our upcoming group tours.
+              Ready to travel with us? Fill out the registration form below to join our upcoming group tours and our team will contact you.
             </p>
 
             <a

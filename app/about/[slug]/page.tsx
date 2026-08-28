@@ -6,6 +6,7 @@ import Footer from "@/app/components/Footer";
 import { offerData } from "@/app/components/about/OfferData";
 
 import styles from "./OfferDetail.module.css";
+import TourHighlights from "@/app/components/home/TourHighlights";
 
 interface Props {
   params: Promise<{
@@ -151,7 +152,6 @@ export default async function OfferPage({ params }: Props) {
           </div>
 
         </section>
-
 
         {/* CTA */}
 

@@ -5,6 +5,12 @@ export const whyChooseUsData = [
   "Complete Travel Solutions",
   "24×7 Customer Support",
   "Professional Service",
+  "Customized Tour Packages",
+  "Well Maintain Vehicles",
+  "Professional Drivers & Tour Manager",
+  "Special Arrangement for Vegetarian & Jain Group",
+  "Specialized service for Foreigners / NRI Travelers",
+  "Best Price Guarantee with Transparency"
 ];
 
 export const achievementsData = [

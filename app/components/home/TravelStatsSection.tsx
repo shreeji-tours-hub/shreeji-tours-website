@@ -19,8 +19,8 @@ export default function TravelStatsSection() {
         <div className={styles.content}>
           <h2>
             We Make
-            <br />
-            World Travel Easy
+            
+            Tour Easy
           </h2>
 
           <p>

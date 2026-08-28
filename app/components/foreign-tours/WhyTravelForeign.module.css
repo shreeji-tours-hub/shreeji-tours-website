@@ -1,11 +1,12 @@
 /* =========================================================
-   SECTION
+   WHY TRAVEL WITH US - SECTION
 ========================================================= */
 
 .section {
   width: 100%;
   padding: 38px 0 42px;
 
+  /* CHANGE THIS COLOR INDEPENDENTLY */
   background: #fff8ed;
 }
 
@@ -13,6 +14,7 @@
   width: min(1200px, calc(100% - 50px));
   margin: 0 auto;
 }
+
 
 /* =========================================================
    HEADING
@@ -49,8 +51,9 @@
   font-weight: 700;
 }
 
+
 /* =========================================================
-   GRID
+   WHY TRAVEL - GRID
 ========================================================= */
 
 .grid {
@@ -61,8 +64,9 @@
   gap: 16px;
 }
 
+
 /* =========================================================
-   ITEM
+   WHY TRAVEL - ITEM
 ========================================================= */
 
 .item {
@@ -96,20 +100,6 @@
     0 8px 20px rgba(0, 0, 0, 0.09);
 }
 
-/* =========================================================
-   ICON
-========================================================= */
-
-.icon {
-  display: inline-block;
-
-  width: 28px;
-  height: 28px;
-
-  margin-bottom: 12px;
-
-  color: #e99f00;
-}
 
 /* =========================================================
    IMAGE
@@ -133,6 +123,7 @@
     0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
+
 /* =========================================================
    TITLE
 ========================================================= */
@@ -148,6 +139,7 @@
   font-weight: 700;
 }
 
+
 /* =========================================================
    DESCRIPTION
 ========================================================= */
@@ -162,11 +154,216 @@
   line-height: 1.55;
 }
 
+
+/* =========================================================
+   NEW SERVICES SECTION
+========================================================= */
+
+.servicesSection {
+  width: 100%;
+
+  padding: 60px 0 70px;
+
+  /* THIS BACKGROUND IS INDEPENDENT
+     FROM .section ABOVE */
+  background: #ffffff;
+}
+
+.servicesContainer {
+  width: min(1320px, calc(100% - 50px));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.servicesGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.serviceCard {
+  background: #ffffff;
+
+  border: 1px solid #e5ddd1;
+
+  border-radius: 10px;
+
+  padding: 26px 34px 28px;
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-3px);
+
+  border-color: #dfc898;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   SERVICE HEADER
+========================================================= */
+
+.serviceHeader {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #e5ddd1;
+}
+
+
+/* =========================================================
+   SERVICE ICON
+========================================================= */
+
+.serviceIcon {
+  flex-shrink: 0;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d9a72b;
+
+  border-radius: 50%;
+
+  color: #c99400;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SERVICE LABEL
+========================================================= */
+
+.serviceLabel {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #b78913;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SERVICE TITLE
+========================================================= */
+
+.serviceTitle {
+  margin: 0;
+
+  color: #8c1717;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.serviceList {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SERVICE LIST ITEM
+========================================================= */
+
+.serviceListItem {
+  display: grid;
+
+  grid-template-columns: 38px 1fr;
+
+  align-items: center;
+
+  min-height: 48px;
+
+  border-bottom: 1px solid #e8e1d8;
+
+  color: #222;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+}
+
+.serviceListItem:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.number {
+  color: #c08b00;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 1050px) {
+
   .container {
     width: calc(100% - 40px);
   }
@@ -180,13 +377,34 @@
   .item {
     padding: 18px 14px;
   }
+
+
+  /* SERVICES */
+
+  .servicesContainer {
+    width: calc(100% - 40px);
+  }
+
+  .servicesGrid {
+    gap: 20px;
+  }
+
+  .serviceCard {
+    padding: 24px 25px;
+  }
+
+  .serviceTitle {
+    font-size: 25px;
+  }
 }
+
 
 /* =========================================================
    SMALL TABLET
 ========================================================= */
 
 @media (max-width: 700px) {
+
   .section {
     padding: 32px 0 36px;
   }
@@ -204,13 +422,42 @@
 
     gap: 14px;
   }
+
+
+  /* SERVICES */
+
+  .servicesSection {
+    padding: 45px 0 55px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .serviceCard {
+    padding: 22px 24px 25px;
+  }
+
+  .serviceTitle {
+    font-size: 24px;
+  }
+
+  .serviceListItem {
+    min-height: 46px;
+
+    font-size: 14px;
+  }
 }
+
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 500px) {
+
   .container {
     width: calc(100% - 25px);
   }
@@ -232,26 +479,76 @@
     height: 60px;
   }
 
-  .icon {
-    width: 26px;
-    height: 26px;
-  }
-
   .item h3 {
     font-size: 14px;
   }
 
   .item p {
     font-size: 12px;
+
     line-height: 1.5;
   }
+
+
+  /* SERVICES */
+
+  .servicesSection {
+    padding: 38px 0 45px;
+  }
+
+  .servicesContainer {
+    width: calc(100% - 25px);
+  }
+
+  .serviceCard {
+    padding: 20px 17px 22px;
+
+    border-radius: 8px;
+  }
+
+  .serviceHeader {
+    gap: 12px;
+
+    padding-bottom: 18px;
+  }
+
+  .serviceIcon {
+    width: 44px;
+    height: 44px;
+
+    font-size: 19px;
+  }
+
+  .serviceLabel {
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .serviceTitle {
+    font-size: 22px;
+  }
+
+  .serviceListItem {
+    grid-template-columns: 34px 1fr;
+
+    min-height: 44px;
+
+    font-size: 13px;
+  }
+
+  .number {
+    font-size: 11px;
+  }
 }
+
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 380px) {
+
   .grid {
     gap: 10px;
   }
@@ -266,5 +563,22 @@
 
   .item p {
     font-size: 11px;
+  }
+
+
+  /* SERVICES */
+
+  .serviceCard {
+    padding: 18px 14px 20px;
+  }
+
+  .serviceTitle {
+    font-size: 20px;
+  }
+
+  .serviceListItem {
+    grid-template-columns: 30px 1fr;
+
+    font-size: 12px;
   }
 }

@@ -7,78 +7,127 @@ import { featuredForeignTours } from "@/app/components/foreign-tours/PopularFore
 
 export default function ForeignToursSection() {
   return (
-    <section className={styles.section} id="foreigners">
+    <>
+      {/* =========================================================
+          INTRO CONTENT
+      ========================================================= */}
 
-      <div className={styles.container}>
+      <section className={styles.introSection}>
 
-        {/* HEADING */}
-        <div className={styles.heading}>
+        <div className={styles.introContainer}>
 
-          <span className={styles.headingLabel}>
-            TOURS FOR FOREIGNERS
+          <span className={styles.introLabel}>
+            Explore Incredible India with SHREEJI TOURS n TRAVELS
           </span>
 
-          <h2 className={styles.headingTitle}>
-            Specially Designed for International Travelers
+          <h1 className={styles.introTitle}>
+            Journey Beyond Destination
+          </h1>
+
+          <h2 className={styles.introSubTitle}>
+            Mumbai-Based Trusted Travel Company
           </h2>
 
-          <div className={styles.decoration}>
-            <i />
-            <b>○</b>
-            <i />
+          <p className={styles.introExperience}>
+            15+ Years of Experience in Creating Unforgettable Journeys & Happy Memories
+          </p>
+
+          <p className={styles.introDescription}>
+            Discover the beauty, culture, spirituality, and incredible destinations of India with Shreeji Tours n Travels. From memorable family holidays and exciting group tours to spiritual journeys and customized travel experiences, we make every journey comfortable, enjoyable, and truly special.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================================================
+          TOURS FOR FOREIGNERS
+      ========================================================= */}
+
+      <section className={styles.section} id="foreigners">
+
+        <div className={styles.container}>
+
+          {/* HEADING */}
+
+          <div className={styles.heading}>
+
+            <span className={styles.headingLabel}>
+              TOURS FOR FOREIGNERS
+            </span>
+
+            <h2 className={styles.headingTitle}>
+              Specially Designed for International Travelers
+            </h2>
+
+            <div className={styles.decoration}>
+              <i />
+              <b>○</b>
+              <i />
+            </div>
+
+          </div>
+
+
+          {/* TOUR CARDS */}
+
+          <div className={styles.grid}>
+
+            {featuredForeignTours.map((tour) => (
+
+              <div
+                key={tour.slug}
+                className={styles.card}
+              >
+
+                <div className={styles.imageWrap}>
+
+                  <img
+                    className={styles.image}
+                    src={tour.image}
+                    alt={tour.title}
+                  />
+
+                </div>
+
+                <div className={styles.cardContent}>
+
+                  <h3 className={styles.cardTitle}>
+                    {tour.title}
+                  </h3>
+
+                  <p className={styles.cardDescription}>
+                    {tour.description}
+                  </p>
+
+                </div>
+
+              </div>
+
+            ))}
+
+          </div>
+
+
+          {/* =========================================================
+              VIEW MORE BUTTON
+          ========================================================= */}
+
+          <div className={styles.viewMoreWrapper}>
+
+            <Link
+              href="/foreigners"
+              className={styles.viewMoreButton}
+            >
+              View More
+            </Link>
+
           </div>
 
         </div>
 
-
-        {/* TOUR CARDS */}
-        <div className={styles.grid}>
-
-          {featuredForeignTours.map((tour) => (
-            <Link
-              key={tour.slug}
-              href={`/foreign-tours/${tour.slug}`}
-              className={styles.card}
-            >
-
-              <div className={styles.imageWrap}>
-                <img
-                  className={styles.image}
-                  src={tour.image}
-                  alt={tour.title}
-                />
-              </div>
-
-              <div className={styles.cardContent}>
-
-                <h3 className={styles.cardTitle}>
-                  {tour.title}
-                </h3>
-
-                <p className={styles.cardDescription}>
-                  {tour.description}
-                </p>
-
-              </div>
-
-            </Link>
-          ))}
-
-        </div>
-
-
-        {/* ONE VIEW MORE BUTTON FOR THE WHOLE SECTION */}
-        <div className={styles.viewMoreWrapper}>
-          <Link
-            href="/foreigners"
-            className={styles.viewMoreButton}
-          >
-            View More
-          </Link>
-        </div>
-
-      </div>
-
-    </section>
+      </section>
+    </>
   );
 }

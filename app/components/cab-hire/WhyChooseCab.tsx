@@ -1,21 +1,8 @@
 "use client";
 
 import styles from "./WhyChooseCab.module.css";
-import {
-  IndianRupee,
-  Clock3,
-  UserRound,
-  CarFront,
-} from "lucide-react";
 
 import { whyChooseCab } from "./WhyChooseCabData";
-
-const icons = [
-  IndianRupee,
-  Clock3,
-  UserRound,
-  CarFront,
-];
 
 export default function WhyChooseCab() {
   return (
@@ -26,22 +13,39 @@ export default function WhyChooseCab() {
         <h2>Why Choose Us?</h2>
 
         <div className={styles.list}>
-          {whyChooseCab.map((item, index) => {
-            const Icon = icons[index];
+
+          {whyChooseCab.map((item) => {
+
+            const Icon = item.icon;
 
             return (
-              <div className={styles.item} key={item.title}>
+              <div
+                className={styles.item}
+                key={item.title}
+              >
 
-                <Icon className={styles.icon} size={23} />
+                <Icon
+                  className={styles.icon}
+                  size={23}
+                  strokeWidth={2}
+                />
 
                 <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+
+                  <p>
+                    {item.description}
+                  </p>
+
                 </div>
 
               </div>
             );
           })}
+
         </div>
 
       </div>

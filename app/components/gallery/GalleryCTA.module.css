@@ -1,7 +1,16 @@
+/* =========================================================
+   GALLERY CTA SECTION
+========================================================= */
+
 .section {
   padding: 30px 30px 60px;
   background: white;
 }
+
+
+/* =========================================================
+   CTA CONTAINER
+========================================================= */
 
 .container {
   max-width: 1250px;
@@ -25,6 +34,11 @@
     );
 }
 
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
 .content {
   padding: 35px 45px;
   max-width: 560px;
@@ -34,6 +48,7 @@
   margin: 0 0 10px;
 
   color: #8d1010;
+
   font-size: 29px;
 }
 
@@ -41,12 +56,20 @@
   margin: 0 0 20px;
 
   color: #555;
+
   font-size: 14px;
+
   line-height: 1.6;
 }
 
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
 .button {
   display: inline-flex;
+
   align-items: center;
   gap: 12px;
 
@@ -63,11 +86,17 @@
   font-weight: 700;
 }
 
+
+/* =========================================================
+   CTA IMAGES
+========================================================= */
+
 .images {
   height: 190px;
 
   display: flex;
   align-items: center;
+
   gap: 8px;
 
   padding-right: 12px;
@@ -83,7 +112,8 @@
 
   transform: rotate(-3deg);
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .images img:nth-child(2) {
@@ -94,7 +124,109 @@
   transform: rotate(-2deg);
 }
 
+
+/* =========================================================
+   FEATURES SECTION
+========================================================= */
+
+.featuresSection {
+  width: 100%;
+
+  padding: 0 0 55px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   FEATURES CONTAINER
+========================================================= */
+
+.featuresContainer {
+  width: min(1400px, calc(100% - 70px));
+
+  margin: 0 auto;
+
+  padding: 20px 25px;
+
+  background: #fff8ed;
+
+  border-radius: 8px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.feature {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 55px;
+
+  border-right:
+    1px solid #e3d7c7;
+}
+
+.feature:last-child {
+  border-right: none;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.featureIcon {
+  color: #222222;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   FEATURE TEXT
+========================================================= */
+
+.featureText strong {
+  display: block;
+
+  color: #800000;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.featureText span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #333333;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   CTA TABLET
+========================================================= */
+
 @media (max-width: 850px) {
+
   .container {
     flex-direction: column;
   }
@@ -105,14 +237,106 @@
 
   .images {
     width: 100%;
+
     justify-content: center;
+
     padding-bottom: 20px;
+  }
+
+
+  /* FEATURES */
+
+  .featuresContainer {
+    width: min(92%, 700px);
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 0;
+
+    padding: 15px;
+  }
+
+  .feature {
+    min-height: 65px;
+
+    padding: 8px;
+
+    border-right: none;
+  }
+
+  .feature:nth-child(odd) {
+    border-right:
+      1px solid #e3d7c7;
+  }
+
+  .feature:nth-child(-n + 3) {
+    border-bottom:
+      1px solid #e3d7c7;
+  }
+
+  .feature:last-child {
+    border-right: none;
   }
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 550px) {
+
   .images img {
     width: 100px;
     height: 90px;
+  }
+
+
+  /* FEATURES */
+
+  .featuresSection {
+    padding: 0 0 40px;
+  }
+
+  .featuresContainer {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+
+    padding: 10px 15px;
+  }
+
+  .feature {
+    justify-content: flex-start;
+
+    min-height: 58px;
+
+    padding: 10px 5px;
+
+    border-right: none !important;
+
+    border-bottom:
+      1px solid #e3d7c7;
+  }
+
+  .feature:last-child {
+    border-bottom: none;
+  }
+
+  .featureIcon {
+    width: 32px;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .featureText strong {
+    font-size: 15px;
+  }
+
+  .featureText span {
+    font-size: 12px;
   }
 }
