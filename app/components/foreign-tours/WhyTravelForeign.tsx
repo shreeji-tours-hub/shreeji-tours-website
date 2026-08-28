@@ -91,7 +91,7 @@ export default function WhyTravelWithUs() {
                   </span>
 
                   <h2 className={styles.serviceTitle}>
-                    Everything we take care of
+                    Everything We Take Care Of
                   </h2>
 
                 </div>

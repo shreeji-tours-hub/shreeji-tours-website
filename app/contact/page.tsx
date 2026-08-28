@@ -9,6 +9,8 @@ import ContactFormMap from "../components/contact/ContactFormMap";
 import WhyContact from "../components/contact/WhyContact";
 import ContactCTA from "../components/contact/ContactCTA";
 
+import TourHighlights from "../components/home/TourHighlights";
+
 export default function ContactPage() {
   return (
     <main>
@@ -21,6 +23,8 @@ export default function ContactPage() {
       <ContactFormMap />
 
       <WhyContact />
+
+      <TourHighlights />
 
       <ContactCTA />
 

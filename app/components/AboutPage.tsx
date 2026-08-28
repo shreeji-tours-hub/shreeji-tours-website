@@ -11,13 +11,15 @@ import OfferSection from "./about/OfferSection";
 import WhyChooseUs from "./about/WhyChooseUs";
 import ContactCTA from "../components/contact/ContactCTA";
 
+import TourHighlights from "./home/TourHighlights";
+
 export default function AboutPage() {
   return (
     <main>
       <Navbar />
 
       <AboutHero />
-      
+
       <OurStory />
 
       <ValuesSection />
@@ -28,7 +30,9 @@ export default function AboutPage() {
 
       <WhyChooseUs />
 
-      <ContactCTA/>
+      <TourHighlights />
+
+      <ContactCTA />
 
       <Footer />
     </main>

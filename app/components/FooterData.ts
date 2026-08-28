@@ -59,6 +59,7 @@ export const footerPopularTours = [
   "Golden Triangle Tours",
   "Char Dham Yatra",
   "South India Tours",
+  "Maharashtra Tours",
 ];
 
 

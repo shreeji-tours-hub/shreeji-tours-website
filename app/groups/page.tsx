@@ -7,11 +7,9 @@ import GroupTourHero from "../components/group-tours/GroupTourHero";
 import GroupTourSearch from "../components/group-tours/GroupTourSearch";
 import PopularGroupTours from "../components/group-tours/PopularGroupTours";
 import WhyGroupTravel from "../components/group-tours/WhyGroupTravel";
-import GroupDestinations from "../components/group-tours/GroupDestinations";
-import GroupTestimonials from "../components/group-tours/GroupTestimonials";
 import GroupTourCTA from "../components/group-tours/GroupTourCTA";
-import ContactCTA from "../components/contact/ContactCTA";
 
+import TourHighlights from "../components/home/TourHighlights";
 
 export default function GroupsPage() {
   return (
@@ -19,10 +17,15 @@ export default function GroupsPage() {
       <Navbar />
 
       <GroupTourHero />
+
       <GroupTourSearch />
+
       <PopularGroupTours />
+
       <WhyGroupTravel />
-      
+
+      <TourHighlights />
+
       <GroupTourCTA />
 
       <Footer />

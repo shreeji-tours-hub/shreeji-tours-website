@@ -45,44 +45,44 @@ const tours = [
 
 const testimonials = [
   {
-    name: "David Lee",
-    country: "Australia",
-    flag: "🇦🇺",
+    name: "Mr. Bashir Ramzan",
+    country: "Canada",
+    flag: "🇨🇦",
     avatar: "https://i.pravatar.cc/100?img=12",
     review:
-      "Excellent service and well planned tour. Thank you Shreeji Tours!",
+      "The services provided was per EXCELLENCE. I would not hesitate to recommend Shreeji Tours n Travels.",
   },
   {
-    name: "Sophie Martin",
-    country: "France",
-    flag: "🇫🇷",
+    name: "Mr. Rivaz",
+    country: "South Africa",
+    flag: "🇿🇦",
     avatar: "https://i.pravatar.cc/100?img=47",
     review:
-      "Our India trip was wonderful. Everything was perfectly organized.",
+      "Mr Vikrant Khut provided remarkable top class service during my stay in Mumbai. His attention to providing excellent service was unrivalled.",
   },
   {
-    name: "Luca Romano",
-    country: "Italy",
-    flag: "🇮🇹",
+    name: "Mrs. Bernadine",
+    country: "Australia",
+    flag: "🇦🇺",
     avatar: "https://i.pravatar.cc/100?img=33",
     review:
-      "Highly professional and supportive team. Best tour experience!",
+      "Our family were treated to all sights in Mumbai and Vikrant was amazing. He built great rapport with my sons and explained every area with its history to us.",
   },
   {
-    name: "Emma Wilson",
-    country: "United Kingdom",
-    flag: "🇬🇧",
+    name: "Mr. Rakesh Udernani",
+    country: "Dubai",
+    flag: "🇦🇪",
     avatar: "https://i.pravatar.cc/100?img=45",
     review:
-      "Amazing experience from start to finish. Highly recommended!",
+      "Our 5 days trip was fantastic. Vehicle was nice and driver was very polite and helpful. We look forward to working with Shreeji Tours n Travels again.",
   },
   {
-    name: "Daniel Smith",
-    country: "USA",
-    flag: "🇺🇸",
+    name: "Steven",
+    country: "Mumbai",
+    flag: "🇮🇳",
     avatar: "https://i.pravatar.cc/100?img=11",
     review:
-      "Everything was smooth and perfectly arranged. Great local team!",
+      "One of the best tours and travels I have ever come across. What they promise is what they deliver and they always keep in touch with you during your tour.",
   },
 ];
 

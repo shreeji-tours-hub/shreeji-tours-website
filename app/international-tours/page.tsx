@@ -7,10 +7,9 @@ import InternationalTourHero from "../components/international-tours/Internation
 import InternationalTourSearch from "../components/international-tours/InternationalTourSearch";
 import PopularInternationalTours from "../components/international-tours/PopularInternationalTours";
 import WhyInternationalTravel from "../components/international-tours/WhyInternationalTravel";
-import InternationalDestinations from "../components/international-tours/InternationalDestinations";
-import InternationalTestimonials from "../components/international-tours/InternationalTestimonials";
 import InternationalTourCTA from "../components/international-tours/InternationalTourCTA";
-import ContactCTA from "../components/contact/ContactCTA";
+
+import TourHighlights from "../components/home/TourHighlights";
 
 export default function InternationalPage() {
   return (
@@ -18,11 +17,17 @@ export default function InternationalPage() {
       <Navbar />
 
       <InternationalTourHero />
+
       <InternationalTourSearch />
+
       <PopularInternationalTours />
+
       <WhyInternationalTravel />
-     
+
+      <TourHighlights />
+
       <InternationalTourCTA />
+
       <Footer />
     </main>
   );

@@ -12,6 +12,7 @@ import ForeignTestimonials from "../components/foreign-tours/ForeignTestimonials
 import ForeignTourCTA from "../components/foreign-tours/ForeignTourCTA";
 import ContactCTA from "../components/contact/ContactCTA";
 
+import TourHighlights from "../components/home/TourHighlights";
 
 export default function ForeignersPage() {
   return (
@@ -25,6 +26,8 @@ export default function ForeignersPage() {
       <PopularForeignTours />
 
       <WhyTravelForeign />
+
+      <TourHighlights />
 
       <ForeignTourCTA />
 
