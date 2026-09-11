@@ -48,39 +48,43 @@ const testimonials = [
     name: "Mr. Bashir Ramzan",
     country: "Canada",
     flag: "🇨🇦",
-    avatar: "https://i.pravatar.cc/100?img=12",
+    initial: "B",
     review:
       "The services provided was per EXCELLENCE. I would not hesitate to recommend Shreeji Tours n Travels.",
   },
+
   {
     name: "Mr. Rivaz",
     country: "South Africa",
     flag: "🇿🇦",
-    avatar: "https://i.pravatar.cc/100?img=47",
+    initial: "R",
     review:
       "Mr Vikrant Khut provided remarkable top class service during my stay in Mumbai. His attention to providing excellent service was unrivalled.",
   },
+
   {
     name: "Mrs. Bernadine",
     country: "Australia",
     flag: "🇦🇺",
-    avatar: "https://i.pravatar.cc/100?img=33",
+    initial: "B",
     review:
       "Our family were treated to all sights in Mumbai and Vikrant was amazing. He built great rapport with my sons and explained every area with its history to us.",
   },
+
   {
     name: "Mr. Rakesh Udernani",
     country: "Dubai",
     flag: "🇦🇪",
-    avatar: "https://i.pravatar.cc/100?img=45",
+    initial: "R",
     review:
       "Our 5 days trip was fantastic. Vehicle was nice and driver was very polite and helpful. We look forward to working with Shreeji Tours n Travels again.",
   },
+
   {
     name: "Steven",
     country: "Mumbai",
     flag: "🇮🇳",
-    avatar: "https://i.pravatar.cc/100?img=11",
+    initial: "S",
     review:
       "One of the best tours and travels I have ever come across. What they promise is what they deliver and they always keep in touch with you during your tour.",
   },
@@ -203,10 +207,9 @@ export default function TourHighlights() {
 
                   <div className={styles.customer}>
 
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                    />
+                    <div className={styles.avatar}>
+  {testimonial.initial}
+</div>
 
                     <div className={styles.customerInfo}>
 

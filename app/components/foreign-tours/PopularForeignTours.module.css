@@ -77,6 +77,101 @@
   font-size: 11px;
 }
 
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+========================================================= */
+
+.filterButton,
+.activeFilter {
+  padding: 11px 20px;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+/* INACTIVE */
+
+.filterButton {
+  background: #ffffff;
+
+  color: #555555;
+
+  border: 1px solid #dcdcdc;
+}
+
+
+/* HOVER */
+
+.filterButton:hover {
+  border-color: #951414;
+
+  color: #951414;
+}
+
+
+/* ACTIVE */
+
+.activeFilter {
+  background: #951414;
+
+  color: #ffffff;
+
+  border: 1px solid #951414;
+
+  box-shadow:
+    0 4px 10px rgba(149, 20, 20, 0.18);
+}
+
+
+/* CLICK */
+
+.filterButton:active,
+.activeFilter:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   NO TOURS
+========================================================= */
+
+.noTours {
+  grid-column: 1 / -1;
+
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: #777777;
+
+  font-size: 15px;
+}
 
 /* =========================================================
    NORMAL RESPONSIVE GRID
@@ -407,6 +502,19 @@
 
   .cardBody {
     padding: 14px;
+  }
+
+  .filters {
+    gap: 8px;
+
+    margin-bottom: 20px;
+  }
+
+  .filterButton,
+  .activeFilter {
+    padding: 10px 16px;
+
+    font-size: 13px;
   }
 
   .cardBody h3 {

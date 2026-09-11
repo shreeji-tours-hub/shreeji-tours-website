@@ -73,6 +73,116 @@
 
 
 /* =========================================================
+   GOOGLE + TRIPADVISOR REVIEW ROW
+========================================================= */
+
+.reviewRow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 45px;
+
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   TRIPADVISOR
+========================================================= */
+
+.tripadvisor {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition: transform 0.25s ease;
+}
+
+.tripadvisor:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TRIPADVISOR LOGO IMAGE
+========================================================= */
+
+.tripadvisorLogo {
+  display: block;
+
+  width: 155px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   TRIPADVISOR REVIEWS
+========================================================= */
+
+.tripadvisorBottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 9px;
+}
+
+.stars {
+  color: #d99a00;
+
+  font-size: 17px;
+
+  letter-spacing: 1px;
+}
+
+.reviewCount {
+  color: #666;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   GOOGLE REVIEW
+========================================================= */
+
+.googleReview {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  transition: transform 0.25s ease;
+}
+
+.googleReview:hover {
+  transform: translateY(-2px);
+}
+
+.googleReviewImage {
+  display: block;
+
+  width: 150px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
    TOURS FOR FOREIGNERS SECTION
 ========================================================= */
 
@@ -82,7 +192,6 @@
   /* BEIGE ONLY FOR THIS SECTION */
   background: #f7f3ed;
 }
-
 
 .container {
   width: min(1450px, 94%);
@@ -354,6 +463,13 @@
   }
 
 
+  /* REVIEW ROW */
+
+  .reviewRow {
+    gap: 30px;
+  }
+
+
   .section {
     padding: 55px 0;
   }
@@ -416,6 +532,50 @@
   }
 
 
+  /* =======================================================
+     REVIEW ROW - MOBILE
+  ======================================================= */
+
+  .reviewRow {
+    flex-direction: column;
+
+    gap: 22px;
+
+    margin-top: 20px;
+  }
+
+  .tripadvisor {
+    align-items: center;
+  }
+
+  .tripadvisorLogo {
+  display: block;
+  width: 100px;
+  height: 90px;
+  object-fit: contain;
+}
+
+  .tripadvisorBottom {
+    margin-top: 7px;
+  }
+
+  .stars {
+    font-size: 15px;
+  }
+
+  .reviewCount {
+    font-size: 13px;
+  }
+
+  .googleReviewImage {
+    width: 145px;
+  }
+
+
+  /* =======================================================
+     TOURS SECTION
+  ======================================================= */
+
   .container {
     width: 90%;
   }
@@ -458,6 +618,35 @@
   .viewMoreButton {
     padding: 10px 24px;
     font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .reviewRow {
+    gap: 18px;
+  }
+
+  .tripadvisorLogo {
+    width: 135px;
+  }
+
+  .googleReviewImage {
+    width: 135px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+
+  .card {
+    border-radius: 6px;
   }
 
 }

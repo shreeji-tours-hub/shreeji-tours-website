@@ -1,6 +1,7 @@
 export const popularForeignTours = [
   {
     slug: "golden-triangle",
+    category: "India Tour",
 
     duration: "7 Days / 6 Nights",
     title: "Golden Triangle Tour",
@@ -208,6 +209,7 @@ export const popularForeignTours = [
 
   {
     slug: "incredible-south-india",
+    category: "India Tour",
 
     duration: "14 Days / 13 Nights",
     title: "Incredible South India",
@@ -360,6 +362,7 @@ export const popularForeignTours = [
 
   {
     slug: "spiritual-india",
+    category: "India Tour",
 
     duration: "11 Days / 10 Nights",
     title: "Spiritual India Tour",
@@ -491,6 +494,7 @@ export const popularForeignTours = [
 
   {
     slug: "himalayan-adventure",
+    category: "Mumbai Tour",
 
     duration: "9 Days / 8 Nights",
     title: "Himalayan Adventure",

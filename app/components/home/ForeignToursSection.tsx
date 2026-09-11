@@ -36,6 +36,67 @@ export default function ForeignToursSection() {
             Discover the beauty, culture, spirituality, and incredible destinations of India with Shreeji Tours n Travels. From memorable family holidays and exciting group tours to spiritual journeys and customized travel experiences, we make every journey comfortable, enjoyable, and truly special.
           </p>
 
+          <p className={styles.introExperience}>
+            Highly Rated on Google & TripAdvisor — Trusted by Travellers Worldwide
+          </p>
+
+
+          {/* =====================================================
+              GOOGLE + TRIPADVISOR REVIEWS
+          ===================================================== */}
+
+          <div className={styles.reviewRow}>
+
+            {/* TRIPADVISOR */}
+
+            <a
+              href="https://www.tripadvisor.in/Attraction_Review-g304554-d15697131-Reviews-Shreeji_Tours_n_Travels-Mumbai_Maharashtra.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.tripadvisor}
+            >
+
+              <img
+                src="/tripadvisor.png"
+                alt="Tripadvisor"
+                className={styles.tripadvisorLogo}
+              />
+
+
+              <div className={styles.tripadvisorBottom}>
+
+                <span className={styles.stars}>
+                  ★★★★★
+                </span>
+
+                <span className={styles.reviewCount}>
+                  500+ Reviews
+                </span>
+
+              </div>
+
+            </a>
+
+
+            {/* GOOGLE REVIEWS */}
+
+            <a
+              href="https://share.google/iwzoH7qJBgbfY3qzL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.googleReview}
+            >
+
+              <img
+                src="/images/google_review_clean_transparent.png"
+                alt="Google Reviews"
+                className={styles.googleReviewImage}
+              />
+
+            </a>
+
+          </div>
+
         </div>
 
       </section>
@@ -45,7 +106,10 @@ export default function ForeignToursSection() {
           TOURS FOR FOREIGNERS
       ========================================================= */}
 
-      <section className={styles.section} id="foreigners">
+      <section
+        className={styles.section}
+        id="foreigners"
+      >
 
         <div className={styles.container}>
 
@@ -128,6 +192,7 @@ export default function ForeignToursSection() {
         </div>
 
       </section>
+
     </>
   );
 }

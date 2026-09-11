@@ -1,18 +1,19 @@
 .section {
   width: 100%;
-  min-height: 575px;
+  min-height: 700px;
 
-  padding: 0;
+  padding: 40px 0 55px;
 
   background: #ffffff;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .container {
   width: min(1320px, 90%);
-  min-height: 575px;
+  min-height: 605px;
 
   margin: 0 auto;
 
@@ -33,11 +34,11 @@
 ========================================================= */
 
 .content {
-  padding-top: 85px;
+  padding-top: 55px;
 }
 
 .content h2 {
-  margin: 0 0 25px;
+  margin: 0 0 20px;
 
   color: #17245f;
 
@@ -50,7 +51,12 @@
   letter-spacing: -1.5px;
 }
 
-.content p {
+
+/* =========================================================
+   INTRO TEXT
+========================================================= */
+
+.introText {
   max-width: 540px;
 
   margin: 0;
@@ -59,7 +65,77 @@
 
   font-size: 18px;
 
-  line-height: 1.75;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TRAVEL EXPERIENCES
+========================================================= */
+
+.experiences {
+  margin-top: 24px;
+
+  color: #17356f;
+}
+
+
+/* HEADING */
+
+.experienceTitle {
+  margin: 0 0 12px;
+
+  color: #17245f;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+/* LIST */
+
+.experiences ul {
+  margin: 0;
+
+  padding-left: 20px;
+}
+
+.experiences li {
+  margin-bottom: 7px;
+
+  color: #17356f;
+
+  font-size: 15px;
+
+  line-height: 1.45;
+}
+
+.experiences li::marker {
+  color: #8d1010;
+}
+
+.experiences li strong {
+  font-weight: 600;
+
+  color: #17245f;
+}
+
+
+/* CLOSING LINE */
+
+.experienceClosing {
+  margin: 16px 0 0;
+
+  color: #17245f;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  font-weight: 600;
 }
 
 
@@ -112,6 +188,7 @@
 
 .statCard {
   width: 220px;
+
   height: 240px;
 
   background: rgba(255, 255, 255, 0.96);
@@ -119,20 +196,21 @@
   border-radius: 22px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
 
   box-sizing: border-box;
 
-  /* soft floating shadow */
   box-shadow:
     0 20px 45px rgba(20, 35, 70, 0.08),
     0 5px 15px rgba(20, 35, 70, 0.04);
 
-  /* very subtle border */
   border: 1px solid rgba(230, 230, 230, 0.7);
 
   position: relative;
@@ -161,20 +239,25 @@
 ========================================================= */
 
 /* India Tour */
+
 .statCard:nth-child(2) {
   margin-top: 0;
 
   animation: floatCardOne 5s ease-in-out infinite;
 }
 
+
 /* Happy Travelers */
+
 .statCard:nth-child(3) {
   margin-top: 190px;
 
   animation: floatCardTwo 5.5s ease-in-out infinite;
 }
 
+
 /* Years Experience */
+
 .statCard:nth-child(4) {
   margin-top: 125px;
 
@@ -196,7 +279,6 @@
   50% {
     transform: translateY(-8px);
   }
-
 }
 
 
@@ -210,7 +292,6 @@
   50% {
     transform: translateY(10px);
   }
-
 }
 
 
@@ -224,7 +305,6 @@
   50% {
     transform: translateY(-7px);
   }
-
 }
 
 
@@ -234,12 +314,15 @@
 
 .statIcon {
   width: 52px;
+
   height: 52px;
 
   margin-bottom: 15px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   color: #8d1010;
@@ -288,6 +371,7 @@
   line-height: 1.4;
 }
 
+
 /* =========================================================
    TABLET
 ========================================================= */
@@ -308,6 +392,18 @@
 
   .statCard {
     width: 200px;
+  }
+
+  .content {
+    padding-top: 50px;
+  }
+
+  .content h2 {
+    font-size: 46px;
+  }
+
+  .experiences li {
+    font-size: 14px;
   }
 
 }
@@ -333,6 +429,9 @@
     gap: 30px;
   }
 
+
+  /* LEFT CONTENT */
+
   .content {
     grid-column: 1 / -1;
 
@@ -341,13 +440,24 @@
     text-align: center;
   }
 
-  .content p {
+  .content h2 {
+    font-size: 44px;
+  }
+
+  .introText {
     margin: 0 auto;
   }
 
-  .button {
-    margin: 40px auto 0;
+  .experiences {
+    max-width: 700px;
+
+    margin: 24px auto 0;
+
+    text-align: left;
   }
+
+
+  /* CARDS */
 
   .statCard:nth-child(2),
   .statCard:nth-child(3),
@@ -382,32 +492,118 @@
     gap: 25px;
   }
 
+
+  /* CONTENT */
+
   .content {
     width: 100%;
+
+    text-align: center;
   }
 
   .content h2 {
     font-size: 38px;
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
   }
 
-  .content p {
+  .introText {
     font-size: 16px;
+
+    line-height: 1.65;
   }
+
+
+  /* EXPERIENCES */
+
+  .experiences {
+    width: 100%;
+
+    margin-top: 22px;
+
+    text-align: left;
+  }
+
+  .experienceTitle {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+  }
+
+  .experiences ul {
+    padding-left: 19px;
+  }
+
+  .experiences li {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+  .experienceClosing {
+    margin-top: 16px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+
+  /* BUTTON */
 
   .button {
     width: 100%;
+
     max-width: 295px;
   }
+
+
+  /* STAT CARDS */
 
   .statCard,
   .statCard:nth-child(2),
   .statCard:nth-child(3),
   .statCard:nth-child(4) {
     width: 220px;
+
     height: 220px;
 
     margin-top: 0;
   }
 
-  
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .content h2 {
+    font-size: 34px;
+  }
+
+  .introText {
+    font-size: 15px;
+  }
+
+  .experienceTitle {
+    font-size: 16px;
+  }
+
+  .experiences li {
+    font-size: 13px;
+
+    line-height: 1.45;
+  }
+
+  .experienceClosing {
+    font-size: 14px;
+  }
+
 }

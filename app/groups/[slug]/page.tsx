@@ -7,6 +7,11 @@ import { popularGroupTours } from "@/app/components/group-tours/PopularGroupTour
 
 import styles from "./GroupTour.module.css";
 
+import {
+  CalendarDays,
+  IndianRupee,
+} from "lucide-react";
+
 interface Props {
   params: Promise<{
     slug: string;
@@ -236,6 +241,55 @@ export default async function GroupTourPage({ params }: Props) {
 
                 </div>
 
+                {/* =================================================
+      TOUR DATE + PRICE
+      ONLY SHOWN FOR UPCOMING TOURS
+  ================================================= */}
+
+  {tour.date && tour.price && (
+    <div className={styles.tourMeta}>
+
+      <div className={styles.tourMetaItem}>
+
+        <div className={styles.tourMetaIcon}>
+          <CalendarDays size={21} strokeWidth={1.8} />
+        </div>
+
+        <div className={styles.tourMetaContent}>
+          <span className={styles.tourMetaLabel}>
+            TOUR DATE
+          </span>
+
+          <span className={styles.tourMetaValue}>
+            {tour.date}
+          </span>
+        </div>
+
+      </div>
+
+
+      <div className={styles.tourMetaItem}>
+
+        <div className={styles.tourMetaIcon}>
+          <IndianRupee size={21} strokeWidth={1.8} />
+        </div>
+
+        <div className={styles.tourMetaContent}>
+          <span className={styles.tourMetaLabel}>
+            TOUR PRICE
+          </span>
+
+          <span className={styles.tourMetaValue}>
+            {tour.price}
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  )}
+
+
 
                 {/* =================================================
                     TOUR HIGHLIGHTS
@@ -286,54 +340,7 @@ export default async function GroupTourPage({ params }: Props) {
                 </div>
 
 
-                {/* =================================================
-                    TOUR DATE + PRICE
-                    ONLY SHOWN FOR UPCOMING TOURS
-                    (tours where date/price are set in the data file)
-                ================================================= */}
-
-                {tour.date && tour.price && (
-                  <div className={styles.tourMeta}>
-
-                    <div className={styles.tourMetaItem}>
-
-                      <span className={styles.tourMetaIcon}>
-                        📅
-                      </span>
-
-                      <div>
-                        <span className={styles.tourMetaLabel}>
-                          Tour Date
-                        </span>
-
-                        <span className={styles.tourMetaValue}>
-                          {tour.date}
-                        </span>
-                      </div>
-
-                    </div>
-
-
-                    <div className={styles.tourMetaItem}>
-
-                      <span className={styles.tourMetaIcon}>
-                        ₹
-                      </span>
-
-                      <div>
-                        <span className={styles.tourMetaLabel}>
-                          Price
-                        </span>
-
-                        <span className={styles.tourMetaValue}>
-                          {tour.price}
-                        </span>
-                      </div>
-
-                    </div>
-
-                  </div>
-                )}
+                
 
               </div>
 

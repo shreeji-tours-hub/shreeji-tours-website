@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 import {
@@ -11,8 +12,16 @@ import styles from "./PopularForeignTours.module.css";
 import { popularForeignTours } from "./PopularForeignToursData";
 
 export default function PopularForeignTours() {
+
+  const [activeFilter, setActiveFilter] = useState("India Tour");
+
+  const filteredTours = popularForeignTours.filter(
+    (tour) => tour.category === activeFilter
+  );
+
   return (
     <section className={styles.section}>
+
       <div className={styles.container}>
 
         {/* =========================
@@ -20,6 +29,7 @@ export default function PopularForeignTours() {
         ========================= */}
 
         <div className={styles.heading}>
+
           <span>POPULAR PACKAGES</span>
 
           <h2>
@@ -31,6 +41,40 @@ export default function PopularForeignTours() {
             <b>◆</b>
             <i />
           </div>
+
+        </div>
+
+
+        {/* =========================
+            FILTER BUTTONS
+        ========================= */}
+
+        <div className={styles.filters}>
+
+          <button
+            type="button"
+            className={
+              activeFilter === "Mumbai Tour"
+                ? styles.activeFilter
+                : styles.filterButton
+            }
+            onClick={() => setActiveFilter("Mumbai Tour")}
+          >
+            Mumbai Tour
+          </button>
+
+          <button
+            type="button"
+            className={
+              activeFilter === "India Tour"
+                ? styles.activeFilter
+                : styles.filterButton
+            }
+            onClick={() => setActiveFilter("India Tour")}
+          >
+            Tours in India
+          </button>
+
         </div>
 
 
@@ -40,74 +84,85 @@ export default function PopularForeignTours() {
 
         <div className={styles.grid}>
 
-          {popularForeignTours.map((tour) => (
+          {filteredTours.length > 0 ? (
 
-            <Link
-              key={tour.slug}
-              href={`/foreign-tours/${tour.slug}`}
-              className={styles.cardLink}
-            >
+            filteredTours.map((tour) => (
 
-              <div className={styles.card}>
+              <Link
+                key={tour.slug}
+                href={`/foreign-tours/${tour.slug}`}
+                className={styles.cardLink}
+              >
 
-                {/* =========================
-                    IMAGE
-                ========================= */}
+                <div className={styles.card}>
 
-                <div className={styles.imageWrap}>
+                  {/* =========================
+                      IMAGE
+                  ========================= */}
 
-                  <img
-                    src={tour.image}
-                    alt={tour.title}
-                  />
+                  <div className={styles.imageWrap}>
 
-                  <span className={styles.duration}>
-                    {tour.duration}
-                  </span>
+                    <img
+                      src={tour.image}
+                      alt={tour.title}
+                    />
 
-                </div>
-
-
-                {/* =========================
-                    CARD BODY
-                ========================= */}
-
-                <div className={styles.cardBody}>
-
-                  <h3>
-                    {tour.title}
-                  </h3>
-
-                  <p className={styles.route}>
-                    {tour.route}
-                  </p>
-
-
-                  <div className={styles.info}>
-
-                    <span>
-                      <CalendarDays size={15} />
+                    <span className={styles.duration}>
                       {tour.duration}
                     </span>
 
-                    <span>
-                      <MapPin size={15} />
-                      {tour.details}
-                    </span>
+                  </div>
+
+
+                  {/* =========================
+                      CARD BODY
+                  ========================= */}
+
+                  <div className={styles.cardBody}>
+
+                    <h3>
+                      {tour.title}
+                    </h3>
+
+                    <p className={styles.route}>
+                      {tour.route}
+                    </p>
+
+
+                    <div className={styles.info}>
+
+                      <span>
+                        <CalendarDays size={15} />
+                        {tour.duration}
+                      </span>
+
+                      <span>
+                        <MapPin size={15} />
+                        {tour.details}
+                      </span>
+
+                    </div>
 
                   </div>
 
                 </div>
 
-              </div>
+              </Link>
 
-            </Link>
+            ))
 
-          ))}
+          ) : (
+
+            <div className={styles.noTours}>
+              No {activeFilter} available at the moment.
+            </div>
+
+          )}
 
         </div>
 
       </div>
+
     </section>
   );
 }

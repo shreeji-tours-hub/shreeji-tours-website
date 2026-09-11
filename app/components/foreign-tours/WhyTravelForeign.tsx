@@ -68,9 +68,24 @@ export default function WhyTravelWithUs() {
 
       <section className={styles.servicesSection}>
 
-        <div className={styles.servicesContainer}>
+  <div className={styles.servicesContainer}>
 
-          <div className={styles.servicesGrid}>
+    {/* =========================
+        INTRO MESSAGE
+    ========================= */}
+    <div className={styles.servicesIntro}>
+      <h2>
+        First time in Mumbai or in India?
+      </h2>
+
+      <p>
+        Don't worry — we take care of your complete travel experience
+        from pickup to drop.
+      </p>
+    </div>
+
+
+    <div className={styles.servicesGrid}>
 
             {/* =====================================================
                 EVERYTHING WE TAKE CARE OF
@@ -101,42 +116,47 @@ export default function WhyTravelWithUs() {
 
               <div className={styles.serviceList}>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>01</span>
-                  <span>Airport Transfer</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>01</span>
+    <span>Airport / Hotel / Cruise Pickup</span>
+  </div>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>02</span>
-                  <span>Hotel Accommodation</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>02</span>
+    <span>Hotel Accommodation</span>
+  </div>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>03</span>
-                  <span>Private Ac Vehicle</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>03</span>
+    <span>Comfortable &amp; Private Ac Vehicle</span>
+  </div>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>04</span>
-                  <span>Local Guide &amp; Assistance</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>04</span>
+    <span>Professional English-Speaking Guides</span>
+  </div>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>05</span>
-                  <span>Sightseeing &amp; Entry Tickets</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>05</span>
+    <span>Sightseeing &amp; Entry Tickets</span>
+  </div>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>06</span>
-                  <span>Meal Recommendation</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>06</span>
+    <span>Meal Recommendation</span>
+  </div>
 
-                <div className={styles.serviceListItem}>
-                  <span className={styles.number}>07</span>
-                  <span>Travel Assistance</span>
-                </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>07</span>
+    <span>Travel Assistance</span>
+  </div>
 
-              </div>
+  <div className={styles.serviceListItem}>
+    <span className={styles.number}>08</span>
+    <span>Flexible Timing</span>
+  </div>
+
+</div>
 
             </div>
 

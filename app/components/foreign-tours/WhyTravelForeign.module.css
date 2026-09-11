@@ -175,6 +175,39 @@
   margin: 0 auto;
 }
 
+/* =========================================================
+   SERVICES INTRO
+========================================================= */
+
+.servicesIntro {
+  text-align: center;
+
+  margin: 0 auto 35px;
+
+  max-width: 850px;
+}
+
+.servicesIntro h2 {
+  margin: 0 0 8px;
+
+  color: #8c1717;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.servicesIntro p {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
 
 /* =========================================================
    SERVICES GRID
@@ -423,6 +456,19 @@
     gap: 14px;
   }
 
+  .servicesIntro {
+  margin-bottom: 25px;
+}
+
+.servicesIntro h2 {
+  font-size: 23px;
+}
+
+.servicesIntro p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 
   /* SERVICES */
 
@@ -469,6 +515,14 @@
   .heading h2 {
     font-size: 23px;
   }
+
+  .servicesIntro h2 {
+  font-size: 21px;
+}
+
+.servicesIntro p {
+  font-size: 13px;
+}
 
   .item {
     padding: 18px 12px;
