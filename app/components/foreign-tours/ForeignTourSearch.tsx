@@ -13,34 +13,30 @@ import {
 
 import { foreignTourSearchOptions } from "./ForeignTourSearchData";
 
-export default function ForeignTourSearch() {
-  const [destination, setDestination] = useState("All Destinations");
-  const [duration, setDuration] = useState("All Duration");
-  const [tourType, setTourType] = useState("All Tour Types");
+type Props = {
+  destination?: string;
+  duration?: string;
+  tourType?: string;
+};
 
-  const handleSearch = () => {
-    console.log({
-      destination,
-      duration,
-      tourType,
-    });
-  };
-
+export default function ForeignTourSearch({
+  destination = "All Destinations",
+  duration = "All Durations",
+  tourType = "All Tour Types",
+}: Props) {
   return (
     <section className={styles.section}>
-      <div className={styles.searchBox}>
-
+      <form className={styles.searchBox} method="GET">
         {/* DESTINATION */}
         <div className={styles.field}>
           <label htmlFor="destination">Destination</label>
-
           <div className={styles.select}>
             <MapPin size={18} className={styles.icon} />
 
             <select
               id="destination"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
+              name="destination"
+              defaultValue={destination}
             >
               {foreignTourSearchOptions.destinations.map((item) => (
                 <option key={item} value={item}>
@@ -49,10 +45,7 @@ export default function ForeignTourSearch() {
               ))}
             </select>
 
-            <ChevronDown
-              size={16}
-              className={styles.chevron}
-            />
+            <ChevronDown size={16} className={styles.chevron} />
           </div>
         </div>
 
@@ -63,11 +56,7 @@ export default function ForeignTourSearch() {
           <div className={styles.select}>
             <CalendarDays size={18} className={styles.icon} />
 
-            <select
-              id="duration"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-            >
+            <select id="duration" name="duration" defaultValue={duration}>
               {foreignTourSearchOptions.durations.map((item) => (
                 <option key={item} value={item}>
                   {item}
@@ -75,10 +64,7 @@ export default function ForeignTourSearch() {
               ))}
             </select>
 
-            <ChevronDown
-              size={16}
-              className={styles.chevron}
-            />
+            <ChevronDown size={16} className={styles.chevron} />
           </div>
         </div>
 
@@ -89,11 +75,7 @@ export default function ForeignTourSearch() {
           <div className={styles.select}>
             <UsersRound size={18} className={styles.icon} />
 
-            <select
-              id="tourType"
-              value={tourType}
-              onChange={(e) => setTourType(e.target.value)}
-            >
+            <select id="tourType" name="tourType" defaultValue={tourType}>
               {foreignTourSearchOptions.types.map((item) => (
                 <option key={item} value={item}>
                   {item}
@@ -101,24 +83,16 @@ export default function ForeignTourSearch() {
               ))}
             </select>
 
-            <ChevronDown
-              size={16}
-              className={styles.chevron}
-            />
+            <ChevronDown size={16} className={styles.chevron} />
           </div>
         </div>
 
         {/* SEARCH */}
-        <button
-          type="button"
-          className={styles.button}
-          onClick={handleSearch}
-        >
+        <button type="submit" className={styles.button}>
           <Search size={19} />
           <span>Search Tours</span>
         </button>
-
-      </div>
+      </form>
     </section>
   );
 }

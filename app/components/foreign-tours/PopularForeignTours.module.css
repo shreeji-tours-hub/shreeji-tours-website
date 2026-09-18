@@ -13,7 +13,6 @@
   margin: 0 auto;
 }
 
-
 /* =========================================================
    HEADING
 ========================================================= */
@@ -48,7 +47,6 @@
   font-weight: 700;
 }
 
-
 /* =========================================================
    HEADING DECORATION
 ========================================================= */
@@ -78,102 +76,6 @@
 }
 
 /* =========================================================
-   FILTER BUTTONS
-========================================================= */
-
-.filters {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 10px;
-
-  margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   FILTER BUTTON
-========================================================= */
-
-.filterButton,
-.activeFilter {
-  padding: 11px 20px;
-
-  border-radius: 6px;
-
-  font-size: 14px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.2s ease;
-}
-
-
-/* INACTIVE */
-
-.filterButton {
-  background: #ffffff;
-
-  color: #555555;
-
-  border: 1px solid #dcdcdc;
-}
-
-
-/* HOVER */
-
-.filterButton:hover {
-  border-color: #951414;
-
-  color: #951414;
-}
-
-
-/* ACTIVE */
-
-.activeFilter {
-  background: #951414;
-
-  color: #ffffff;
-
-  border: 1px solid #951414;
-
-  box-shadow:
-    0 4px 10px rgba(149, 20, 20, 0.18);
-}
-
-
-/* CLICK */
-
-.filterButton:active,
-.activeFilter:active {
-  transform: scale(0.97);
-}
-
-
-/* =========================================================
-   NO TOURS
-========================================================= */
-
-.noTours {
-  grid-column: 1 / -1;
-
-  padding: 45px 20px;
-
-  text-align: center;
-
-  color: #777777;
-
-  font-size: 15px;
-}
-
-/* =========================================================
    NORMAL RESPONSIVE GRID
 ========================================================= */
 
@@ -191,20 +93,16 @@
   box-sizing: border-box;
 }
 
-
 /* =========================================================
    CARD LINK
 ========================================================= */
 
 .cardLink {
   display: block;
-
   min-width: 0;
-
   text-decoration: none;
   color: inherit;
 }
-
 
 /* =========================================================
    CARD
@@ -213,7 +111,7 @@
 .card {
   width: 100%;
   min-width: 0;
-
+  height: 100%;
   overflow: hidden;
 
   background: #fff;
@@ -222,8 +120,7 @@
 
   border-radius: 10px;
 
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
 
   transition:
     transform 0.2s ease,
@@ -233,10 +130,8 @@
 .card:hover {
   transform: translateY(-4px);
 
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.11);
 }
-
 
 /* =========================================================
    IMAGE
@@ -268,7 +163,6 @@
   transform: scale(1.04);
 }
 
-
 /* =========================================================
    DURATION BADGE
 ========================================================= */
@@ -292,10 +186,8 @@
 
   line-height: 1.2;
 
-  box-shadow:
-    0 2px 7px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);
 }
-
 
 /* =========================================================
    CARD BODY
@@ -304,7 +196,6 @@
 .cardBody {
   padding: 14px;
 }
-
 
 /* =========================================================
    TITLE
@@ -331,7 +222,6 @@
   overflow: hidden;
 }
 
-
 /* =========================================================
    ROUTE
 ========================================================= */
@@ -351,7 +241,6 @@
 
   text-overflow: ellipsis;
 }
-
 
 /* =========================================================
    INFO
@@ -387,14 +276,12 @@
   color: #951414;
 }
 
-
 /* =========================================================
    TABLET
    4 CARDS PER ROW
 ========================================================= */
 
 @media (max-width: 1150px) {
-
   .container {
     width: calc(100% - 40px);
   }
@@ -404,9 +291,7 @@
 
     gap: 18px;
   }
-
 }
-
 
 /* =========================================================
    SMALL TABLET
@@ -414,7 +299,6 @@
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -424,9 +308,7 @@
   .imageWrap {
     height: 190px;
   }
-
 }
-
 
 /* =========================================================
    TABLET / LARGE MOBILE
@@ -434,7 +316,6 @@
 ========================================================= */
 
 @media (max-width: 700px) {
-
   .container {
     width: calc(100% - 30px);
   }
@@ -456,9 +337,7 @@
   .cardBody h3 {
     font-size: 19px;
   }
-
 }
-
 
 /* =========================================================
    MOBILE
@@ -466,7 +345,6 @@
 ========================================================= */
 
 @media (max-width: 500px) {
-
   .section {
     padding: 18px 0 30px;
   }
@@ -504,19 +382,6 @@
     padding: 14px;
   }
 
-  .filters {
-    gap: 8px;
-
-    margin-bottom: 20px;
-  }
-
-  .filterButton,
-  .activeFilter {
-    padding: 10px 16px;
-
-    font-size: 13px;
-  }
-
   .cardBody h3 {
     font-size: 19px;
   }
@@ -532,5 +397,4 @@
   .duration {
     font-size: 11px;
   }
-
 }
