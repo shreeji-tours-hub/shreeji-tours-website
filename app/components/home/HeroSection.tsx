@@ -17,7 +17,7 @@ export default function HeroSection() {
         preload="auto"
       >
         <source
-          src="https://res.cloudinary.com/dz9hxvxa/video/upload/v1786279202/Incredible_India_-_Incredible_India_1080p_h264.mp4"
+          src="https://res.cloudinary.com/dcaiszxcb/video/upload/v1790000464/Incredible_India_xf9vaj.mp4"
           type="video/mp4"
         />
       </video>
