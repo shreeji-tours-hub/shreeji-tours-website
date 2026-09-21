@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./HeroSection.module.css";
-import { heroData } from "./Hero";
 
 export default function HeroSection() {
   return (
@@ -22,15 +21,10 @@ export default function HeroSection() {
         />
       </video>
 
-      {/* OVERLAY */}
-      <div className={styles.heroOverlay}></div>
-
       {/* CONTENT */}
       <div className={styles.heroContent}>
         <div className={styles.heroCopy}>
-
-          
-
+          {/* Hero content can be added here */}
         </div>
       </div>
 
