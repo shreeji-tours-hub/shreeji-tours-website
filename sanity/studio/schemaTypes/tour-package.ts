@@ -7,6 +7,13 @@ export const tourPackage = defineType({
 
   fields: [
     defineField({
+      name: 'code',
+      title: 'Package Code',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: 'title',
       title: 'Package Name',
       type: 'string',
@@ -33,9 +40,10 @@ export const tourPackage = defineType({
     }),
 
     defineField({
-      name: 'tag',
-      title: 'Tag',
-      type: 'string',
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
 
     defineField({
@@ -49,6 +57,13 @@ export const tourPackage = defineType({
       name: 'duration',
       title: 'Duration',
       type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'durationInDays',
+      title: 'Duration (In Days)',
+      type: 'number',
       validation: (Rule) => Rule.required(),
     }),
 

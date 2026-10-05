@@ -8,6 +8,9 @@ import WhyTravelForeign from "../components/foreign-tours/WhyTravelForeign";
 import ForeignTourCTA from "../components/foreign-tours/ForeignTourCTA";
 
 import TourHighlights from "../components/home/TourHighlights";
+import { getTours } from "../controller/tour.controller";
+import TourSearch from "../components/india-tours/TourSearch";
+import ToursGrid from "../components/common/tours-grid/tours-grid";
 
 type PageProps = {
   searchParams: Promise<{
@@ -19,13 +22,14 @@ type PageProps = {
 
 export default async function ForeignersPage({ searchParams }: PageProps) {
   const params = await searchParams;
+  const tours = await getTours("Tour for foreigners", params);
 
   return (
     <main>
       <Navbar />
       <ForeignTourHero />
-      <ForeignTourSearch />
-      <PopularForeignTours />
+      <TourSearch params={params} />
+      <ToursGrid tours={tours} />
       <WhyTravelForeign />
       <TourHighlights />
       <ForeignTourCTA />
