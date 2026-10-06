@@ -6,7 +6,7 @@
   width: 100%;
   height: 78px;
   background: #fff8e7;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
   top: 0;
   left: 0;
@@ -22,11 +22,9 @@
   justify-content: space-between;
 }
 
-
 /* =========================
    LOGO
 ========================= */
-
 
 .logo {
   display: flex;
@@ -67,7 +65,6 @@
   display: block;
 }
 
-
 /* =========================
    NAV LINKS
 ========================= */
@@ -97,7 +94,6 @@
     transform 0.25s ease;
 }
 
-
 /* =========================
    HOVER
 ========================= */
@@ -105,7 +101,6 @@
 .navLinks a:hover {
   color: #c69214;
 }
-
 
 /* =========================
    ACTIVE LINK
@@ -130,7 +125,6 @@
   border-radius: 3px 3px 0 0;
 }
 
-
 /* =========================
    MOBILE BUTTON
 ========================= */
@@ -139,12 +133,11 @@
   display: none;
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: black;
   font-size: 28px;
   cursor: pointer;
   z-index: 1100;
 }
-
 
 /* =========================
    WHATSAPP
@@ -165,20 +158,18 @@
   border-radius: 22px 0 0 22px;
   font-size: 12px;
   font-weight: 600;
-  box-shadow: 0 3px 12px rgba(0,0,0,.18);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
 }
 
 .whatsappButton svg {
   font-size: 18px;
 }
 
-
 /* =========================
    TABLET
 ========================= */
 
-@media (max-width:1100px) {
-
+@media (max-width: 1100px) {
   .navLinks {
     gap: 14px;
   }
@@ -200,106 +191,103 @@
   }
 }
 
-
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width:850px){
+@media (max-width: 850px) {
+  .navbar {
+    height: 70px;
+  }
 
-.navbar{
-  height:70px;
-}
+  .navInner {
+    width: calc(100% - 30px);
+  }
 
-.navInner{
-  width:calc(100% - 30px);
-}
+  .logoText {
+    font-size: 14px;
+  }
 
-.logoText {
-  font-size: 14px;
-}
+  .logoSymbol {
+    font-size: 22px;
+  }
 
-.logoSymbol {
-  font-size: 22px;
-}
+  .logoTagline {
+    font-size: 5px;
+  }
 
-.logoTagline {
-  font-size: 5px;
-}
+  /* Hamburger */
 
-/* Hamburger */
+  .mobileMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.mobileMenu{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+  /* Mobile Menu */
 
-/* Mobile Menu */
+  .navLinks {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    z-index: 999;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
 
-.navLinks{
-  position:fixed;
-  top:70px;
-  left:0;
-  width:100%;
-  background:#ffffff;
-  display:none;
-  flex-direction:column;
-  align-items:stretch;
-  gap:0;
-  z-index:999;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
+  .mobileActive {
+    display: flex;
+  }
 
-.mobileActive{
-  display:flex;
-}
+  /* Links */
 
-/* Links */
+  .navLinks a {
+    width: 100%;
+    height: auto;
+    padding: 18px 24px;
+    color: #222222;
+    font-size: 16px;
+    border-bottom: 1px solid #eeeeee;
+  }
 
-.navLinks a{
-  width:100%;
-  height:auto;
-  padding:18px 24px;
-  color:#222222;
-  font-size:16px;
-  border-bottom:1px solid #eeeeee;
-}
+  /* Hover */
 
-/* Hover */
+  .navLinks a:hover {
+    background: #fafafa;
+    color: #ddac1a;
+  }
 
-.navLinks a:hover{
-  background:#fafafa;
-  color:#ddac1a;
-}
+  /* Active */
 
-/* Active */
+  .active {
+    color: #ddac1a !important;
+    border-left: 4px solid #ddac1a;
+    padding-left: 20px !important;
+  }
 
-.active{
-  color:#ddac1a !important;
-  border-left:4px solid #ddac1a;
-  padding-left:20px !important;
-}
+  .active::after {
+    display: none;
+  }
 
-.active::after{
-  display:none;
-}
+  /* Whatsapp */
 
-/* Whatsapp */
+  .whatsappButton {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    right: 20px;
+    bottom: 20px;
+    top: auto;
+    justify-content: center;
+    padding: 0;
+  }
 
-.whatsappButton{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  right:20px;
-  bottom:20px;
-  top:auto;
-  justify-content:center;
-  padding:0;
-}
-
-.whatsappButton span{
-  display:none;
-}
-
+  .whatsappButton span {
+    display: none;
+  }
 }

@@ -13,6 +13,8 @@ export type TourDetail = {
   }[];
   inclusions: string[];
   exclusions: string[];
+  coverImage?: string;
+  location?: string;
 };
 
 export const tourDetails: TourDetail[] = [
@@ -26,11 +28,7 @@ export const tourDetails: TourDetail[] = [
     description:
       "Experience the royal heritage, magnificent forts, colourful markets and rich culture of Rajasthan on this unforgettable journey through India's land of kings.",
 
-    destinations: [
-      "Jaipur",
-      "Jodhpur",
-      "Udaipur",
-    ],
+    destinations: ["Jaipur", "Jodhpur", "Udaipur"],
 
     highlights: [
       "Explore the magnificent Amber Fort",
@@ -63,8 +61,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 4",
         title: "Jodhpur Sightseeing",
-        description:
-          "Visit Mehrangarh Fort, Jaswant Thada and the old city.",
+        description: "Visit Mehrangarh Fort, Jaswant Thada and the old city.",
       },
       {
         day: "Day 5",
@@ -75,14 +72,12 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 6",
         title: "Udaipur Sightseeing",
-        description:
-          "Visit City Palace, Lake Pichola and Jagdish Temple.",
+        description: "Visit City Palace, Lake Pichola and Jagdish Temple.",
       },
       {
         day: "Day 7",
         title: "Departure",
-        description:
-          "Enjoy breakfast before your departure from Udaipur.",
+        description: "Enjoy breakfast before your departure from Udaipur.",
       },
     ],
 
@@ -112,11 +107,7 @@ export const tourDetails: TourDetail[] = [
     description:
       "Discover India's iconic Golden Triangle covering Delhi, Agra and Jaipur, combining history, architecture, culture and unforgettable experiences.",
 
-    destinations: [
-      "Delhi",
-      "Agra",
-      "Jaipur",
-    ],
+    destinations: ["Delhi", "Agra", "Jaipur"],
 
     highlights: [
       "Visit the Taj Mahal",
@@ -131,8 +122,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 1",
         title: "Arrival in Delhi",
-        description:
-          "Arrive in Delhi and explore the city's major landmarks.",
+        description: "Arrive in Delhi and explore the city's major landmarks.",
       },
       {
         day: "Day 2",
@@ -143,14 +133,12 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 3",
         title: "Delhi to Agra",
-        description:
-          "Travel to Agra and visit Agra Fort.",
+        description: "Travel to Agra and visit Agra Fort.",
       },
       {
         day: "Day 4",
         title: "Taj Mahal and Jaipur",
-        description:
-          "Visit the Taj Mahal before travelling to Jaipur.",
+        description: "Visit the Taj Mahal before travelling to Jaipur.",
       },
       {
         day: "Day 5",
@@ -161,8 +149,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 6",
         title: "Departure",
-        description:
-          "Breakfast and departure from Jaipur.",
+        description: "Breakfast and departure from Jaipur.",
       },
     ],
 
@@ -192,12 +179,7 @@ export const tourDetails: TourDetail[] = [
     description:
       "Experience the vibrant city of Mumbai with its iconic landmarks, colonial architecture, seaside promenades and energetic local culture.",
 
-    destinations: [
-      "Gateway of India",
-      "Marine Drive",
-      "Colaba",
-      "Bandra",
-    ],
+    destinations: ["Gateway of India", "Marine Drive", "Colaba", "Bandra"],
 
     highlights: [
       "Gateway of India",
@@ -212,8 +194,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 1",
         title: "South Mumbai",
-        description:
-          "Explore Gateway of India, Colaba, CST and Marine Drive.",
+        description: "Explore Gateway of India, Colaba, CST and Marine Drive.",
       },
       {
         day: "Day 2",
@@ -247,11 +228,7 @@ export const tourDetails: TourDetail[] = [
     description:
       "Relax on Goa's beautiful beaches, explore its Portuguese heritage and enjoy the perfect combination of beaches, culture and nightlife.",
 
-    destinations: [
-      "North Goa",
-      "South Goa",
-      "Panaji",
-    ],
+    destinations: ["North Goa", "South Goa", "Panaji"],
 
     highlights: [
       "Relax at beautiful beaches",
@@ -266,8 +243,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 1",
         title: "Arrival in Goa",
-        description:
-          "Arrive in Goa and relax at your hotel and nearby beach.",
+        description: "Arrive in Goa and relax at your hotel and nearby beach.",
       },
       {
         day: "Day 2",
@@ -284,8 +260,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 4",
         title: "Departure",
-        description:
-          "Enjoy breakfast before departure.",
+        description: "Enjoy breakfast before departure.",
       },
     ],
 
@@ -314,11 +289,7 @@ export const tourDetails: TourDetail[] = [
     description:
       "Experience the serene beauty of Kerala through its lush landscapes, peaceful backwaters, traditional villages and rich culture.",
 
-    destinations: [
-      "Kochi",
-      "Munnar",
-      "Alleppey",
-    ],
+    destinations: ["Kochi", "Munnar", "Alleppey"],
 
     highlights: [
       "Kerala backwaters",
@@ -338,8 +309,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 2",
         title: "Kochi to Munnar",
-        description:
-          "Travel through scenic landscapes to Munnar.",
+        description: "Travel through scenic landscapes to Munnar.",
       },
       {
         day: "Day 3",
@@ -356,8 +326,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 5",
         title: "Departure",
-        description:
-          "Breakfast followed by departure.",
+        description: "Breakfast followed by departure.",
       },
     ],
 
@@ -387,11 +356,7 @@ export const tourDetails: TourDetail[] = [
     description:
       "Explore the breathtaking mountains of Himachal Pradesh with scenic valleys, charming hill stations and unforgettable Himalayan landscapes.",
 
-    destinations: [
-      "Shimla",
-      "Manali",
-      "Solang Valley",
-    ],
+    destinations: ["Shimla", "Manali", "Solang Valley"],
 
     highlights: [
       "Shimla sightseeing",
@@ -412,8 +377,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 2",
         title: "Shimla Sightseeing",
-        description:
-          "Visit popular attractions around Shimla.",
+        description: "Visit popular attractions around Shimla.",
       },
       {
         day: "Day 3",
@@ -424,8 +388,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 4",
         title: "Manali Sightseeing",
-        description:
-          "Explore the major attractions of Manali.",
+        description: "Explore the major attractions of Manali.",
       },
       {
         day: "Day 5",
@@ -436,8 +399,7 @@ export const tourDetails: TourDetail[] = [
       {
         day: "Day 6",
         title: "Departure",
-        description:
-          "Breakfast followed by departure.",
+        description: "Breakfast followed by departure.",
       },
     ],
 
