@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import styles from "./ForeignTourSearch.module.css";
-
+import styles from "./tour-search.module.css";
 import {
   Search,
   ChevronDown,
@@ -10,8 +8,7 @@ import {
   CalendarDays,
   UsersRound,
 } from "lucide-react";
-
-import { foreignTourSearchOptions } from "./ForeignTourSearchData";
+import { foreignTourSearchOptions } from "./constants";
 
 type Props = {
   destination?: string;
@@ -19,7 +16,7 @@ type Props = {
   tourType?: string;
 };
 
-export default function ForeignTourSearch({
+export default function TourSearch({
   destination = "All Destinations",
   duration = "All Durations",
   tourType = "All Tour Types",

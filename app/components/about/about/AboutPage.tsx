@@ -1,15 +1,14 @@
 "use client";
 
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-
+import Footer from "../../Footer";
+import Navbar from "../../Navbar";
+import JourneyCTA from "../JourneyCTA";
+import LeadershipSection from "../LeadershipSection";
+import OfferSection from "../OfferSection";
+import OurStory from "../OurStory";
+import ValuesSection from "../ValuesSection";
+import WhyChooseUs from "../WhyChooseUs";
 import AboutHero from "./AboutHero";
-import OurStory from "./OurStory";
-import ValuesSection from "./ValuesSection";
-import LeadershipSection from "./LeadershipSection";
-import OfferSection from "./OfferSection";
-import WhyChooseUs from "./WhyChooseUs";
-import JourneyCTA from "./JourneyCTA";
 
 export default function AboutPage() {
   return (

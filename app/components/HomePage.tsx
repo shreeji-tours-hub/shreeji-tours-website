@@ -11,7 +11,6 @@ import TravelStatsSection from "./home/TravelStatsSection";
 import TourHighlights from "./home/TourHighlights";
 import ContactCTA from "../components/contact/ContactCTA";
 
-
 export default function HomePage() {
   return (
     <>
@@ -23,10 +22,9 @@ export default function HomePage() {
         <PopularToursSection />
         <CabHireSection />
         <TravelStatsSection />
-        <TourHighlights/>
-        <ContactCTA/>
+        <TourHighlights />
+        <ContactCTA />
       </main>
-
 
       <Footer />
     </>

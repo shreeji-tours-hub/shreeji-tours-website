@@ -4,61 +4,31 @@ import { useState } from "react";
 import styles from "./TourSearch.module.css";
 import { Search } from "lucide-react";
 
-export default function TourSearch() {
-  const [destination, setDestination] = useState("Any Destination");
-  const [tourType, setTourType] = useState("Any Type");
-  const [duration, setDuration] = useState("Any Duration");
-
-  const handleSearch = () => {
-    const params = new URLSearchParams();
-
-    if (destination !== "Any Destination") {
-      params.set("destination", destination);
-    }
-
-    if (tourType !== "Any Type") {
-      params.set("type", tourType);
-    }
-
-    if (duration !== "Any Duration") {
-      params.set("duration", duration);
-    }
-
-    // Update URL without leaving the page
-    const query = params.toString();
-
-    window.history.pushState(
-      {},
-      "",
-      query ? `/tours?${query}` : "/tours"
-    );
-
-    // Scroll to tour packages
-    const toursSection = document.getElementById("tour-packages");
-
-    if (toursSection) {
-      toursSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-
-    // Let other components know that search changed
-    window.dispatchEvent(new Event("tourSearch"));
+export default function TourSearch({
+  params,
+}: {
+  params: {
+    destination?: string;
+    duration?: string;
+    tourType?: string;
   };
+}) {
+  const [destination, setDestination] = useState(
+    params?.destination ?? "Any Destination",
+  );
+  const [tourType, setTourType] = useState(params?.tourType ?? "Any Type");
+  const [duration, setDuration] = useState(params?.duration ?? "Any Duration");
 
   return (
     <section className={styles.section}>
-      <div className={styles.searchBox}>
-
+      <form className={styles.searchBox} method="GET">
         {/* DESTINATION */}
         <div className={styles.field}>
-          <label htmlFor="destination">
-            Destination
-          </label>
+          <label htmlFor="destination">Destination</label>
 
           <select
             id="destination"
+            name="destination"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             className={styles.select}
@@ -77,15 +47,13 @@ export default function TourSearch() {
           </select>
         </div>
 
-
         {/* TOUR TYPE */}
         <div className={styles.field}>
-          <label htmlFor="tourType">
-            Tour Type
-          </label>
+          <label htmlFor="tourType">Tour Type</label>
 
           <select
             id="tourType"
+            name="tourType"
             value={tourType}
             onChange={(e) => setTourType(e.target.value)}
             className={styles.select}
@@ -102,15 +70,13 @@ export default function TourSearch() {
           </select>
         </div>
 
-
         {/* DURATION */}
         <div className={styles.field}>
-          <label htmlFor="duration">
-            Duration
-          </label>
+          <label htmlFor="duration">Duration</label>
 
           <select
             id="duration"
+            name="duration"
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
             className={styles.select}
@@ -124,19 +90,13 @@ export default function TourSearch() {
           </select>
         </div>
 
-
         {/* SEARCH */}
-        <button
-          type="button"
-          className={styles.button}
-          onClick={handleSearch}
-        >
+        <button type="submit" className={styles.button}>
           <Search size={18} strokeWidth={2.5} />
 
           <span>Search Tours</span>
         </button>
-
-      </div>
+      </form>
     </section>
   );
 }
